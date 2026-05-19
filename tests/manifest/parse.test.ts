@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { parseFilename, applyOverride, groupByArtist } from '../../scripts/build-manifest';
+import { parseFilename, applyOverride, groupByArtist, extractHrefs } from '../../scripts/build-manifest';
 
 describe('parseFilename', () => {
   it('parses a standard guitargeek filename', () => {
@@ -82,5 +82,22 @@ describe('groupByArtist', () => {
   it('sorts artists alphabetically by name', () => {
     const artists = groupByArtist(rigs);
     expect(artists.map((a) => a.slug)).toEqual(['eric-clapton', 'jimi-hendrix']);
+  });
+});
+
+describe('extractHrefs', () => {
+  it('extracts hrefs to image files only', () => {
+    const html = `
+      <html><body>
+        <a href="ace_frehley_guitar_rig_2010.jpg">file</a>
+        <a href="readme.txt">other</a>
+        <a href="eric_clapton_guitar_rig_1966.png">file</a>
+        <a href="parent_dir/">dir</a>
+      </body></html>
+    `;
+    expect(extractHrefs(html)).toEqual([
+      'ace_frehley_guitar_rig_2010.jpg',
+      'eric_clapton_guitar_rig_1966.png',
+    ]);
   });
 });

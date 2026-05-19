@@ -1,4 +1,4 @@
-import { displayNameFromSlug } from '../src/lib/slug';
+import { displayNameFromSlug, slugify } from '../src/lib/slug';
 
 export type ParsedFilename = {
   artistSlug: string;
@@ -67,4 +67,86 @@ export function groupByArtist(rigs: Rig[]): Artist[] {
     }
   }
   return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+import { writeFile, readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const ARCHIVE_LISTING = 'https://archive.org/download/guitargeek-archives/';
+
+const HREF_RE = /href="([^"]+\.(?:jpg|png|gif))"/gi;
+
+export function extractHrefs(html: string): string[] {
+  const hits: string[] = [];
+  let m: RegExpExecArray | null;
+  while ((m = HREF_RE.exec(html)) !== null) {
+    hits.push(m[1]);
+  }
+  return hits;
+}
+
+export function buildRigs(filenames: string[], overrides: Record<string, string>): Rig[] {
+  const seenIds = new Set<string>();
+  const rigs: Rig[] = [];
+  for (const name of filenames) {
+    const parsed = parseFilename(name);
+    if (!parsed) continue;
+    let id = `${parsed.artistSlug}-${parsed.year}`;
+    let suffix = 2;
+    while (seenIds.has(id)) {
+      id = `${parsed.artistSlug}-${parsed.year}-${suffix++}`;
+    }
+    seenIds.add(id);
+    rigs.push({
+      id,
+      artistSlug: slugify(parsed.artistSlug),
+      artistName: applyOverride(parsed.artistSlug, overrides),
+      year: parsed.year,
+      src: `https://archive.org/download/guitargeek-archives/${name}`,
+      format: parsed.ext,
+    });
+  }
+  rigs.sort((a, b) => a.artistName.localeCompare(b.artistName) || a.year - b.year);
+  return rigs;
+}
+
+async function main() {
+  const here = dirname(fileURLToPath(import.meta.url));
+  const root = join(here, '..');
+
+  console.log(`Fetching ${ARCHIVE_LISTING}…`);
+  const res = await fetch(ARCHIVE_LISTING);
+  if (!res.ok) {
+    throw new Error(`Archive listing returned ${res.status}`);
+  }
+  const html = await res.text();
+  const hrefs = extractHrefs(html);
+  console.log(`Found ${hrefs.length} candidate image hrefs`);
+
+  const overridesRaw = await readFile(join(root, 'data', 'overrides.json'), 'utf8');
+  const overrides = JSON.parse(overridesRaw) as Record<string, string>;
+
+  const rigs = buildRigs(hrefs, overrides);
+  console.log(`Parsed ${rigs.length} rigs`);
+
+  const artists = groupByArtist(rigs);
+  console.log(`Grouped into ${artists.length} artists`);
+
+  const manifest = {
+    generatedAt: new Date().toISOString(),
+    source: ARCHIVE_LISTING,
+    rigs,
+  };
+  await writeFile(join(root, 'data', 'rigs.json'), JSON.stringify(manifest, null, 2) + '\n');
+  await writeFile(join(root, 'data', 'artists.json'), JSON.stringify(artists, null, 2) + '\n');
+  console.log('Wrote data/rigs.json and data/artists.json');
+}
+
+const invokedDirectly = process.argv[1] && import.meta.url.endsWith(process.argv[1].split('/').pop()!);
+if (invokedDirectly) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }

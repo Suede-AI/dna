@@ -1,0 +1,350 @@
+{
+  "generatedAt": "2026-05-19T22:10:11.930Z",
+  "source": "https://archive.org/download/guitargeek-archives/",
+  "rigs": [
+    {
+      "id": "311_tim_mahoney-2009",
+      "artistSlug": "311-tim-mahoney",
+      "artistName": "311 — Tim Mahoney",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/311_tim_mahoney_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "a_day_to_remember_kevin_skaff-2010",
+      "artistSlug": "a-day-to-remember-kevin-skaff",
+      "artistName": "A Day To Remember Kevin Skaff",
+      "year": 2010,
+      "src": "https://archive.org/download/guitargeek-archives/a_day_to_remember_kevin_skaff_guitar_rig_2010.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "ace_frehley-2010",
+      "artistSlug": "ace-frehley",
+      "artistName": "Ace Frehley",
+      "year": 2010,
+      "src": "https://archive.org/download/guitargeek-archives/ace_frehley_guitar_rig_2010.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "against_me_laura_jane_grace-2011",
+      "artistSlug": "against-me-laura-jane-grace",
+      "artistName": "Against Me Laura Jane Grace",
+      "year": 2011,
+      "src": "https://archive.org/download/guitargeek-archives/against_me_laura_jane_grace_guitar_rig_2011.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "alice_in_chains_jerry_cantrell-2010",
+      "artistSlug": "alice-in-chains-jerry-cantrell",
+      "artistName": "Alice In Chains Jerry Cantrell",
+      "year": 2010,
+      "src": "https://archive.org/download/guitargeek-archives/alice_in_chains_jerry_cantrell_guitar_rig_2010.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "anberlin_joey_mulligan-2009",
+      "artistSlug": "anberlin-joey-mulligan",
+      "artistName": "Anberlin Joey Mulligan",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/anberlin_joey_mulligan_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "art_of_dying_greg-2011",
+      "artistSlug": "art-of-dying-greg",
+      "artistName": "Art Of Dying Greg",
+      "year": 2011,
+      "src": "https://archive.org/download/guitargeek-archives/art_of_dying_greg_guitar_rig_2011.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "billy_idol_steve_stevens-2012",
+      "artistSlug": "billy-idol-steve-stevens",
+      "artistName": "Billy Idol Steve Stevens",
+      "year": 2012,
+      "src": "https://archive.org/download/guitargeek-archives/billy_idol_steve_stevens_guitar_rig_2012.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "bmth_lee_malia-2011",
+      "artistSlug": "bmth-lee-malia",
+      "artistName": "Bmth Lee Malia",
+      "year": 2011,
+      "src": "https://archive.org/download/guitargeek-archives/bmth_lee_malia_guitar_rig_2011.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "chapterhouse_andrew_sheriff-1992",
+      "artistSlug": "chapterhouse-andrew-sheriff",
+      "artistName": "Chapterhouse Andrew Sheriff",
+      "year": 1992,
+      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_andrew_sheriff_guitar_rig_1992.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "chapterhouse_stephen_patman-1992",
+      "artistSlug": "chapterhouse-stephen-patman",
+      "artistName": "Chapterhouse Stephen Patman",
+      "year": 1992,
+      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_stephen_patman_guitar_rig_1992.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "children_of_bodom_roope_latvala-2009",
+      "artistSlug": "children-of-bodom-roope-latvala",
+      "artistName": "Children Of Bodom Roope Latvala",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/children_of_bodom_roope_latvala_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "chimaira_rob_arnold-2009",
+      "artistSlug": "chimaira-rob-arnold",
+      "artistName": "Chimaira Rob Arnold",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/chimaira_rob_arnold_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "creed_mark_tremonti-2009",
+      "artistSlug": "creed-mark-tremonti",
+      "artistName": "Creed Mark Tremonti",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/creed_mark_tremonti_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "death_chuck_schuldiner-1993",
+      "artistSlug": "death-chuck-schuldiner",
+      "artistName": "Death Chuck Schuldiner",
+      "year": 1993,
+      "src": "https://archive.org/download/guitargeek-archives/death_chuck_schuldiner_guitar_rig_1993.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "deftones_stephen_carpenter-2011",
+      "artistSlug": "deftones-stephen-carpenter",
+      "artistName": "Deftones Stephen Carpenter",
+      "year": 2011,
+      "src": "https://archive.org/download/guitargeek-archives/deftones_stephen_carpenter_guitar_rig_2011.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "eric_clapton_bluesbreakers-1966",
+      "artistSlug": "eric-clapton-bluesbreakers",
+      "artistName": "Eric Clapton Bluesbreakers",
+      "year": 1966,
+      "src": "https://archive.org/download/guitargeek-archives/eric_clapton_bluesbreakers_guitar_rig_1966.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "eric_clapton_cream-1967",
+      "artistSlug": "eric-clapton-cream",
+      "artistName": "Eric Clapton Cream",
+      "year": 1967,
+      "src": "https://archive.org/download/guitargeek-archives/eric_clapton_cream_guitar_rig_1967.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "eric_clapton_the_yardbirds-1964",
+      "artistSlug": "eric-clapton-the-yardbirds",
+      "artistName": "Eric Clapton The Yardbirds",
+      "year": 1964,
+      "src": "https://archive.org/download/guitargeek-archives/eric_clapton_the_yardbirds_guitar_rig_1964.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "feared_ola_englund-2014",
+      "artistSlug": "feared-ola-englund",
+      "artistName": "Feared Ola Englund",
+      "year": 2014,
+      "src": "https://archive.org/download/guitargeek-archives/feared_ola_englund_guitar_rig_2014.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "fugazi_guy_picciotto-1999",
+      "artistSlug": "fugazi-guy-picciotto",
+      "artistName": "Fugazi Guy Picciotto",
+      "year": 1999,
+      "src": "https://archive.org/download/guitargeek-archives/fugazi_guy_picciotto_guitar_rig_1999.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "hatebreed_wayne_lozinak-2009",
+      "artistSlug": "hatebreed-wayne-lozinak",
+      "artistName": "Hatebreed Wayne Lozinak",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/hatebreed_wayne_lozinak_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "hershel_yatovitz-2014",
+      "artistSlug": "hershel-yatovitz",
+      "artistName": "Hershel Yatovitz",
+      "year": 2014,
+      "src": "https://archive.org/download/guitargeek-archives/hershel_yatovitz_guitar_rig_2014.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "hinder_joe_garvey-2008",
+      "artistSlug": "hinder-joe-garvey",
+      "artistName": "Hinder Joe Garvey",
+      "year": 2008,
+      "src": "https://archive.org/download/guitargeek-archives/hinder_joe_garvey_guitar_rig_2008.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "jeff_beck-2003",
+      "artistSlug": "jeff-beck",
+      "artistName": "Jeff Beck",
+      "year": 2003,
+      "src": "https://archive.org/download/guitargeek-archives/jeff_beck_guitar_rig_2003.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "jeff_hanneman_slayer-2002",
+      "artistSlug": "jeff-hanneman-slayer",
+      "artistName": "Jeff Hanneman Slayer",
+      "year": 2002,
+      "src": "https://archive.org/download/guitargeek-archives/jeff_hanneman_slayer_guitar_rig_2002.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "jesus_lizard_duane_denison-1989",
+      "artistSlug": "jesus-lizard-duane-denison",
+      "artistName": "Jesus Lizard Duane Denison",
+      "year": 1989,
+      "src": "https://archive.org/download/guitargeek-archives/jesus_lizard_duane_denison_guitar_rig_1989.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "joe_bonamassa-2010",
+      "artistSlug": "joe-bonamassa",
+      "artistName": "Joe Bonamassa",
+      "year": 2010,
+      "src": "https://archive.org/download/guitargeek-archives/joe_bonamassa_guitar_rig_2010.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "john5-2009",
+      "artistSlug": "john5",
+      "artistName": "John5",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/john5_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "kenny_wayne_shephard-2010",
+      "artistSlug": "kenny-wayne-shephard",
+      "artistName": "Kenny Wayne Shephard",
+      "year": 2010,
+      "src": "https://archive.org/download/guitargeek-archives/kenny_wayne_shephard_guitar_rig_2010.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "kingsx_ty_tabor-2008",
+      "artistSlug": "kingsx-ty-tabor",
+      "artistName": "Kingsx Ty Tabor",
+      "year": 2008,
+      "src": "https://archive.org/download/guitargeek-archives/kingsx_ty_tabor_guitar_rig_2008.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "korn_head-2002",
+      "artistSlug": "korn-head",
+      "artistName": "Korn Head",
+      "year": 2002,
+      "src": "https://archive.org/download/guitargeek-archives/korn_head_guitar_rig_2002.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "korn_munky-2002",
+      "artistSlug": "korn-munky",
+      "artistName": "Korn Munky",
+      "year": 2002,
+      "src": "https://archive.org/download/guitargeek-archives/korn_munky_guitar_rig_2002.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "lush_miki_berenyi-1994",
+      "artistSlug": "lush-miki-berenyi",
+      "artistName": "Lush Miki Berenyi",
+      "year": 1994,
+      "src": "https://archive.org/download/guitargeek-archives/lush_miki_berenyi_guitar_rig_1994.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "mastodon_bill_kelliher-2009",
+      "artistSlug": "mastodon-bill-kelliher",
+      "artistName": "Mastodon Bill Kelliher",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/mastodon_bill_kelliher_guitar_rig_2009.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "nin_robin_finck-2014",
+      "artistSlug": "nin-robin-finck",
+      "artistName": "Nin Robin Finck",
+      "year": 2014,
+      "src": "https://archive.org/download/guitargeek-archives/nin_robin_finck_guitar_rig_2014.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "potus_david_dederer-1993",
+      "artistSlug": "potus-david-dederer",
+      "artistName": "Potus David Dederer",
+      "year": 1993,
+      "src": "https://archive.org/download/guitargeek-archives/potus_david_dederer_guitar_rig_1993.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "sixxam_dj_ashba-2008",
+      "artistSlug": "sixxam-dj-ashba",
+      "artistName": "Sixxam Dj Ashba",
+      "year": 2008,
+      "src": "https://archive.org/download/guitargeek-archives/sixxam_dj_ashba_guitar_rig_2008.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "superjointritual_jimmy_bower-2004",
+      "artistSlug": "superjointritual-jimmy-bower",
+      "artistName": "Superjointritual Jimmy Bower",
+      "year": 2004,
+      "src": "https://archive.org/download/guitargeek-archives/superjointritual_jimmy_bower_guitar_rig_2004.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "swervedriver_adam_franklin-1998",
+      "artistSlug": "swervedriver-adam-franklin",
+      "artistName": "Swervedriver Adam Franklin",
+      "year": 1998,
+      "src": "https://archive.org/download/guitargeek-archives/swervedriver_adam_franklin_guitar_rig_1998.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "the_pixies_joey_santiago-2014",
+      "artistSlug": "the-pixies-joey-santiago",
+      "artistName": "The Pixies Joey Santiago",
+      "year": 2014,
+      "src": "https://archive.org/download/guitargeek-archives/the_pixies_joey_santiago_guitar_rig_2014.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "thin_lizzy_brian_robertson-1974",
+      "artistSlug": "thin-lizzy-brian-robertson",
+      "artistName": "Thin Lizzy Brian Robertson",
+      "year": 1974,
+      "src": "https://archive.org/download/guitargeek-archives/thin_lizzy_brian_robertson_guitar_rig_1974.jpg",
+      "format": "jpg"
+    },
+    {
+      "id": "whitesnake_doug_aldrich-2009",
+      "artistSlug": "whitesnake-doug-aldrich",
+      "artistName": "Whitesnake Doug Aldrich",
+      "year": 2009,
+      "src": "https://archive.org/download/guitargeek-archives/whitesnake_doug_aldrich_guitar_rig_2009.jpg",
+      "format": "jpg"
+    }
+  ]
+}
