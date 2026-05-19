@@ -1,12 +1,14 @@
 import { HomeHero } from '@/components/hero/HomeHero';
+import { CompilationGrid } from '@/components/grid/CompilationGrid';
+import { getAllArtists, getAllRigs } from '@/lib/manifest';
 
 export default function HomePage() {
+  const artists = getAllArtists();
+  const rigs = getAllRigs();
   return (
-    <>
+    <main>
       <HomeHero />
-      <section id="archive" aria-label="Archive grid placeholder" className="mx-auto max-w-[1400px] px-6 py-24">
-        <p className="mono-label">ARCHIVE GRID LANDS IN A LATER TASK</p>
-      </section>
-    </>
+      <CompilationGrid artists={artists} rigs={rigs} />
+    </main>
   );
 }
