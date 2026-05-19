@@ -10,7 +10,6 @@ export function SearchInput({ value, onChange }: { value: string; onChange: (v: 
         onChange={(e) => onChange(e.target.value)}
         placeholder="artist or year"
         className="bg-transparent outline-none text-white placeholder:text-[color:var(--color-mute)] w-full"
-        aria-label="Search artists or year"
       />
     </label>
   );

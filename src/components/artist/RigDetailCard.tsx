@@ -59,6 +59,7 @@ export function RigDetailCard({
                 href={rig.src}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`View source file for ${rig.artistName} ${rig.year} rig on archive.org (opens in new tab)`}
                 className="underline-offset-4 hover:underline hover:text-[color:var(--color-signal)] break-all"
               >
                 archive.org/…/{rig.src.split('/').pop()}↗

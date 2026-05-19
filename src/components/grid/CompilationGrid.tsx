@@ -66,7 +66,8 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
                     id={`artist-anchor-${artist.slug}`}
                     className="col-span-full mono-label pt-6"
                   >
-                    {artist.name} <span className="text-[color:var(--color-mute)]">· {artist.count}</span>
+                    <span className="text-[color:var(--color-bone)]">{artist.name}</span>
+                    <span className="text-[color:var(--color-mute)]"> · {artist.count}</span>
                   </div>,
                   ...artistRigs.map((rig) => {
                     const stagger = cardIndex < 24 ? cardIndex * 30 : null;

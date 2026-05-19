@@ -17,7 +17,7 @@ export function LetterRail({ activeLetter, onJump }: { activeLetter: string | nu
           style={{
             color: activeLetter === l ? 'var(--color-signal)' : 'var(--color-mute)',
           }}
-          aria-current={activeLetter === l}
+          aria-current={activeLetter === l ? 'location' : undefined}
         >
           {l}
         </button>

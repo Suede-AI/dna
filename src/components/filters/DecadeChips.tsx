@@ -22,7 +22,7 @@ export function DecadeChips({
             className="h-8 px-3 inline-flex items-center gap-2 hairline mono text-[0.6875rem] uppercase tracking-[0.08em]"
             style={{
               borderRadius: 'var(--radius-control)',
-              color: isActive ? 'var(--color-white)' : 'var(--color-mute)',
+              color: isActive ? 'var(--color-white)' : 'var(--color-bone)',
               background: isActive ? 'var(--color-ink-3)' : 'transparent',
             }}
           >
