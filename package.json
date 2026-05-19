@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "refresh-manifest": "tsx scripts/build-manifest.ts"
+    "refresh-manifest": "tsx scripts/build-manifest.ts",
+    "validate-manifest": "tsx scripts/validate-manifest.ts"
   },
   "dependencies": {
     "geist": "^1.7.0",
