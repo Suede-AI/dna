@@ -1,6 +1,7 @@
 {
   "generatedAt": "2026-05-19T22:15:12.229Z",
   "source": "https://archive.org/download/guitargeek-archives/",
+  "validatedAt": "2026-05-19T23:27:33.298Z",
   "rigs": [
     {
       "id": "10000maniacs_rob-2000",
@@ -88,14 +89,6 @@
       "artistName": "Air Formation Matt",
       "year": 2000,
       "src": "https://archive.org/download/guitargeek-archives/air_formation_matt_2000.png",
-      "format": "png"
-    },
-    {
-      "id": "alan_low-2000",
-      "artistSlug": "alan-low",
-      "artistName": "Alan Low",
-      "year": 2000,
-      "src": "https://archive.org/download/guitargeek-archives/alan_low_2000.png",
       "format": "png"
     },
     {
@@ -459,22 +452,6 @@
       "format": "png"
     },
     {
-      "id": "bowelectric_lawrence-1998",
-      "artistSlug": "bowelectric-lawrence",
-      "artistName": "Bowelectric Lawrence",
-      "year": 1998,
-      "src": "https://archive.org/download/guitargeek-archives/bowelectric_lawrence_1998.png",
-      "format": "png"
-    },
-    {
-      "id": "bowery_electric_martha-1994",
-      "artistSlug": "bowery-electric-martha",
-      "artistName": "Bowery Electric Martha",
-      "year": 1994,
-      "src": "https://archive.org/download/guitargeek-archives/bowery_electric_martha_1994.png",
-      "format": "png"
-    },
-    {
       "id": "brandnew_jesse-2004",
       "artistSlug": "brandnew-jesse",
       "artistName": "Brandnew Jesse",
@@ -547,14 +524,6 @@
       "format": "png"
     },
     {
-      "id": "catatonia_mark-2000",
-      "artistSlug": "catatonia-mark",
-      "artistName": "Catatonia Mark",
-      "year": 2000,
-      "src": "https://archive.org/download/guitargeek-archives/catatonia_mark_2000.png",
-      "format": "png"
-    },
-    {
       "id": "catatonia_owen-2000",
       "artistSlug": "catatonia-owen",
       "artistName": "Catatonia Owen",
@@ -617,14 +586,6 @@
       "year": 1992,
       "src": "https://archive.org/download/guitargeek-archives/chapterhouse_andrew_sheriff_guitar_rig_1992.jpg",
       "format": "jpg"
-    },
-    {
-      "id": "chapterhouse_simon-1993",
-      "artistSlug": "chapterhouse-simon",
-      "artistName": "Chapterhouse Simon",
-      "year": 1993,
-      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_simon_1993.png",
-      "format": "png"
     },
     {
       "id": "chapterhouse_stephen-1992",
@@ -899,14 +860,6 @@
       "format": "png"
     },
     {
-      "id": "devildriver_jeff_kendrick-2008",
-      "artistSlug": "devildriver-jeff-kendrick",
-      "artistName": "Devildriver Jeff Kendrick",
-      "year": 2008,
-      "src": "https://archive.org/download/guitargeek-archives/devildriver_jeff_kendrick_2008.jpg",
-      "format": "jpg"
-    },
-    {
       "id": "dinosaurjr_j-1996",
       "artistSlug": "dinosaurjr-j",
       "artistName": "Dinosaurjr J",
@@ -1051,14 +1004,6 @@
       "format": "jpg"
     },
     {
-      "id": "fearfactory_dino-1998",
-      "artistSlug": "fearfactory-dino",
-      "artistName": "Fearfactory Dino",
-      "year": 1998,
-      "src": "https://archive.org/download/guitargeek-archives/fearfactory_dino_1998.png",
-      "format": "png"
-    },
-    {
       "id": "fearfactory_dino-2001",
       "artistSlug": "fearfactory-dino",
       "artistName": "Fearfactory Dino",
@@ -1073,14 +1018,6 @@
       "year": 2010,
       "src": "https://archive.org/download/guitargeek-archives/five_finger_death_punch_jason_hook_2010.jpg",
       "format": "jpg"
-    },
-    {
-      "id": "flaw_lance-2002",
-      "artistSlug": "flaw-lance",
-      "artistName": "Flaw Lance",
-      "year": 2002,
-      "src": "https://archive.org/download/guitargeek-archives/flaw_lance_2002.png",
-      "format": "png"
     },
     {
       "id": "flaw_ryan-2002",
@@ -1499,14 +1436,6 @@
       "format": "png"
     },
     {
-      "id": "jamc_lincoln-1999",
-      "artistSlug": "jamc-lincoln",
-      "artistName": "Jamc Lincoln",
-      "year": 1999,
-      "src": "https://archive.org/download/guitargeek-archives/jamc_lincoln_1999.png",
-      "format": "png"
-    },
-    {
       "id": "janes_addiction_dave_navarro-2012",
       "artistSlug": "janes-addiction-dave-navarro",
       "artistName": "Janes Addiction Dave Navarro",
@@ -1627,14 +1556,6 @@
       "format": "jpg"
     },
     {
-      "id": "kenny_wayne_shephard-2010",
-      "artistSlug": "kenny-wayne-shephard",
-      "artistName": "Kenny Wayne Shephard",
-      "year": 2010,
-      "src": "https://archive.org/download/guitargeek-archives/kenny_wayne_shephard_guitar_rig_2010.jpg",
-      "format": "jpg"
-    },
-    {
       "id": "killingheidi_jesse-2001",
       "artistSlug": "killingheidi-jesse",
       "artistName": "Killingheidi Jesse",
@@ -1656,14 +1577,6 @@
       "artistName": "King Jackie",
       "year": 1988,
       "src": "https://archive.org/download/guitargeek-archives/king_jackie_1988.png",
-      "format": "png"
-    },
-    {
-      "id": "kingcrimson_trey-2000",
-      "artistSlug": "kingcrimson-trey",
-      "artistName": "Kingcrimson Trey",
-      "year": 2000,
-      "src": "https://archive.org/download/guitargeek-archives/kingcrimson_trey_2000.png",
       "format": "png"
     },
     {
@@ -1801,14 +1714,6 @@
       "year": 2004,
       "src": "https://archive.org/download/guitargeek-archives/linkin_park_brad_delson_2004.jpg",
       "format": "jpg"
-    },
-    {
-      "id": "llc_scott-1993",
-      "artistSlug": "llc-scott",
-      "artistName": "Llc Scott",
-      "year": 1993,
-      "src": "https://archive.org/download/guitargeek-archives/llc_scott_1993.png",
-      "format": "png"
     },
     {
       "id": "lochheed_adam-2004",
@@ -2083,14 +1988,6 @@
       "format": "png"
     },
     {
-      "id": "muse_matt-2000",
-      "artistSlug": "muse-matt",
-      "artistName": "Muse Matt",
-      "year": 2000,
-      "src": "https://archive.org/download/guitargeek-archives/muse_matt_2000.png",
-      "format": "png"
-    },
-    {
       "id": "mxpx_tom-1999",
       "artistSlug": "mxpx-tom",
       "artistName": "Mxpx Tom",
@@ -2120,14 +2017,6 @@
       "artistName": "Nickelback Mike",
       "year": 2001,
       "src": "https://archive.org/download/guitargeek-archives/nickelback_mike_2001.png",
-      "format": "png"
-    },
-    {
-      "id": "nickelback_ryan-2001",
-      "artistSlug": "nickelback-ryan",
-      "artistName": "Nickelback Ryan",
-      "year": 2001,
-      "src": "https://archive.org/download/guitargeek-archives/nickelback_ryan_2001.png",
       "format": "png"
     },
     {
@@ -2200,14 +2089,6 @@
       "artistName": "Orgy Amir",
       "year": 2000,
       "src": "https://archive.org/download/guitargeek-archives/orgy_amir_2000.png",
-      "format": "png"
-    },
-    {
-      "id": "orgy_ryan-2000",
-      "artistSlug": "orgy-ryan",
-      "artistName": "Orgy Ryan",
-      "year": 2000,
-      "src": "https://archive.org/download/guitargeek-archives/orgy_ryan_2000.png",
       "format": "png"
     },
     {
@@ -2355,22 +2236,6 @@
       "format": "png"
     },
     {
-      "id": "pixies_black-1993",
-      "artistSlug": "pixies-black",
-      "artistName": "Pixies Black",
-      "year": 1993,
-      "src": "https://archive.org/download/guitargeek-archives/pixies_black_1993.png",
-      "format": "png"
-    },
-    {
-      "id": "pixies_joey-1991",
-      "artistSlug": "pixies-joey",
-      "artistName": "Pixies Joey",
-      "year": 1991,
-      "src": "https://archive.org/download/guitargeek-archives/pixies_joey_1991.png",
-      "format": "png"
-    },
-    {
       "id": "pixies_kim-1991",
       "artistSlug": "pixies-kim",
       "artistName": "Pixies Kim",
@@ -2441,14 +2306,6 @@
       "year": 1999,
       "src": "https://archive.org/download/guitargeek-archives/posterchildren_rick_1999.png",
       "format": "png"
-    },
-    {
-      "id": "potus_david_dederer-1993",
-      "artistSlug": "potus-david-dederer",
-      "artistName": "Potus David Dederer",
-      "year": 1993,
-      "src": "https://archive.org/download/guitargeek-archives/potus_david_dederer_guitar_rig_1993.jpg",
-      "format": "jpg"
     },
     {
       "id": "primus_larry-1998",
@@ -2539,14 +2396,6 @@
       "format": "png"
     },
     {
-      "id": "radiohead_jonny_-1997",
-      "artistSlug": "radiohead-jonny-",
-      "artistName": "Radiohead Jonny ",
-      "year": 1997,
-      "src": "https://archive.org/download/guitargeek-archives/radiohead_jonny__1997.jpg",
-      "format": "jpg"
-    },
-    {
       "id": "radiohead_thom-1997",
       "artistSlug": "radiohead-thom",
       "artistName": "Radiohead Thom",
@@ -2616,14 +2465,6 @@
       "artistName": "Rhcp Dave",
       "year": 1996,
       "src": "https://archive.org/download/guitargeek-archives/rhcp_dave_1996.png",
-      "format": "png"
-    },
-    {
-      "id": "rhcp_john-2001",
-      "artistSlug": "rhcp-john",
-      "artistName": "Rhcp John",
-      "year": 2001,
-      "src": "https://archive.org/download/guitargeek-archives/rhcp_john_2001.png",
       "format": "png"
     },
     {
@@ -2739,14 +2580,6 @@
       "format": "jpg"
     },
     {
-      "id": "sisterhazel_andrew-2001",
-      "artistSlug": "sisterhazel-andrew",
-      "artistName": "Sisterhazel Andrew",
-      "year": 2001,
-      "src": "https://archive.org/download/guitargeek-archives/sisterhazel_andrew_2001.png",
-      "format": "png"
-    },
-    {
       "id": "sisterhazel_jeff-2001",
       "artistSlug": "sisterhazel-jeff",
       "artistName": "Sisterhazel Jeff",
@@ -2835,28 +2668,12 @@
       "format": "png"
     },
     {
-      "id": "slipknot_jim_root-2004",
-      "artistSlug": "slipknot-jim-root",
-      "artistName": "Slipknot Jim Root",
-      "year": 2004,
-      "src": "https://archive.org/download/guitargeek-archives/slipknot_jim_root_2004.jpg",
-      "format": "jpg"
-    },
-    {
       "id": "slowdive_christian-1993",
       "artistSlug": "slowdive-christian",
       "artistName": "Slowdive Christian",
       "year": 1993,
       "src": "https://archive.org/download/guitargeek-archives/slowdive_christian_1993.jpg",
       "format": "jpg"
-    },
-    {
-      "id": "slowdive_neil-1993",
-      "artistSlug": "slowdive-neil",
-      "artistName": "Slowdive Neil",
-      "year": 1993,
-      "src": "https://archive.org/download/guitargeek-archives/slowdive_neil_1993.png",
-      "format": "png"
     },
     {
       "id": "slowdive_neil_halstead-1993",
@@ -2915,14 +2732,6 @@
       "format": "png"
     },
     {
-      "id": "stabbingwest_walter-2001",
-      "artistSlug": "stabbingwest-walter",
-      "artistName": "Stabbingwest Walter",
-      "year": 2001,
-      "src": "https://archive.org/download/guitargeek-archives/stabbingwest_walter_2001.png",
-      "format": "png"
-    },
-    {
       "id": "staind_mike_mushok-2005",
       "artistSlug": "staind-mike-mushok",
       "artistName": "Staind Mike Mushok",
@@ -2955,14 +2764,6 @@
       "format": "jpg"
     },
     {
-      "id": "staticx_tony-2002",
-      "artistSlug": "staticx-tony",
-      "artistName": "Staticx Tony",
-      "year": 2002,
-      "src": "https://archive.org/download/guitargeek-archives/staticx_tony_2002.png",
-      "format": "png"
-    },
-    {
       "id": "staticx_tripp-2002",
       "artistSlug": "staticx-tripp",
       "artistName": "Staticx Tripp",
@@ -2976,14 +2777,6 @@
       "artistName": "Staticx Wayne",
       "year": 2002,
       "src": "https://archive.org/download/guitargeek-archives/staticx_wayne_2002.png",
-      "format": "png"
-    },
-    {
-      "id": "steelpulse_moonie-2000",
-      "artistSlug": "steelpulse-moonie",
-      "artistName": "Steelpulse Moonie",
-      "year": 2000,
-      "src": "https://archive.org/download/guitargeek-archives/steelpulse_moonie_2000.png",
       "format": "png"
     },
     {
@@ -3096,14 +2889,6 @@
       "artistName": "Swervedriver Jimmy",
       "year": 1998,
       "src": "https://archive.org/download/guitargeek-archives/swervedriver_jimmy_1998.png",
-      "format": "png"
-    },
-    {
-      "id": "swervedriver_steve-1998",
-      "artistSlug": "swervedriver-steve",
-      "artistName": "Swervedriver Steve",
-      "year": 1998,
-      "src": "https://archive.org/download/guitargeek-archives/swervedriver_steve_1998.png",
       "format": "png"
     },
     {
@@ -3232,14 +3017,6 @@
       "artistName": "Toadies Clark",
       "year": 2001,
       "src": "https://archive.org/download/guitargeek-archives/toadies_clark_2001.png",
-      "format": "png"
-    },
-    {
-      "id": "toadies_lisa-2001",
-      "artistSlug": "toadies-lisa",
-      "artistName": "Toadies Lisa",
-      "year": 2001,
-      "src": "https://archive.org/download/guitargeek-archives/toadies_lisa_2001.png",
       "format": "png"
     },
     {

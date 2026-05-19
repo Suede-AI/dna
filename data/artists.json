@@ -110,16 +110,6 @@
     ]
   },
   {
-    "slug": "alan-low",
-    "name": "Alan Low",
-    "count": 1,
-    "yearMin": 2000,
-    "yearMax": 2000,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "albert-king",
     "name": "Albert King",
     "count": 1,
@@ -543,26 +533,6 @@
     ]
   },
   {
-    "slug": "bowelectric-lawrence",
-    "name": "Bowelectric Lawrence",
-    "count": 1,
-    "yearMin": 1998,
-    "yearMax": 1998,
-    "decades": [
-      1990
-    ]
-  },
-  {
-    "slug": "bowery-electric-martha",
-    "name": "Bowery Electric Martha",
-    "count": 1,
-    "yearMin": 1994,
-    "yearMax": 1994,
-    "decades": [
-      1990
-    ]
-  },
-  {
     "slug": "brandnew-jesse",
     "name": "Brandnew Jesse",
     "count": 1,
@@ -653,16 +623,6 @@
     ]
   },
   {
-    "slug": "catatonia-mark",
-    "name": "Catatonia Mark",
-    "count": 1,
-    "yearMin": 2000,
-    "yearMax": 2000,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "catatonia-owen",
     "name": "Catatonia Owen",
     "count": 1,
@@ -729,16 +689,6 @@
     "count": 1,
     "yearMin": 1992,
     "yearMax": 1992,
-    "decades": [
-      1990
-    ]
-  },
-  {
-    "slug": "chapterhouse-simon",
-    "name": "Chapterhouse Simon",
-    "count": 1,
-    "yearMin": 1993,
-    "yearMax": 1993,
     "decades": [
       1990
     ]
@@ -1075,16 +1025,6 @@
     ]
   },
   {
-    "slug": "devildriver-jeff-kendrick",
-    "name": "Devildriver Jeff Kendrick",
-    "count": 1,
-    "yearMin": 2008,
-    "yearMax": 2008,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "dinosaurjr-j",
     "name": "Dinosaurjr J",
     "count": 1,
@@ -1267,11 +1207,10 @@
   {
     "slug": "fearfactory-dino",
     "name": "Fearfactory Dino",
-    "count": 2,
-    "yearMin": 1998,
+    "count": 1,
+    "yearMin": 2001,
     "yearMax": 2001,
     "decades": [
-      1990,
       2000
     ]
   },
@@ -1283,16 +1222,6 @@
     "yearMax": 2010,
     "decades": [
       2010
-    ]
-  },
-  {
-    "slug": "flaw-lance",
-    "name": "Flaw Lance",
-    "count": 1,
-    "yearMin": 2002,
-    "yearMax": 2002,
-    "decades": [
-      2000
     ]
   },
   {
@@ -1787,16 +1716,6 @@
     ]
   },
   {
-    "slug": "jamc-lincoln",
-    "name": "Jamc Lincoln",
-    "count": 1,
-    "yearMin": 1999,
-    "yearMax": 1999,
-    "decades": [
-      1990
-    ]
-  },
-  {
     "slug": "janes-addiction-dave-navarro",
     "name": "Janes Addiction Dave Navarro",
     "count": 1,
@@ -1947,16 +1866,6 @@
     ]
   },
   {
-    "slug": "kenny-wayne-shephard",
-    "name": "Kenny Wayne Shephard",
-    "count": 1,
-    "yearMin": 2010,
-    "yearMax": 2010,
-    "decades": [
-      2010
-    ]
-  },
-  {
     "slug": "killingheidi-jesse",
     "name": "Killingheidi Jesse",
     "count": 1,
@@ -1984,16 +1893,6 @@
     "yearMax": 1988,
     "decades": [
       1980
-    ]
-  },
-  {
-    "slug": "kingcrimson-trey",
-    "name": "Kingcrimson Trey",
-    "count": 1,
-    "yearMin": 2000,
-    "yearMax": 2000,
-    "decades": [
-      2000
     ]
   },
   {
@@ -2126,16 +2025,6 @@
     "yearMax": 2004,
     "decades": [
       2000
-    ]
-  },
-  {
-    "slug": "llc-scott",
-    "name": "Llc Scott",
-    "count": 1,
-    "yearMin": 1993,
-    "yearMax": 1993,
-    "decades": [
-      1990
     ]
   },
   {
@@ -2459,16 +2348,6 @@
     ]
   },
   {
-    "slug": "muse-matt",
-    "name": "Muse Matt",
-    "count": 1,
-    "yearMin": 2000,
-    "yearMax": 2000,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "mxpx-tom",
     "name": "Mxpx Tom",
     "count": 1,
@@ -2501,16 +2380,6 @@
   {
     "slug": "nickelback-mike",
     "name": "Nickelback Mike",
-    "count": 1,
-    "yearMin": 2001,
-    "yearMax": 2001,
-    "decades": [
-      2000
-    ]
-  },
-  {
-    "slug": "nickelback-ryan",
-    "name": "Nickelback Ryan",
     "count": 1,
     "yearMin": 2001,
     "yearMax": 2001,
@@ -2581,16 +2450,6 @@
   {
     "slug": "orgy-amir",
     "name": "Orgy Amir",
-    "count": 1,
-    "yearMin": 2000,
-    "yearMax": 2000,
-    "decades": [
-      2000
-    ]
-  },
-  {
-    "slug": "orgy-ryan",
-    "name": "Orgy Ryan",
     "count": 1,
     "yearMin": 2000,
     "yearMax": 2000,
@@ -2779,26 +2638,6 @@
     ]
   },
   {
-    "slug": "pixies-black",
-    "name": "Pixies Black",
-    "count": 1,
-    "yearMin": 1993,
-    "yearMax": 1993,
-    "decades": [
-      1990
-    ]
-  },
-  {
-    "slug": "pixies-joey",
-    "name": "Pixies Joey",
-    "count": 1,
-    "yearMin": 1991,
-    "yearMax": 1991,
-    "decades": [
-      1990
-    ]
-  },
-  {
     "slug": "pixies-kim",
     "name": "Pixies Kim",
     "count": 1,
@@ -2884,16 +2723,6 @@
     "count": 1,
     "yearMin": 1999,
     "yearMax": 1999,
-    "decades": [
-      1990
-    ]
-  },
-  {
-    "slug": "potus-david-dederer",
-    "name": "Potus David Dederer",
-    "count": 1,
-    "yearMin": 1993,
-    "yearMax": 1993,
     "decades": [
       1990
     ]
@@ -2990,16 +2819,6 @@
     ]
   },
   {
-    "slug": "radiohead-jonny-",
-    "name": "Radiohead Jonny ",
-    "count": 1,
-    "yearMin": 1997,
-    "yearMax": 1997,
-    "decades": [
-      1990
-    ]
-  },
-  {
     "slug": "radiohead-thom",
     "name": "Radiohead Thom",
     "count": 1,
@@ -3087,16 +2906,6 @@
     "yearMax": 1996,
     "decades": [
       1990
-    ]
-  },
-  {
-    "slug": "rhcp-john",
-    "name": "Rhcp John",
-    "count": 1,
-    "yearMin": 2001,
-    "yearMax": 2001,
-    "decades": [
-      2000
     ]
   },
   {
@@ -3240,16 +3049,6 @@
     ]
   },
   {
-    "slug": "sisterhazel-andrew",
-    "name": "Sisterhazel Andrew",
-    "count": 1,
-    "yearMin": 2001,
-    "yearMax": 2001,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "sisterhazel-jeff",
     "name": "Sisterhazel Jeff",
     "count": 1,
@@ -3350,28 +3149,8 @@
     ]
   },
   {
-    "slug": "slipknot-jim-root",
-    "name": "Slipknot Jim Root",
-    "count": 1,
-    "yearMin": 2004,
-    "yearMax": 2004,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "slowdive-christian",
     "name": "Slowdive Christian",
-    "count": 1,
-    "yearMin": 1993,
-    "yearMax": 1993,
-    "decades": [
-      1990
-    ]
-  },
-  {
-    "slug": "slowdive-neil",
-    "name": "Slowdive Neil",
     "count": 1,
     "yearMin": 1993,
     "yearMax": 1993,
@@ -3450,16 +3229,6 @@
     ]
   },
   {
-    "slug": "stabbingwest-walter",
-    "name": "Stabbingwest Walter",
-    "count": 1,
-    "yearMin": 2001,
-    "yearMax": 2001,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "staind-mike-mushok",
     "name": "Staind Mike Mushok",
     "count": 1,
@@ -3500,16 +3269,6 @@
     ]
   },
   {
-    "slug": "staticx-tony",
-    "name": "Staticx Tony",
-    "count": 1,
-    "yearMin": 2002,
-    "yearMax": 2002,
-    "decades": [
-      2000
-    ]
-  },
-  {
     "slug": "staticx-tripp",
     "name": "Staticx Tripp",
     "count": 1,
@@ -3525,16 +3284,6 @@
     "count": 1,
     "yearMin": 2002,
     "yearMax": 2002,
-    "decades": [
-      2000
-    ]
-  },
-  {
-    "slug": "steelpulse-moonie",
-    "name": "Steelpulse Moonie",
-    "count": 1,
-    "yearMin": 2000,
-    "yearMax": 2000,
     "decades": [
       2000
     ]
@@ -3672,16 +3421,6 @@
   {
     "slug": "swervedriver-jimmy",
     "name": "Swervedriver Jimmy",
-    "count": 1,
-    "yearMin": 1998,
-    "yearMax": 1998,
-    "decades": [
-      1990
-    ]
-  },
-  {
-    "slug": "swervedriver-steve",
-    "name": "Swervedriver Steve",
     "count": 1,
     "yearMin": 1998,
     "yearMax": 1998,
@@ -3842,16 +3581,6 @@
   {
     "slug": "toadies-clark",
     "name": "Toadies Clark",
-    "count": 1,
-    "yearMin": 2001,
-    "yearMax": 2001,
-    "decades": [
-      2000
-    ]
-  },
-  {
-    "slug": "toadies-lisa",
-    "name": "Toadies Lisa",
     "count": 1,
     "yearMin": 2001,
     "yearMax": 2001,
