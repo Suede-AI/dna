@@ -3,7 +3,7 @@ import Link from 'next/link';
 export function Footer() {
   return (
     <footer className="border-t hairline mt-32">
-      <div className="mx-auto max-w-[1600px] px-6 py-12 grid gap-6 sm:grid-cols-3">
+      <div className="mx-auto max-w-[1600px] px-6 py-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div className="mono-label">
           <p className="text-[color:var(--color-bone)] mb-2">SUEDE / DNA</p>
           <p className="text-[color:var(--color-mute)]">SIGNAL CHAINS, ARCHIVED.</p>
@@ -18,11 +18,15 @@ export function Footer() {
           >
             archive.org / guitargeek-archives ↗
           </a>
+        </div>
+        <div className="mono-label">
+          <p className="text-[color:var(--color-bone)] mb-2">CONTACT</p>
+          <p className="text-[color:var(--color-mute)] block">REACH OUT ON X</p>
           <a
-            href="mailto:corrections@suedeai.ai?subject=Suede%20DNA%20correction"
+            href="mailto:info@suedeai.org?subject=Suede%20DNA"
             className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
           >
-            corrections@suedeai.ai
+            info@suedeai.org
           </a>
         </div>
         <div className="mono-label">

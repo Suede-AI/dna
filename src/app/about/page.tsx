@@ -65,12 +65,12 @@ export default function AboutPage() {
           <p className="mt-3">
             All images are credited to the Guitar Geek Archives and the Internet Archive item that
             hosts them. If you are a rights holder and want a photograph removed, or a name
-            corrected, write to{' '}
+            corrected, reach out on X or write to{' '}
             <a
-              href="mailto:corrections@suedeai.ai"
+              href="mailto:info@suedeai.org"
               className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
             >
-              corrections@suedeai.ai
+              info@suedeai.org
             </a>
             .
           </p>
