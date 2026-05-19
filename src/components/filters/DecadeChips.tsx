@@ -31,7 +31,7 @@ export function DecadeChips({
               className="inline-block w-1.5 h-1.5 rounded-full"
               style={{ background: isActive ? 'var(--color-signal)' : 'transparent', border: isActive ? 'none' : '1px solid var(--color-mute)' }}
             />
-            &apos;{d - 1900}s
+            &apos;{String(d).slice(-2).padStart(2, '0')}s
           </button>
         );
       })}

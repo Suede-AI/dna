@@ -31,7 +31,7 @@ export function ArtistStrip({
         </h1>
         <p className="mt-6 mono-data text-[color:var(--color-bone)]">
           {artist.count} RIG{artist.count === 1 ? '' : 'S'} · {artist.yearMin}–{artist.yearMax} ·{' '}
-          {artist.decades.map((d) => `${d - 1900}s`).join(' · ')}
+          {artist.decades.map((d) => `'${String(d).slice(-2).padStart(2, '0')}s`).join(' · ')}
         </p>
         <nav aria-label="Artist navigation" className="mt-10 flex gap-6 mono-label">
           <Link href="/" className="hover:text-[color:var(--color-signal)]">← ALL ARTISTS</Link>

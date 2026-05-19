@@ -7,8 +7,8 @@ function decodeDecades(raw: string | null): number[] {
   if (!raw) return [];
   return raw
     .split(',')
-    .map((d) => Number(d.replace(/[^\d]/g, '')))
-    .filter((n) => Number.isFinite(n) && n >= 1900 && n <= 2100);
+    .map((d) => Number(d.trim()))
+    .filter((n) => Number.isFinite(n) && n >= 1900 && n <= 2100 && n % 10 === 0);
 }
 
 function decodeSort(raw: string | null): SortOrder {
@@ -29,7 +29,7 @@ function readFromUrl(): FilterState {
 function writeToUrl(state: FilterState) {
   if (typeof window === 'undefined') return;
   const params = new URLSearchParams();
-  if (state.decades.length) params.set('decades', state.decades.map((d) => `${d - 1900}s`).join(','));
+  if (state.decades.length) params.set('decades', state.decades.map(String).join(','));
   if (state.q) params.set('q', state.q);
   if (state.sort !== 'name-asc') params.set('sort', state.sort);
   const qs = params.toString();
