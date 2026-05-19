@@ -40,6 +40,24 @@ export function Footer() {
           </a>
         </div>
       </div>
+
+      <div className="border-t hairline">
+        <div className="mx-auto max-w-[1600px] px-6 py-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div
+            aria-hidden
+            className="font-[820] leading-[0.85] tracking-[var(--tracking-tight)] text-white select-none"
+            style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
+          >
+            <span>SUEDE</span>
+            <span className="text-[color:var(--color-signal)] mx-2">/</span>
+            <span className="text-[color:var(--color-bone)]">DNA</span>
+          </div>
+          <p className="mono-label text-[color:var(--color-bone)] sm:text-right">
+            A SUEDE LABS / JASON COLAPIETRO CREATION
+          </p>
+        </div>
+      </div>
+
       <div className="h-px w-full" style={{ background: 'var(--color-signal-glow)' }} />
     </footer>
   );
