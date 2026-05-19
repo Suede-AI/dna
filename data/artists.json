@@ -1,5 +1,15 @@
 [
   {
+    "slug": "10000maniacs-rob",
+    "name": "10000maniacs Rob",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "311-tim-mahoney",
     "name": "311 — Tim Mahoney",
     "count": 1,
@@ -20,6 +30,46 @@
     ]
   },
   {
+    "slug": "aarktika-jon",
+    "name": "Aarktika Jon",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "aberdeen-beth",
+    "name": "Aberdeen Beth",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "aberdeen-john",
+    "name": "Aberdeen John",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "aberdeen-johnny",
+    "name": "Aberdeen Johnny",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "ace-frehley",
     "name": "Ace Frehley",
     "count": 1,
@@ -27,6 +77,16 @@
     "yearMax": 2010,
     "decades": [
       2010
+    ]
+  },
+  {
+    "slug": "adema-tim-fluckey",
+    "name": "Adema Tim Fluckey",
+    "count": 1,
+    "yearMin": 2005,
+    "yearMax": 2005,
+    "decades": [
+      2000
     ]
   },
   {
@@ -40,6 +100,36 @@
     ]
   },
   {
+    "slug": "air-formation-matt",
+    "name": "Air Formation Matt",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "alan-low",
+    "name": "Alan Low",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "albert-king",
+    "name": "Albert King",
+    "count": 1,
+    "yearMin": 1977,
+    "yearMax": 1977,
+    "decades": [
+      1970
+    ]
+  },
+  {
     "slug": "alice-in-chains-jerry-cantrell",
     "name": "Alice In Chains Jerry Cantrell",
     "count": 1,
@@ -50,11 +140,133 @@
     ]
   },
   {
+    "slug": "alicecooper-pete",
+    "name": "Alicecooper Pete",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "alisonshalo-adam",
+    "name": "Alisonshalo Adam",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "all-steve",
+    "name": "All Steve",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "allmanbrothers-warren",
+    "name": "Allmanbrothers Warren",
+    "count": 3,
+    "yearMin": 1980,
+    "yearMax": 2001,
+    "decades": [
+      1980,
+      1990,
+      2000
+    ]
+  },
+  {
     "slug": "anberlin-joey-mulligan",
     "name": "Anberlin Joey Mulligan",
     "count": 1,
     "yearMin": 2009,
     "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "angus-acdc",
+    "name": "Angus Acdc",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "animals-as-leaders",
+    "name": "Animals As Leaders",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "anthrax-scott-ian",
+    "name": "Anthrax Scott Ian",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "apples-robert",
+    "name": "Apples Robert",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "arc-angels-charlie",
+    "name": "Arc Angels Charlie",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "arcangels-doyle",
+    "name": "Arcangels Doyle",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "arch-enemy-michael-amott",
+    "name": "Arch Enemy Michael Amott",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "army-of-anyone-dean-deleo",
+    "name": "Army Of Anyone Dean Deleo",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
     "decades": [
       2000
     ]
@@ -70,6 +282,156 @@
     ]
   },
   {
+    "slug": "ash-charlotte",
+    "name": "Ash Charlotte",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ash-mark",
+    "name": "Ash Mark",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ash-tim",
+    "name": "Ash Tim",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "asteroid4-eric",
+    "name": "Asteroid4 Eric",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "asteroid4-james",
+    "name": "Asteroid4 James",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "audioslave-tom-morello",
+    "name": "Audioslave Tom Morello",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "avril-devin",
+    "name": "Avril Devin",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "badlydrawnboy-damon",
+    "name": "Badlydrawnboy Damon",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "badlydrawnboy-robin",
+    "name": "Badlydrawnboy Robin",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "badlydrawnboy-sean",
+    "name": "Badlydrawnboy Sean",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "bandofsusans-robert",
+    "name": "Bandofsusans Robert",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bellesebastian-steve",
+    "name": "Bellesebastian Steve",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "berry-chuck",
+    "name": "Berry Chuck",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bethanycurve-richard",
+    "name": "Bethanycurve Richard",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bigasstruck-steve",
+    "name": "Bigasstruck Steve",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "billy-idol-steve-stevens",
     "name": "Billy Idol Steve Stevens",
     "count": 1,
@@ -77,6 +439,87 @@
     "yearMax": 2012,
     "decades": [
       2010
+    ]
+  },
+  {
+    "slug": "biohazard-billy",
+    "name": "Biohazard Billy",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "blacksabbath-toni",
+    "name": "Blacksabbath Toni",
+    "count": 2,
+    "yearMin": 1971,
+    "yearMax": 2000,
+    "decades": [
+      1970,
+      2000
+    ]
+  },
+  {
+    "slug": "blacksabbath-tony",
+    "name": "Blacksabbath Tony",
+    "count": 1,
+    "yearMin": 1971,
+    "yearMax": 1971,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "blink182-mark",
+    "name": "Blink182 Mark",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "blink182-thomas",
+    "name": "Blink182 Thomas",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bluesbreakers-eric",
+    "name": "Bluesbreakers Eric",
+    "count": 1,
+    "yearMin": 1966,
+    "yearMax": 1966,
+    "decades": [
+      1960
+    ]
+  },
+  {
+    "slug": "blur-graham",
+    "name": "Blur Graham",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "blur-graham-coxon",
+    "name": "Blur Graham Coxon",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
     ]
   },
   {
@@ -90,8 +533,219 @@
     ]
   },
   {
+    "slug": "booradleys-martin",
+    "name": "Booradleys Martin",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bowelectric-lawrence",
+    "name": "Bowelectric Lawrence",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bowery-electric-martha",
+    "name": "Bowery Electric Martha",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "brandnew-jesse",
+    "name": "Brandnew Jesse",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "brandnew-vin",
+    "name": "Brandnew Vin",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "britnyfox-michael",
+    "name": "Britnyfox Michael",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "britnyfox-tommy",
+    "name": "Britnyfox Tommy",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "brmc-peter",
+    "name": "Brmc Peter",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "buddyguy-scott",
+    "name": "Buddyguy Scott",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "builttospill-doug",
+    "name": "Builttospill Doug",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "bullet-for-my-valentine-michael-padget",
+    "name": "Bullet For My Valentine Michael Padget",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "carlton-larry",
+    "name": "Carlton Larry",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "catatonia-mark",
+    "name": "Catatonia Mark",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "catatonia-owen",
+    "name": "Catatonia Owen",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "catherine-wheel-brian",
+    "name": "Catherine Wheel Brian",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "catherinewheel-brian",
+    "name": "Catherinewheel Brian",
+    "count": 2,
+    "yearMin": 1995,
+    "yearMax": 2000,
+    "decades": [
+      1990,
+      2000
+    ]
+  },
+  {
+    "slug": "catherinewheel-rob",
+    "name": "Catherinewheel Rob",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "cgt-paul",
+    "name": "Cgt Paul",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "chapterhouse-andrew",
+    "name": "Chapterhouse Andrew",
+    "count": 1,
+    "yearMin": 1992,
+    "yearMax": 1992,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "chapterhouse-andrew-sheriff",
     "name": "Chapterhouse Andrew Sheriff",
+    "count": 1,
+    "yearMin": 1992,
+    "yearMax": 1992,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "chapterhouse-simon",
+    "name": "Chapterhouse Simon",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "chapterhouse-stephen",
+    "name": "Chapterhouse Stephen",
     "count": 1,
     "yearMin": 1992,
     "yearMax": 1992,
@@ -107,6 +761,36 @@
     "yearMax": 1992,
     "decades": [
       1990
+    ]
+  },
+  {
+    "slug": "charlatans-mark",
+    "name": "Charlatans Mark",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "chavez-matt",
+    "name": "Chavez Matt",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "children-of-bodom-alexi-laiho",
+    "name": "Children Of Bodom Alexi Laiho",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
     ]
   },
   {
@@ -130,11 +814,212 @@
     ]
   },
   {
+    "slug": "chris-duarte",
+    "name": "Chris Duarte",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "christopher-willits",
+    "name": "Christopher Willits",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "circa-survive-brendan",
+    "name": "Circa Survive Brendan",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "clientele-alasdair",
+    "name": "Clientele Alasdair",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "clientele-alastair",
+    "name": "Clientele Alastair",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "coalchamber-meegs",
+    "name": "Coalchamber Meegs",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "collectivesoul-ross",
+    "name": "Collectivesoul Ross",
+    "count": 2,
+    "yearMin": 1998,
+    "yearMax": 2000,
+    "decades": [
+      1990,
+      2000
+    ]
+  },
+  {
+    "slug": "collins-albert",
+    "name": "Collins Albert",
+    "count": 1,
+    "yearMin": 1970,
+    "yearMax": 1970,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "corrosion-pepper",
+    "name": "Corrosion Pepper",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "cream-eric",
+    "name": "Cream Eric",
+    "count": 1,
+    "yearMin": 1968,
+    "yearMax": 1968,
+    "decades": [
+      1960
+    ]
+  },
+  {
     "slug": "creed-mark-tremonti",
     "name": "Creed Mark Tremonti",
     "count": 1,
     "yearMin": 2009,
     "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "cure-robert",
+    "name": "Cure Robert",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "curt-kirkwood",
+    "name": "Curt Kirkwood",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "curve-dean",
+    "name": "Curve Dean",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "curve-rob",
+    "name": "Curve Rob",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "dale-dick",
+    "name": "Dale Dick",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "dandywarhols-courtney",
+    "name": "Dandywarhols Courtney",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "dandywarhols-pete",
+    "name": "Dandywarhols Pete",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "danzig-todd",
+    "name": "Danzig Todd",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "darkest-hour-mike-schleibaum",
+    "name": "Darkest Hour Mike Schleibaum",
+    "count": 1,
+    "yearMin": 2009,
+    "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "davidgregory-dave",
+    "name": "Davidgregory Dave",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
     "decades": [
       2000
     ]
@@ -150,6 +1035,26 @@
     ]
   },
   {
+    "slug": "deathcabforcutie-ben",
+    "name": "Deathcabforcutie Ben",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "deftones-stephen",
+    "name": "Deftones Stephen",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "deftones-stephen-carpenter",
     "name": "Deftones Stephen Carpenter",
     "count": 1,
@@ -157,6 +1062,96 @@
     "yearMax": 2011,
     "decades": [
       2010
+    ]
+  },
+  {
+    "slug": "denmark-joe",
+    "name": "Denmark Joe",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "devildriver-jeff-kendrick",
+    "name": "Devildriver Jeff Kendrick",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "dinosaurjr-j",
+    "name": "Dinosaurjr J",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "disturbed-dan",
+    "name": "Disturbed Dan",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "dokken-reb",
+    "name": "Dokken Reb",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "doncabellero-ian",
+    "name": "Doncabellero Ian",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "down-kirk-windstein",
+    "name": "Down Kirk Windstein",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "echo-orbiter-justin",
+    "name": "Echo Orbiter Justin",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "edwyn-collins",
+    "name": "Edwyn Collins",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
     ]
   },
   {
@@ -190,6 +1185,76 @@
     ]
   },
   {
+    "slug": "ericjohnson",
+    "name": "Ericjohnson",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "escape-the-fate-bryan-monte-money",
+    "name": "Escape The Fate Bryan Monte Money",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "eve6-jon",
+    "name": "Eve6 Jon",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "facetoface-trever",
+    "name": "Facetoface Trever",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "factory81-bill",
+    "name": "Factory81 Bill",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "fall-out-boy-joe-trohman",
+    "name": "Fall Out Boy Joe Trohman",
+    "count": 1,
+    "yearMin": 2005,
+    "yearMax": 2005,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "fates-warning-jim",
+    "name": "Fates Warning Jim",
+    "count": 1,
+    "yearMin": 2012,
+    "yearMax": 2012,
+    "decades": [
+      2010
+    ]
+  },
+  {
     "slug": "feared-ola-englund",
     "name": "Feared Ola Englund",
     "count": 1,
@@ -197,6 +1262,147 @@
     "yearMax": 2014,
     "decades": [
       2010
+    ]
+  },
+  {
+    "slug": "fearfactory-dino",
+    "name": "Fearfactory Dino",
+    "count": 2,
+    "yearMin": 1998,
+    "yearMax": 2001,
+    "decades": [
+      1990,
+      2000
+    ]
+  },
+  {
+    "slug": "five-finger-death-punch-jason-hook",
+    "name": "Five Finger Death Punch Jason Hook",
+    "count": 1,
+    "yearMin": 2010,
+    "yearMax": 2010,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "flaw-lance",
+    "name": "Flaw Lance",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "flaw-ryan",
+    "name": "Flaw Ryan",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "foofighters-chris",
+    "name": "Foofighters Chris",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "foofighters-dave",
+    "name": "Foofighters Dave",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "foofighters-nate",
+    "name": "Foofighters Nate",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "for-against-mav",
+    "name": "For Against Mav",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "fow-jody",
+    "name": "Fow Jody",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "frankblack",
+    "name": "Frankblack",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "fripp-robert",
+    "name": "Fripp Robert",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "fsa-david",
+    "name": "Fsa David",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "fuel-brett",
+    "name": "Fuel Brett",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "fugazi-guy",
+    "name": "Fugazi Guy",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
     ]
   },
   {
@@ -210,6 +1416,167 @@
     ]
   },
   {
+    "slug": "fugazi-ian",
+    "name": "Fugazi Ian",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "fumanchu-bob",
+    "name": "Fumanchu Bob",
+    "count": 2,
+    "yearMin": 2000,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "gbv-mitch-mitchell",
+    "name": "Gbv Mitch Mitchell",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "gilbert-paul",
+    "name": "Gilbert Paul",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "gin-blossoms-jesse",
+    "name": "Gin Blossoms Jesse",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "godsmack-robbie",
+    "name": "Godsmack Robbie",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "godsmack-tony",
+    "name": "Godsmack Tony",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "gogos-charlotte",
+    "name": "Gogos Charlotte",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "gogos-jane",
+    "name": "Gogos Jane",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "govtmule-warren",
+    "name": "Govtmule Warren",
+    "count": 2,
+    "yearMin": 1990,
+    "yearMax": 2001,
+    "decades": [
+      1990,
+      2000
+    ]
+  },
+  {
+    "slug": "grateful-dead-bob",
+    "name": "Grateful Dead Bob",
+    "count": 1,
+    "yearMin": 1979,
+    "yearMax": 1979,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "grateful-dead-jerry",
+    "name": "Grateful Dead Jerry",
+    "count": 1,
+    "yearMin": 1979,
+    "yearMax": 1979,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "gwar-flattus",
+    "name": "Gwar Flattus",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "half-string-david-rogers",
+    "name": "Half String David Rogers",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "halfstring-brandon",
+    "name": "Halfstring Brandon",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "hatebreed-sean-martin",
+    "name": "Hatebreed Sean Martin",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "hatebreed-wayne-lozinak",
     "name": "Hatebreed Wayne Lozinak",
     "count": 1,
@@ -217,6 +1584,36 @@
     "yearMax": 2009,
     "decades": [
       2000
+    ]
+  },
+  {
+    "slug": "hellyeah-tom-maxwell",
+    "name": "Hellyeah Tom Maxwell",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "helmet-page",
+    "name": "Helmet Page",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "hendrix-jimi",
+    "name": "Hendrix Jimi",
+    "count": 1,
+    "yearMin": 1968,
+    "yearMax": 1968,
+    "decades": [
+      1960
     ]
   },
   {
@@ -240,6 +1637,176 @@
     ]
   },
   {
+    "slug": "hogmolly-tad",
+    "name": "Hogmolly Tad",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "hurricane-no1-andy-bell",
+    "name": "Hurricane No1 Andy Bell",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "illnino-jardel",
+    "name": "Illnino Jardel",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "incubus-dirk",
+    "name": "Incubus Dirk",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "incubus-mike",
+    "name": "Incubus Mike",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "indigenous-mato",
+    "name": "Indigenous Mato",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "innocencemission-don",
+    "name": "Innocencemission Don",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "introspection-dave",
+    "name": "Introspection Dave",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "iron-maiden-adrian-smith",
+    "name": "Iron Maiden Adrian Smith",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "iron-maiden-dave",
+    "name": "Iron Maiden Dave",
+    "count": 2,
+    "yearMin": 2003,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ironmaiden-adrian",
+    "name": "Ironmaiden Adrian",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ironmaiden-dave",
+    "name": "Ironmaiden Dave",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "isley-bros-ernie",
+    "name": "Isley Bros Ernie",
+    "count": 1,
+    "yearMin": 1977,
+    "yearMax": 1977,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "ivy-andy",
+    "name": "Ivy Andy",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "jamc-ben",
+    "name": "Jamc Ben",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "jamc-lincoln",
+    "name": "Jamc Lincoln",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "janes-addiction-dave-navarro",
+    "name": "Janes Addiction Dave Navarro",
+    "count": 1,
+    "yearMin": 2012,
+    "yearMax": 2012,
+    "decades": [
+      2010
+    ]
+  },
+  {
     "slug": "jeff-beck",
     "name": "Jeff Beck",
     "count": 1,
@@ -260,6 +1827,16 @@
     ]
   },
   {
+    "slug": "jeff-trott",
+    "name": "Jeff Trott",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "jesus-lizard-duane-denison",
     "name": "Jesus Lizard Duane Denison",
     "count": 1,
@@ -267,6 +1844,26 @@
     "yearMax": 1989,
     "decades": [
       1980
+    ]
+  },
+  {
+    "slug": "jetstobrazil-brian",
+    "name": "Jetstobrazil Brian",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "jimmy-eat-world-jim",
+    "name": "Jimmy Eat World Jim",
+    "count": 1,
+    "yearMin": 2012,
+    "yearMax": 2012,
+    "decades": [
+      2010
     ]
   },
   {
@@ -280,11 +1877,71 @@
     ]
   },
   {
+    "slug": "john-5",
+    "name": "John 5",
+    "count": 1,
+    "yearMin": 2005,
+    "yearMax": 2005,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "john5",
     "name": "John5",
     "count": 1,
     "yearMin": 2009,
     "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "johnny-hiland",
+    "name": "Johnny Hiland",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "joy-division-peter",
+    "name": "Joy Division Peter",
+    "count": 1,
+    "yearMin": 1979,
+    "yearMax": 1979,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "joydivision-bernard",
+    "name": "Joydivision Bernard",
+    "count": 1,
+    "yearMin": 1979,
+    "yearMax": 1979,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "judas-priest-glen-tipton",
+    "name": "Judas Priest Glen Tipton",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "judas-priest-kk-downing",
+    "name": "Judas Priest Kk Downing",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
     "decades": [
       2000
     ]
@@ -300,6 +1957,56 @@
     ]
   },
   {
+    "slug": "killingheidi-jesse",
+    "name": "Killingheidi Jesse",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "killswitch-joel-stroetzel",
+    "name": "Killswitch Joel Stroetzel",
+    "count": 1,
+    "yearMin": 2005,
+    "yearMax": 2005,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "king-jackie",
+    "name": "King Jackie",
+    "count": 1,
+    "yearMin": 1988,
+    "yearMax": 1988,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "kingcrimson-trey",
+    "name": "Kingcrimson Trey",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "kingsx-ty",
+    "name": "Kingsx Ty",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "kingsx-ty-tabor",
     "name": "Kingsx Ty Tabor",
     "count": 1,
@@ -310,8 +2017,90 @@
     ]
   },
   {
+    "slug": "kinks-dave",
+    "name": "Kinks Dave",
+    "count": 1,
+    "yearMin": 1964,
+    "yearMax": 1964,
+    "decades": [
+      1960
+    ]
+  },
+  {
+    "slug": "korn-fieldy",
+    "name": "Korn Fieldy",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "korn-head",
     "name": "Korn Head",
+    "count": 3,
+    "yearMin": 1997,
+    "yearMax": 2002,
+    "decades": [
+      1990,
+      2000
+    ]
+  },
+  {
+    "slug": "korn-munky",
+    "name": "Korn Munky",
+    "count": 3,
+    "yearMin": 1997,
+    "yearMax": 2002,
+    "decades": [
+      1990,
+      2000
+    ]
+  },
+  {
+    "slug": "laguns-tracii",
+    "name": "Laguns Tracii",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "laika-margaret",
+    "name": "Laika Margaret",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "lamb-of-god-willie-adler",
+    "name": "Lamb Of God Willie Adler",
+    "count": 1,
+    "yearMin": 2005,
+    "yearMax": 2005,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "lang-jonny",
+    "name": "Lang Jonny",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "leni-stern",
+    "name": "Leni Stern",
     "count": 1,
     "yearMin": 2002,
     "yearMax": 2002,
@@ -320,13 +2109,83 @@
     ]
   },
   {
-    "slug": "korn-munky",
-    "name": "Korn Munky",
+    "slug": "limpbizkit-wes",
+    "name": "Limpbizkit Wes",
     "count": 1,
-    "yearMin": 2002,
-    "yearMax": 2002,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "linkin-park-brad-delson",
+    "name": "Linkin Park Brad Delson",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
     "decades": [
       2000
+    ]
+  },
+  {
+    "slug": "llc-scott",
+    "name": "Llc Scott",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "lochheed-adam",
+    "name": "Lochheed Adam",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "luna-dean",
+    "name": "Luna Dean",
+    "count": 2,
+    "yearMin": 2000,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "luna-sean",
+    "name": "Luna Sean",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "lush-emma",
+    "name": "Lush Emma",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "lush-miki",
+    "name": "Lush Miki",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
     ]
   },
   {
@@ -340,11 +2199,321 @@
     ]
   },
   {
+    "slug": "machinehead-phil-demmel",
+    "name": "Machinehead Phil Demmel",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "magicdirt-adalita",
+    "name": "Magicdirt Adalita",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "magicdirt-dean",
+    "name": "Magicdirt Dean",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "magicdirt-raul",
+    "name": "Magicdirt Raul",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "mahogany-andrew",
+    "name": "Mahogany Andrew",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "malmsteen-yngwie",
+    "name": "Malmsteen Yngwie",
+    "count": 1,
+    "yearMin": 1988,
+    "yearMax": 1988,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "manorastroman-trace",
+    "name": "Manorastroman Trace",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "mastodon-bill-kelliher",
     "name": "Mastodon Bill Kelliher",
     "count": 1,
     "yearMin": 2009,
     "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "matthewsweet-richard",
+    "name": "Matthewsweet Richard",
+    "count": 1,
+    "yearMin": 1992,
+    "yearMax": 1992,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "may-brian",
+    "name": "May Brian",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "mbv-belinda",
+    "name": "Mbv Belinda",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "mbv-kevin",
+    "name": "Mbv Kevin",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "medicine-brad",
+    "name": "Medicine Brad",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "meeting-places-chase",
+    "name": "Meeting Places Chase",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "meeting-places-scott",
+    "name": "Meeting Places Scott",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "megadeth-dave",
+    "name": "Megadeth Dave",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "megadeth-glen-drover",
+    "name": "Megadeth Glen Drover",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "mellowdrone-jonathan",
+    "name": "Mellowdrone Jonathan",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "meltbanana-agata",
+    "name": "Meltbanana Agata",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "melvins-buzzo",
+    "name": "Melvins Buzzo",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "mightylemondrops-dave",
+    "name": "Mightylemondrops Dave",
+    "count": 1,
+    "yearMin": 1990,
+    "yearMax": 1990,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "mogwai-stewart",
+    "name": "Mogwai Stewart",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "motleycrue-mick",
+    "name": "Motleycrue Mick",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "mudoney-mark",
+    "name": "Mudoney Mark",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "mudvayne-gurrg",
+    "name": "Mudvayne Gurrg",
+    "count": 2,
+    "yearMin": 2001,
+    "yearMax": 2005,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "mudvayne-ryknow",
+    "name": "Mudvayne Ryknow",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "muse-matt",
+    "name": "Muse Matt",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "mxpx-tom",
+    "name": "Mxpx Tom",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "nadasurf-daniel",
+    "name": "Nadasurf Daniel",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "nadasurf-matthew",
+    "name": "Nadasurf Matthew",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "nickelback-mike",
+    "name": "Nickelback Mike",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "nickelback-ryan",
+    "name": "Nickelback Ryan",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
     "decades": [
       2000
     ]
@@ -360,6 +2529,366 @@
     ]
   },
   {
+    "slug": "nirvana-kurt",
+    "name": "Nirvana Kurt",
+    "count": 3,
+    "yearMin": 1992,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "nofx-elhefe",
+    "name": "Nofx Elhefe",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "nothingface-tom",
+    "name": "Nothingface Tom",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ocean-blue-david",
+    "name": "Ocean Blue David",
+    "count": 1,
+    "yearMin": 1994,
+    "yearMax": 1994,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "orangesunshine-ryan",
+    "name": "Orangesunshine Ryan",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "orgy-amir",
+    "name": "Orgy Amir",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "orgy-ryan",
+    "name": "Orgy Ryan",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ozzy-randy",
+    "name": "Ozzy Randy",
+    "count": 1,
+    "yearMin": 1981,
+    "yearMax": 1981,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "ozzy-rhoads",
+    "name": "Ozzy Rhoads",
+    "count": 1,
+    "yearMin": 1981,
+    "yearMax": 1981,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "ozzy-zakk",
+    "name": "Ozzy Zakk",
+    "count": 1,
+    "yearMin": 1988,
+    "yearMax": 1988,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "ozzy-zakk-wylde",
+    "name": "Ozzy Zakk Wylde",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "pale-saints-graeme",
+    "name": "Pale Saints Graeme",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "pantera-dimebag",
+    "name": "Pantera Dimebag",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "pantera-rex",
+    "name": "Pantera Rex",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "paparoach-jerry",
+    "name": "Paparoach Jerry",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "paparoach-tobin",
+    "name": "Paparoach Tobin",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "paul-gilbert",
+    "name": "Paul Gilbert",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "pearljam-eddie",
+    "name": "Pearljam Eddie",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "pearljam-mike",
+    "name": "Pearljam Mike",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "pearljam-stone",
+    "name": "Pearljam Stone",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "perfectcircle-billie",
+    "name": "Perfectcircle Billie",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "pete-anderson",
+    "name": "Pete Anderson",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "peteanderson",
+    "name": "Peteanderson",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "petty-tom",
+    "name": "Petty Tom",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "phillesh-warren",
+    "name": "Phillesh Warren",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "pixies-black",
+    "name": "Pixies Black",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "pixies-joey",
+    "name": "Pixies Joey",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "pixies-kim",
+    "name": "Pixies Kim",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "pobpah-kip",
+    "name": "Pobpah Kip",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "pod-marcos",
+    "name": "Pod Marcos",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "pod-traa",
+    "name": "Pod Traa",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "polara-dan",
+    "name": "Polara Dan",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "polara-ed",
+    "name": "Polara Ed",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "polara-jennifer",
+    "name": "Polara Jennifer",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "posies-ken",
+    "name": "Posies Ken",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "posterchildren-rick",
+    "name": "Posterchildren Rick",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "potus-david-dederer",
     "name": "Potus David Dederer",
     "count": 1,
@@ -370,11 +2899,742 @@
     ]
   },
   {
+    "slug": "primus-larry",
+    "name": "Primus Larry",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "promisering-davey",
+    "name": "Promisering Davey",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "psych-furs-richard",
+    "name": "Psych Furs Richard",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "psychedelicfurs-john",
+    "name": "Psychedelicfurs John",
+    "count": 3,
+    "yearMin": 1980,
+    "yearMax": 2001,
+    "decades": [
+      1980,
+      2000
+    ]
+  },
+  {
+    "slug": "psychedelicfurs-tim",
+    "name": "Psychedelicfurs Tim",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "queen-brian",
+    "name": "Queen Brian",
+    "count": 1,
+    "yearMin": 1990,
+    "yearMax": 1990,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "queensryche-michael-wilton",
+    "name": "Queensryche Michael Wilton",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "queensryche-mike-stone",
+    "name": "Queensryche Mike Stone",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "radiohead-jonny",
+    "name": "Radiohead Jonny",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "radiohead-jonny-",
+    "name": "Radiohead Jonny ",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "radiohead-thom",
+    "name": "Radiohead Thom",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "railwaychilren-gary",
+    "name": "Railwaychilren Gary",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "raitt-bonnie",
+    "name": "Raitt Bonnie",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "ramones-johnny",
+    "name": "Ramones Johnny",
+    "count": 1,
+    "yearMin": 1990,
+    "yearMax": 1990,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "ramones-johnny-ramone",
+    "name": "Ramones Johnny Ramone",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "ratm-tom",
+    "name": "Ratm Tom",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "ratm-tom-morello",
+    "name": "Ratm Tom Morello",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "remyzero-jeffrey",
+    "name": "Remyzero Jeffrey",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "rhcp-dave",
+    "name": "Rhcp Dave",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "rhcp-john",
+    "name": "Rhcp John",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "rhcp-john-frusciante",
+    "name": "Rhcp John Frusciante",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "richardlloyd",
+    "name": "Richardlloyd",
+    "count": 1,
+    "yearMin": 1980,
+    "yearMax": 1980,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "ride-andy",
+    "name": "Ride Andy",
+    "count": 1,
+    "yearMin": 1991,
+    "yearMax": 1991,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "rig-jamc-ben",
+    "name": "Rig Jamc Ben",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "ryecoalition-john",
+    "name": "Ryecoalition John",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "satriani-joe",
+    "name": "Satriani Joe",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "seam-soo",
+    "name": "Seam Soo",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "secret-machines-devon",
+    "name": "Secret Machines Devon",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sepultura-andreas-kisser",
+    "name": "Sepultura Andreas Kisser",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sevendust-john",
+    "name": "Sevendust John",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "shadowsfall-jon-donais",
+    "name": "Shadowsfall Jon Donais",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "shellac-steve",
+    "name": "Shellac Steve",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sherylcrow-jeff",
+    "name": "Sherylcrow Jeff",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "shinedown-jasin-todd",
+    "name": "Shinedown Jasin Todd",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sisterhazel-andrew",
+    "name": "Sisterhazel Andrew",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sisterhazel-jeff",
+    "name": "Sisterhazel Jeff",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sisterhazel-ryan",
+    "name": "Sisterhazel Ryan",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
     "slug": "sixxam-dj-ashba",
     "name": "Sixxam Dj Ashba",
     "count": 1,
     "yearMin": 2008,
     "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "skinlab-glen",
+    "name": "Skinlab Glen",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "skunkanansie-ace",
+    "name": "Skunkanansie Ace",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "skycriesmary-william",
+    "name": "Skycriesmary William",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "slash",
+    "name": "Slash",
+    "count": 2,
+    "yearMin": 2003,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sleaterkinney-carrie",
+    "name": "Sleaterkinney Carrie",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "slipknot-4",
+    "name": "Slipknot 4",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "slipknot-7",
+    "name": "Slipknot 7",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "slipknot-jim-root",
+    "name": "Slipknot Jim Root",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "slowdive-christian",
+    "name": "Slowdive Christian",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "slowdive-neil",
+    "name": "Slowdive Neil",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "slowdive-neil-halstead",
+    "name": "Slowdive Neil Halstead",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "slowdive-rachel",
+    "name": "Slowdive Rachel",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "spineshank-mike",
+    "name": "Spineshank Mike",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "srv",
+    "name": "Srv",
+    "count": 1,
+    "yearMin": 1984,
+    "yearMax": 1984,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "ssm-roland",
+    "name": "Ssm Roland",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "stabbingwest-chris",
+    "name": "Stabbingwest Chris",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "stabbingwest-derrek",
+    "name": "Stabbingwest Derrek",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "stabbingwest-walter",
+    "name": "Stabbingwest Walter",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "staind-mike-mushok",
+    "name": "Staind Mike Mushok",
+    "count": 1,
+    "yearMin": 2005,
+    "yearMax": 2005,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "starflyer59-jason",
+    "name": "Starflyer59 Jason",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "starsofthelid-brian",
+    "name": "Starsofthelid Brian",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "static-x-wayne-static",
+    "name": "Static X Wayne Static",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "staticx-tony",
+    "name": "Staticx Tony",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "staticx-tripp",
+    "name": "Staticx Tripp",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "staticx-wayne",
+    "name": "Staticx Wayne",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "steelpulse-moonie",
+    "name": "Steelpulse Moonie",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "steve-vai",
+    "name": "Steve Vai",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "stonesour-josh",
+    "name": "Stonesour Josh",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "stooges-james",
+    "name": "Stooges James",
+    "count": 1,
+    "yearMin": 2011,
+    "yearMax": 2011,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "story-of-the-year-ryan-phillips",
+    "name": "Story Of The Year Ryan Phillips",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "strokes-albert",
+    "name": "Strokes Albert",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "strokes-nick",
+    "name": "Strokes Nick",
+    "count": 1,
+    "yearMin": 2002,
+    "yearMax": 2002,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "sublime-brad",
+    "name": "Sublime Brad",
+    "count": 1,
+    "yearMin": 1992,
+    "yearMax": 1992,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "sublime-eric",
+    "name": "Sublime Eric",
+    "count": 1,
+    "yearMin": 1992,
+    "yearMax": 1992,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "sugar-bob",
+    "name": "Sugar Bob",
+    "count": 1,
+    "yearMin": 1993,
+    "yearMax": 1993,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "sum41-dave-baksh",
+    "name": "Sum41 Dave Baksh",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
     "decades": [
       2000
     ]
@@ -390,6 +3650,16 @@
     ]
   },
   {
+    "slug": "swervedriver-adam",
+    "name": "Swervedriver Adam",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "swervedriver-adam-franklin",
     "name": "Swervedriver Adam Franklin",
     "count": 1,
@@ -397,6 +3667,106 @@
     "yearMax": 1998,
     "decades": [
       1990
+    ]
+  },
+  {
+    "slug": "swervedriver-jimmy",
+    "name": "Swervedriver Jimmy",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "swervedriver-steve",
+    "name": "Swervedriver Steve",
+    "count": 1,
+    "yearMin": 1998,
+    "yearMax": 1998,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "tad-tad",
+    "name": "Tad Tad",
+    "count": 1,
+    "yearMin": 1988,
+    "yearMax": 1988,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "tahiti-80-xavier",
+    "name": "Tahiti 80 Xavier",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "taking-sunday-john",
+    "name": "Taking Sunday John",
+    "count": 1,
+    "yearMin": 2012,
+    "yearMax": 2012,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "tanya-donelly",
+    "name": "Tanya Donelly",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "television-richard",
+    "name": "Television Richard",
+    "count": 1,
+    "yearMin": 1974,
+    "yearMax": 1974,
+    "decades": [
+      1970
+    ]
+  },
+  {
+    "slug": "testament-eric-peterson",
+    "name": "Testament Eric Peterson",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "the-cult-billy-duffy",
+    "name": "The Cult Billy Duffy",
+    "count": 1,
+    "yearMin": 2012,
+    "yearMax": 2012,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "the-kinks-dave-davies",
+    "name": "The Kinks Dave Davies",
+    "count": 1,
+    "yearMin": 1964,
+    "yearMax": 1964,
+    "decades": [
+      1960
     ]
   },
   {
@@ -410,6 +3780,26 @@
     ]
   },
   {
+    "slug": "the-used-quinn-allman",
+    "name": "The Used Quinn Allman",
+    "count": 1,
+    "yearMin": 2013,
+    "yearMax": 2013,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "thin-lizzy-brian",
+    "name": "Thin Lizzy Brian",
+    "count": 1,
+    "yearMin": 1974,
+    "yearMax": 1974,
+    "decades": [
+      1970
+    ]
+  },
+  {
     "slug": "thin-lizzy-brian-robertson",
     "name": "Thin Lizzy Brian Robertson",
     "count": 1,
@@ -420,11 +3810,371 @@
     ]
   },
   {
+    "slug": "throwingmuses-kristen",
+    "name": "Throwingmuses Kristen",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "thursday-steve-pedulla",
+    "name": "Thursday Steve Pedulla",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "thursday-tom-keeley",
+    "name": "Thursday Tom Keeley",
+    "count": 1,
+    "yearMin": 2004,
+    "yearMax": 2004,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "toadies-clark",
+    "name": "Toadies Clark",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "toadies-lisa",
+    "name": "Toadies Lisa",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "toadies-todd",
+    "name": "Toadies Todd",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "tompetty-mike",
+    "name": "Tompetty Mike",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "tony-macalpine",
+    "name": "Tony Macalpine",
+    "count": 1,
+    "yearMin": 2012,
+    "yearMax": 2012,
+    "decades": [
+      2010
+    ]
+  },
+  {
+    "slug": "tool-adam",
+    "name": "Tool Adam",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "trower-robin",
+    "name": "Trower Robin",
+    "count": 1,
+    "yearMin": 1980,
+    "yearMax": 1980,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "twistedsister-jj",
+    "name": "Twistedsister Jj",
+    "count": 1,
+    "yearMin": 1980,
+    "yearMax": 1980,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "u2-edge",
+    "name": "U2 Edge",
+    "count": 1,
+    "yearMin": 1981,
+    "yearMax": 1981,
+    "decades": [
+      1980
+    ]
+  },
+  {
+    "slug": "unearth-buz-mcgrath",
+    "name": "Unearth Buz Mcgrath",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "unearth-ken-susi",
+    "name": "Unearth Ken Susi",
+    "count": 1,
+    "yearMin": 2007,
+    "yearMax": 2007,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "unified-theory-chris-s",
+    "name": "Unified Theory Chris S",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "unified-theory-chris-t",
+    "name": "Unified Theory Chris T",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "vai-steve",
+    "name": "Vai Steve",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "valentine-matthew-tuck",
+    "name": "Valentine Matthew Tuck",
+    "count": 1,
+    "yearMin": 2006,
+    "yearMax": 2006,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "vanhalen-eddie",
+    "name": "Vanhalen Eddie",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "verve-pipe-aj",
+    "name": "Verve Pipe Aj",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "voyagerone-jeramy",
+    "name": "Voyagerone Jeramy",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "voyagerone-peter",
+    "name": "Voyagerone Peter",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "weddingpresent-david",
+    "name": "Weddingpresent David",
+    "count": 1,
+    "yearMin": 1995,
+    "yearMax": 1995,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "whitesnake-adrian",
+    "name": "Whitesnake Adrian",
+    "count": 1,
+    "yearMin": 1997,
+    "yearMax": 1997,
+    "decades": [
+      1990
+    ]
+  },
+  {
     "slug": "whitesnake-doug-aldrich",
     "name": "Whitesnake Doug Aldrich",
     "count": 1,
     "yearMin": 2009,
     "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "who-pete",
+    "name": "Who Pete",
+    "count": 1,
+    "yearMin": 1969,
+    "yearMax": 1969,
+    "decades": [
+      1960
+    ]
+  },
+  {
+    "slug": "widespreadpanic-houser",
+    "name": "Widespreadpanic Houser",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "widespreadpanic-john",
+    "name": "Widespreadpanic John",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "willienelson-jackie",
+    "name": "Willienelson Jackie",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "willits",
+    "name": "Willits",
+    "count": 1,
+    "yearMin": 2009,
+    "yearMax": 2009,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "windy-and-carl-carl",
+    "name": "Windy And Carl Carl",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "wylde-zakk",
+    "name": "Wylde Zakk",
+    "count": 1,
+    "yearMin": 2000,
+    "yearMax": 2000,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "yngwie-malmsteen",
+    "name": "Yngwie Malmsteen",
+    "count": 1,
+    "yearMin": 2008,
+    "yearMax": 2008,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "yolatengo-ira",
+    "name": "Yolatengo Ira",
+    "count": 1,
+    "yearMin": 1996,
+    "yearMax": 1996,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "youami-dave",
+    "name": "Youami Dave",
+    "count": 1,
+    "yearMin": 2001,
+    "yearMax": 2001,
+    "decades": [
+      2000
+    ]
+  },
+  {
+    "slug": "yumebitsu-adam",
+    "name": "Yumebitsu Adam",
+    "count": 1,
+    "yearMin": 1999,
+    "yearMax": 1999,
+    "decades": [
+      1990
+    ]
+  },
+  {
+    "slug": "zztop-billy-gibbons",
+    "name": "Zztop Billy Gibbons",
+    "count": 1,
+    "yearMin": 2003,
+    "yearMax": 2003,
     "decades": [
       2000
     ]
