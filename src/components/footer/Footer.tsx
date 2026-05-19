@@ -21,7 +21,14 @@ export function Footer() {
         </div>
         <div className="mono-label">
           <p className="text-[color:var(--color-bone)] mb-2">CONTACT</p>
-          <p className="text-[color:var(--color-mute)] block">REACH OUT ON X</p>
+          <a
+            href="https://x.com/aisuede"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block"
+          >
+            @aisuede on X ↗
+          </a>
           <a
             href="mailto:info@suedeai.org?subject=Suede%20DNA"
             className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
