@@ -42,6 +42,14 @@ export function Footer() {
             METHOD →
           </Link>
           <a
+            href="https://suede.social"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            suede.social ↗
+          </a>
+          <a
             href="https://suedeai.ai"
             className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
             target="_blank"
@@ -63,9 +71,20 @@ export function Footer() {
             <span className="text-[color:var(--color-signal)] mx-2">/</span>
             <span className="text-[color:var(--color-bone)]">DNA</span>
           </div>
-          <p className="mono-label text-[color:var(--color-bone)] sm:text-right">
-            A SUEDE LABS / JASON COLAPIETRO CREATION
-          </p>
+          <div className="mono-label text-[color:var(--color-bone)] sm:text-right space-y-1">
+            <p>A SUEDE LABS / JASON COLAPIETRO CREATION</p>
+            <p className="text-[color:var(--color-mute)]">
+              SOURCED FROM GUITAR GEEK FOR{' '}
+              <a
+                href="https://suede.social"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+              >
+                SUEDE.SOCIAL ↗
+              </a>
+            </p>
+          </div>
         </div>
       </div>
 

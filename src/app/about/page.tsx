@@ -88,8 +88,17 @@ export default function AboutPage() {
         <section>
           <h2 className="mono-label text-[color:var(--color-white)]">COLOPHON</h2>
           <p className="mt-3">
-            Built by Suede on Next.js 15, Tailwind v4, and Geist. The visual language follows the
-            Suede Sonic Laboratory specification used across{' '}
+            Built by Suede Labs for{' '}
+            <a
+              href="https://suede.social"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+            >
+              suede.social
+            </a>{' '}
+            on Next.js 15, Tailwind v4, and Geist. The visual language follows the Suede Sonic
+            Laboratory specification used across{' '}
             <a
               href="https://suedeai.ai"
               target="_blank"
