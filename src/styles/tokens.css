@@ -1,0 +1,43 @@
+@theme {
+  /* Palette */
+  --color-ink-0: #000000;
+  --color-ink-1: #050b16;
+  --color-ink-2: #09101b;
+  --color-ink-3: #0d1726;
+  --color-white: #ffffff;
+  --color-bone: rgba(255, 255, 255, 0.62);
+  --color-mute: rgba(255, 255, 255, 0.40);
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-signal: #22d3ee;
+  --color-signal-glow: rgba(34, 211, 238, 0.30);
+  --color-proof: #34d399;
+  --color-danger: #ef4444;
+
+  /* Typography scale */
+  --text-mono-label: 0.6875rem;
+  --text-mono-data: 0.875rem;
+  --text-body: clamp(1rem, 0.92rem + 0.4vw, 1.125rem);
+  --text-section: clamp(2rem, 1rem + 3vw, 4rem);
+  --text-hero: clamp(3rem, 1rem + 7vw, 8rem);
+
+  /* Tracking */
+  --tracking-tight: -0.02em;
+  --tracking-mono-label: 0.08em;
+
+  /* Spacing scale (additive to Tailwind defaults) */
+  --spacing-section: clamp(4rem, 3rem + 5vw, 10rem);
+
+  /* Radii */
+  --radius-control: 4px;
+  --radius-card: 6px;
+
+  /* Motion */
+  --duration-fast: 300ms;
+  --duration-component: 600ms;
+  --duration-hero: 1200ms;
+  --ease-sweep: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout */
+  --max-content: 1400px;
+  --max-header: 1600px;
+}

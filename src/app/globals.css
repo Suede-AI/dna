@@ -1,6 +1,74 @@
 @import "tailwindcss";
+@import "../styles/tokens.css";
 
-html, body {
-  background: #050b16;
-  color: #ffffff;
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background: var(--color-ink-0);
+  }
+
+  body {
+    background: var(--color-ink-1);
+    color: var(--color-white);
+    font-family: var(--font-geist-sans), system-ui, sans-serif;
+    font-size: var(--text-body);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink-1);
+  }
+
+  *:focus-visible {
+    outline: 1px solid var(--color-signal);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .mono {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+  }
+  .mono-label {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: var(--text-mono-label);
+    letter-spacing: var(--tracking-mono-label);
+    text-transform: uppercase;
+    color: var(--color-mute);
+  }
+  .mono-data {
+    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-size: var(--text-mono-data);
+  }
+  .hairline {
+    border: 1px solid var(--color-line);
+  }
+}
+
+@keyframes sweep-in {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes envelope-decay {
+  0%   { color: var(--color-signal); }
+  100% { color: var(--color-white); }
+}
+
+@keyframes signal-pulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
