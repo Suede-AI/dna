@@ -55,12 +55,15 @@ export function groupByArtist(rigs: Rig[]): Artist[] {
         decades: [decade],
       });
     } else {
-      existing.count += 1;
-      existing.yearMin = Math.min(existing.yearMin, rig.year);
-      existing.yearMax = Math.max(existing.yearMax, rig.year);
-      if (!existing.decades.includes(decade)) {
-        existing.decades = [...existing.decades, decade].sort((a, b) => a - b);
-      }
+      map.set(rig.artistSlug, {
+        ...existing,
+        count: existing.count + 1,
+        yearMin: Math.min(existing.yearMin, rig.year),
+        yearMax: Math.max(existing.yearMax, rig.year),
+        decades: existing.decades.includes(decade)
+          ? existing.decades
+          : [...existing.decades, decade].sort((a, b) => a - b),
+      });
     }
   }
   return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
