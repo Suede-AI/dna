@@ -56,15 +56,27 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
         <div>
           <h2 className="sr-only">Compilation grid</h2>
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredArtists.flatMap((artist) => {
-              const artistRigs = visibleRigs.filter((r) => r.artistSlug === artist.slug);
-              return [
-                <div key={`anchor-${artist.slug}`} id={`artist-anchor-${artist.slug}`} className="col-span-full mono-label pt-6">
-                  {artist.name} <span className="text-[color:var(--color-mute)]">· {artist.count}</span>
-                </div>,
-                ...artistRigs.map((rig, i) => <RigCard key={rig.id} rig={rig} index={i} />),
-              ];
-            })}
+            {(() => {
+              let cardIndex = 0;
+              return filteredArtists.flatMap((artist) => {
+                const artistRigs = visibleRigs.filter((r) => r.artistSlug === artist.slug);
+                const nodes = [
+                  <div
+                    key={`anchor-${artist.slug}`}
+                    id={`artist-anchor-${artist.slug}`}
+                    className="col-span-full mono-label pt-6"
+                  >
+                    {artist.name} <span className="text-[color:var(--color-mute)]">· {artist.count}</span>
+                  </div>,
+                  ...artistRigs.map((rig) => {
+                    const stagger = cardIndex < 24 ? cardIndex * 30 : null;
+                    cardIndex += 1;
+                    return <RigCard key={rig.id} rig={rig} index={cardIndex - 1} stagger={stagger} />;
+                  }),
+                ];
+                return nodes;
+              });
+            })()}
           </div>
         </div>
         <LetterRail activeLetter={activeLetter} onJump={jumpToLetter} />

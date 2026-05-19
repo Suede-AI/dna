@@ -2,7 +2,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import type { Rig } from '@/lib/manifest';
 
-export function RigCard({ rig, index }: { rig: Rig; index: number }) {
+export function RigCard({ rig, index, stagger }: { rig: Rig; index: number; stagger?: number | null }) {
+  const animationStyle =
+    stagger !== null && stagger !== undefined
+      ? { animation: `sweep-in var(--duration-component) var(--ease-sweep) ${stagger}ms both` }
+      : undefined;
   return (
     <Link
       href={`/${rig.artistSlug}#rig-${rig.year}`}
@@ -10,6 +14,7 @@ export function RigCard({ rig, index }: { rig: Rig; index: number }) {
       style={{
         background: 'var(--color-ink-2)',
         borderRadius: 'var(--radius-card)',
+        ...animationStyle,
       }}
     >
       <figure className="relative aspect-[4/3] overflow-hidden">
