@@ -12,7 +12,7 @@ export function Header() {
     <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-ink-1)]/60">
       <div className="border-b hairline">
         <div className="mx-auto max-w-[1600px] h-16 px-6 flex items-center gap-8">
-          <Link href="/" aria-label="Suede DNA home" className="flex items-center gap-3 text-white">
+          <a href="https://suedeai.ai" aria-label="Suede home" className="flex items-center gap-3 text-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/suede-mark.svg" alt="" width={28} height={28} />
             <span className="mono text-sm tracking-[0.12em] font-medium">
@@ -20,7 +20,7 @@ export function Header() {
               <span className="mx-1 text-[color:var(--color-signal)]">/</span>
               <span className="text-[color:var(--color-bone)]">DNA</span>
             </span>
-          </Link>
+          </a>
           <nav aria-label="Main navigation" className="flex items-center gap-6 mono-label">
             {NAV.map((item) => (
               <Link
