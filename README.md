@@ -73,7 +73,7 @@ The rig images and signal-chain references are derived from the [guitargeek-arch
 
 Suede DNA is one of several products in the [Suede Labs AI](https://suedeai.ai) family — a small studio building tools at the intersection of guitar, music, and AI. Sibling products include [Strumly](https://strumly.suedeai.ai) (24/7 conversational AI guitar coach) and [FretPulse](https://fretpulse.suedeai.ai) (holistic guitar care companion).
 
-Founded by [Jason Colapietro](https://github.com/JasonColapietro) — founder/CEO, published author, Forbes contributor.
+Founded by [Jason Colapietro](https://github.com/JasonColapietro) — Founder and CEO, published author, Forbes contributor.
 
 ---
 
