@@ -8,14 +8,14 @@ The premise: every distinctive guitar tone lives inside a specific signal chain 
 
 ## What's in here
 
-- A Next.js 16 (App Router) site that renders the rig grid, per-artist pages, search, year filters, and JSON-LD structured data.
+- A Next.js 15 (App Router) site that renders the rig grid, per-artist pages, search, year filters, and JSON-LD structured data.
 - A canonical `data/rigs.json` manifest (~409 rigs, 390 artists, year-stamped) with a `validate-manifest` step that gates builds on schema integrity.
 - A small build pipeline (`scripts/build-manifest.ts`, `scripts/validate-manifest.ts`) for refreshing and validating the dataset from the upstream source.
 - Vitest tests covering the manifest, search, slug, and filter logic.
 
 ## Tech stack
 
-- **Framework:** Next.js 16 (App Router, Turbopack dev server)
+- **Framework:** Next.js 15 (App Router, Turbopack dev server)
 - **Language:** TypeScript (strict)
 - **Runtime:** Node 20+
 - **Package manager:** pnpm

@@ -22,7 +22,7 @@ Every rig image surfaced on `dna.suedeai.ai` is served directly from (or referen
 - A normalized JSON manifest with consistent artist slugs, year stamps, and a deterministic ID scheme.
 - A search + filter layer (`src/lib/search.ts`, `src/lib/filters.ts`).
 - Manual corrections (`data/overrides.json`) and intentional exclusions (`data/excluded.json`) for cases where upstream filenames or metadata were ambiguous.
-- A static, archival-feeling presentation layer (Next.js 16 + Tailwind v4).
+- A static, archival-feeling presentation layer (Next.js 15 + Tailwind v4).
 - SEO + JSON-LD structured data so each artist and rig is independently discoverable.
 
 ## How to credit a rig you use
