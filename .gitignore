@@ -8,3 +8,7 @@ build/
 *.tsbuildinfo
 coverage/
 .turbo/
+
+# Accidentally synced desktop folders — never check these into the repo
+Documents/
+documents/

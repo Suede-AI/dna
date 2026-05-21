@@ -20,24 +20,36 @@ export function Footer() {
           </a>
         </div>
         <div className="mono-label">
-          <p className="text-[color:var(--color-bone)] mb-2">CONTACT</p>
+          <p className="text-[color:var(--color-bone)] mb-2">SUEDE LABS</p>
           <a
-            href="https://x.com/aisuede"
+            href="https://suedeai.ai"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block"
           >
-            @aisuede on X ↗
+            suedeai.ai ↗
           </a>
           <a
-            href="mailto:info@suedeai.org?subject=Suede%20DNA"
+            href="https://strumly.suedeai.ai"
             className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Ask any rig question to our music oracle"
           >
-            info@suedeai.org
+            strumly ↗
+          </a>
+          <a
+            href="https://fretpulse.suedeai.ai"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Diagnose your own rig with FretPulse"
+          >
+            fretpulse ↗
           </a>
         </div>
         <div className="mono-label">
-          <p className="text-[color:var(--color-bone)] mb-2">SUEDE</p>
+          <p className="text-[color:var(--color-bone)] mb-2">CONTACT</p>
           <Link href="/about" className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block">
             METHOD →
           </Link>
@@ -50,12 +62,18 @@ export function Footer() {
             suede.social ↗
           </a>
           <a
-            href="https://suedeai.ai"
-            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
+            href="https://x.com/aisuede"
             target="_blank"
             rel="noopener noreferrer"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
           >
-            suedeai.ai ↗
+            @aisuede on X ↗
+          </a>
+          <a
+            href="mailto:info@suedeai.org?subject=Suede%20DNA"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
+          >
+            info@suedeai.org
           </a>
         </div>
       </div>

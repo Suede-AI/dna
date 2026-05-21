@@ -119,6 +119,42 @@ export default function AboutPage() {
             .
           </p>
         </section>
+
+        <section>
+          <h2 className="mono-label text-[color:var(--color-white)]">SUEDE LABS FAMILY</h2>
+          <p className="mt-3">
+            DNA is part of a small family of guitar-focused tools by Suede Labs.{' '}
+            <a
+              href="https://strumly.suedeai.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+            >
+              Strumly
+            </a>{' '}
+            is the music oracle — ask any rig or tone question and get an answer grounded in this
+            archive.{' '}
+            <a
+              href="https://fretpulse.suedeai.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+            >
+              FretPulse
+            </a>{' '}
+            diagnoses your own rig — feed it your signal chain and it reports back on tone, gain
+            staging, and gaps. Both sit alongside this archive at{' '}
+            <a
+              href="https://suedeai.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+            >
+              suedeai.ai
+            </a>
+            .
+          </p>
+        </section>
       </article>
 
       <Link href="/" className="inline-block mt-16 mono-label hover:text-[color:var(--color-signal)]">

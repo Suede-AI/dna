@@ -3,7 +3,7 @@ import { HomeHero } from '@/components/hero/HomeHero';
 import { CompilationGrid } from '@/components/grid/CompilationGrid';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getAllArtists, getAllRigs, getStats } from '@/lib/manifest';
-import { homeJsonLd, homePageDescription, homePageTitle } from '@/lib/seo';
+import { homeJsonLd, homePageDescription, homePageTitle, websiteSearchJsonLd } from '@/lib/seo';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -32,6 +32,7 @@ export default function HomePage() {
   return (
     <main>
       <JsonLd data={homeJsonLd(SITE_URL, stats.totalArtists, stats.totalRigs)} />
+      <JsonLd data={websiteSearchJsonLd(SITE_URL)} />
       <HomeHero />
       <CompilationGrid artists={artists} rigs={rigs} />
     </main>

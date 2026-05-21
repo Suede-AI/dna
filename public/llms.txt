@@ -1,0 +1,41 @@
+# Suede DNA — Signal Chains, Archived
+
+> Suede DNA (dna.suedeai.ai) is a compilation archive of guitarist rigs presented as artist-level chronological strands — a tonal genealogy of recorded electric-guitar setups.
+
+## Dataset
+
+- 409 documented guitarist rigs
+- 390 unique artists
+- Year range: 1964 to 2014
+- Source: Internet Archive item `guitargeek-archives` (https://archive.org/details/guitargeek-archives)
+- Each rig is a single archival photograph with artist, year, and source URL
+
+## Crawl posture
+
+- Fully crawlable; no `noindex` directives anywhere on the site
+- All 390 artist pages are listed in https://dna.suedeai.ai/sitemap.xml
+- Canonical URL pattern: `https://dna.suedeai.ai/{artist-slug}` (no trailing slash)
+- robots.txt: https://dna.suedeai.ai/robots.txt
+
+## Site map
+
+- https://dna.suedeai.ai/ — Home (compilation grid of all 409 rigs across 390 artists)
+- https://dna.suedeai.ai/about — About / method / attribution
+- https://dna.suedeai.ai/{artist-slug} — Per-artist page with chronological rigs
+- https://dna.suedeai.ai/sitemap.xml — Full sitemap
+- https://dna.suedeai.ai/robots.txt — Robots policy
+
+## Attribution and licensing
+
+- Site code: MIT-licensed (https://github.com/Suede-AI/dna)
+- Images and underlying rig photographs: sourced from the Guitar Geek archive item on the Internet Archive
+- Image rights are governed by the upstream archive — see https://archive.org/about/terms.php
+- Cite as: "Suede DNA, sourced from the Guitar Geek archives via the Internet Archive"
+- For corrections or rights questions: info@suedeai.org or https://x.com/aisuede
+
+## Related Suede properties
+
+- https://suedeai.ai — Suede AI (apex)
+- https://strumly.suedeai.ai — Strumly, the rig-question oracle
+- https://fretpulse.suedeai.ai — FretPulse, the rig diagnostic
+- https://suede.social — Suede social

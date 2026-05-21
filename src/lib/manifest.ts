@@ -47,6 +47,10 @@ export function getArtistNeighbors(slug: string): { prev?: Artist; next?: Artist
   };
 }
 
+export function getRigById(id: string): Rig | undefined {
+  return rigs.find((r) => r.id === id);
+}
+
 export function getStats(): { totalRigs: number; totalArtists: number; yearMin: number; yearMax: number } {
   const totalRigs = rigs.length;
   const totalArtists = artists.length;

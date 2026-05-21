@@ -5,7 +5,9 @@ import { ArtistStrip } from '@/components/artist/ArtistStrip';
 import { DNAChain } from '@/components/artist/DNAChain';
 import { RigDetailCard } from '@/components/artist/RigDetailCard';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
+import { artistJsonLd, artistPageDescription, artistPageTitle, rigJsonLd } from '@/lib/seo';
+import { getRelatedArtists } from '@/lib/related';
+import { RelatedArtists } from '@/components/artist/RelatedArtists';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -46,10 +48,14 @@ export default async function ArtistPage({ params }: { params: Promise<{ 'artist
   if (!artist) notFound();
   const rigs = getRigsByArtistSlug(slug);
   const { prev, next } = getArtistNeighbors(slug);
+  const related = getRelatedArtists(slug, 6);
 
   return (
     <main>
       <JsonLd data={artistJsonLd(artist, rigs, SITE_URL)} />
+      {rigs.map((rig) => (
+        <JsonLd key={`ld-${rig.id}`} data={rigJsonLd(rig, artist, SITE_URL)} />
+      ))}
       <ArtistStrip artist={artist} prev={prev} next={next} />
       <DNAChain rigs={rigs} artistName={artist.name} />
       <section aria-label="Rigs in detail">
@@ -57,6 +63,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ 'artist
           <RigDetailCard key={rig.id} rig={rig} index={i} prev={rigs[i - 1]} next={rigs[i + 1]} />
         ))}
       </section>
+      <RelatedArtists artists={related} />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { getAllArtists } from '@/lib/manifest';
+import { getAllArtists, getAllRigs } from '@/lib/manifest';
 import rigsManifest from '../../data/rigs.json';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
@@ -14,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    })),
+    ...getAllRigs().map((r) => ({
+      url: `${SITE_URL}/rigs/${r.id}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     })),
   ];
 }
