@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/JsonLd';
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -8,9 +11,19 @@ export const metadata: Metadata = {
   alternates: { canonical: '/about' },
 };
 
+const aboutBreadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Suede DNA', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'About', item: `${SITE_URL}/about` },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <main className="mx-auto max-w-[800px] px-6 py-24">
+      <JsonLd data={aboutBreadcrumbJsonLd} />
       <p className="mono-label">SUEDE/DNA / ABOUT</p>
       <h1
         className="font-[820] text-white mt-4"
