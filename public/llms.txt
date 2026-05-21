@@ -13,8 +13,10 @@
 ## Crawl posture
 
 - Fully crawlable; no `noindex` directives anywhere on the site
-- All 390 artist pages are listed in https://dna.suedeai.ai/sitemap.xml
-- Canonical URL pattern: `https://dna.suedeai.ai/{artist-slug}` (no trailing slash)
+- All 390 artist pages + all 409 rig pages are listed in https://dna.suedeai.ai/sitemap.xml
+- Canonical URL patterns:
+  - `https://dna.suedeai.ai/{artist-slug}` — per-artist page (390 total, no trailing slash)
+  - `https://dna.suedeai.ai/rigs/{rig-id}` — per-rig deep-link page (409 total)
 - robots.txt: https://dna.suedeai.ai/robots.txt
 
 ## Site map
@@ -22,6 +24,7 @@
 - https://dna.suedeai.ai/ — Home (compilation grid of all 409 rigs across 390 artists)
 - https://dna.suedeai.ai/about — About / method / attribution
 - https://dna.suedeai.ai/{artist-slug} — Per-artist page with chronological rigs
+- https://dna.suedeai.ai/rigs/{rig-id} — Per-rig deep-link page with MusicalInstrument schema
 - https://dna.suedeai.ai/sitemap.xml — Full sitemap
 - https://dna.suedeai.ai/robots.txt — Robots policy
 
