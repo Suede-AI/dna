@@ -1,11 +1,27 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
+
 export const metadata: Metadata = {
   title: 'About',
   description:
     'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
-  alternates: { canonical: '/about' },
+  alternates: { canonical: `${SITE_URL}/about` },
+  openGraph: {
+    title: 'About — Suede DNA',
+    description:
+      'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
+    url: `${SITE_URL}/about`,
+    siteName: 'Suede DNA',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About — Suede DNA',
+    description:
+      'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
+  },
 };
 
 export default function AboutPage() {

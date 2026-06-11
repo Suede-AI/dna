@@ -9,16 +9,81 @@ import './globals.css';
 
 const stats = getStats();
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
+
+const defaultDescription = `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs} documented setups from ${stats.totalArtists} artists, ${stats.yearMin}–${stats.yearMax}, indexed by year and player.`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai'),
+  metadataBase: new URL(SITE_URL),
   title: { default: 'Suede DNA — Signal Chains, Archived', template: '%s · Suede DNA' },
-  description: `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs} documented setups from ${stats.totalArtists} artists, ${stats.yearMin}–${stats.yearMax}, indexed by year and player.`,
+  description: defaultDescription,
+  keywords: [
+    'guitar rigs',
+    'signal chains',
+    'guitarist gear',
+    'guitar rig archive',
+    'guitar pedalboard history',
+    'Guitar Geek',
+    'guitar setup photos',
+    'rock guitar equipment',
+    'guitar tone archive',
+    'musician gear documentation',
+    'vintage guitar rigs',
+    'guitar effects chains',
+    'Suede DNA',
+  ],
+  authors: [{ name: 'Jason Colapietro', url: 'https://github.com/JasonColapietro' }],
+  creator: 'Jason Colapietro',
+  publisher: 'Suede Labs AI',
   openGraph: {
-    siteName: 'Suede DNA',
     type: 'website',
+    locale: 'en_US',
+    url: SITE_URL,
+    siteName: 'Suede DNA',
+    title: 'Suede DNA — Signal Chains, Archived',
+    description: defaultDescription,
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Suede DNA — a compilation archive of guitarists\' rigs and signal chains',
+      },
+    ],
   },
-  twitter: { card: 'summary_large_image' },
-  robots: { index: true, follow: true },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Suede DNA — Signal Chains, Archived',
+    description: defaultDescription,
+    creator: '@aisuede',
+    images: ['/opengraph-image'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  alternates: { canonical: SITE_URL },
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Suede DNA',
+  url: SITE_URL,
+  description: defaultDescription,
+  publisher: {
+    '@type': 'Organization',
+    name: 'Suede Labs AI',
+    url: 'https://suedeai.ai',
+  },
+  sameAs: ['https://twitter.com/aisuede', 'https://github.com/Suede-AI'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,6 +94,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
       </body>
     </html>
   );

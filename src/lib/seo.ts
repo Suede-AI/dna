@@ -48,15 +48,17 @@ export function homeJsonLd(siteUrl: string, totalArtists: number, totalRigs: num
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Suede DNA',
+    name: 'Suede DNA — Signal Chains, Archived',
     description: homePageDescription(),
     url: siteUrl,
     isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },
+    publisher: { '@type': 'Organization', name: 'Suede Labs AI', url: 'https://suedeai.ai' },
     mainEntity: {
       '@type': 'ItemList',
-      numberOfItems: totalArtists,
+      name: 'Guitar Rig Archive',
+      numberOfItems: totalRigs,
       itemListOrder: 'https://schema.org/ItemListOrderAscending',
-      additionalType: `${totalRigs} rigs`,
+      description: `${totalArtists} artists · ${totalRigs} rigs`,
     },
   } as const;
 }
