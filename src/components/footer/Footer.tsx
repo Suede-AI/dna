@@ -42,6 +42,14 @@ export function Footer() {
             METHOD →
           </Link>
           <a
+            href="https://guitar.solutions"
+            className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            THE SIGNAL CHAIN ↗
+          </a>
+          <a
             href="https://suede.social"
             className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)] block mt-1"
             target="_blank"
