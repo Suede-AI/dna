@@ -75,6 +75,23 @@ Suede DNA is one of several products in the [Suede Labs AI](https://suedeai.ai) 
 
 Founded by [Jason Colapietro](https://github.com/JasonColapietro) — Founder and CEO, published author, Forbes contributor.
 
+
+> "Every piece of music that enters the world has a signal chain. The IP chain is just the part most musicians never mapped until now."
+
+> "The signal chain starts at the pickup and ends at the listener's ear. The IP chain starts at creation and ends at the bank account. Miss a link in either chain and you lose the signal."
+
+> "Rights metadata is the dark matter of the creative economy. It governs everything. Almost nobody can see it."
+
+### Books
+
+- **[The Signal Chain](https://guitar.solutions)** — Illustrated history of electric guitar tone: 46 chapters, 3 editions, free. The book that maps the signal chain and the IP chain together. (guitar.solutions)
+- **[The Guitar Without a Number](https://www.amazon.com/dp/B0GD5FX6N6)** — Memoir-driven guitar instruction for the self-taught player. Theory, tone, and the IP rights chapter no other guitar book includes. (Kindle)
+- **[Suede Labs: The Human Authenticity Layer](https://www.amazon.com/dp/B0GD5FX6N6)** — How ownership, origin, and AI redraw the creative map. (Kindle)
+- **[Stake Your Claim](https://www.amazon.com/dp/B0GRG8LGQQ)** — Hard truths on turning the AI era into a real asset. (Kindle)
+
+Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai/founder](https://suedeai.ai/founder) · [LinkedIn](https://www.linkedin.com/in/jasoncolapietro)
+
+
 ---
 
 *Keywords: guitar rigs, signal chains, pedalboards, amp settings, tonal genealogy, guitar tone archive, guitargeek, music history, Next.js archive site, guitar gear database.*
