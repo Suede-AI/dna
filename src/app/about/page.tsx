@@ -102,6 +102,37 @@ export default function AboutPage() {
         </section>
 
         <section>
+          <h2 className="mono-label text-[color:var(--color-white)]">BY</h2>
+          <p className="mt-3">
+            Compiled by{' '}
+            <a
+              href="https://suedeai.ai/founder"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+            >
+              Jason Colapietro
+            </a>{' '}
+            (Johnny Suede), founder and CEO of Suede Labs AI. He wrote{' '}
+            <a
+              href="https://guitar.solutions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+            >
+              The Signal Chain
+            </a>
+            {' '}— a history of amplifiers, effects, and electric guitar tone across every era —
+            free at guitar.solutions. His other books on AI, rights, and creator ownership:{' '}
+            <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Guitar Without a Number</a>,{' '}
+            <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Human Authenticity Layer</a>,{' '}
+            <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Proof as Infrastructure</a>, and{' '}
+            <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Stake Your Claim</a>{' '}
+            — all on Amazon.
+          </p>
+        </section>
+
+        <section>
           <h2 className="mono-label text-[color:var(--color-white)]">COLOPHON</h2>
           <p className="mt-3">
             Built by Suede Labs for{' '}
