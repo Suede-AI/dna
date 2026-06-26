@@ -1,5 +1,7 @@
 # Suede DNA
 
+> **A [Suede Labs AI](https://suedeai.ai) project · Built by [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO**
+
 **Live:** [dna.suedeai.ai](https://dna.suedeai.ai)
 
 A tonal genealogy archive of guitarists' rigs and signal chains — 409 documented setups from 390 artists, indexed by year and player. Built and maintained by [Suede Labs AI](https://suedeai.ai).
