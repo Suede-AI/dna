@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     'guitar effects chains',
     'Suede DNA',
   ],
-  authors: [{ name: 'Jason Colapietro', url: 'https://github.com/JasonColapietro' }],
+  authors: [{ name: 'Jason Colapietro', url: 'https://suedeai.ai/founder' }],
   creator: 'Jason Colapietro',
   publisher: 'Suede Labs AI',
   openGraph: {
@@ -55,7 +55,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Suede DNA — Signal Chains, Archived',
     description: defaultDescription,
-    creator: '@aisuede',
+    site: '@AISUEDE',
+    creator: '@johnnysuede',
     images: ['/opengraph-image'],
   },
   robots: {
@@ -72,18 +73,37 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
 };
 
+// Canonical @ids mirror suedeai.ai/#organization and suedeai.ai/founder#person
+// so search engines merge this site's entities into the shared Suede graph.
+const SUEDE_ORG_ID = 'https://suedeai.ai/#organization';
+const JASON_PERSON_ID = 'https://suedeai.ai/founder#person';
+
 const websiteJsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  name: 'Suede DNA',
-  url: SITE_URL,
-  description: defaultDescription,
-  publisher: {
-    '@type': 'Organization',
-    name: 'Suede Labs AI',
-    url: 'https://suedeai.ai',
-  },
-  sameAs: ['https://twitter.com/aisuede', 'https://github.com/Suede-AI'],
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: 'Suede DNA',
+      url: SITE_URL,
+      description: defaultDescription,
+      publisher: { '@id': SUEDE_ORG_ID },
+      creator: { '@id': JASON_PERSON_ID },
+    },
+    {
+      '@type': 'Organization',
+      '@id': SUEDE_ORG_ID,
+      name: 'Suede Labs AI',
+      url: 'https://suedeai.ai',
+    },
+    {
+      '@type': 'Person',
+      '@id': JASON_PERSON_ID,
+      name: 'Jason Colapietro',
+      alternateName: 'Johnny Suede',
+      url: 'https://suedeai.ai/founder',
+    },
+  ],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
