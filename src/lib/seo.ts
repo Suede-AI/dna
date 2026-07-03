@@ -1,11 +1,21 @@
 import type { Artist, Rig } from './manifest';
 
+export function artistYearRange(artist: Pick<Artist, 'yearMin' | 'yearMax'>): string {
+  return artist.yearMin === artist.yearMax
+    ? String(artist.yearMin)
+    : `${artist.yearMin}–${artist.yearMax}`;
+}
+
 export function artistPageTitle(artist: Artist): string {
-  return `${artist.name} — Guitar Rigs ${artist.yearMin}–${artist.yearMax}`;
+  return `${artist.name} — Guitar Rigs ${artistYearRange(artist)}`;
 }
 
 export function artistPageDescription(artist: Artist): string {
-  return `The complete rig archive for ${artist.name} — ${artist.count} setups documented between ${artist.yearMin} and ${artist.yearMax}. Photos sourced from the Guitar Geek archives. Part of Suede DNA.`;
+  const when =
+    artist.yearMin === artist.yearMax
+      ? `in ${artist.yearMin}`
+      : `between ${artist.yearMin} and ${artist.yearMax}`;
+  return `The complete rig archive for ${artist.name} — ${artist.count} setups documented ${when}. Photos sourced from the Guitar Geek archives. Part of Suede DNA.`;
 }
 
 export function homePageTitle(): string {
