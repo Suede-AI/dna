@@ -33,6 +33,8 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
 
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const suggestions = useMemo(() => suggestArtists(artists, state.q), [artists, state.q]);
+  const showLetterDividers =
+    deferredState.sort === 'name-asc' && deferredState.q.trim() === '' && deferredState.decades.length === 0;
 
   const jumpToLetter = (l: string) => {
     const slug = filteredArtists.find((a) => a.name.toUpperCase().startsWith(l))?.slug;
@@ -85,23 +87,52 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
           <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {(() => {
               let cardIndex = 0;
+              let currentLetter: string | null = null;
               return filteredArtists.flatMap((artist) => {
                 const artistRigs = visibleRigs.filter((r) => r.artistSlug === artist.slug);
-                const nodes = [
+                const letter = getArtistInitial(artist.name);
+                const nodes: ReactNode[] = [];
+
+                if (showLetterDividers && letter !== currentLetter) {
+                  currentLetter = letter;
+                  nodes.push(
+                    <div key={`divider-${letter}`} className="col-span-full flex items-end gap-5 pt-12 pb-2" aria-hidden>
+                      <span
+                        className="font-[820] text-white/10"
+                        style={{ fontSize: 'var(--text-section)', lineHeight: 0.8 }}
+                      >
+                        {letter}
+                      </span>
+                      <span className="mb-2 h-px flex-1 bg-[color:var(--color-line)]" />
+                    </div>
+                  );
+                }
+
+                nodes.push(
                   <div
                     key={`anchor-${artist.slug}`}
                     id={`artist-anchor-${artist.slug}`}
-                    className="col-span-full mono-label pt-6"
+                    className="col-span-full pt-6"
                   >
-                    <span className="text-[color:var(--color-bone)]">{highlightArtistName(artist.name, deferredState.q)}</span>
-                    <span className="text-[color:var(--color-mute)]"> · {artist.count}</span>
-                  </div>,
+                    <div className="flex flex-wrap items-center gap-3 border-t hairline pt-4">
+                      <span className="font-medium text-white">{highlightArtistName(artist.name, deferredState.q)}</span>
+                      <span className="mono-label hairline px-2 py-1" style={{ borderRadius: 'var(--radius-control)' }}>
+                        {artist.count} RIGS
+                      </span>
+                      <span className="mono-label hairline px-2 py-1" style={{ borderRadius: 'var(--radius-control)' }}>
+                        {formatYearRange(artist)}
+                      </span>
+                    </div>
+                  </div>
+                );
+
+                nodes.push(
                   ...artistRigs.map((rig) => {
                     const stagger = cardIndex < 24 ? cardIndex * 30 : null;
                     cardIndex += 1;
                     return <RigCard key={rig.id} rig={rig} index={cardIndex - 1} stagger={stagger} />;
-                  }),
-                ];
+                  })
+                );
                 return nodes;
               });
             })()}
@@ -111,6 +142,15 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
       </div>
     </>
   );
+}
+
+function getArtistInitial(name: string): string {
+  const initial = name.trim().charAt(0).toUpperCase();
+  return /^[A-Z]$/.test(initial) ? initial : '#';
+}
+
+function formatYearRange(artist: Artist): string {
+  return artist.yearMin === artist.yearMax ? String(artist.yearMin) : `${artist.yearMin}-${artist.yearMax}`;
 }
 
 function highlightArtistName(name: string, query: string): ReactNode {

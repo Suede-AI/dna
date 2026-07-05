@@ -181,7 +181,7 @@ open/close + prev/next logic unit-tested where feasible; gates green.
 
 ## Phase 3 — The archive grid as an instrument (P1)
 
-### [ ] 3.1 Letter dividers + artist header redesign
+### [x] 3.1 Letter dividers + artist header redesign
 
 **Now:** Per-artist anchor rows in `CompilationGrid.tsx` are plain mono lines; 409 cards
 read as an undifferentiated wall.
@@ -420,3 +420,4 @@ the loop print its completion sentinel.
 - 2.3 — added shared RigImage shimmer/fallback component across grid, detail, and DNA chain — src/components/media/RigImage.tsx, src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, tests/components/RigImage.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.4 — added token-based hover/focus lift, signal border/glow, and arrow nudge to grid cards and DNA chain nodes — src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.5 — added native dialog full-size rig lightbox with zoom, pan, keyboard prev/next, and opener wiring — src/components/media/Lightbox.tsx, src/components/artist/RigDetailCard.tsx, src/app/[artist-slug]/page.tsx, src/app/globals.css, tests/components/Lightbox.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 3.1 — added default A-Z letter dividers and redesigned artist headers with rig/year chips — src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
