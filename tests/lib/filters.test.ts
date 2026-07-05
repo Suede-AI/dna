@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { countResults, filterArtists, sortArtists, type FilterState } from '../../src/lib/filters';
+import { countResults, filterArtists, sortArtists, summarizeFilters, type FilterState } from '../../src/lib/filters';
 import type { Artist, Rig } from '../../src/lib/manifest';
 
 const A: Artist[] = [
@@ -70,5 +70,29 @@ describe('countResults', () => {
     ];
 
     expect(countResults(A.slice(0, 2), rigs)).toEqual({ artists: 2, rigs: 3 });
+  });
+});
+
+describe('summarizeFilters', () => {
+  it('returns inactive summary for default filters', () => {
+    const state: FilterState = { decades: [], q: '', sort: 'name-asc' };
+    expect(summarizeFilters(state, { artists: 3, rigs: 6 })).toEqual({
+      active: false,
+      countLabel: '3 ARTISTS · 6 RIGS',
+      facets: [],
+    });
+  });
+
+  it('summarizes decade and query facets with removable descriptors', () => {
+    const state: FilterState = { decades: [1990, 1970], q: 'hendrix', sort: 'year-desc' };
+    expect(summarizeFilters(state, { artists: 3, rigs: 5 })).toEqual({
+      active: true,
+      countLabel: '3 ARTISTS · 5 RIGS',
+      facets: [
+        { kind: 'decade', value: 1970, label: "'70S" },
+        { kind: 'decade', value: 1990, label: "'90S" },
+        { kind: 'query', value: 'hendrix', label: '"HENDRIX"' },
+      ],
+    });
   });
 });

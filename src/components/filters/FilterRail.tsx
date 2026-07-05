@@ -2,7 +2,7 @@
 
 import { DecadeChips } from './DecadeChips';
 import { SearchInput } from '../search/SearchInput';
-import type { FilterState, ResultCounts, SortOrder } from '@/lib/filters';
+import { summarizeFilters, type FilterState, type ResultCounts, type SortOrder } from '@/lib/filters';
 
 const SORTS: { value: SortOrder; label: string }[] = [
   { value: 'name-asc', label: 'A–Z' },
@@ -21,6 +21,7 @@ export function FilterRail({
   sortDisabled?: boolean;
   resultCounts?: ResultCounts;
 }) {
+  const summary = resultCounts ? summarizeFilters(state, resultCounts) : null;
   const toggleDecade = (d: number) => {
     onChange({
       decades: state.decades.includes(d) ? state.decades.filter((x) => x !== d) : [...state.decades, d],
@@ -65,10 +66,28 @@ export function FilterRail({
         <div className="ml-auto w-full sm:w-72">
           <SearchInput value={state.q} onChange={(q) => onChange({ q })} />
         </div>
-        {resultCounts ? (
-          <p className="mono-label basis-full" aria-live="polite">
-            {resultCounts.artists} ARTISTS · {resultCounts.rigs} RIGS
-          </p>
+        {summary?.active ? (
+          <div className="mono-label flex basis-full flex-wrap items-center gap-2" aria-live="polite">
+            <span>{summary.countLabel}</span>
+            <span aria-hidden>—</span>
+            {summary.facets.map((facet) => (
+              <button
+                key={`${facet.kind}-${facet.value}`}
+                type="button"
+                className="hairline px-2 py-1 text-[color:var(--color-bone)] hover:text-[color:var(--color-signal)]"
+                style={{ borderRadius: 'var(--radius-control)' }}
+                onClick={() => {
+                  if (facet.kind === 'decade') {
+                    onChange({ decades: state.decades.filter((decade) => decade !== facet.value) });
+                  } else {
+                    onChange({ q: '' });
+                  }
+                }}
+              >
+                {facet.label} ×
+              </button>
+            ))}
+          </div>
         ) : null}
       </div>
     </div>

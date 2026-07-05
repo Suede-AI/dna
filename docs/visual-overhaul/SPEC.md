@@ -219,7 +219,7 @@ overlap content or wrap brokenly; fix what you find.
 **Accept:** Zero hardcoded sticky offsets remain (grep proves it); gates green; log notes
 mobile spot-check for Jason.
 
-### [ ] 3.4 Active-filter feedback row
+### [x] 3.4 Active-filter feedback row
 
 **Now:** Active decade chips + a search term give no combined feedback and no per-facet
 removal.
@@ -423,3 +423,4 @@ the loop print its completion sentinel.
 - 3.1 — added default A-Z letter dividers and redesigned artist headers with rig/year chips — src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.2 — added LetterRail scroll-spy, filtered-letter availability, disabled absent letters, and reduced-motion-aware jumps — src/components/grid/CompilationGrid.tsx, src/components/grid/LetterRail.tsx, src/lib/letters.ts, tests/lib/letters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.3 — replaced hardcoded sticky/scroll offsets with header/filter tokens; grep for legacy offsets is clean; needs Jason 375px mobile spot-check — src/styles/tokens.css, src/components/filters/FilterRail.tsx, src/components/grid/LetterRail.tsx, src/components/grid/CompilationGrid.tsx, src/components/artist/RigDetailCard.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 3.4 — replaced always-on count row with removable active-filter summary facets — src/lib/filters.ts, src/components/filters/FilterRail.tsx, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.

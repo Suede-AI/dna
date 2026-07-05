@@ -14,6 +14,16 @@ export type ResultCounts = {
   rigs: number;
 };
 
+export type FilterSummaryFacet =
+  | { kind: 'decade'; value: number; label: string }
+  | { kind: 'query'; value: string; label: string };
+
+export type FilterSummary = {
+  active: boolean;
+  countLabel: string;
+  facets: FilterSummaryFacet[];
+};
+
 export const DEFAULT_FILTER_STATE: FilterState = {
   decades: [],
   q: '',
@@ -47,5 +57,26 @@ export function countResults(artists: Artist[], rigs: Rig[]): ResultCounts {
   return {
     artists: artists.length,
     rigs: rigs.length,
+  };
+}
+
+export function summarizeFilters(state: FilterState, counts: ResultCounts): FilterSummary {
+  const facets: FilterSummaryFacet[] = [
+    ...[...state.decades].sort((a, b) => a - b).map((decade) => ({
+      kind: 'decade' as const,
+      value: decade,
+      label: `'${String(decade).slice(-2).padStart(2, '0')}S`,
+    })),
+  ];
+
+  const query = state.q.trim();
+  if (query) {
+    facets.push({ kind: 'query', value: query, label: `"${query.toUpperCase()}"` });
+  }
+
+  return {
+    active: facets.length > 0,
+    countLabel: `${counts.artists} ARTISTS · ${counts.rigs} RIGS`,
+    facets,
   };
 }
