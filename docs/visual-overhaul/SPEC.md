@@ -309,7 +309,7 @@ images, no layout shift (reserved space).
 
 **Accept:** Pure SVG/CSS; hidden on mobile; hero LCP text unaffected; gates green.
 
-### [ ] 5.2 Waveform depth
+### [x] 5.2 Waveform depth
 
 **Now:** `HeroWaveform.tsx` is a single 1px path at 0.4 opacity.
 
@@ -430,3 +430,4 @@ the loop print its completion sentinel.
 - 4.3 — restyled rig details as a sticky specimen sheet with index context, lightbox control, and thumb prev/next links — src/components/artist/RigDetailCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.4 — added artist archive position context and decade chips linking to home filter URLs — src/lib/artist-index.ts, src/components/artist/ArtistStrip.tsx, src/app/[artist-slug]/page.tsx, tests/lib/artist-index.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.1 — added desktop-only hero signal-chain SVG with reduced-motion-aware pulse and reserved right column — src/components/hero/HeroSignalChain.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 5.2 — layered the hero waveform with phase-shifted depth and signal-to-transparent primary stroke — src/components/hero/HeroWaveform.tsx, docs/visual-overhaul/SPEC.md — gates: green.
