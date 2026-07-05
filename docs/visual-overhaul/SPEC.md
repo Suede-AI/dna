@@ -374,7 +374,7 @@ neutralizes it.
 
 **Accept:** Content visible with JS disabled (reason it through and note it); gates green.
 
-### [ ] 6.3 Contrast + focus audit
+### [x] 6.3 Contrast + focus audit
 
 **Now:** `--color-mute` is 0.40-alpha white (~3.2:1 on ink) and is used for *meaningful*
 text (card index labels, placeholder, ticker source).
@@ -436,3 +436,4 @@ the loop print its completion sentinel.
 - 5.5 — replaced minimal 404 with SIGNAL LOST rescue links and a GET search form to home ?q= — src/app/not-found.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 6.1 — attempted `experimental.viewTransition`; reverted because `next build` printed a static-generation console error about a large document without Suspense boundaries after enabling it — docs/visual-overhaul/SPEC.md — gates: green after revert.
 - 6.2 — added hydration-armed scroll reveals for detail sections and letter dividers; no-JS stays visible because hidden state is only added client-side — src/hooks/useRevealOnScroll.ts, src/app/globals.css, src/components/artist/RigDetailCard.tsx, src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 6.3 — added mute-readable token and applied it to mono labels, placeholders, header/footer source text, LetterRail, search inputs, and DNA node labels; added explicit focus rings to search fields — src/styles/tokens.css, src/app/globals.css, src/components/search/SearchInput.tsx, src/app/not-found.tsx, src/components/header/HeaderTicker.tsx, src/components/header/HeaderShell.tsx, src/components/footer/Footer.tsx, src/components/grid/LetterRail.tsx, src/components/filters/FilterRail.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.

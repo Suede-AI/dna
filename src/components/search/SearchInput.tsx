@@ -38,7 +38,7 @@ export function SearchInput({ value, onChange }: { value: string; onChange: (v: 
         }}
         placeholder="artist or year"
         aria-keyshortcuts="/ Meta+K Control+K"
-        className="bg-transparent outline-none text-white placeholder:text-[color:var(--color-mute)] w-full"
+        className="bg-transparent outline-none text-white placeholder:text-[color:var(--color-mute-readable)] w-full focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-signal)]"
       />
       {value ? (
         <button

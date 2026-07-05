@@ -32,7 +32,7 @@ export function LetterRail({
             aria-disabled={disabled || undefined}
             className="h-5 px-1 transition-colors disabled:cursor-not-allowed"
             style={{
-              color: activeLetter === l ? 'var(--color-signal)' : 'var(--color-mute)',
+              color: activeLetter === l ? 'var(--color-signal)' : 'var(--color-mute-readable)',
               opacity: disabled ? 0.25 : 1,
             }}
             aria-current={activeLetter === l ? 'location' : undefined}

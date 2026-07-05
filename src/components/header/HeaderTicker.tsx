@@ -11,7 +11,7 @@ export function HeaderTicker() {
         <span>{totalArtists.toLocaleString()} ARTISTS</span>
         <span className="text-[color:var(--color-mute)]">·</span>
         <span>{yearMin} – {yearMax}</span>
-        <span className="ml-auto min-w-0 max-w-[45vw] truncate text-[color:var(--color-mute)]">
+        <span className="ml-auto min-w-0 max-w-[45vw] truncate text-[color:var(--color-mute-readable)]">
           SOURCE: archive.org/guitargeek-archives
         </span>
       </div>

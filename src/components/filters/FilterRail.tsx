@@ -50,7 +50,7 @@ export function FilterRail({
                   ? 'var(--color-mute)'
                   : state.sort === s.value
                     ? 'var(--color-white)'
-                    : 'var(--color-mute)',
+                    : 'var(--color-mute-readable)',
                 borderBottom:
                   !sortDisabled && state.sort === s.value
                     ? '1px solid var(--color-signal)'

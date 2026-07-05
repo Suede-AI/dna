@@ -31,7 +31,7 @@ export default function NotFound() {
           name="q"
           type="search"
           placeholder="artist or year"
-          className="h-12 flex-1 hairline bg-transparent px-4 text-white outline-none placeholder:text-[color:var(--color-mute)]"
+          className="h-12 flex-1 hairline bg-transparent px-4 text-white outline-none placeholder:text-[color:var(--color-mute-readable)] focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-signal)]"
           style={{ borderRadius: 'var(--radius-control)' }}
         />
         <button

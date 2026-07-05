@@ -7,6 +7,7 @@
   --color-white: #ffffff;
   --color-bone: rgba(255, 255, 255, 0.62);
   --color-mute: rgba(255, 255, 255, 0.40);
+  --color-mute-readable: rgba(255, 255, 255, 0.55);
   --color-line: rgba(255, 255, 255, 0.08);
   --color-signal: #22d3ee;
   --color-signal-glow: rgba(34, 211, 238, 0.30);

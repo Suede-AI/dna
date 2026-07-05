@@ -148,7 +148,7 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
                 </a>
               <div className="mt-2 flex items-center justify-between mono-label">
                   <span className={activeIndex === i ? 'text-[color:var(--color-signal)]' : 'text-[color:var(--color-bone)]'}>{rig.year}</span>
-                  <span className="rig-arrow text-[color:var(--color-mute)]">VIEW DNA →</span>
+                  <span className="rig-arrow text-[color:var(--color-mute-readable)]">VIEW DNA →</span>
                 </div>
               </li>
             ))}

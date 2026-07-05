@@ -60,7 +60,7 @@ export function HeaderShell({ children }: { children: ReactNode }) {
               href="https://archive.org/details/guitargeek-archives"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[color:var(--color-mute)] hover:text-[color:var(--color-signal)]"
+              className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)]"
             >
               SOURCE ↗
             </a>

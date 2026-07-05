@@ -39,7 +39,7 @@
     font-size: var(--text-mono-label);
     letter-spacing: var(--tracking-mono-label);
     text-transform: uppercase;
-    color: var(--color-mute);
+    color: var(--color-mute-readable);
   }
   .mono-data {
     font-family: var(--font-geist-mono), ui-monospace, monospace;
