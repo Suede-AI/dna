@@ -19,16 +19,21 @@ export function RigDetailCard({
       className="border-t hairline scroll-mt-32"
     >
       <div className="mx-auto max-w-[1400px] px-6 py-20 grid gap-12 md:grid-cols-[3fr_2fr]">
-        <figure className="relative aspect-[4/3] overflow-hidden" style={{ borderRadius: 'var(--radius-card)' }}>
-          <Image
-            src={rig.src}
-            alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
-            fill
-            priority={index === 0}
-            sizes="(min-width: 768px) 60vw, 100vw"
-            className="object-cover"
-            unoptimized={rig.format === 'gif'}
-          />
+        <figure
+          className="relative min-h-[18rem] max-h-[75vh] overflow-hidden bg-[color:var(--color-ink-3)]"
+          style={{ borderRadius: 'var(--radius-card)', height: 'min(75vh, 64vw)' }}
+        >
+          <div className="absolute inset-4">
+            <Image
+              src={rig.src}
+              alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
+              fill
+              priority={index === 0}
+              sizes="(min-width: 768px) 60vw, 100vw"
+              className="object-contain"
+              unoptimized={rig.format === 'gif'}
+            />
+          </div>
           <figcaption className="sr-only">
             {rig.artistName} rig, <time dateTime={String(rig.year)}>{rig.year}</time>.
           </figcaption>

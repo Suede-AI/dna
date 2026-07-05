@@ -49,15 +49,17 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
                 className="block group hairline overflow-hidden focus-visible:outline-1 focus-visible:outline-[color:var(--color-signal)]"
                 style={{ borderRadius: 'var(--radius-card)', background: 'var(--color-ink-2)' }}
               >
-                <div className="relative aspect-[4/3]">
-                  <Image
-                    src={rig.src}
-                    alt={`${rig.artistName} guitar rig setup, ${rig.year}`}
-                    fill
-                    sizes="180px"
-                    className="object-cover transition-opacity group-hover:opacity-90"
-                    unoptimized={rig.format === 'gif'}
-                  />
+                <div className="relative aspect-[4/3] bg-[color:var(--color-ink-3)]">
+                  <div className="absolute inset-2">
+                    <Image
+                      src={rig.src}
+                      alt={`${rig.artistName} guitar rig setup, ${rig.year}`}
+                      fill
+                      sizes="180px"
+                      className="object-contain transition-opacity group-hover:opacity-90"
+                      unoptimized={rig.format === 'gif'}
+                    />
+                  </div>
                 </div>
               </a>
               <div className="mt-2 flex items-center justify-between mono-label">
