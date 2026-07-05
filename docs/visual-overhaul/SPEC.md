@@ -319,7 +319,7 @@ reduced motion (existing hook).
 
 **Accept:** Gates green; reduced-motion renders static single-frame.
 
-### [ ] 5.3 Stats count-up (SEO-safe)
+### [x] 5.3 Stats count-up (SEO-safe)
 
 **Now:** Hero stat line and ticker are static text.
 
@@ -431,3 +431,4 @@ the loop print its completion sentinel.
 - 4.4 — added artist archive position context and decade chips linking to home filter URLs — src/lib/artist-index.ts, src/components/artist/ArtistStrip.tsx, src/app/[artist-slug]/page.tsx, tests/lib/artist-index.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.1 — added desktop-only hero signal-chain SVG with reduced-motion-aware pulse and reserved right column — src/components/hero/HeroSignalChain.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.2 — layered the hero waveform with phase-shifted depth and signal-to-transparent primary stroke — src/components/hero/HeroWaveform.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 5.3 — replaced hero stat line with SEO-safe once-on-view count-up initialized to final SSR values; build had no hydration warnings — src/components/hero/HeroStatsCount.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.

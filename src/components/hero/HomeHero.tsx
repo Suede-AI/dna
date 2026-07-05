@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { HeroSignalChain } from './HeroSignalChain';
+import { HeroStatsCount } from './HeroStatsCount';
 import { HeroWaveform } from './HeroWaveform';
 import { getStats } from '@/lib/manifest';
 
@@ -57,9 +58,7 @@ export function HomeHero() {
               READ THE METHOD →
             </Link>
           </div>
-          <p className="mt-12 mono-label">
-            {totalRigs.toLocaleString()} RIGS · {totalArtists.toLocaleString()} ARTISTS · {yearMin}–{yearMax}
-          </p>
+          <HeroStatsCount totalRigs={totalRigs} totalArtists={totalArtists} yearMin={yearMin} yearMax={yearMax} />
         </div>
         <HeroSignalChain />
       </div>
