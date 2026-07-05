@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import artistsData from '../../data/artists.json';
+import { ARTIST_ALIASES } from '../../src/lib/aliases';
 import {
   damerauLevenshteinDistanceWithin,
   isYearQuery,
@@ -123,6 +124,25 @@ describe('suggestArtists', () => {
       { slug: 'four', name: 'Alpha Amp', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
     ];
     expect(suggestArtists(artists, 'alpha').map((a) => a.slug)).toEqual(['one', 'two', 'three']);
+  });
+});
+
+describe('artist aliases', () => {
+  it('resolves curated aliases against real slugs', () => {
+    const artists = artistsData as Artist[];
+    expect(searchArtists(artists, 'evh')[0].slug).toBe('vanhalen-eddie');
+    expect(searchArtists(artists, 'stevie ray vaughan')[0].slug).toBe('srv');
+    expect(searchArtists(artists, 'satch')[0].slug).toBe('satriani-joe');
+    expect(searchArtists(artists, 'saul hudson')[0].slug).toBe('slash');
+    expect(searchArtists(artists, 'pete townshend')[0].slug).toBe('who-pete');
+  });
+
+  it('contains only real manifest slugs and stays small', () => {
+    const slugs = new Set((artistsData as Artist[]).map((artist) => artist.slug));
+    expect(Object.keys(ARTIST_ALIASES)).toHaveLength(7);
+    for (const slug of Object.keys(ARTIST_ALIASES)) {
+      expect(slugs.has(slug)).toBe(true);
+    }
   });
 });
 

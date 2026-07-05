@@ -1,3 +1,4 @@
+import { ARTIST_ALIASES } from './aliases';
 import type { Artist } from './manifest';
 
 export function searchArtists(artists: Artist[], rawQuery: string): Artist[] {
@@ -11,7 +12,7 @@ export function searchArtists(artists: Artist[], rawQuery: string): Artist[] {
   }
 
   return artists
-    .map((a, index) => ({ a, index, score: scoreMatch(a.name, q) }))
+    .map((a, index) => ({ a, index, score: scoreArtist(a, q) }))
     .filter((x) => x.score > 0)
     .sort((x, y) => y.score - x.score || x.index - y.index)
     .map((x) => x.a);
@@ -60,6 +61,15 @@ function scoreMatch(haystack: string, needle: string): number {
     total += tokenScore;
   }
   return total;
+}
+
+function scoreArtist(artist: Artist, query: string): number {
+  return Math.max(scoreMatch(artist.name, query), scoreAliases(artist.slug, query));
+}
+
+function scoreAliases(slug: string, query: string): number {
+  const aliases = ARTIST_ALIASES[slug] ?? [];
+  return aliases.reduce((best, alias) => Math.max(best, Math.min(scoreMatch(alias, query), 60)), 0);
 }
 
 function scoreToken(nameTokens: string[], queryToken: string): number {

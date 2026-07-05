@@ -94,7 +94,7 @@ names as buttons that set `q`; keep CLEAR FILTERS. Extract a pure
 **Accept:** Searching a real artist shows highlighted spans; a one-typo query's empty
 state suggests the right artist; `suggestArtists` unit-tested; gates green.
 
-### [ ] 1.6 Alias layer
+### [x] 1.6 Alias layer
 
 **Now:** Nickname queries fail — the archive's names are literal (e.g. searching a common
 abbreviation like "SRV" or "EVH" finds nothing if the dataset spells the full name).
@@ -414,3 +414,4 @@ the loop print its completion sentinel.
 - 1.3 — added bounded Damerau-Levenshtein fuzzy token fallback below exact tiers — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.4 — added deferred grid filtering, search shortcuts/clear, live result counts, and memoized rig cards — src/components/search/SearchInput.tsx, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, src/components/grid/RigCard.tsx, src/lib/filters.ts, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.5 — highlighted artist-name token matches and added did-you-mean suggestion buttons — src/components/grid/CompilationGrid.tsx, src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 1.6 — added curated manifest-validated alias map for shorthand/alternate guitarist queries — src/lib/aliases.ts, src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
