@@ -9,6 +9,9 @@
   --color-mute: rgba(255, 255, 255, 0.40);
   --color-mute-readable: rgba(255, 255, 255, 0.55);
   --color-line: rgba(255, 255, 255, 0.08);
+  --color-archive-paper: #e7dfcf;
+  --color-archive-paper-ink: #15110b;
+  --color-archive-paper-faint: rgba(21, 17, 11, 0.56);
   --color-signal: #22d3ee;
   --color-signal-glow: rgba(34, 211, 238, 0.30);
   --color-proof: #34d399;

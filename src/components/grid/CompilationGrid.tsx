@@ -107,10 +107,10 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
   return (
     <>
       <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} resultCounts={resultCounts} />
-      <div id="archive" className="relative mx-auto max-w-[1400px] px-6 pt-12 pb-24 grid grid-cols-[1fr_auto] gap-6">
+      <div id="archive" className="relative mx-auto max-w-[1500px] px-6 pt-8 pb-24 grid grid-cols-[1fr_auto] gap-6">
         <div>
           <h2 className="sr-only">Compilation grid</h2>
-          <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
             {(() => {
               let cardIndex = 0;
               let currentLetter: string | null = null;
@@ -131,10 +131,13 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
                     key={`anchor-${artist.slug}`}
                     id={`artist-anchor-${artist.slug}`}
                     data-letter={letter}
-                    className="col-span-full pt-6"
+                    className="col-span-full pt-3"
                     style={{ scrollMarginTop: 'calc(var(--header-h) + var(--filter-rail-h) + 1rem)' }}
                   >
-                    <div className="flex flex-wrap items-center gap-3 border-t hairline pt-4">
+                    <div
+                      className="flex flex-wrap items-center gap-3 border-t hairline px-3 py-3"
+                      style={{ background: 'color-mix(in srgb, var(--color-ink-2) 55%, transparent)' }}
+                    >
                       <span className="font-medium text-white">{highlightArtistName(artist.name, deferredState.q)}</span>
                       <span className="mono-label hairline px-2 py-1" style={{ borderRadius: 'var(--radius-control)' }}>
                         {artist.count} RIGS
@@ -167,19 +170,11 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
 function LetterDivider({ letter }: { letter: string }) {
   const reveal = useRevealOnScroll<HTMLDivElement>(60);
   return (
-    <div
-      ref={reveal.ref}
-      className={`col-span-full flex items-end gap-5 pt-12 pb-2 ${reveal.className}`}
-      style={reveal.style}
-      aria-hidden
-    >
-      <span
-        className="font-[820] text-white/10"
-        style={{ fontSize: 'var(--text-section)', lineHeight: 0.8 }}
-      >
-        {letter}
-      </span>
-      <span className="mb-2 h-px flex-1 bg-[color:var(--color-line)]" />
+    <div ref={reveal.ref} className={`col-span-full pt-5 ${reveal.className}`} style={reveal.style} aria-hidden>
+      <div className="mono-label flex items-center gap-4">
+        <span className="text-white">{letter}</span>
+        <span className="h-px flex-1 bg-[color:var(--color-line)]" />
+      </div>
     </div>
   );
 }

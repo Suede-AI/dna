@@ -18,17 +18,17 @@ function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; st
         ...animationStyle,
       }}
     >
-      <figure className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-ink-3)]">
-        <div className="absolute inset-3">
+      <figure className="relative aspect-[5/4] overflow-hidden bg-[color:var(--color-ink-3)]">
+        <div className="absolute inset-2">
           <RigImage
             rig={rig}
             alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+            sizes="(min-width: 1536px) 25vw, (min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-contain transition-opacity duration-300 group-hover:opacity-90"
           />
         </div>
       </figure>
-      <div className="border-t hairline px-4 py-3 flex items-center justify-between">
+      <div className="border-t hairline px-4 py-3 flex items-center justify-between gap-4">
         <div className="min-w-0">
           <p className="text-white truncate" style={{ fontWeight: 600 }}>{rig.artistName}</p>
           <p className="mono-label">RIG · {String(index + 1).padStart(3, '0')}</p>
