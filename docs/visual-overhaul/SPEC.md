@@ -341,7 +341,7 @@ runs once; gates green.
 
 **Accept:** No layout shift on state change; nav reflects route; gates green.
 
-### [ ] 5.5 404 rescue page
+### [x] 5.5 404 rescue page
 
 **Now:** `src/app/not-found.tsx` is minimal.
 
@@ -433,3 +433,4 @@ the loop print its completion sentinel.
 - 5.2 — layered the hero waveform with phase-shifted depth and signal-to-transparent primary stroke — src/components/hero/HeroWaveform.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.3 — replaced hero stat line with SEO-safe once-on-view count-up initialized to final SSR values; build had no hydration warnings — src/components/hero/HeroStatsCount.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.4 — added scroll-elevated header shell, route-aware nav current state, and truncating ticker source note — src/components/header/HeaderShell.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
+- 5.5 — replaced minimal 404 with SIGNAL LOST rescue links and a GET search form to home ?q= — src/app/not-found.tsx, docs/visual-overhaul/SPEC.md — gates: green.
