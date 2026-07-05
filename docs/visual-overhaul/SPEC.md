@@ -50,7 +50,7 @@ against name tokens (prefix > substring) and sum.
 from `data/artists.json`; tests cover em dash, apostrophe, a diacritic, and reversed token
 order; gates green.
 
-### [ ] 1.3 Typo tolerance tier
+### [x] 1.3 Typo tolerance tier
 
 **Now:** `"hendrx"` or `"vaughn"` (for "Vaughan") return nothing.
 
@@ -411,3 +411,4 @@ the loop print its completion sentinel.
 <!-- One line per iteration: task id — what changed — files touched — gates result. -->
 - 1.1 — wired live filtering to ranked/year-aware search and disabled sort while text relevance owns ordering — src/lib/search.ts, src/lib/filters.ts, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, tests/lib/search.test.ts, tests/lib/filters.test.ts — gates: green.
 - 1.2 — normalized punctuation/diacritics and made multi-token search order-insensitive — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 1.3 — added bounded Damerau-Levenshtein fuzzy token fallback below exact tiers — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.

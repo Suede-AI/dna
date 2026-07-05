@@ -1,6 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import artistsData from '../../data/artists.json';
-import { isYearQuery, normalize, searchArtists, usesRelevanceSort } from '../../src/lib/search';
+import {
+  damerauLevenshteinDistanceWithin,
+  isYearQuery,
+  normalize,
+  searchArtists,
+  usesRelevanceSort,
+} from '../../src/lib/search';
 import type { Artist } from '../../src/lib/manifest';
 
 const A: Artist[] = [
@@ -54,8 +60,24 @@ describe('searchArtists', () => {
       { slug: 'two', name: 'Plain Name', count: 1, yearMin: 1998, yearMax: 1998, decades: [1990] },
     ];
     expect(searchArtists(artists, 'cafe connor')[0].slug).toBe('one');
-    expect(searchArtists(artists, 'oconnor')).toEqual([]);
+    expect(searchArtists(artists, 'oconnor')[0].slug).toBe('one');
     expect(searchArtists(artists, 'connor cafe')[0].slug).toBe('one');
+  });
+
+  it('finds real artists from one-typo queries', () => {
+    const artists = artistsData as Artist[];
+    expect(searchArtists(artists, 'hendrx')[0].slug).toBe('hendrix-jimi');
+    expect(searchArtists(artists, 'calpton')[0].slug).toBe('eric-clapton-bluesbreakers');
+    expect(searchArtists(artists, 'frusciant')[0].slug).toBe('rhcp-john-frusciante');
+  });
+
+  it('keeps exact and substring matches ahead of fuzzy matches', () => {
+    const artists: Artist[] = [
+      { slug: 'exact', name: 'Hendrx', count: 1, yearMin: 2000, yearMax: 2000, decades: [2000] },
+      { slug: 'fuzzy', name: 'Hendrix', count: 1, yearMin: 2000, yearMax: 2000, decades: [2000] },
+      { slug: 'substring', name: 'The Hendrx Machine', count: 1, yearMin: 2000, yearMax: 2000, decades: [2000] },
+    ];
+    expect(searchArtists(artists, 'hendrx').map((a) => a.slug)).toEqual(['exact', 'substring', 'fuzzy']);
   });
 });
 
@@ -76,5 +98,18 @@ describe('query classification', () => {
 describe('normalize', () => {
   it('strips marks, converts punctuation to spaces, and collapses whitespace', () => {
     expect(normalize(" Café — O'Connor / Delay & Fuzz ")).toBe('cafe o connor delay fuzz');
+  });
+});
+
+describe('damerauLevenshteinDistanceWithin', () => {
+  it('detects substitutions, deletions, and adjacent swaps inside the bound', () => {
+    expect(damerauLevenshteinDistanceWithin('hendrx', 'hendrix', 1)).toBe(1);
+    expect(damerauLevenshteinDistanceWithin('frusciant', 'frusciante', 2)).toBe(1);
+    expect(damerauLevenshteinDistanceWithin('calpton', 'clapton', 1)).toBe(1);
+  });
+
+  it('returns null when length or distance exceeds the bound', () => {
+    expect(damerauLevenshteinDistanceWithin('srv', 'stevie', 1)).toBeNull();
+    expect(damerauLevenshteinDistanceWithin('hendzzz', 'hendrix', 1)).toBeNull();
   });
 });
