@@ -355,7 +355,7 @@ submits to `/?q=…`, and top links (BROWSE THE ARCHIVE / ABOUT). Note: App Rout
 
 ## Phase 6 — Motion, accessibility, wrap-up (P3)
 
-### [ ] 6.1 View transitions (attempt; revert-safe)
+### [!] 6.1 View transitions (attempt; revert-safe)
 
 **Build:** Try Next 15's experimental `viewTransition` flag for grid → artist navigation
 (cards morphing into the artist page is the dream; a crossfade is acceptable). This is the
@@ -434,3 +434,4 @@ the loop print its completion sentinel.
 - 5.3 — replaced hero stat line with SEO-safe once-on-view count-up initialized to final SSR values; build had no hydration warnings — src/components/hero/HeroStatsCount.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.4 — added scroll-elevated header shell, route-aware nav current state, and truncating ticker source note — src/components/header/HeaderShell.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.5 — replaced minimal 404 with SIGNAL LOST rescue links and a GET search form to home ?q= — src/app/not-found.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 6.1 — attempted `experimental.viewTransition`; reverted because `next build` printed a static-generation console error about a large document without Suspense boundaries after enabling it — docs/visual-overhaul/SPEC.md — gates: green after revert.
