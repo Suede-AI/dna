@@ -11,9 +11,12 @@ The premise: every distinctive guitar tone lives inside a specific signal chain 
 ## What's in here
 
 - A Next.js 15 (App Router) site that renders the rig grid, per-artist pages, search, year filters, and JSON-LD structured data.
+- Ranked, fuzzy, alias-aware search with year queries, result counts, match highlighting, keyboard shortcuts, and empty-state suggestions.
+- Contained rig diagrams with archive-aware loading states and a dependency-free full-size lightbox for close inspection.
+- Per-artist DNA chains with year-proportional timelines, scroll-synced active rigs, decade context, and specimen-sheet detail cards.
 - A canonical `data/rigs.json` manifest (~409 rigs, 390 artists, year-stamped) with a `validate-manifest` step that gates builds on schema integrity.
 - A small build pipeline (`scripts/build-manifest.ts`, `scripts/validate-manifest.ts`) for refreshing and validating the dataset from the upstream source.
-- Vitest tests covering the manifest, search, slug, and filter logic.
+- Vitest tests covering the manifest, search, slug, filter, timeline, and media-interaction logic.
 
 ## Tech stack
 
