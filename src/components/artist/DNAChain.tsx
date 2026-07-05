@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo } from 'react';
-import Image from 'next/image';
 import { DNAPath, type ChainNode } from './DNAPath';
+import { RigImage } from '../media/RigImage';
 import type { Rig } from '@/lib/manifest';
 
 const NODE_W = 180;
@@ -51,13 +51,11 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
               >
                 <div className="relative aspect-[4/3] bg-[color:var(--color-ink-3)]">
                   <div className="absolute inset-2">
-                    <Image
-                      src={rig.src}
+                    <RigImage
+                      rig={rig}
                       alt={`${rig.artistName} guitar rig setup, ${rig.year}`}
-                      fill
                       sizes="180px"
                       className="object-contain transition-opacity group-hover:opacity-90"
-                      unoptimized={rig.format === 'gif'}
                     />
                   </div>
                 </div>

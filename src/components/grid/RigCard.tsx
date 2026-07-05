@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { memo } from 'react';
+import { RigImage } from '../media/RigImage';
 import type { Rig } from '@/lib/manifest';
 
 function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; stagger?: number | null }) {
@@ -20,13 +20,11 @@ function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; st
     >
       <figure className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-ink-3)]">
         <div className="absolute inset-3">
-          <Image
-            src={rig.src}
+          <RigImage
+            rig={rig}
             alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
-            fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
             className="object-contain transition-opacity duration-300 group-hover:opacity-90"
-            unoptimized={rig.format === 'gif'}
           />
         </div>
       </figure>

@@ -137,7 +137,7 @@ ink-3.
 **Accept:** Detail images never cropped; very wide scans don't collapse the layout
 (min-height on the frame); gates green.
 
-### [ ] 2.3 Image loading + failure polish
+### [x] 2.3 Image loading + failure polish
 
 **Now:** No placeholders; archive.org is slow and occasionally down, leaving broken-image
 glyphs.
@@ -417,3 +417,4 @@ the loop print its completion sentinel.
 - 1.6 — added curated manifest-validated alias map for shorthand/alternate guitarist queries — src/lib/aliases.ts, src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.1 — changed grid rig images to contained specimen-slide frames and removed the image gradient; needs Jason visual spot-check — src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.2 — changed detail and DNA-chain rig images to contained ink-backed frames with a capped detail viewport — src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 2.3 — added shared RigImage shimmer/fallback component across grid, detail, and DNA chain — src/components/media/RigImage.tsx, src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, tests/components/RigImage.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.

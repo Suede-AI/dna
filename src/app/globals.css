@@ -48,6 +48,17 @@
   .hairline {
     border: 1px solid var(--color-line);
   }
+  .rig-image-shimmer {
+    overflow: hidden;
+  }
+  .rig-image-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, transparent, var(--color-ink-3), transparent);
+    animation: rig-shimmer var(--duration-hero) var(--ease-sweep) infinite;
+  }
 }
 
 @keyframes sweep-in {
@@ -63,6 +74,10 @@
 @keyframes signal-pulse {
   0%, 100% { opacity: 1; }
   50%      { opacity: 0.6; }
+}
+
+@keyframes rig-shimmer {
+  100% { transform: translateX(100%); }
 }
 
 @media (prefers-reduced-motion: reduce) {

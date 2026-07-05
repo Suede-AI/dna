@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { RigImage } from '../media/RigImage';
 import type { Rig } from '@/lib/manifest';
 
 export function RigDetailCard({
@@ -24,14 +24,12 @@ export function RigDetailCard({
           style={{ borderRadius: 'var(--radius-card)', height: 'min(75vh, 64vw)' }}
         >
           <div className="absolute inset-4">
-            <Image
-              src={rig.src}
+            <RigImage
+              rig={rig}
               alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
-              fill
               priority={index === 0}
               sizes="(min-width: 768px) 60vw, 100vw"
               className="object-contain"
-              unoptimized={rig.format === 'gif'}
             />
           </div>
           <figcaption className="sr-only">
