@@ -1,11 +1,61 @@
 import { describe, it, expect } from 'vitest';
-import { countResults, filterArtists, sortArtists, summarizeFilters, type FilterState } from '../../src/lib/filters';
+import {
+  countResults,
+  filterArtists,
+  filterRigs,
+  sortArtists,
+  summarizeFilters,
+  type FilterState,
+} from '../../src/lib/filters';
 import type { Artist, Rig } from '../../src/lib/manifest';
 
 const A: Artist[] = [
   { slug: 'a-1', name: 'A One', count: 1, yearMin: 1969, yearMax: 1969, decades: [1960] },
   { slug: 'b-2', name: 'B Two', count: 3, yearMin: 1971, yearMax: 1989, decades: [1970, 1980] },
   { slug: 'c-3', name: 'C Three', count: 2, yearMin: 2003, yearMax: 2005, decades: [2000] },
+];
+
+const R: Rig[] = [
+  {
+    id: 'a-1969',
+    artistSlug: 'a-1',
+    artistName: 'A One',
+    year: 1969,
+    src: 'https://example.com/a.jpg',
+    format: 'jpg',
+  },
+  {
+    id: 'b-1971',
+    artistSlug: 'b-2',
+    artistName: 'B Two',
+    year: 1971,
+    src: 'https://example.com/b.jpg',
+    format: 'jpg',
+  },
+  {
+    id: 'b-1989',
+    artistSlug: 'b-2',
+    artistName: 'B Two',
+    year: 1989,
+    src: 'https://example.com/c.jpg',
+    format: 'jpg',
+  },
+  {
+    id: 'c-2003',
+    artistSlug: 'c-3',
+    artistName: 'C Three',
+    year: 2003,
+    src: 'https://example.com/d.jpg',
+    format: 'jpg',
+  },
+  {
+    id: 'c-2005',
+    artistSlug: 'c-3',
+    artistName: 'C Three',
+    year: 2005,
+    src: 'https://example.com/e.jpg',
+    format: 'jpg',
+  },
 ];
 
 describe('filterArtists', () => {
@@ -46,6 +96,32 @@ describe('filterArtists', () => {
   it('combines decades and query', () => {
     const state: FilterState = { decades: [1970], q: 'b', sort: 'name-asc' };
     expect(filterArtists(A, state).map((a) => a.slug)).toEqual(['b-2']);
+  });
+});
+
+describe('filterRigs', () => {
+  it('filters rig cards by exact year queries', () => {
+    const state: FilterState = { decades: [], q: '1971', sort: 'name-asc' };
+    const artists = filterArtists(A, state);
+    expect(filterRigs(R, artists, state).map((rig) => rig.id)).toEqual(['b-1971']);
+  });
+
+  it('filters rig cards by year ranges', () => {
+    const state: FilterState = { decades: [], q: '1971-1989', sort: 'name-asc' };
+    const artists = filterArtists(A, state);
+    expect(filterRigs(R, artists, state).map((rig) => rig.id)).toEqual(['b-1971', 'b-1989']);
+  });
+
+  it('filters rig cards by decade chips', () => {
+    const state: FilterState = { decades: [1980], q: '', sort: 'name-asc' };
+    const artists = filterArtists(A, state);
+    expect(filterRigs(R, artists, state).map((rig) => rig.id)).toEqual(['b-1989']);
+  });
+
+  it('filters rig cards by relative year constraints', () => {
+    const state: FilterState = { decades: [], q: 'after 2003', sort: 'name-asc' };
+    const artists = filterArtists(A, state);
+    expect(filterRigs(R, artists, state).map((rig) => rig.id)).toEqual(['c-2005']);
   });
 });
 

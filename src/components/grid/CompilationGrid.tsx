@@ -6,7 +6,7 @@ import { LetterRail } from './LetterRail';
 import { FilterRail } from '../filters/FilterRail';
 import { useRevealOnScroll } from '@/hooks/useRevealOnScroll';
 import { useUrlState } from '@/hooks/useUrlState';
-import { countResults, filterArtists, sortArtists } from '@/lib/filters';
+import { countResults, filterArtists, filterRigs, sortArtists } from '@/lib/filters';
 import { getArtistInitial, getAvailableLetters } from '@/lib/letters';
 import { damerauLevenshteinDistanceWithin, normalize, suggestArtists, usesRelevanceSort } from '@/lib/search';
 import type { Artist, Rig } from '@/lib/manifest';
@@ -19,16 +19,19 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
   const relevanceSort = usesRelevanceSort(state.q);
   const deferredRelevanceSort = usesRelevanceSort(deferredState.q);
 
-  const filteredArtists = useMemo(() => {
+  const searchedArtists = useMemo(() => {
     const nextArtists = filterArtists(artists, deferredState);
     return deferredRelevanceSort ? nextArtists : sortArtists(nextArtists, deferredState.sort);
   }, [artists, deferredRelevanceSort, deferredState]);
 
-  const visibleSlugs = useMemo(() => new Set(filteredArtists.map((a) => a.slug)), [filteredArtists]);
-
   const visibleRigs = useMemo(
-    () => rigs.filter((r) => visibleSlugs.has(r.artistSlug)),
-    [rigs, visibleSlugs]
+    () => filterRigs(rigs, searchedArtists, deferredState),
+    [rigs, searchedArtists, deferredState]
+  );
+  const visibleSlugs = useMemo(() => new Set(visibleRigs.map((rig) => rig.artistSlug)), [visibleRigs]);
+  const filteredArtists = useMemo(
+    () => searchedArtists.filter((artist) => visibleSlugs.has(artist.slug)),
+    [searchedArtists, visibleSlugs]
   );
 
   const resultCounts = useMemo(() => countResults(filteredArtists, visibleRigs), [filteredArtists, visibleRigs]);

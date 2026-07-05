@@ -5,6 +5,7 @@ import {
   damerauLevenshteinDistanceWithin,
   isYearQuery,
   normalize,
+  parseSearchQuery,
   searchArtists,
   suggestArtists,
   usesRelevanceSort,
@@ -35,6 +36,19 @@ describe('searchArtists', () => {
   it('matches year-like queries', () => {
     const results = searchArtists(A, '1990');
     expect(results.find((a) => a.slug === 'eric-johnson')).toBeTruthy();
+  });
+
+  it('combines text search with exact years', () => {
+    const artists = artistsData as Artist[];
+    expect(searchArtists(artists, 'evh 1997')[0].slug).toBe('vanhalen-eddie');
+    expect(searchArtists(artists, "u2 '81")[0].slug).toBe('u2-edge');
+  });
+
+  it('matches decades, ranges, and relative year constraints', () => {
+    expect(searchArtists(A, '90s eric').map((a) => a.slug)).toEqual(['eric-johnson']);
+    expect(searchArtists(A, '1967-1970').map((a) => a.slug)).toEqual(['eric-clapton', 'jimi-hendrix']);
+    expect(searchArtists(A, 'before 1970').map((a) => a.slug)).toEqual(['eric-clapton', 'jimi-hendrix']);
+    expect(searchArtists(A, 'after:1990').map((a) => a.slug)).toEqual(['eric-johnson']);
   });
 
   it('ranks prefix matches above substring matches', () => {
@@ -84,15 +98,39 @@ describe('searchArtists', () => {
 });
 
 describe('query classification', () => {
-  it('treats only pure 4-digit queries as year queries', () => {
+  it('parses structured year searches out of mixed text queries', () => {
+    expect(parseSearchQuery('evh 1997')).toEqual({
+      text: 'evh',
+      yearRanges: [{ min: 1997, max: 1997 }],
+    });
+    expect(parseSearchQuery("u2 '81")).toEqual({
+      text: 'u2',
+      yearRanges: [{ min: 1981, max: 1981 }],
+    });
+    expect(parseSearchQuery('90s eric')).toEqual({
+      text: 'eric',
+      yearRanges: [{ min: 1990, max: 1999 }],
+    });
+    expect(parseSearchQuery('1967 to 1970')).toEqual({
+      text: '',
+      yearRanges: [{ min: 1967, max: 1970 }],
+    });
+  });
+
+  it('treats structured year-only queries as year queries', () => {
     expect(isYearQuery('1997')).toBe(true);
     expect(isYearQuery(' 1997 ')).toBe(true);
+    expect(isYearQuery('90s')).toBe(true);
+    expect(isYearQuery('1990-1999')).toBe(true);
+    expect(isYearQuery('year:1997')).toBe(true);
     expect(isYearQuery('1997 tone')).toBe(false);
   });
 
   it('uses relevance sort only for text queries', () => {
     expect(usesRelevanceSort('hendrix')).toBe(true);
+    expect(usesRelevanceSort('evh 1997')).toBe(true);
     expect(usesRelevanceSort('1997')).toBe(false);
+    expect(usesRelevanceSort('90s')).toBe(false);
     expect(usesRelevanceSort('')).toBe(false);
   });
 });
@@ -114,6 +152,9 @@ describe('suggestArtists', () => {
   it('returns no suggestions for blank and year queries', () => {
     expect(suggestArtists(A, '')).toEqual([]);
     expect(suggestArtists(A, '1990')).toEqual([]);
+    expect(suggestArtists(A, '90s')).toEqual([]);
+    expect(suggestArtists(A, '1990-1999')).toEqual([]);
+    expect(suggestArtists(A, 'year:1997')).toEqual([]);
   });
 
   it('caps suggestions at three by default', () => {

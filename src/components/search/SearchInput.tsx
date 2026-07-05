@@ -36,7 +36,7 @@ export function SearchInput({ value, onChange }: { value: string; onChange: (v: 
             e.currentTarget.blur();
           }
         }}
-        placeholder="artist or year"
+        placeholder="artist, year, range"
         aria-keyshortcuts="/ Meta+K Control+K"
         className="bg-transparent outline-none text-white placeholder:text-[color:var(--color-mute-readable)] w-full focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--color-signal)]"
       />

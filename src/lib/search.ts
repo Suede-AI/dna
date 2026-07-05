@@ -1,36 +1,107 @@
 import { ARTIST_ALIASES } from './aliases';
 import type { Artist } from './manifest';
 
+export type YearRange = {
+  min: number;
+  max: number;
+};
+
+export type ParsedSearchQuery = {
+  text: string;
+  yearRanges: YearRange[];
+};
+
 export function searchArtists(artists: Artist[], rawQuery: string): Artist[] {
-  const q = normalize(rawQuery);
-  if (!q) return artists;
+  const parsed = parseSearchQuery(rawQuery);
+  if (!parsed.text && parsed.yearRanges.length === 0) return artists;
 
-  // Year query (4-digit number): match artists whose year range includes it
-  if (/^\d{4}$/.test(q)) {
-    const year = Number(q);
-    return artists.filter((a) => year >= a.yearMin && year <= a.yearMax);
-  }
+  const yearFiltered =
+    parsed.yearRanges.length > 0
+      ? artists.filter((artist) => parsed.yearRanges.every((range) => artistOverlapsRange(artist, range)))
+      : artists;
 
-  return artists
-    .map((a, index) => ({ a, index, score: scoreArtist(a, q) }))
+  if (!parsed.text) return yearFiltered;
+
+  return yearFiltered
+    .map((a, index) => ({ a, index, score: scoreArtist(a, parsed.text) }))
     .filter((x) => x.score > 0)
     .sort((x, y) => y.score - x.score || x.index - y.index)
     .map((x) => x.a);
 }
 
 export function suggestArtists(artists: Artist[], rawQuery: string, limit = 3): Artist[] {
-  const q = normalize(rawQuery);
-  if (!q || isYearQuery(q)) return [];
-  return searchArtists(artists, q).slice(0, limit);
+  const parsed = parseSearchQuery(rawQuery);
+  if (!parsed.text) return [];
+  return searchArtists(artists, rawQuery).slice(0, limit);
 }
 
 export function isYearQuery(rawQuery: string): boolean {
-  return /^\d{4}$/.test(rawQuery.trim());
+  const parsed = parseSearchQuery(rawQuery);
+  return parsed.text.length === 0 && parsed.yearRanges.length > 0;
 }
 
 export function usesRelevanceSort(rawQuery: string): boolean {
-  const q = rawQuery.trim();
-  return q.length > 0 && !isYearQuery(q);
+  return parseSearchQuery(rawQuery).text.length > 0;
+}
+
+export function parseSearchQuery(rawQuery: string): ParsedSearchQuery {
+  let remainder = ` ${rawQuery} `;
+  const yearRanges: YearRange[] = [];
+
+  const consume = (pattern: RegExp, toRange: (match: string[]) => YearRange | null) => {
+    remainder = remainder.replace(pattern, (...args: unknown[]) => {
+      const fullMatch = String(args[0]);
+      const captures = args.slice(1, -2).map((value) => String(value ?? ''));
+      const range = toRange([fullMatch, ...captures]);
+      if (range) yearRanges.push(normalizeRange(range));
+      return ' ';
+    });
+  };
+
+  consume(/\b(19\d{2}|20\d{2})\s*(?:-|–|—|\.\.|to)\s*(19\d{2}|20\d{2})\b/gi, (match) => ({
+    min: Number(match[1]),
+    max: Number(match[2]),
+  }));
+  consume(/\b(?:year|yr)(?::\s*|\s+)(19\d{2}|20\d{2})\b/gi, (match) => exactYear(Number(match[1])));
+  consume(/\b(?:before|pre)(?::\s*|\s+)(19\d{2}|20\d{2})\b/gi, (match) => ({
+    min: 0,
+    max: Number(match[1]) - 1,
+  }));
+  consume(/\b(?:until|through|thru|to|max)(?::\s*|\s+)(19\d{2}|20\d{2})\b/gi, (match) => ({
+    min: 0,
+    max: Number(match[1]),
+  }));
+  consume(/\b(?:after|since)(?::\s*|\s+)(19\d{2}|20\d{2})\b/gi, (match) => ({
+    min: Number(match[1]) + 1,
+    max: 9999,
+  }));
+  consume(/\b(?:from|min)(?::\s*|\s+)(19\d{2}|20\d{2})\b/gi, (match) => ({
+    min: Number(match[1]),
+    max: 9999,
+  }));
+  consume(/(?:^|\s)(<=|<|>=|>)\s*(19\d{2}|20\d{2})(?=\s|$)/gi, (match) => {
+    const year = Number(match[2]);
+    if (match[1] === '<') return { min: 0, max: year - 1 };
+    if (match[1] === '<=') return { min: 0, max: year };
+    if (match[1] === '>') return { min: year + 1, max: 9999 };
+    return { min: year, max: 9999 };
+  });
+  consume(/(?:^|\s)['’](\d{2})(?=\s|$)/g, (match) => exactYear(expandTwoDigitYear(Number(match[1]))));
+  consume(/\b(?:'|’)?(\d{2})s\b/gi, (match) => decadeRange(Number(match[1])));
+  consume(/\b((?:19|20)\d0)s\b/gi, (match) => {
+    const decade = Number(match[1]);
+    return { min: decade, max: decade + 9 };
+  });
+  consume(/\b(19\d{2}|20\d{2})\b/g, (match) => exactYear(Number(match[1])));
+
+  return {
+    text: normalize(remainder),
+    yearRanges,
+  };
+}
+
+export function yearMatchesRanges(year: number, ranges: YearRange[]): boolean {
+  return ranges.every((range) => year >= range.min && year <= range.max);
 }
 
 export function normalize(value: string): string {
@@ -41,6 +112,35 @@ export function normalize(value: string): string {
     .replace(/[\u2014\u2013\-_'"’.\/&]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+function artistOverlapsRange(artist: Artist, range: YearRange): boolean {
+  return artist.yearMin <= range.max && artist.yearMax >= range.min;
+}
+
+function exactYear(year: number): YearRange {
+  return { min: year, max: year };
+}
+
+function normalizeRange(range: YearRange): YearRange {
+  return {
+    min: Math.min(range.min, range.max),
+    max: Math.max(range.min, range.max),
+  };
+}
+
+function decadeRange(twoDigitDecade: number): YearRange | null {
+  if (twoDigitDecade >= 0 && twoDigitDecade <= 14) {
+    return { min: 2000 + twoDigitDecade, max: 2000 + twoDigitDecade + 9 };
+  }
+  if (twoDigitDecade >= 60 && twoDigitDecade <= 99) {
+    return { min: 1900 + twoDigitDecade, max: 1900 + twoDigitDecade + 9 };
+  }
+  return null;
+}
+
+function expandTwoDigitYear(twoDigitYear: number): number {
+  return twoDigitYear <= 14 ? 2000 + twoDigitYear : 1900 + twoDigitYear;
 }
 
 function scoreMatch(haystack: string, needle: string): number {

@@ -1,5 +1,5 @@
 import type { Artist, Rig } from './manifest';
-import { searchArtists } from './search';
+import { parseSearchQuery, searchArtists, yearMatchesRanges } from './search';
 
 export type SortOrder = 'name-asc' | 'year-asc' | 'year-desc';
 
@@ -41,6 +41,17 @@ export function filterArtists(artists: Artist[], state: FilterState): Artist[] {
   return searchArtists(decadeFiltered, state.q);
 }
 
+export function filterRigs(rigs: Rig[], artists: Artist[], state: FilterState): Rig[] {
+  const artistSlugs = new Set(artists.map((artist) => artist.slug));
+  const { yearRanges } = parseSearchQuery(state.q);
+
+  return rigs.filter((rig) => {
+    if (!artistSlugs.has(rig.artistSlug)) return false;
+    if (state.decades.length > 0 && !state.decades.includes(getDecade(rig.year))) return false;
+    return yearMatchesRanges(rig.year, yearRanges);
+  });
+}
+
 export function sortArtists(artists: Artist[], order: SortOrder): Artist[] {
   const copy = [...artists];
   switch (order) {
@@ -51,6 +62,10 @@ export function sortArtists(artists: Artist[], order: SortOrder): Artist[] {
     case 'year-desc':
       return copy.sort((a, b) => b.yearMax - a.yearMax || a.name.localeCompare(b.name));
   }
+}
+
+function getDecade(year: number): number {
+  return Math.floor(year / 10) * 10;
 }
 
 export function countResults(artists: Artist[], rigs: Rig[]): ResultCounts {
