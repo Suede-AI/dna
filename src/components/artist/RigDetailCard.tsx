@@ -50,9 +50,14 @@ export function RigDetailCard({
             {rig.artistName} rig, <time dateTime={String(rig.year)}>{rig.year}</time>.
           </figcaption>
         </figure>
-        <div className="flex flex-col gap-6">
+        <div
+          className="flex flex-col gap-6 md:sticky md:self-start"
+          style={{ top: 'calc(var(--header-h) + 1rem)' }}
+        >
           <header>
-            <p className="mono-label">RIG · {String(index + 1).padStart(3, '0')}</p>
+            <p className="mono-label">
+              RIG {String(index + 1).padStart(3, '0')} / {String(rigs.length).padStart(3, '0')}
+            </p>
             <h2
               id={`rig-${rig.year}-heading`}
               className="font-[820] text-white mt-2"
@@ -65,13 +70,18 @@ export function RigDetailCard({
               <time dateTime={String(rig.year)}>{rig.year}</time>
             </h2>
           </header>
-          <dl className="mono-data grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 text-[color:var(--color-bone)]">
-            <dt className="mono-label self-center">YEAR</dt>
-            <dd className="text-white">{rig.year}</dd>
-            <dt className="mono-label self-center">FORMAT</dt>
-            <dd className="text-white uppercase">{rig.format}</dd>
-            <dt className="mono-label self-center">SOURCE</dt>
-            <dd>
+          <dl className="mono-data hairline text-[color:var(--color-bone)]" style={{ borderRadius: 'var(--radius-card)' }}>
+            <div className="grid grid-cols-[auto_1fr] gap-x-6 border-b hairline px-4 py-3">
+              <dt className="mono-label self-center">YEAR</dt>
+              <dd className="text-white">{rig.year}</dd>
+            </div>
+            <div className="grid grid-cols-[auto_1fr] gap-x-6 border-b hairline px-4 py-3">
+              <dt className="mono-label self-center">FORMAT</dt>
+              <dd className="text-white uppercase">{rig.format}</dd>
+            </div>
+            <div className="grid grid-cols-[auto_1fr] gap-x-6 px-4 py-3">
+              <dt className="mono-label self-center">SOURCE</dt>
+              <dd>
               <a
                 href={rig.src}
                 target="_blank"
@@ -81,7 +91,8 @@ export function RigDetailCard({
               >
                 archive.org/…/{rig.src.split('/').pop()}↗
               </a>
-            </dd>
+              </dd>
+            </div>
           </dl>
           <button
             type="button"
@@ -91,13 +102,38 @@ export function RigDetailCard({
           >
             OPEN FULL SIZE
           </button>
-          <nav aria-label="Rig navigation" className="mt-auto flex gap-6 mono-label">
-            {prev && <a href={`#rig-${prev.year}`} className="hover:text-[color:var(--color-signal)]">← {prev.year}</a>}
-            {next && <a href={`#rig-${next.year}`} className="ml-auto hover:text-[color:var(--color-signal)]">{next.year} →</a>}
+          <nav aria-label="Rig navigation" className="mt-auto grid gap-3 sm:grid-cols-2">
+            {prev ? <RigNavLink rig={prev} label="PREV" direction="prev" /> : <span aria-hidden />}
+            {next ? <RigNavLink rig={next} label="NEXT" direction="next" /> : null}
           </nav>
         </div>
       </div>
       <Lightbox rigs={rigs} initialIndex={index} open={lightboxOpen} onOpenChange={setLightboxOpen} />
     </article>
+  );
+}
+
+function RigNavLink({ rig, label, direction }: { rig: Rig; label: string; direction: 'prev' | 'next' }) {
+  return (
+    <a
+      href={`#rig-${rig.year}`}
+      className="group hairline grid grid-cols-[4.5rem_1fr] items-center gap-3 p-2 text-[color:var(--color-bone)] hover:text-[color:var(--color-signal)]"
+      style={{ borderRadius: 'var(--radius-card)' }}
+    >
+      <div className="relative aspect-[4/3] overflow-hidden bg-[color:var(--color-ink-3)]" style={{ borderRadius: 'var(--radius-control)' }}>
+        <div className="absolute inset-1">
+          <RigImage
+            rig={rig}
+            alt={`${rig.artistName} guitar rig setup, ${rig.year}`}
+            sizes="72px"
+            className="object-contain transition-opacity group-hover:opacity-90"
+          />
+        </div>
+      </div>
+      <span className="min-w-0">
+        <span className="mono-label block">{direction === 'prev' ? '← ' : ''}{label}{direction === 'next' ? ' →' : ''}</span>
+        <span className="mono-data block text-white">{rig.year}</span>
+      </span>
+    </a>
   );
 }

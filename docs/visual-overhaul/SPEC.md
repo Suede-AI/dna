@@ -271,7 +271,7 @@ under reduced motion).
 **Accept:** Active node follows scroll on artists with 2+ rigs; single-rig artists
 unaffected; gates green.
 
-### [ ] 4.3 RigDetailCard as a specimen sheet
+### [x] 4.3 RigDetailCard as a specimen sheet
 
 **Now:** Meta column is a plain `dl`; prev/next are bare year links; no tie-in to the
 lightbox; no index context.
@@ -427,3 +427,4 @@ the loop print its completion sentinel.
 - 3.5 — added content-visibility with a 24rem x 30rem intrinsic card estimate; RigCard memoization and rig.id keys held — src/app/globals.css, src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.1 — upgraded DNA chain to year-proportional spacing, year axis ticks, overflow fades/hint, and CSS offset-path pulse — src/components/artist/DNAPath.tsx, src/components/artist/DNAChain.tsx, src/app/globals.css, tests/components/DNAPath.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.2 — synced DNA chain active node to visible rig detail sections and made chain jumps smooth/reduced-motion-aware — src/components/artist/DNAChain.tsx, src/components/artist/RigDetailCard.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
+- 4.3 — restyled rig details as a sticky specimen sheet with index context, lightbox control, and thumb prev/next links — src/components/artist/RigDetailCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
