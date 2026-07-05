@@ -1,27 +1,45 @@
 'use client';
 
-const LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+import { LETTERS } from '@/lib/letters';
 
-export function LetterRail({ activeLetter, onJump }: { activeLetter: string | null; onJump: (l: string) => void }) {
+export function LetterRail({
+  activeLetter,
+  availableLetters,
+  onJump,
+}: {
+  activeLetter: string | null;
+  availableLetters: string[];
+  onJump: (l: string) => void;
+}) {
+  const available = new Set(availableLetters);
+
   return (
     <nav
       aria-label="Artist letter index"
       className="hidden lg:flex flex-col items-end gap-1 sticky top-32 self-start mono-label"
     >
-      {LETTERS.map((l) => (
-        <button
-          key={l}
-          type="button"
-          onClick={() => onJump(l)}
-          className="h-5 px-1 transition-colors"
-          style={{
-            color: activeLetter === l ? 'var(--color-signal)' : 'var(--color-mute)',
-          }}
-          aria-current={activeLetter === l ? 'location' : undefined}
-        >
-          {l}
-        </button>
-      ))}
+      {LETTERS.map((l) => {
+        const disabled = !available.has(l);
+        return (
+          <button
+            key={l}
+            type="button"
+            onClick={() => {
+              if (!disabled) onJump(l);
+            }}
+            disabled={disabled}
+            aria-disabled={disabled || undefined}
+            className="h-5 px-1 transition-colors disabled:cursor-not-allowed"
+            style={{
+              color: activeLetter === l ? 'var(--color-signal)' : 'var(--color-mute)',
+              opacity: disabled ? 0.25 : 1,
+            }}
+            aria-current={activeLetter === l ? 'location' : undefined}
+          >
+            {l}
+          </button>
+        );
+      })}
     </nav>
   );
 }

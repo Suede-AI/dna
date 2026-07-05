@@ -1,11 +1,12 @@
 'use client';
 
-import { useDeferredValue, useMemo, useState, type ReactNode } from 'react';
+import { useDeferredValue, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { RigCard } from './RigCard';
 import { LetterRail } from './LetterRail';
 import { FilterRail } from '../filters/FilterRail';
 import { useUrlState } from '@/hooks/useUrlState';
 import { countResults, filterArtists, sortArtists } from '@/lib/filters';
+import { getArtistInitial, getAvailableLetters } from '@/lib/letters';
 import { damerauLevenshteinDistanceWithin, normalize, suggestArtists, usesRelevanceSort } from '@/lib/search';
 import type { Artist, Rig } from '@/lib/manifest';
 
@@ -33,15 +34,39 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
 
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const suggestions = useMemo(() => suggestArtists(artists, state.q), [artists, state.q]);
+  const availableLetters = useMemo(() => getAvailableLetters(filteredArtists), [filteredArtists]);
   const showLetterDividers =
     deferredState.sort === 'name-asc' && deferredState.q.trim() === '' && deferredState.decades.length === 0;
+
+  useEffect(() => {
+    if (filteredArtists.length === 0 || typeof IntersectionObserver === 'undefined') return;
+
+    const anchors = filteredArtists
+      .map((artist) => document.getElementById(`artist-anchor-${artist.slug}`))
+      .filter((anchor): anchor is HTMLElement => Boolean(anchor));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        const letter = visible?.target.getAttribute('data-letter');
+        if (letter) setActiveLetter(letter);
+      },
+      { rootMargin: '-30% 0px -60% 0px', threshold: 0 }
+    );
+
+    anchors.forEach((anchor) => observer.observe(anchor));
+    return () => observer.disconnect();
+  }, [filteredArtists]);
 
   const jumpToLetter = (l: string) => {
     const slug = filteredArtists.find((a) => a.name.toUpperCase().startsWith(l))?.slug;
     if (!slug) return;
     setActiveLetter(l);
     const el = document.getElementById(`artist-anchor-${slug}`);
-    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    el?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
   };
 
   if (visibleRigs.length === 0) {
@@ -112,6 +137,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
                   <div
                     key={`anchor-${artist.slug}`}
                     id={`artist-anchor-${artist.slug}`}
+                    data-letter={letter}
                     className="col-span-full pt-6"
                   >
                     <div className="flex flex-wrap items-center gap-3 border-t hairline pt-4">
@@ -138,15 +164,10 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
             })()}
           </div>
         </div>
-        <LetterRail activeLetter={activeLetter} onJump={jumpToLetter} />
+        <LetterRail activeLetter={activeLetter} availableLetters={availableLetters} onJump={jumpToLetter} />
       </div>
     </>
   );
-}
-
-function getArtistInitial(name: string): string {
-  const initial = name.trim().charAt(0).toUpperCase();
-  return /^[A-Z]$/.test(initial) ? initial : '#';
 }
 
 function formatYearRange(artist: Artist): string {

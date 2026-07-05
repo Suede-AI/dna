@@ -194,7 +194,7 @@ for `N RIGS · YYYY–YYYY`. Keep `artist-anchor-{slug}` ids stable for the Lett
 **Accept:** Dividers appear only in unfiltered A–Z view; letter jump still lands
 correctly; gates green.
 
-### [ ] 3.2 LetterRail scroll-spy + disabled letters
+### [x] 3.2 LetterRail scroll-spy + disabled letters
 
 **Now:** `LetterRail.tsx` highlights a letter only after you click it, and letters with no
 artists are still clickable no-ops.
@@ -421,3 +421,4 @@ the loop print its completion sentinel.
 - 2.4 — added token-based hover/focus lift, signal border/glow, and arrow nudge to grid cards and DNA chain nodes — src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.5 — added native dialog full-size rig lightbox with zoom, pan, keyboard prev/next, and opener wiring — src/components/media/Lightbox.tsx, src/components/artist/RigDetailCard.tsx, src/app/[artist-slug]/page.tsx, src/app/globals.css, tests/components/Lightbox.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.1 — added default A-Z letter dividers and redesigned artist headers with rig/year chips — src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 3.2 — added LetterRail scroll-spy, filtered-letter availability, disabled absent letters, and reduced-motion-aware jumps — src/components/grid/CompilationGrid.tsx, src/components/grid/LetterRail.tsx, src/lib/letters.ts, tests/lib/letters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
