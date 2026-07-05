@@ -17,6 +17,15 @@ export function searchArtists(artists: Artist[], rawQuery: string): Artist[] {
     .map((x) => x.a);
 }
 
+export function isYearQuery(rawQuery: string): boolean {
+  return /^\d{4}$/.test(rawQuery.trim());
+}
+
+export function usesRelevanceSort(rawQuery: string): boolean {
+  const q = rawQuery.trim();
+  return q.length > 0 && !isYearQuery(q);
+}
+
 function scoreMatch(haystack: string, needle: string): number {
   if (haystack === needle) return 100;
   if (haystack.startsWith(needle)) return 80;

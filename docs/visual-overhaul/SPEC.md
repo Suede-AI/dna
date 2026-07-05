@@ -17,7 +17,7 @@ actually good. Phases are ordered by priority: **work tasks top to bottom.**
 
 ## Phase 1 — Search that actually works (P0)
 
-### [ ] 1.1 Wire the ranked search into the live grid
+### [x] 1.1 Wire the ranked search into the live grid
 
 **Now:** Two search paths disagree. `src/lib/search.ts` has `searchArtists` — scored
 (exact 100 / prefix 80 / word 60 / substring 40) with 4-digit **year queries** matching
@@ -409,3 +409,4 @@ the loop print its completion sentinel.
 ## Iteration Log
 
 <!-- One line per iteration: task id — what changed — files touched — gates result. -->
+- 1.1 — wired live filtering to ranked/year-aware search and disabled sort while text relevance owns ordering — src/lib/search.ts, src/lib/filters.ts, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, tests/lib/search.test.ts, tests/lib/filters.test.ts — gates: green.

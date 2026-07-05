@@ -13,9 +13,11 @@ const SORTS: { value: SortOrder; label: string }[] = [
 export function FilterRail({
   state,
   onChange,
+  sortDisabled = false,
 }: {
   state: FilterState;
   onChange: (next: Partial<FilterState>) => void;
+  sortDisabled?: boolean;
 }) {
   const toggleDecade = (d: number) => {
     onChange({
@@ -31,12 +33,24 @@ export function FilterRail({
             <button
               key={s.value}
               type="button"
-              onClick={() => onChange({ sort: s.value })}
+              onClick={() => {
+                if (!sortDisabled) onChange({ sort: s.value });
+              }}
               aria-pressed={state.sort === s.value}
+              aria-disabled={sortDisabled || undefined}
               className="mono-label h-8 px-2"
               style={{
-                color: state.sort === s.value ? 'var(--color-white)' : 'var(--color-mute)',
-                borderBottom: state.sort === s.value ? '1px solid var(--color-signal)' : '1px solid transparent',
+                color: sortDisabled
+                  ? 'var(--color-mute)'
+                  : state.sort === s.value
+                    ? 'var(--color-white)'
+                    : 'var(--color-mute)',
+                borderBottom:
+                  !sortDisabled && state.sort === s.value
+                    ? '1px solid var(--color-signal)'
+                    : '1px solid transparent',
+                cursor: sortDisabled ? 'not-allowed' : 'pointer',
+                opacity: sortDisabled ? 0.55 : 1,
               }}
             >
               {s.label}

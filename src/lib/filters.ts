@@ -1,4 +1,5 @@
 import type { Artist } from './manifest';
+import { searchArtists } from './search';
 
 export type SortOrder = 'name-asc' | 'year-asc' | 'year-desc';
 
@@ -15,16 +16,14 @@ export const DEFAULT_FILTER_STATE: FilterState = {
 };
 
 export function filterArtists(artists: Artist[], state: FilterState): Artist[] {
-  const q = state.q.trim().toLowerCase();
-  return artists.filter((a) => {
+  const decadeFiltered = artists.filter((a) => {
     if (state.decades.length > 0 && !state.decades.some((d) => a.decades.includes(d))) {
-      return false;
-    }
-    if (q && !a.name.toLowerCase().includes(q)) {
       return false;
     }
     return true;
   });
+
+  return searchArtists(decadeFiltered, state.q);
 }
 
 export function sortArtists(artists: Artist[], order: SortOrder): Artist[] {

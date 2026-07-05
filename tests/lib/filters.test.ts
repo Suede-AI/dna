@@ -29,6 +29,20 @@ describe('filterArtists', () => {
     expect(filterArtists(A, state).map((a) => a.slug)).toEqual(['b-2']);
   });
 
+  it('filters by year query through the ranked search path', () => {
+    const state: FilterState = { decades: [], q: '1980', sort: 'name-asc' };
+    expect(filterArtists(A, state).map((a) => a.slug)).toEqual(['b-2']);
+  });
+
+  it('returns text queries in relevance order before sort is applied', () => {
+    const artists: Artist[] = [
+      { slug: 'substring', name: 'The Two Index', count: 1, yearMin: 1992, yearMax: 1992, decades: [1990] },
+      { slug: 'prefix', name: 'Two Index', count: 1, yearMin: 2002, yearMax: 2002, decades: [2000] },
+    ];
+    const state: FilterState = { decades: [], q: 'two', sort: 'year-desc' };
+    expect(filterArtists(artists, state).map((a) => a.slug)).toEqual(['prefix', 'substring']);
+  });
+
   it('combines decades and query', () => {
     const state: FilterState = { decades: [1970], q: 'b', sort: 'name-asc' };
     expect(filterArtists(A, state).map((a) => a.slug)).toEqual(['b-2']);

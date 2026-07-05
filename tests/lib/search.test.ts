@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { searchArtists } from '../../src/lib/search';
+import { isYearQuery, searchArtists, usesRelevanceSort } from '../../src/lib/search';
 import type { Artist } from '../../src/lib/manifest';
 
 const A: Artist[] = [
@@ -26,5 +26,27 @@ describe('searchArtists', () => {
   it('matches year-like queries', () => {
     const results = searchArtists(A, '1990');
     expect(results.find((a) => a.slug === 'eric-johnson')).toBeTruthy();
+  });
+
+  it('ranks prefix matches above substring matches', () => {
+    const artists: Artist[] = [
+      { slug: 'sub', name: 'The Electric Erics', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
+      { slug: 'prefix', name: 'Eric Machine', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
+    ];
+    expect(searchArtists(artists, 'eric')[0].slug).toBe('prefix');
+  });
+});
+
+describe('query classification', () => {
+  it('treats only pure 4-digit queries as year queries', () => {
+    expect(isYearQuery('1997')).toBe(true);
+    expect(isYearQuery(' 1997 ')).toBe(true);
+    expect(isYearQuery('1997 tone')).toBe(false);
+  });
+
+  it('uses relevance sort only for text queries', () => {
+    expect(usesRelevanceSort('hendrix')).toBe(true);
+    expect(usesRelevanceSort('1997')).toBe(false);
+    expect(usesRelevanceSort('')).toBe(false);
   });
 });

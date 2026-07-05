@@ -6,15 +6,18 @@ import { LetterRail } from './LetterRail';
 import { FilterRail } from '../filters/FilterRail';
 import { useUrlState } from '@/hooks/useUrlState';
 import { filterArtists, sortArtists } from '@/lib/filters';
+import { usesRelevanceSort } from '@/lib/search';
 import type { Artist, Rig } from '@/lib/manifest';
 
 export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Rig[] }) {
   const [state, update] = useUrlState();
 
-  const filteredArtists = useMemo(
-    () => sortArtists(filterArtists(artists, state), state.sort),
-    [artists, state]
-  );
+  const relevanceSort = usesRelevanceSort(state.q);
+
+  const filteredArtists = useMemo(() => {
+    const nextArtists = filterArtists(artists, state);
+    return relevanceSort ? nextArtists : sortArtists(nextArtists, state.sort);
+  }, [artists, relevanceSort, state]);
 
   const visibleSlugs = useMemo(() => new Set(filteredArtists.map((a) => a.slug)), [filteredArtists]);
 
@@ -36,7 +39,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
   if (visibleRigs.length === 0) {
     return (
       <div className="mx-auto max-w-[1400px] px-6 py-24">
-        <FilterRail state={state} onChange={update} />
+        <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} />
         <p className="mono-label mt-16">NO MATCHES FOR &ldquo;{state.q || `decades ${state.decades.join(', ')}`}&rdquo;</p>
         <button
           type="button"
@@ -51,7 +54,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
 
   return (
     <>
-      <FilterRail state={state} onChange={update} />
+      <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} />
       <div id="archive" className="relative mx-auto max-w-[1400px] px-6 pt-12 pb-24 grid grid-cols-[1fr_auto] gap-6">
         <div>
           <h2 className="sr-only">Compilation grid</h2>
