@@ -24,6 +24,7 @@ export function RigDetailCard({
     <article
       id={`rig-${rig.year}`}
       aria-labelledby={`rig-${rig.year}-heading`}
+      data-rig-index={index}
       className="border-t hairline"
       style={{ scrollMarginTop: 'calc(var(--header-h) + 1rem)' }}
     >

@@ -260,7 +260,7 @@ traveling pulse dot along the path (CSS `offset-path`; none under reduced motion
 **Accept:** `computeDNAPath`/position math covered by updated `tests/components/DNAPath.test.tsx`
 (proportional spacing asserted); gates green.
 
-### [ ] 4.2 Chain ↔ sections scroll-sync
+### [x] 4.2 Chain ↔ sections scroll-sync
 
 **Now:** Chain nodes don't know which rig section you're reading.
 
@@ -426,3 +426,4 @@ the loop print its completion sentinel.
 - 3.4 — replaced always-on count row with removable active-filter summary facets — src/lib/filters.ts, src/components/filters/FilterRail.tsx, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.5 — added content-visibility with a 24rem x 30rem intrinsic card estimate; RigCard memoization and rig.id keys held — src/app/globals.css, src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.1 — upgraded DNA chain to year-proportional spacing, year axis ticks, overflow fades/hint, and CSS offset-path pulse — src/components/artist/DNAPath.tsx, src/components/artist/DNAChain.tsx, src/app/globals.css, tests/components/DNAPath.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 4.2 — synced DNA chain active node to visible rig detail sections and made chain jumps smooth/reduced-motion-aware — src/components/artist/DNAChain.tsx, src/components/artist/RigDetailCard.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.

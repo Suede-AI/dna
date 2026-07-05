@@ -108,6 +108,10 @@
     offset-rotate: 0deg;
     animation: dna-pulse-travel 12s linear infinite;
   }
+  .dna-node-active {
+    border-color: var(--color-signal);
+    box-shadow: 0 0 24px var(--color-signal-glow);
+  }
 }
 
 @keyframes sweep-in {

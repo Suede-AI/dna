@@ -16,6 +16,7 @@ const CHAIN_HEIGHT = 220;
 export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [hasOverflow, setHasOverflow] = useState(false);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const { nodes, ticks, totalWidth } = useMemo(
     () =>
       computeDNAChainLayout(rigs, {
@@ -39,6 +40,28 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
     window.addEventListener('resize', updateOverflow);
     return () => window.removeEventListener('resize', updateOverflow);
   }, [totalWidth]);
+
+  useEffect(() => {
+    if (rigs.length < 2 || typeof IntersectionObserver === 'undefined') return;
+
+    const sections = rigs
+      .map((rig) => document.getElementById(`rig-${rig.year}`))
+      .filter((section): section is HTMLElement => Boolean(section));
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        const index = Number(visible?.target.getAttribute('data-rig-index'));
+        if (Number.isFinite(index)) setActiveIndex(index);
+      },
+      { rootMargin: '-30% 0px -45% 0px', threshold: [0.2, 0.5, 0.8] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [rigs]);
 
   if (rigs.length === 0) return null;
 
@@ -99,8 +122,18 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
               >
                 <a
                   href={`#rig-${rig.year}`}
-                  className="group rig-interactive-card block hairline overflow-hidden focus-visible:outline-1 focus-visible:outline-[color:var(--color-signal)]"
+                  aria-current={activeIndex === i ? 'location' : undefined}
+                  className={`group rig-interactive-card block hairline overflow-hidden focus-visible:outline-1 focus-visible:outline-[color:var(--color-signal)] ${
+                    activeIndex === i ? 'dna-node-active' : ''
+                  }`}
                   style={{ borderRadius: 'var(--radius-card)', background: 'var(--color-ink-2)' }}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    const target = document.getElementById(`rig-${rig.year}`);
+                    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    target?.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+                    history.replaceState(null, '', `#rig-${rig.year}`);
+                  }}
                 >
                   <div className="relative aspect-[4/3] bg-[color:var(--color-ink-3)]">
                     <div className="absolute inset-2">
@@ -113,8 +146,8 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
                     </div>
                   </div>
                 </a>
-                <div className="mt-2 flex items-center justify-between mono-label">
-                  <span className="text-[color:var(--color-bone)]">{rig.year}</span>
+              <div className="mt-2 flex items-center justify-between mono-label">
+                  <span className={activeIndex === i ? 'text-[color:var(--color-signal)]' : 'text-[color:var(--color-bone)]'}>{rig.year}</span>
                   <span className="rig-arrow text-[color:var(--color-mute)]">VIEW DNA →</span>
                 </div>
               </li>
