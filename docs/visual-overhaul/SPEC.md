@@ -63,7 +63,7 @@ so typos never outrank real matches.
 them (e.g. a dropped letter, a swapped pair, a wrong vowel); exact matches still rank
 first; edit-distance helper unit-tested; gates green.
 
-### [ ] 1.4 Search input UX: shortcuts, clear, count, debounce
+### [x] 1.4 Search input UX: shortcuts, clear, count, debounce
 
 **Now:** `src/components/search/SearchInput.tsx` is a bare input. No clear button, no
 keyboard shortcut, no result feedback, and every keystroke re-filters and re-renders the
@@ -412,3 +412,4 @@ the loop print its completion sentinel.
 - 1.1 — wired live filtering to ranked/year-aware search and disabled sort while text relevance owns ordering — src/lib/search.ts, src/lib/filters.ts, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, tests/lib/search.test.ts, tests/lib/filters.test.ts — gates: green.
 - 1.2 — normalized punctuation/diacritics and made multi-token search order-insensitive — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.3 — added bounded Damerau-Levenshtein fuzzy token fallback below exact tiers — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 1.4 — added deferred grid filtering, search shortcuts/clear, live result counts, and memoized rig cards — src/components/search/SearchInput.tsx, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, src/components/grid/RigCard.tsx, src/lib/filters.ts, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.

@@ -1,4 +1,4 @@
-import type { Artist } from './manifest';
+import type { Artist, Rig } from './manifest';
 import { searchArtists } from './search';
 
 export type SortOrder = 'name-asc' | 'year-asc' | 'year-desc';
@@ -7,6 +7,11 @@ export type FilterState = {
   decades: number[];
   q: string;
   sort: SortOrder;
+};
+
+export type ResultCounts = {
+  artists: number;
+  rigs: number;
 };
 
 export const DEFAULT_FILTER_STATE: FilterState = {
@@ -36,4 +41,11 @@ export function sortArtists(artists: Artist[], order: SortOrder): Artist[] {
     case 'year-desc':
       return copy.sort((a, b) => b.yearMax - a.yearMax || a.name.localeCompare(b.name));
   }
+}
+
+export function countResults(artists: Artist[], rigs: Rig[]): ResultCounts {
+  return {
+    artists: artists.length,
+    rigs: rigs.length,
+  };
 }

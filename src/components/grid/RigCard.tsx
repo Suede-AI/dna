@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { memo } from 'react';
 import type { Rig } from '@/lib/manifest';
 
-export function RigCard({ rig, index, stagger }: { rig: Rig; index: number; stagger?: number | null }) {
+function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; stagger?: number | null }) {
   const animationStyle =
     stagger !== null && stagger !== undefined
       ? { animation: `sweep-in var(--duration-component) var(--ease-sweep) ${stagger}ms both` }
@@ -47,3 +48,5 @@ export function RigCard({ rig, index, stagger }: { rig: Rig; index: number; stag
     </Link>
   );
 }
+
+export const RigCard = memo(RigCardComponent);

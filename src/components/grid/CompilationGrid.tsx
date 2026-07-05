@@ -1,23 +1,26 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useDeferredValue, useMemo, useState } from 'react';
 import { RigCard } from './RigCard';
 import { LetterRail } from './LetterRail';
 import { FilterRail } from '../filters/FilterRail';
 import { useUrlState } from '@/hooks/useUrlState';
-import { filterArtists, sortArtists } from '@/lib/filters';
+import { countResults, filterArtists, sortArtists } from '@/lib/filters';
 import { usesRelevanceSort } from '@/lib/search';
 import type { Artist, Rig } from '@/lib/manifest';
 
 export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Rig[] }) {
   const [state, update] = useUrlState();
+  const deferredQ = useDeferredValue(state.q);
+  const deferredState = useMemo(() => ({ ...state, q: deferredQ }), [deferredQ, state]);
 
   const relevanceSort = usesRelevanceSort(state.q);
+  const deferredRelevanceSort = usesRelevanceSort(deferredState.q);
 
   const filteredArtists = useMemo(() => {
-    const nextArtists = filterArtists(artists, state);
-    return relevanceSort ? nextArtists : sortArtists(nextArtists, state.sort);
-  }, [artists, relevanceSort, state]);
+    const nextArtists = filterArtists(artists, deferredState);
+    return deferredRelevanceSort ? nextArtists : sortArtists(nextArtists, deferredState.sort);
+  }, [artists, deferredRelevanceSort, deferredState]);
 
   const visibleSlugs = useMemo(() => new Set(filteredArtists.map((a) => a.slug)), [filteredArtists]);
 
@@ -25,6 +28,8 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
     () => rigs.filter((r) => visibleSlugs.has(r.artistSlug)),
     [rigs, visibleSlugs]
   );
+
+  const resultCounts = useMemo(() => countResults(filteredArtists, visibleRigs), [filteredArtists, visibleRigs]);
 
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
 
@@ -39,7 +44,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
   if (visibleRigs.length === 0) {
     return (
       <div className="mx-auto max-w-[1400px] px-6 py-24">
-        <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} />
+        <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} resultCounts={resultCounts} />
         <p className="mono-label mt-16">NO MATCHES FOR &ldquo;{state.q || `decades ${state.decades.join(', ')}`}&rdquo;</p>
         <button
           type="button"
@@ -54,7 +59,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
 
   return (
     <>
-      <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} />
+      <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} resultCounts={resultCounts} />
       <div id="archive" className="relative mx-auto max-w-[1400px] px-6 pt-12 pb-24 grid grid-cols-[1fr_auto] gap-6">
         <div>
           <h2 className="sr-only">Compilation grid</h2>

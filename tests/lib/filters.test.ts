@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { filterArtists, sortArtists, type FilterState } from '../../src/lib/filters';
-import type { Artist } from '../../src/lib/manifest';
+import { countResults, filterArtists, sortArtists, type FilterState } from '../../src/lib/filters';
+import type { Artist, Rig } from '../../src/lib/manifest';
 
 const A: Artist[] = [
   { slug: 'a-1', name: 'A One', count: 1, yearMin: 1969, yearMax: 1969, decades: [1960] },
@@ -58,5 +58,17 @@ describe('sortArtists', () => {
   });
   it('sorts by yearMax descending', () => {
     expect(sortArtists(A, 'year-desc').map((a) => a.slug)).toEqual(['c-3', 'b-2', 'a-1']);
+  });
+});
+
+describe('countResults', () => {
+  it('counts visible artists and rigs', () => {
+    const rigs: Rig[] = [
+      { id: 'r1', artistSlug: 'a-1', artistName: 'A One', year: 1969, src: 'https://example.com/a.jpg', format: 'jpg' },
+      { id: 'r2', artistSlug: 'a-1', artistName: 'A One', year: 1970, src: 'https://example.com/b.jpg', format: 'jpg' },
+      { id: 'r3', artistSlug: 'b-2', artistName: 'B Two', year: 1971, src: 'https://example.com/c.jpg', format: 'jpg' },
+    ];
+
+    expect(countResults(A.slice(0, 2), rigs)).toEqual({ artists: 2, rigs: 3 });
   });
 });

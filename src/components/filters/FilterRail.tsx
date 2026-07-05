@@ -2,7 +2,7 @@
 
 import { DecadeChips } from './DecadeChips';
 import { SearchInput } from '../search/SearchInput';
-import type { FilterState, SortOrder } from '@/lib/filters';
+import type { FilterState, ResultCounts, SortOrder } from '@/lib/filters';
 
 const SORTS: { value: SortOrder; label: string }[] = [
   { value: 'name-asc', label: 'A–Z' },
@@ -14,10 +14,12 @@ export function FilterRail({
   state,
   onChange,
   sortDisabled = false,
+  resultCounts,
 }: {
   state: FilterState;
   onChange: (next: Partial<FilterState>) => void;
   sortDisabled?: boolean;
+  resultCounts?: ResultCounts;
 }) {
   const toggleDecade = (d: number) => {
     onChange({
@@ -60,6 +62,11 @@ export function FilterRail({
         <div className="ml-auto w-full sm:w-72">
           <SearchInput value={state.q} onChange={(q) => onChange({ q })} />
         </div>
+        {resultCounts ? (
+          <p className="mono-label basis-full" aria-live="polite">
+            {resultCounts.artists} ARTISTS · {resultCounts.rigs} RIGS
+          </p>
+        ) : null}
       </div>
     </div>
   );
