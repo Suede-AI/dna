@@ -1,13 +1,16 @@
 import Link from 'next/link';
 import type { Artist } from '@/lib/manifest';
+import type { ArtistArchivePosition } from '@/lib/artist-index';
 import { artistYearRange } from '@/lib/seo';
 
 export function ArtistStrip({
   artist,
+  archivePosition,
   prev,
   next,
 }: {
   artist: Artist;
+  archivePosition: ArtistArchivePosition | null;
   prev?: Artist;
   next?: Artist;
 }) {
@@ -30,10 +33,27 @@ export function ArtistStrip({
         >
           {artist.name}
         </h1>
-        <p className="mt-6 mono-data text-[color:var(--color-bone)]">
-          {artist.count} RIG{artist.count === 1 ? '' : 'S'} · {artistYearRange(artist)} ·{' '}
-          {artist.decades.map((d) => `'${String(d).slice(-2).padStart(2, '0')}s`).join(' · ')}
-        </p>
+        <div className="mt-6 flex flex-wrap items-center gap-3 mono-data text-[color:var(--color-bone)]">
+          {archivePosition ? (
+            <span className="mono-label text-[color:var(--color-bone)]">
+              ARTIST {archivePosition.index} / {archivePosition.total}
+            </span>
+          ) : null}
+          <span>{artist.count} RIG{artist.count === 1 ? '' : 'S'}</span>
+          <span className="text-[color:var(--color-mute)]">·</span>
+          <span>{artistYearRange(artist)}</span>
+          <span className="text-[color:var(--color-mute)]">·</span>
+          {artist.decades.map((d) => (
+            <Link
+              key={d}
+              href={`/?decades=${d}`}
+              className="mono-label hairline px-2 py-1 text-[color:var(--color-bone)] hover:text-[color:var(--color-signal)]"
+              style={{ borderRadius: 'var(--radius-control)' }}
+            >
+              &apos;{String(d).slice(-2).padStart(2, '0')}s
+            </Link>
+          ))}
+        </div>
         <nav aria-label="Artist navigation" className="mt-10 flex gap-6 mono-label">
           <Link href="/" className="hover:text-[color:var(--color-signal)]">← ALL ARTISTS</Link>
           {prev && (

@@ -283,7 +283,7 @@ a small thumb.
 
 **Accept:** Holds for 1-rig artists (no sticky jank, no prev/next); gates green.
 
-### [ ] 4.4 ArtistStrip context
+### [x] 4.4 ArtistStrip context
 
 **Now:** `ArtistStrip.tsx` shows name/count/years but no position in the archive, and its
 decade text isn't actionable.
@@ -428,3 +428,4 @@ the loop print its completion sentinel.
 - 4.1 — upgraded DNA chain to year-proportional spacing, year axis ticks, overflow fades/hint, and CSS offset-path pulse — src/components/artist/DNAPath.tsx, src/components/artist/DNAChain.tsx, src/app/globals.css, tests/components/DNAPath.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.2 — synced DNA chain active node to visible rig detail sections and made chain jumps smooth/reduced-motion-aware — src/components/artist/DNAChain.tsx, src/components/artist/RigDetailCard.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.3 — restyled rig details as a sticky specimen sheet with index context, lightbox control, and thumb prev/next links — src/components/artist/RigDetailCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 4.4 — added artist archive position context and decade chips linking to home filter URLs — src/lib/artist-index.ts, src/components/artist/ArtistStrip.tsx, src/app/[artist-slug]/page.tsx, tests/lib/artist-index.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
