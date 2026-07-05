@@ -113,7 +113,7 @@ gates green.
 
 ## Phase 2 — Show the diagrams properly (P1)
 
-### [ ] 2.1 Stop cropping rig diagrams in the grid
+### [x] 2.1 Stop cropping rig diagrams in the grid
 
 **Now:** `src/components/grid/RigCard.tsx` uses `aspect-[4/3]` + `object-cover`, which
 decapitates tall/wide rig scans, plus a darkening gradient over the image bottom.
@@ -415,3 +415,4 @@ the loop print its completion sentinel.
 - 1.4 — added deferred grid filtering, search shortcuts/clear, live result counts, and memoized rig cards — src/components/search/SearchInput.tsx, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, src/components/grid/RigCard.tsx, src/lib/filters.ts, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.5 — highlighted artist-name token matches and added did-you-mean suggestion buttons — src/components/grid/CompilationGrid.tsx, src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.6 — added curated manifest-validated alias map for shorthand/alternate guitarist queries — src/lib/aliases.ts, src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 2.1 — changed grid rig images to contained specimen-slide frames and removed the image gradient; needs Jason visual spot-check — src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
