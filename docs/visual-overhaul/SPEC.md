@@ -247,7 +247,7 @@ estimate documented); gates green.
 
 ## Phase 4 — Artist page: the genome view (P2)
 
-### [ ] 4.1 DNAChain strand upgrade
+### [x] 4.1 DNAChain strand upgrade
 
 **Now:** `DNAChain.tsx` spaces nodes evenly regardless of year gaps; the strand is a flat
 1px bezier; no year axis; overflow gives no affordance.
@@ -425,3 +425,4 @@ the loop print its completion sentinel.
 - 3.3 — replaced hardcoded sticky/scroll offsets with header/filter tokens; grep for legacy offsets is clean; needs Jason 375px mobile spot-check — src/styles/tokens.css, src/components/filters/FilterRail.tsx, src/components/grid/LetterRail.tsx, src/components/grid/CompilationGrid.tsx, src/components/artist/RigDetailCard.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.4 — replaced always-on count row with removable active-filter summary facets — src/lib/filters.ts, src/components/filters/FilterRail.tsx, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.5 — added content-visibility with a 24rem x 30rem intrinsic card estimate; RigCard memoization and rig.id keys held — src/app/globals.css, src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 4.1 — upgraded DNA chain to year-proportional spacing, year axis ticks, overflow fades/hint, and CSS offset-path pulse — src/components/artist/DNAPath.tsx, src/components/artist/DNAChain.tsx, src/app/globals.css, tests/components/DNAPath.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.

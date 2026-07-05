@@ -1,4 +1,47 @@
 export type ChainNode = { x: number; y: number };
+export type ChainTick = { x: number; year: number };
+export type ChainLayout = { nodes: ChainNode[]; ticks: ChainTick[]; totalWidth: number };
+
+export function computeDNAChainLayout(
+  rigs: { year: number }[],
+  {
+    nodeWidth,
+    minGap,
+    maxGap,
+    yearScale,
+    paddingX,
+    y,
+  }: {
+    nodeWidth: number;
+    minGap: number;
+    maxGap: number;
+    yearScale: number;
+    paddingX: number;
+    y: number;
+  }
+): ChainLayout {
+  if (rigs.length === 0) return { nodes: [], ticks: [], totalWidth: 0 };
+
+  const nodes: ChainNode[] = [{ x: paddingX + nodeWidth / 2, y }];
+  for (let i = 1; i < rigs.length; i += 1) {
+    const yearGap = Math.max(1, Math.abs(rigs[i].year - rigs[i - 1].year));
+    const gap = Math.min(Math.max(yearGap * yearScale, minGap), maxGap);
+    nodes.push({ x: nodes[i - 1].x + nodeWidth + gap, y });
+  }
+
+  const seenYears = new Set<number>();
+  const ticks = rigs.flatMap((rig, index) => {
+    if (seenYears.has(rig.year)) return [];
+    seenYears.add(rig.year);
+    return [{ x: nodes[index].x, year: rig.year }];
+  });
+
+  return {
+    nodes,
+    ticks,
+    totalWidth: nodes[nodes.length - 1].x + nodeWidth / 2 + paddingX,
+  };
+}
 
 export function computeDNAPath(nodes: ChainNode[]): string {
   if (nodes.length === 0) return '';

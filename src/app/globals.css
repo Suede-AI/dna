@@ -95,6 +95,19 @@
     content-visibility: auto;
     contain-intrinsic-size: 24rem 30rem;
   }
+  .dna-pulse-dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--color-signal);
+    box-shadow: 0 0 24px var(--color-signal-glow);
+    offset-distance: 0%;
+    offset-rotate: 0deg;
+    animation: dna-pulse-travel 12s linear infinite;
+  }
 }
 
 @keyframes sweep-in {
@@ -116,6 +129,10 @@
   100% { transform: translateX(100%); }
 }
 
+@keyframes dna-pulse-travel {
+  100% { offset-distance: 100%; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
@@ -127,5 +144,9 @@
   .rig-node:is(:hover, :focus-within) .rig-arrow,
   .rig-interactive-card:is(:hover, :focus-visible) .rig-arrow {
     transform: none;
+  }
+
+  .dna-pulse-dot {
+    display: none;
   }
 }
