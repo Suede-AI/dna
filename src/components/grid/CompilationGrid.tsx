@@ -4,6 +4,7 @@ import { useDeferredValue, useEffect, useMemo, useState, type ReactNode } from '
 import { RigCard } from './RigCard';
 import { LetterRail } from './LetterRail';
 import { FilterRail } from '../filters/FilterRail';
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll';
 import { useUrlState } from '@/hooks/useUrlState';
 import { countResults, filterArtists, sortArtists } from '@/lib/filters';
 import { getArtistInitial, getAvailableLetters } from '@/lib/letters';
@@ -121,15 +122,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
                 if (showLetterDividers && letter !== currentLetter) {
                   currentLetter = letter;
                   nodes.push(
-                    <div key={`divider-${letter}`} className="col-span-full flex items-end gap-5 pt-12 pb-2" aria-hidden>
-                      <span
-                        className="font-[820] text-white/10"
-                        style={{ fontSize: 'var(--text-section)', lineHeight: 0.8 }}
-                      >
-                        {letter}
-                      </span>
-                      <span className="mb-2 h-px flex-1 bg-[color:var(--color-line)]" />
-                    </div>
+                    <LetterDivider key={`divider-${letter}`} letter={letter} />
                   );
                 }
 
@@ -168,6 +161,26 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
         <LetterRail activeLetter={activeLetter} availableLetters={availableLetters} onJump={jumpToLetter} />
       </div>
     </>
+  );
+}
+
+function LetterDivider({ letter }: { letter: string }) {
+  const reveal = useRevealOnScroll<HTMLDivElement>(60);
+  return (
+    <div
+      ref={reveal.ref}
+      className={`col-span-full flex items-end gap-5 pt-12 pb-2 ${reveal.className}`}
+      style={reveal.style}
+      aria-hidden
+    >
+      <span
+        className="font-[820] text-white/10"
+        style={{ fontSize: 'var(--text-section)', lineHeight: 0.8 }}
+      >
+        {letter}
+      </span>
+      <span className="mb-2 h-px flex-1 bg-[color:var(--color-line)]" />
+    </div>
   );
 }
 

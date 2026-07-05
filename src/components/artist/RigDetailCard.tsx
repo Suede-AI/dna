@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Lightbox } from '../media/Lightbox';
 import { RigImage } from '../media/RigImage';
+import { useRevealOnScroll } from '@/hooks/useRevealOnScroll';
 import type { Rig } from '@/lib/manifest';
 
 export function RigDetailCard({
@@ -19,14 +20,16 @@ export function RigDetailCard({
   next?: Rig;
 }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const reveal = useRevealOnScroll<HTMLElement>((index % 3) * 60);
 
   return (
     <article
+      ref={reveal.ref}
       id={`rig-${rig.year}`}
       aria-labelledby={`rig-${rig.year}-heading`}
       data-rig-index={index}
-      className="border-t hairline"
-      style={{ scrollMarginTop: 'calc(var(--header-h) + 1rem)' }}
+      className={`border-t hairline ${reveal.className}`}
+      style={{ scrollMarginTop: 'calc(var(--header-h) + 1rem)', ...reveal.style }}
     >
       <div className="mx-auto max-w-[1400px] px-6 py-20 grid gap-12 md:grid-cols-[3fr_2fr]">
         <figure

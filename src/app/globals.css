@@ -121,6 +121,17 @@
     background: color-mix(in srgb, var(--color-ink-1) 90%, transparent);
     border-color: var(--color-line);
   }
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity var(--duration-component) var(--ease-sweep),
+      transform var(--duration-component) var(--ease-sweep);
+  }
+  .reveal-on-scroll.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes sweep-in {
@@ -161,5 +172,10 @@
 
   .dna-pulse-dot {
     display: none;
+  }
+
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
   }
 }

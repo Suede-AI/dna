@@ -365,7 +365,7 @@ with the error in the log.
 **Accept:** Either gates green with the flag on and no console errors — or a clean `[!]`
 with reasoning and no leftover diff.
 
-### [ ] 6.2 Scroll reveals for detail sections
+### [x] 6.2 Scroll reveals for detail sections
 
 **Build:** IO-driven one-time sweep-in for `RigDetailCard` sections and Phase 3 letter
 dividers: translate ≤ 12px, stagger ≤ 120ms, and **no-JS safe** (content default-visible;
@@ -435,3 +435,4 @@ the loop print its completion sentinel.
 - 5.4 — added scroll-elevated header shell, route-aware nav current state, and truncating ticker source note — src/components/header/HeaderShell.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.5 — replaced minimal 404 with SIGNAL LOST rescue links and a GET search form to home ?q= — src/app/not-found.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 6.1 — attempted `experimental.viewTransition`; reverted because `next build` printed a static-generation console error about a large document without Suspense boundaries after enabling it — docs/visual-overhaul/SPEC.md — gates: green after revert.
+- 6.2 — added hydration-armed scroll reveals for detail sections and letter dividers; no-JS stays visible because hidden state is only added client-side — src/hooks/useRevealOnScroll.ts, src/app/globals.css, src/components/artist/RigDetailCard.tsx, src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
