@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { isYearQuery, searchArtists, usesRelevanceSort } from '../../src/lib/search';
+import artistsData from '../../data/artists.json';
+import { isYearQuery, normalize, searchArtists, usesRelevanceSort } from '../../src/lib/search';
 import type { Artist } from '../../src/lib/manifest';
 
 const A: Artist[] = [
@@ -35,6 +36,27 @@ describe('searchArtists', () => {
     ];
     expect(searchArtists(artists, 'eric')[0].slug).toBe('prefix');
   });
+
+  it('matches punctuation-normalized real artist names', () => {
+    const artists = artistsData as Artist[];
+    expect(searchArtists(artists, '311 tim')[0].slug).toBe('311-tim-mahoney');
+    expect(searchArtists(artists, 'tim mahoney')[0].slug).toBe('311-tim-mahoney');
+  });
+
+  it('matches order-insensitive multi-token real artist names', () => {
+    const artists = artistsData as Artist[];
+    expect(searchArtists(artists, 'day remember')[0].slug).toBe('a-day-to-remember-kevin-skaff');
+  });
+
+  it('handles apostrophes, diacritics, and reversed token order', () => {
+    const artists: Artist[] = [
+      { slug: 'one', name: "Café O'Connor", count: 1, yearMin: 1998, yearMax: 1998, decades: [1990] },
+      { slug: 'two', name: 'Plain Name', count: 1, yearMin: 1998, yearMax: 1998, decades: [1990] },
+    ];
+    expect(searchArtists(artists, 'cafe connor')[0].slug).toBe('one');
+    expect(searchArtists(artists, 'oconnor')).toEqual([]);
+    expect(searchArtists(artists, 'connor cafe')[0].slug).toBe('one');
+  });
 });
 
 describe('query classification', () => {
@@ -48,5 +70,11 @@ describe('query classification', () => {
     expect(usesRelevanceSort('hendrix')).toBe(true);
     expect(usesRelevanceSort('1997')).toBe(false);
     expect(usesRelevanceSort('')).toBe(false);
+  });
+});
+
+describe('normalize', () => {
+  it('strips marks, converts punctuation to spaces, and collapses whitespace', () => {
+    expect(normalize(" Café — O'Connor / Delay & Fuzz ")).toBe('cafe o connor delay fuzz');
   });
 });

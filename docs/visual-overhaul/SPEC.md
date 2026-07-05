@@ -36,7 +36,7 @@ query, the selected `sortArtists` order applies as today.
 prefix match ranks above a mere substring match; sort control disables during text search;
 `tests/lib/filters.test.ts` + `tests/lib/search.test.ts` updated and green; gates green.
 
-### [ ] 1.2 Normalize queries and names
+### [x] 1.2 Normalize queries and names
 
 **Now:** Matching is raw lowercase. `"311 tim"` fails against `"311 — Tim Mahoney"`
 (em dash), diacritics can't be typed, punctuation breaks matches, token order matters.
@@ -410,3 +410,4 @@ the loop print its completion sentinel.
 
 <!-- One line per iteration: task id — what changed — files touched — gates result. -->
 - 1.1 — wired live filtering to ranked/year-aware search and disabled sort while text relevance owns ordering — src/lib/search.ts, src/lib/filters.ts, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, tests/lib/search.test.ts, tests/lib/filters.test.ts — gates: green.
+- 1.2 — normalized punctuation/diacritics and made multi-token search order-insensitive — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
