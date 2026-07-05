@@ -11,7 +11,7 @@ function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; st
   return (
     <Link
       href={`/${rig.artistSlug}#rig-${rig.year}`}
-      className="group block hairline transition-colors"
+      className="group rig-interactive-card block hairline"
       style={{
         background: 'var(--color-ink-2)',
         borderRadius: 'var(--radius-card)',
@@ -35,7 +35,7 @@ function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; st
         </div>
         <div className="text-right">
           <p className="mono-data text-[color:var(--color-bone)]">{rig.year}</p>
-          <p className="mono-label group-hover:text-[color:var(--color-signal)] transition-colors">
+          <p className="mono-label rig-arrow">
             VIEW DNA →
           </p>
         </div>

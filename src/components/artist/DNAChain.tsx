@@ -36,7 +36,7 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
           {rigs.map((rig, i) => (
             <li
               key={rig.id}
-              className="absolute"
+              className="rig-node absolute"
               style={{
                 left: nodes[i].x - NODE_W / 2,
                 top: CHAIN_HEIGHT / 2 - NODE_H / 2,
@@ -46,7 +46,7 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
             >
               <a
                 href={`#rig-${rig.year}`}
-                className="block group hairline overflow-hidden focus-visible:outline-1 focus-visible:outline-[color:var(--color-signal)]"
+                className="group rig-interactive-card block hairline overflow-hidden focus-visible:outline-1 focus-visible:outline-[color:var(--color-signal)]"
                 style={{ borderRadius: 'var(--radius-card)', background: 'var(--color-ink-2)' }}
               >
                 <div className="relative aspect-[4/3] bg-[color:var(--color-ink-3)]">
@@ -62,7 +62,7 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
               </a>
               <div className="mt-2 flex items-center justify-between mono-label">
                 <span className="text-[color:var(--color-bone)]">{rig.year}</span>
-                <span className="text-[color:var(--color-mute)]">RIG·{String(i + 1).padStart(2, '0')}</span>
+                <span className="rig-arrow text-[color:var(--color-mute)]">VIEW DNA →</span>
               </div>
             </li>
           ))}

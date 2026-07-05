@@ -151,7 +151,7 @@ Adopt it in `RigCard`, `RigDetailCard`, and `DNAChain`.
 **Accept:** One shared component used in all three; error path unit-tested (force error,
 assert fallback + link render); gates green.
 
-### [ ] 2.4 Card hover/focus language
+### [x] 2.4 Card hover/focus language
 
 **Now:** Hover is only a 90% image opacity dip and a label color swap.
 
@@ -418,3 +418,4 @@ the loop print its completion sentinel.
 - 2.1 — changed grid rig images to contained specimen-slide frames and removed the image gradient; needs Jason visual spot-check — src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.2 — changed detail and DNA-chain rig images to contained ink-backed frames with a capped detail viewport — src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.3 — added shared RigImage shimmer/fallback component across grid, detail, and DNA chain — src/components/media/RigImage.tsx, src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, tests/components/RigImage.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 2.4 — added token-based hover/focus lift, signal border/glow, and arrow nudge to grid cards and DNA chain nodes — src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.

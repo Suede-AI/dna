@@ -59,6 +59,31 @@
     background: linear-gradient(90deg, transparent, var(--color-ink-3), transparent);
     animation: rig-shimmer var(--duration-hero) var(--ease-sweep) infinite;
   }
+  .rig-interactive-card {
+    transition:
+      border-color var(--duration-fast) var(--ease-sweep),
+      box-shadow var(--duration-fast) var(--ease-sweep),
+      transform var(--duration-fast) var(--ease-sweep);
+  }
+  .rig-interactive-card:is(:hover, :focus-visible) {
+    border-color: var(--color-signal);
+    box-shadow: 0 0 24px var(--color-signal-glow);
+    transform: translateY(-2px);
+  }
+  .rig-arrow {
+    display: inline-block;
+    transition:
+      color var(--duration-fast) var(--ease-sweep),
+      transform var(--duration-fast) var(--ease-sweep);
+  }
+  .rig-interactive-card:is(:hover, :focus-visible) .rig-arrow {
+    color: var(--color-signal);
+    transform: translateX(3px);
+  }
+  .rig-node:is(:hover, :focus-within) .rig-arrow {
+    color: var(--color-signal);
+    transform: translateX(3px);
+  }
 }
 
 @keyframes sweep-in {
@@ -85,5 +110,11 @@
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .rig-interactive-card:is(:hover, :focus-visible),
+  .rig-node:is(:hover, :focus-within) .rig-arrow,
+  .rig-interactive-card:is(:hover, :focus-visible) .rig-arrow {
+    transform: none;
   }
 }
