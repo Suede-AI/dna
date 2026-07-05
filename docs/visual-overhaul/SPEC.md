@@ -298,7 +298,7 @@ keep the breadcrumb.
 
 ## Phase 5 — Hero + chrome (P2)
 
-### [ ] 5.1 Hero signal-chain diagram
+### [x] 5.1 Hero signal-chain diagram
 
 **Now:** The hero's right half is empty; the only graphic is the bottom waveform.
 
@@ -429,3 +429,4 @@ the loop print its completion sentinel.
 - 4.2 — synced DNA chain active node to visible rig detail sections and made chain jumps smooth/reduced-motion-aware — src/components/artist/DNAChain.tsx, src/components/artist/RigDetailCard.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.3 — restyled rig details as a sticky specimen sheet with index context, lightbox control, and thumb prev/next links — src/components/artist/RigDetailCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 4.4 — added artist archive position context and decade chips linking to home filter URLs — src/lib/artist-index.ts, src/components/artist/ArtistStrip.tsx, src/app/[artist-slug]/page.tsx, tests/lib/artist-index.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 5.1 — added desktop-only hero signal-chain SVG with reduced-motion-aware pulse and reserved right column — src/components/hero/HeroSignalChain.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
