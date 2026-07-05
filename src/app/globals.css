@@ -91,6 +91,10 @@
   .rig-lightbox::backdrop {
     background: color-mix(in srgb, var(--color-ink-0) 88%, transparent);
   }
+  .rig-card-visibility {
+    content-visibility: auto;
+    contain-intrinsic-size: 24rem 30rem;
+  }
 }
 
 @keyframes sweep-in {

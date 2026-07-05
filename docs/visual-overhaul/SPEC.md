@@ -232,7 +232,7 @@ removal.
 **Accept:** Facets individually removable; hidden at default state; helper unit-tested;
 gates green.
 
-### [ ] 3.5 Grid render performance
+### [x] 3.5 Grid render performance
 
 **Now:** All 409 cards render eagerly; filter changes re-render everything.
 
@@ -424,3 +424,4 @@ the loop print its completion sentinel.
 - 3.2 — added LetterRail scroll-spy, filtered-letter availability, disabled absent letters, and reduced-motion-aware jumps — src/components/grid/CompilationGrid.tsx, src/components/grid/LetterRail.tsx, src/lib/letters.ts, tests/lib/letters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.3 — replaced hardcoded sticky/scroll offsets with header/filter tokens; grep for legacy offsets is clean; needs Jason 375px mobile spot-check — src/styles/tokens.css, src/components/filters/FilterRail.tsx, src/components/grid/LetterRail.tsx, src/components/grid/CompilationGrid.tsx, src/components/artist/RigDetailCard.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.4 — replaced always-on count row with removable active-filter summary facets — src/lib/filters.ts, src/components/filters/FilterRail.tsx, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 3.5 — added content-visibility with a 24rem x 30rem intrinsic card estimate; RigCard memoization and rig.id keys held — src/app/globals.css, src/components/grid/RigCard.tsx, docs/visual-overhaul/SPEC.md — gates: green.

@@ -11,7 +11,7 @@ function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; st
   return (
     <Link
       href={`/${rig.artistSlug}#rig-${rig.year}`}
-      className="group rig-interactive-card block hairline"
+      className="group rig-card-visibility rig-interactive-card block hairline"
       style={{
         background: 'var(--color-ink-2)',
         borderRadius: 'var(--radius-card)',
