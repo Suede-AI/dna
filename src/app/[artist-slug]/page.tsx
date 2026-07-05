@@ -54,7 +54,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ 'artist
       <DNAChain rigs={rigs} artistName={artist.name} />
       <section aria-label="Rigs in detail">
         {rigs.map((rig, i) => (
-          <RigDetailCard key={rig.id} rig={rig} index={i} prev={rigs[i - 1]} next={rigs[i + 1]} />
+          <RigDetailCard key={rig.id} rig={rig} index={i} rigs={rigs} prev={rigs[i - 1]} next={rigs[i + 1]} />
         ))}
       </section>
     </main>

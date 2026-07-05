@@ -84,6 +84,13 @@
     color: var(--color-signal);
     transform: translateX(3px);
   }
+  .rig-lightbox {
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-card);
+  }
+  .rig-lightbox::backdrop {
+    background: color-mix(in srgb, var(--color-ink-0) 88%, transparent);
+  }
 }
 
 @keyframes sweep-in {

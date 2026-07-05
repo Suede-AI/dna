@@ -162,7 +162,7 @@ and the `VIEW DNA →` arrow nudges right — all with token durations/easing.
 
 **Accept:** Pure CSS (no JS), tokens only, applied to both surfaces; gates green.
 
-### [ ] 2.5 Zoom lightbox for diagrams
+### [x] 2.5 Zoom lightbox for diagrams
 
 **Now:** No way to read a dense rig schematic full-screen — the single biggest missing
 feature for a diagram archive.
@@ -419,3 +419,4 @@ the loop print its completion sentinel.
 - 2.2 — changed detail and DNA-chain rig images to contained ink-backed frames with a capped detail viewport — src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.3 — added shared RigImage shimmer/fallback component across grid, detail, and DNA chain — src/components/media/RigImage.tsx, src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/RigDetailCard.tsx, src/components/artist/DNAChain.tsx, tests/components/RigImage.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 2.4 — added token-based hover/focus lift, signal border/glow, and arrow nudge to grid cards and DNA chain nodes — src/app/globals.css, src/components/grid/RigCard.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 2.5 — added native dialog full-size rig lightbox with zoom, pan, keyboard prev/next, and opener wiring — src/components/media/Lightbox.tsx, src/components/artist/RigDetailCard.tsx, src/app/[artist-slug]/page.tsx, src/app/globals.css, tests/components/Lightbox.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
