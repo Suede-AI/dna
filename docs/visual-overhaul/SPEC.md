@@ -331,7 +331,7 @@ number. Instant under reduced motion. Ticker stays static.
 **Accept:** View-source shows real numbers; no hydration mismatch warnings in build;
 runs once; gates green.
 
-### [ ] 5.4 Header scroll elevation + nav state
+### [x] 5.4 Header scroll elevation + nav state
 
 **Now:** Header is a constant translucent bar; nav links have no current-page state.
 
@@ -432,3 +432,4 @@ the loop print its completion sentinel.
 - 5.1 — added desktop-only hero signal-chain SVG with reduced-motion-aware pulse and reserved right column — src/components/hero/HeroSignalChain.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.2 — layered the hero waveform with phase-shifted depth and signal-to-transparent primary stroke — src/components/hero/HeroWaveform.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 5.3 — replaced hero stat line with SEO-safe once-on-view count-up initialized to final SSR values; build had no hydration warnings — src/components/hero/HeroStatsCount.tsx, src/components/hero/HomeHero.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 5.4 — added scroll-elevated header shell, route-aware nav current state, and truncating ticker source note — src/components/header/HeaderShell.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, src/app/globals.css, docs/visual-overhaul/SPEC.md — gates: green.
