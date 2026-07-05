@@ -139,6 +139,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
                     id={`artist-anchor-${artist.slug}`}
                     data-letter={letter}
                     className="col-span-full pt-6"
+                    style={{ scrollMarginTop: 'calc(var(--header-h) + var(--filter-rail-h) + 1rem)' }}
                   >
                     <div className="flex flex-wrap items-center gap-3 border-t hairline pt-4">
                       <span className="font-medium text-white">{highlightArtistName(artist.name, deferredState.q)}</span>

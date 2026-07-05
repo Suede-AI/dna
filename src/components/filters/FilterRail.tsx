@@ -27,7 +27,10 @@ export function FilterRail({
     });
   };
   return (
-    <div className="sticky top-[7.5rem] z-30 border-y hairline backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-ink-1)]/80">
+    <div
+      className="sticky z-30 border-y hairline backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-ink-1)]/80"
+      style={{ top: 'var(--header-h)' }}
+    >
       <div className="mx-auto max-w-[1400px] px-6 py-4 flex flex-wrap items-center gap-6">
         <DecadeChips selected={state.decades} onToggle={toggleDecade} />
         <div role="group" aria-label="Sort order" className="flex items-center gap-2">

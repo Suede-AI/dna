@@ -206,7 +206,7 @@ scrolling. Letters absent from the *current filtered* artist set render disabled
 **Accept:** Rail tracks scroll position; disabled letters inert and update with filters;
 letter-availability derivation extracted pure + unit-tested; gates green.
 
-### [ ] 3.3 Header-height system (kill the magic sticky offsets)
+### [x] 3.3 Header-height system (kill the magic sticky offsets)
 
 **Now:** FilterRail hardcodes `top-[7.5rem]`; anchors hardcode `scroll-mt-32`; the header
 is a 64px bar + ticker. Offsets drift whenever chrome changes, and mobile overlap is
@@ -422,3 +422,4 @@ the loop print its completion sentinel.
 - 2.5 — added native dialog full-size rig lightbox with zoom, pan, keyboard prev/next, and opener wiring — src/components/media/Lightbox.tsx, src/components/artist/RigDetailCard.tsx, src/app/[artist-slug]/page.tsx, src/app/globals.css, tests/components/Lightbox.test.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.1 — added default A-Z letter dividers and redesigned artist headers with rig/year chips — src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 3.2 — added LetterRail scroll-spy, filtered-letter availability, disabled absent letters, and reduced-motion-aware jumps — src/components/grid/CompilationGrid.tsx, src/components/grid/LetterRail.tsx, src/lib/letters.ts, tests/lib/letters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 3.3 — replaced hardcoded sticky/scroll offsets with header/filter tokens; grep for legacy offsets is clean; needs Jason 375px mobile spot-check — src/styles/tokens.css, src/components/filters/FilterRail.tsx, src/components/grid/LetterRail.tsx, src/components/grid/CompilationGrid.tsx, src/components/artist/RigDetailCard.tsx, src/components/header/Header.tsx, src/components/header/HeaderTicker.tsx, docs/visual-overhaul/SPEC.md — gates: green.

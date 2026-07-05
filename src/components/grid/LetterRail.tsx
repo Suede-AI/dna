@@ -16,7 +16,8 @@ export function LetterRail({
   return (
     <nav
       aria-label="Artist letter index"
-      className="hidden lg:flex flex-col items-end gap-1 sticky top-32 self-start mono-label"
+      className="hidden lg:flex flex-col items-end gap-1 sticky self-start mono-label"
+      style={{ top: 'calc(var(--header-h) + var(--filter-rail-h) + 1rem)' }}
     >
       {LETTERS.map((l) => {
         const disabled = !available.has(l);

@@ -40,4 +40,8 @@
   /* Layout */
   --max-content: 1400px;
   --max-header: 1600px;
+  --header-main-h: 4rem;
+  --header-ticker-h: 2rem;
+  --header-h: calc(var(--header-main-h) + var(--header-ticker-h));
+  --filter-rail-h: 7rem;
 }

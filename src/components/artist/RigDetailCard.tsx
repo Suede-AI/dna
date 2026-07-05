@@ -24,7 +24,8 @@ export function RigDetailCard({
     <article
       id={`rig-${rig.year}`}
       aria-labelledby={`rig-${rig.year}-heading`}
-      className="border-t hairline scroll-mt-32"
+      className="border-t hairline"
+      style={{ scrollMarginTop: 'calc(var(--header-h) + 1rem)' }}
     >
       <div className="mx-auto max-w-[1400px] px-6 py-20 grid gap-12 md:grid-cols-[3fr_2fr]">
         <figure
