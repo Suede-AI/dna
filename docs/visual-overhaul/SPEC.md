@@ -80,7 +80,7 @@ inside the field; `React.memo` on `RigCard`. Show a live result line near the Fi
 and search; RigCard memoized; any new pure logic (e.g. count derivation) unit-tested;
 gates green.
 
-### [ ] 1.5 Match highlighting + smart empty state
+### [x] 1.5 Match highlighting + smart empty state
 
 **Now:** No indication of *why* a result matched. The empty state is a bare
 "NO MATCHES" line with a clear button.
@@ -413,3 +413,4 @@ the loop print its completion sentinel.
 - 1.2 — normalized punctuation/diacritics and made multi-token search order-insensitive — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.3 — added bounded Damerau-Levenshtein fuzzy token fallback below exact tiers — src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
 - 1.4 — added deferred grid filtering, search shortcuts/clear, live result counts, and memoized rig cards — src/components/search/SearchInput.tsx, src/components/grid/CompilationGrid.tsx, src/components/filters/FilterRail.tsx, src/components/grid/RigCard.tsx, src/lib/filters.ts, tests/lib/filters.test.ts, docs/visual-overhaul/SPEC.md — gates: green.
+- 1.5 — highlighted artist-name token matches and added did-you-mean suggestion buttons — src/components/grid/CompilationGrid.tsx, src/lib/search.ts, tests/lib/search.test.ts, docs/visual-overhaul/SPEC.md — gates: green.

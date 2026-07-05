@@ -1,12 +1,12 @@
 'use client';
 
-import { useDeferredValue, useMemo, useState } from 'react';
+import { useDeferredValue, useMemo, useState, type ReactNode } from 'react';
 import { RigCard } from './RigCard';
 import { LetterRail } from './LetterRail';
 import { FilterRail } from '../filters/FilterRail';
 import { useUrlState } from '@/hooks/useUrlState';
 import { countResults, filterArtists, sortArtists } from '@/lib/filters';
-import { usesRelevanceSort } from '@/lib/search';
+import { damerauLevenshteinDistanceWithin, normalize, suggestArtists, usesRelevanceSort } from '@/lib/search';
 import type { Artist, Rig } from '@/lib/manifest';
 
 export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Rig[] }) {
@@ -32,6 +32,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
   const resultCounts = useMemo(() => countResults(filteredArtists, visibleRigs), [filteredArtists, visibleRigs]);
 
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
+  const suggestions = useMemo(() => suggestArtists(artists, state.q), [artists, state.q]);
 
   const jumpToLetter = (l: string) => {
     const slug = filteredArtists.find((a) => a.name.toUpperCase().startsWith(l))?.slug;
@@ -46,6 +47,24 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
       <div className="mx-auto max-w-[1400px] px-6 py-24">
         <FilterRail state={state} onChange={update} sortDisabled={relevanceSort} resultCounts={resultCounts} />
         <p className="mono-label mt-16">NO MATCHES FOR &ldquo;{state.q || `decades ${state.decades.join(', ')}`}&rdquo;</p>
+        {suggestions.length > 0 ? (
+          <div className="mt-6">
+            <p className="mono-label">DID YOU MEAN</p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              {suggestions.map((artist) => (
+                <button
+                  key={artist.slug}
+                  type="button"
+                  onClick={() => update({ q: artist.name })}
+                  className="mono-label hairline px-3 py-2 text-[color:var(--color-bone)] hover:text-[color:var(--color-signal)]"
+                  style={{ borderRadius: 'var(--radius-control)' }}
+                >
+                  {artist.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        ) : null}
         <button
           type="button"
           onClick={() => update({ decades: [], q: '', sort: 'name-asc' })}
@@ -74,7 +93,7 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
                     id={`artist-anchor-${artist.slug}`}
                     className="col-span-full mono-label pt-6"
                   >
-                    <span className="text-[color:var(--color-bone)]">{artist.name}</span>
+                    <span className="text-[color:var(--color-bone)]">{highlightArtistName(artist.name, deferredState.q)}</span>
                     <span className="text-[color:var(--color-mute)]"> · {artist.count}</span>
                   </div>,
                   ...artistRigs.map((rig) => {
@@ -92,4 +111,49 @@ export function CompilationGrid({ artists, rigs }: { artists: Artist[]; rigs: Ri
       </div>
     </>
   );
+}
+
+function highlightArtistName(name: string, query: string): ReactNode {
+  const queryTokens = normalize(query).split(' ').filter(Boolean);
+  if (queryTokens.length === 0) return name;
+
+  const nodes: ReactNode[] = [];
+  const tokenPattern = /[\p{L}\p{N}]+/gu;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = tokenPattern.exec(name)) !== null) {
+    const token = match[0];
+    const start = match.index;
+    if (start > lastIndex) nodes.push(name.slice(lastIndex, start));
+
+    if (queryTokens.some((queryToken) => tokenMatchesQuery(token, queryToken))) {
+      nodes.push(
+        <mark
+          key={`${start}-${token}`}
+          className="bg-transparent text-[color:var(--color-signal)] underline decoration-[color:var(--color-signal)] underline-offset-4"
+        >
+          {token}
+        </mark>
+      );
+    } else {
+      nodes.push(token);
+    }
+
+    lastIndex = start + token.length;
+  }
+
+  if (lastIndex < name.length) nodes.push(name.slice(lastIndex));
+  return nodes;
+}
+
+function tokenMatchesQuery(token: string, queryToken: string): boolean {
+  const normalizedToken = normalize(token);
+  if (!normalizedToken || queryToken.length === 0) return false;
+  if (normalizedToken === queryToken || normalizedToken.startsWith(queryToken) || normalizedToken.includes(queryToken)) {
+    return true;
+  }
+
+  const maxDistance = queryToken.length >= 8 ? 2 : queryToken.length >= 4 ? 1 : 0;
+  return maxDistance > 0 && damerauLevenshteinDistanceWithin(queryToken, normalizedToken, maxDistance) !== null;
 }

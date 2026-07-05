@@ -5,6 +5,7 @@ import {
   isYearQuery,
   normalize,
   searchArtists,
+  suggestArtists,
   usesRelevanceSort,
 } from '../../src/lib/search';
 import type { Artist } from '../../src/lib/manifest';
@@ -98,6 +99,30 @@ describe('query classification', () => {
 describe('normalize', () => {
   it('strips marks, converts punctuation to spaces, and collapses whitespace', () => {
     expect(normalize(" Café — O'Connor / Delay & Fuzz ")).toBe('cafe o connor delay fuzz');
+  });
+});
+
+describe('suggestArtists', () => {
+  it('suggests fuzzy artist matches and respects the limit', () => {
+    const artists = artistsData as Artist[];
+    const suggestions = suggestArtists(artists, 'hendrx', 2);
+    expect(suggestions).toHaveLength(1);
+    expect(suggestions[0].slug).toBe('hendrix-jimi');
+  });
+
+  it('returns no suggestions for blank and year queries', () => {
+    expect(suggestArtists(A, '')).toEqual([]);
+    expect(suggestArtists(A, '1990')).toEqual([]);
+  });
+
+  it('caps suggestions at three by default', () => {
+    const artists: Artist[] = [
+      { slug: 'one', name: 'Alpha Tone', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
+      { slug: 'two', name: 'Alpha Drive', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
+      { slug: 'three', name: 'Alpha Delay', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
+      { slug: 'four', name: 'Alpha Amp', count: 1, yearMin: 1990, yearMax: 1990, decades: [1990] },
+    ];
+    expect(suggestArtists(artists, 'alpha').map((a) => a.slug)).toEqual(['one', 'two', 'three']);
   });
 });
 

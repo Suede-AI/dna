@@ -17,6 +17,12 @@ export function searchArtists(artists: Artist[], rawQuery: string): Artist[] {
     .map((x) => x.a);
 }
 
+export function suggestArtists(artists: Artist[], rawQuery: string, limit = 3): Artist[] {
+  const q = normalize(rawQuery);
+  if (!q || isYearQuery(q)) return [];
+  return searchArtists(artists, q).slice(0, limit);
+}
+
 export function isYearQuery(rawQuery: string): boolean {
   return /^\d{4}$/.test(rawQuery.trim());
 }
