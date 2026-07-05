@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { LETTERS } from '@/lib/letters';
 
 export function LetterRail({
@@ -12,6 +13,15 @@ export function LetterRail({
   onJump: (l: string) => void;
 }) {
   const available = new Set(availableLetters);
+  const buttonRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  const focusRelativeLetter = (current: string, direction: -1 | 1) => {
+    const enabledLetters = LETTERS.filter((letter) => available.has(letter));
+    const currentIndex = enabledLetters.indexOf(current);
+    if (currentIndex === -1) return;
+    const next = enabledLetters[Math.min(Math.max(currentIndex + direction, 0), enabledLetters.length - 1)];
+    buttonRefs.current[next]?.focus();
+  };
 
   return (
     <nav
@@ -25,8 +35,21 @@ export function LetterRail({
           <button
             key={l}
             type="button"
+            ref={(node) => {
+              buttonRefs.current[l] = node;
+            }}
             onClick={() => {
               if (!disabled) onJump(l);
+            }}
+            onKeyDown={(event) => {
+              if (event.key === 'ArrowUp') {
+                event.preventDefault();
+                focusRelativeLetter(l, -1);
+              }
+              if (event.key === 'ArrowDown') {
+                event.preventDefault();
+                focusRelativeLetter(l, 1);
+              }
             }}
             disabled={disabled}
             aria-disabled={disabled || undefined}

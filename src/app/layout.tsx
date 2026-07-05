@@ -110,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
+        <a href="#archive" className="skip-link mono-label">SKIP TO ARCHIVE</a>
         <GridMotif />
         <Header />
         {children}

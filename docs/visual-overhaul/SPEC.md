@@ -385,7 +385,7 @@ a visible `:focus-visible` ring (chips, rail, cards, dialog, clear buttons).
 
 **Accept:** Token added + applied; changed surfaces listed in the log; gates green.
 
-### [ ] 6.4 Keyboard sweep + skip link
+### [x] 6.4 Keyboard sweep + skip link
 
 **Build:** A `SKIP TO ARCHIVE` skip link first in tab order (visually hidden until
 focused); LetterRail arrow-key navigation (↑/↓ move focus, Enter jumps);
@@ -437,3 +437,4 @@ the loop print its completion sentinel.
 - 6.1 — attempted `experimental.viewTransition`; reverted because `next build` printed a static-generation console error about a large document without Suspense boundaries after enabling it — docs/visual-overhaul/SPEC.md — gates: green after revert.
 - 6.2 — added hydration-armed scroll reveals for detail sections and letter dividers; no-JS stays visible because hidden state is only added client-side — src/hooks/useRevealOnScroll.ts, src/app/globals.css, src/components/artist/RigDetailCard.tsx, src/components/grid/CompilationGrid.tsx, docs/visual-overhaul/SPEC.md — gates: green.
 - 6.3 — added mute-readable token and applied it to mono labels, placeholders, header/footer source text, LetterRail, search inputs, and DNA node labels; added explicit focus rings to search fields — src/styles/tokens.css, src/app/globals.css, src/components/search/SearchInput.tsx, src/app/not-found.tsx, src/components/header/HeaderTicker.tsx, src/components/header/HeaderShell.tsx, src/components/footer/Footer.tsx, src/components/grid/LetterRail.tsx, src/components/filters/FilterRail.tsx, src/components/artist/DNAChain.tsx, docs/visual-overhaul/SPEC.md — gates: green.
+- 6.4 — added SKIP TO ARCHIVE and LetterRail ArrowUp/ArrowDown focus movement; manual sweep: Tab to skip link, / and Cmd/Ctrl+K focus search, ESC clears/blurs search, rail arrows move focus then Enter jumps, lightbox Left/Right stays scoped to dialog — src/app/layout.tsx, src/app/globals.css, src/components/grid/LetterRail.tsx, docs/visual-overhaul/SPEC.md — gates: green.

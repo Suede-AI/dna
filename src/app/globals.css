@@ -121,6 +121,22 @@
     background: color-mix(in srgb, var(--color-ink-1) 90%, transparent);
     border-color: var(--color-line);
   }
+  .skip-link {
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    z-index: 100;
+    transform: translateY(-150%);
+    border: 1px solid var(--color-signal);
+    border-radius: var(--radius-control);
+    background: var(--color-ink-1);
+    color: var(--color-white);
+    padding: 0.75rem 1rem;
+    transition: transform var(--duration-fast) var(--ease-sweep);
+  }
+  .skip-link:focus-visible {
+    transform: translateY(0);
+  }
   .reveal-on-scroll {
     opacity: 0;
     transform: translateY(12px);
