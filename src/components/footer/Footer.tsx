@@ -41,6 +41,12 @@ export function Footer() {
           <Link href="/about" className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block">
             METHOD →
           </Link>
+          <Link href="/docs" className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1">
+            DOCS →
+          </Link>
+          <Link href="/articles" className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1">
+            ARTICLES →
+          </Link>
           <a
             href="https://guitar.solutions"
             className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"

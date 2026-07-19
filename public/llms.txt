@@ -13,6 +13,12 @@ Suede DNA archives the rigs and signal chains of notable guitarists. Each entry 
 
 This is a reference resource, not a commercial catalog. It is the guitar DNA archive — the signal-chain history of recorded music.
 
+## Documentation and articles
+
+- Docs (sourcing, verification, search syntax, FAQ): https://dna.suedeai.ai/docs
+- Articles (rig history, tone genealogy, gear-chain essays): https://dna.suedeai.ai/articles
+- About / the method: https://dna.suedeai.ai/about
+
 ## Related properties
 
 - Guitar chord tools and scales: https://guitarchords.info
