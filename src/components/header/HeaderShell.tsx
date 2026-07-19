@@ -7,6 +7,8 @@ import { useEffect, useState, type ReactNode } from 'react';
 const NAV = [
   { href: '/', label: 'DNA' },
   { href: '/#archive', label: 'ARCHIVE' },
+  { href: '/docs', label: 'DOCS' },
+  { href: '/articles', label: 'ARTICLES' },
   { href: '/about', label: 'ABOUT' },
 ];
 
@@ -21,7 +23,14 @@ export function HeaderShell({ children }: { children: ReactNode }) {
     return () => window.removeEventListener('scroll', update);
   }, []);
 
-  const currentPage = pathname === '/about' ? 'ABOUT' : 'DNA';
+  const currentPage =
+    pathname === '/about'
+      ? 'ABOUT'
+      : pathname?.startsWith('/docs')
+        ? 'DOCS'
+        : pathname?.startsWith('/articles')
+          ? 'ARTICLES'
+          : 'DNA';
 
   return (
     <header
