@@ -1,0 +1,43 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ink" cx="78%" cy="22%" r="90%">
+      <stop offset="0" stop-color="#10243c"/>
+      <stop offset=".5" stop-color="#071222"/>
+      <stop offset="1" stop-color="#030812"/>
+    </radialGradient>
+    <linearGradient id="signal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset=".2" stop-color="#22d3ee"/>
+      <stop offset=".8" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ink)"/>
+  <g stroke="#23344c" stroke-width="1" opacity=".45">
+    <path d="M72 0V630M192 0V630M312 0V630M432 0V630M552 0V630M672 0V630M792 0V630M912 0V630M1032 0V630M1152 0V630"/>
+    <path d="M0 94H1200M0 214H1200M0 334H1200M0 454H1200M0 574H1200"/>
+  </g>
+
+  <g transform="translate(76 68)"
+     font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace">
+    <text x="0" y="0" font-size="21" font-weight="700" letter-spacing="5" fill="#22d3ee">SUEDE / DNA</text>
+    <text x="1048" y="0" text-anchor="end" font-size="17" letter-spacing="3" fill="#6f819a">ARCHIVE RECORD 001</text>
+  </g>
+
+  <g transform="translate(76 250)"
+     font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif"
+     font-weight="800" fill="#f5f7fb">
+    <text x="0" y="0" font-size="105" letter-spacing="-3">SIGNAL CHAINS,</text>
+    <text x="0" y="103" font-size="105" letter-spacing="-3">ARCHIVED.</text>
+  </g>
+
+  <g transform="translate(76 438)"
+     font-family="'SFMono-Regular', Consolas, 'Liberation Mono', monospace">
+    <rect width="1048" height="2" fill="url(#signal)"/>
+    <path d="M0 42H92L118 24L154 62L191 35L226 48H302L334 20L368 66L401 39L438 48H532L563 29L595 58L628 41L664 48H760L792 25L827 63L860 38L898 48H1048"
+          fill="none" stroke="#22d3ee" stroke-width="3" opacity=".84"/>
+    <text x="0" y="112" font-size="20" letter-spacing="2.5" fill="#9aa8ba">RIG DIAGRAMS · SOURCED RECORDS · VERIFIED LINEAGE</text>
+    <text x="1048" y="112" text-anchor="end" font-size="20" fill="#9aa8ba">dna.suedeai.ai</text>
+  </g>
+</svg>

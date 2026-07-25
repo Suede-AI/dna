@@ -5,6 +5,7 @@ import { Header } from '@/components/header/Header';
 import { Footer } from '@/components/footer/Footer';
 import { GridMotif } from '@/components/chrome/GridMotif';
 import { getStats } from '@/lib/manifest';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import './globals.css';
 
 const stats = getStats();
@@ -42,14 +43,7 @@ export const metadata: Metadata = {
     siteName: 'Suede DNA',
     title: 'Suede DNA — Signal Chains, Archived',
     description: defaultDescription,
-    images: [
-      {
-        url: '/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'Suede DNA — a compilation archive of guitarists\' rigs and signal chains',
-      },
-    ],
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
@@ -57,7 +51,7 @@ export const metadata: Metadata = {
     description: defaultDescription,
     site: '@AISUEDE',
     creator: '@johnnysuede',
-    images: ['/opengraph-image'],
+    images: [DNA_SOCIAL_IMAGE.url],
   },
   robots: {
     index: true,

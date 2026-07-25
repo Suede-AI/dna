@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getArticle } from '@/lib/articles-content';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const SLUG = 'the-guitar-rig-diagram-as-a-documentary-form';
@@ -17,11 +18,13 @@ export const metadata: Metadata = {
     siteName: 'Suede DNA',
     type: 'article',
     publishedTime: article.date,
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${article.title} — Suede DNA`,
     description: article.description,
+    images: [DNA_SOCIAL_IMAGE.url],
   },
 };
 
