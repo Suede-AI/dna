@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getStats } from '@/lib/manifest';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/faq';
@@ -18,12 +19,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${PATH}`,
     siteName: 'Suede DNA',
     type: 'article',
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'FAQ — Suede DNA Docs',
     description:
       'Common questions about coverage, corrections, image rights, and how to reach the archive if something is wrong.',
+    images: [DNA_SOCIAL_IMAGE.url],
   },
 };
 

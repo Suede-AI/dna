@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/sourcing-and-verification';
@@ -16,12 +17,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${PATH}`,
     siteName: 'Suede DNA',
     type: 'article',
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Sourcing and Verification — Suede DNA Docs',
     description:
       'Where the rig photos come from, how the manifest is built and validated, and exactly what Suede DNA does and does not verify.',
+    images: [DNA_SOCIAL_IMAGE.url],
   },
 };
 

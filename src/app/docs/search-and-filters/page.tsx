@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection } from '@/components/docs/PageShell';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/search-and-filters';
@@ -16,12 +17,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${PATH}`,
     siteName: 'Suede DNA',
     type: 'article',
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Search and Filters — Suede DNA Docs',
     description:
       'How the search box parses names, years, and decades, how ranking works, and how decade filters and sort order combine.',
+    images: [DNA_SOCIAL_IMAGE.url],
   },
 };
 

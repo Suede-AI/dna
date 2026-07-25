@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getStats } from '@/lib/manifest';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/what-is-suede-dna';
@@ -17,12 +18,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}${PATH}`,
     siteName: 'Suede DNA',
     type: 'article',
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'What Suede DNA Is — Suede DNA Docs',
     description:
       'The premise behind the archive: why a guitarist’s rigs form a signal chain across time, and how the site is structured around that idea.',
+    images: [DNA_SOCIAL_IMAGE.url],
   },
 };
 

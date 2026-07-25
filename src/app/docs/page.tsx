@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DOCS } from '@/lib/docs-content';
 import { IndexCard } from '@/components/docs/IndexCard';
+import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -17,12 +18,14 @@ export const metadata: Metadata = {
     url: `${SITE_URL}/docs`,
     siteName: 'Suede DNA',
     type: 'website',
+    images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Docs — Suede DNA',
     description:
       'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
+    images: [DNA_SOCIAL_IMAGE.url],
   },
 };
 
