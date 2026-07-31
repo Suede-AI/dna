@@ -10,12 +10,27 @@ export function artistPageTitle(artist: Artist): string {
   return `${artist.name} — Guitar Rigs ${artistYearRange(artist)}`;
 }
 
+function artistRigCount(artist: Pick<Artist, 'count'>): string {
+  return `${artist.count} documented rig ${artist.count === 1 ? 'setup' : 'setups'}`;
+}
+
 export function artistPageDescription(artist: Artist): string {
   const when =
     artist.yearMin === artist.yearMax
       ? `in ${artist.yearMin}`
       : `between ${artist.yearMin} and ${artist.yearMax}`;
-  return `The complete rig archive for ${artist.name} — ${artist.count} setups documented ${when}. Photos sourced from the Guitar Geek archives. Part of Suede DNA.`;
+  return `Explore ${artistRigCount(artist)} for ${artist.name} ${when} in the Suede DNA collection. Each diagram links to its Guitar Geek Archives source on the Internet Archive.`;
+}
+
+export function artistArchiveContext(
+  artist: Pick<Artist, 'name' | 'count' | 'yearMin' | 'yearMax'>,
+): string {
+  const coverage =
+    artist.yearMin === artist.yearMax
+      ? `from ${artist.yearMin}`
+      : `spanning ${artistYearRange(artist)}`;
+
+  return `${artist.name} has ${artistRigCount(artist)} ${coverage} in the Suede DNA collection. Every entry is indexed from the community-maintained Guitar Geek Archives item on the Internet Archive and links to its original archive.org file. Suede DNA adds a presentation, normalization, and search layer. The manifest records an artist association, year, file format, structured source URL, and stable identifier for each archived diagram. Those fields support browsing and source tracing; Suede DNA does not interpret the photographed gear or independently fact-check the upstream artist and year attribution. Coverage reflects the diagrams available in the upstream collection, not a complete history of this artist's equipment or career.`;
 }
 
 export function homePageTitle(): string {
