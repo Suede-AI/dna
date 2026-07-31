@@ -10,12 +10,27 @@ export function artistPageTitle(artist: Artist): string {
   return `${artist.name} — Guitar Rigs ${artistYearRange(artist)}`;
 }
 
+function artistRigCount(artist: Pick<Artist, 'count'>): string {
+  return `${artist.count} documented rig ${artist.count === 1 ? 'setup' : 'setups'}`;
+}
+
 export function artistPageDescription(artist: Artist): string {
   const when =
     artist.yearMin === artist.yearMax
       ? `in ${artist.yearMin}`
       : `between ${artist.yearMin} and ${artist.yearMax}`;
-  return `The complete rig archive for ${artist.name} — ${artist.count} setups documented ${when}. Photos sourced from the Guitar Geek archives. Part of Suede DNA.`;
+  return `Explore ${artistRigCount(artist)} for ${artist.name} ${when} in the Suede DNA collection. Each diagram links to its Guitar Geek Archives source on the Internet Archive.`;
+}
+
+export function artistArchiveContext(
+  artist: Pick<Artist, 'name' | 'count' | 'yearMin' | 'yearMax'>,
+): string {
+  const coverage =
+    artist.yearMin === artist.yearMax
+      ? `from ${artist.yearMin}`
+      : `spanning ${artistYearRange(artist)}`;
+
+  return `${artist.name} has ${artistRigCount(artist)} ${coverage} in the Suede DNA collection. Each entry is indexed from the Guitar Geek Archives and links to its original Internet Archive file. Suede DNA verifies the manifest structure and source reference, not the upstream archive's artist or year attribution.`;
 }
 
 export function homePageTitle(): string {

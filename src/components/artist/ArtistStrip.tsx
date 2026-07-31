@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Artist } from '@/lib/manifest';
 import type { ArtistArchivePosition } from '@/lib/artist-index';
-import { artistYearRange } from '@/lib/seo';
+import { artistArchiveContext, artistYearRange } from '@/lib/seo';
 
 export function ArtistStrip({
   artist,
@@ -53,6 +53,20 @@ export function ArtistStrip({
               &apos;{String(d).slice(-2).padStart(2, '0')}s
             </Link>
           ))}
+        </div>
+        <div
+          className="mt-8 max-w-3xl leading-relaxed text-[color:var(--color-bone)]"
+          style={{ fontSize: 'var(--text-body)' }}
+        >
+          <p>{artistArchiveContext(artist)}</p>
+          <p className="mono-label mt-4">
+            <Link
+              href="/docs/sourcing-and-verification"
+              className="hover:text-[color:var(--color-signal)]"
+            >
+              SOURCING AND VERIFICATION →
+            </Link>
+          </p>
         </div>
         <nav aria-label="Artist navigation" className="mt-10 flex gap-6 mono-label">
           <Link href="/" className="hover:text-[color:var(--color-signal)]">← ALL ARTISTS</Link>

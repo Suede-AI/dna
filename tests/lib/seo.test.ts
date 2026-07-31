@@ -1,5 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { artistPageTitle, artistPageDescription, artistJsonLd } from '../../src/lib/seo';
+import {
+  artistArchiveContext,
+  artistJsonLd,
+  artistPageDescription,
+  artistPageTitle,
+} from '../../src/lib/seo';
 import type { Artist } from '../../src/lib/manifest';
 
 const clapton: Artist = {
@@ -26,9 +31,11 @@ describe('SEO helpers', () => {
   });
 
   it('formats artist page description with counts', () => {
-    expect(artistPageDescription(clapton)).toContain('5 setups');
+    expect(artistPageDescription(clapton)).toContain('5 documented rig setups');
     expect(artistPageDescription(clapton)).toContain('1966');
     expect(artistPageDescription(clapton)).toContain('1989');
+    expect(artistPageDescription(clapton)).toContain('Suede DNA collection');
+    expect(artistPageDescription(clapton)).not.toContain('complete rig archive');
   });
 
   it('formats single-rig artist title without duplicate year range', () => {
@@ -37,9 +44,20 @@ describe('SEO helpers', () => {
   });
 
   it('formats single-rig artist description without duplicate year range', () => {
+    expect(artistPageDescription(singleRigArtist)).toContain('1 documented rig setup');
+    expect(artistPageDescription(singleRigArtist)).not.toContain('1 documented rig setups');
     expect(artistPageDescription(singleRigArtist)).toContain('in 2010');
     expect(artistPageDescription(singleRigArtist)).not.toContain('2010–2010');
     expect(artistPageDescription(singleRigArtist)).not.toContain('between 2010 and 2010');
+  });
+
+  it('builds artist-specific archive context without overstating upstream verification', () => {
+    expect(artistArchiveContext(clapton)).toBe(
+      'Eric Clapton has 5 documented rig setups spanning 1966–1989 in the Suede DNA collection. Each entry is indexed from the Guitar Geek Archives and links to its original Internet Archive file. Suede DNA verifies the manifest structure and source reference, not the upstream archive\'s artist or year attribution.',
+    );
+    expect(artistArchiveContext(singleRigArtist)).toContain(
+      '1 documented rig setup from 2010 in the Suede DNA collection',
+    );
   });
 
   it('emits valid artist JSON-LD shape', () => {

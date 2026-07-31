@@ -40,7 +40,7 @@ export function RigDetailCard({
             setLightboxOpen(true);
           }}
         >
-          <div className="absolute inset-4">
+          <div className="absolute inset-x-4 top-4 bottom-16">
             <RigImage
               rig={rig}
               alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
@@ -49,8 +49,11 @@ export function RigDetailCard({
               className="object-contain"
             />
           </div>
-          <figcaption className="sr-only">
-            {rig.artistName} rig, <time dateTime={String(rig.year)}>{rig.year}</time>.
+          <figcaption className="absolute inset-x-4 bottom-4 flex flex-wrap gap-x-2 mono-label text-[color:var(--color-bone)]">
+            <span>
+              {rig.artistName} · <time dateTime={String(rig.year)}>{rig.year}</time>
+            </span>
+            <span>Guitar Geek Archives via Internet Archive · {rig.format.toUpperCase()}</span>
           </figcaption>
         </figure>
         <div
@@ -70,7 +73,7 @@ export function RigDetailCard({
                 letterSpacing: 'var(--tracking-tight)',
               }}
             >
-              <time dateTime={String(rig.year)}>{rig.year}</time>
+              {rig.artistName} — <time dateTime={String(rig.year)}>{rig.year}</time> Guitar Rig
             </h2>
           </header>
           <dl className="mono-data hairline text-[color:var(--color-bone)]" style={{ borderRadius: 'var(--radius-card)' }}>
