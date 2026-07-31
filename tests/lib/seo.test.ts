@@ -52,9 +52,16 @@ describe('SEO helpers', () => {
   });
 
   it('builds artist-specific archive context without overstating upstream verification', () => {
-    expect(artistArchiveContext(clapton)).toBe(
-      'Eric Clapton has 5 documented rig setups spanning 1966–1989 in the Suede DNA collection. Each entry is indexed from the Guitar Geek Archives and links to its original Internet Archive file. Suede DNA verifies the manifest structure and source reference, not the upstream archive\'s artist or year attribution.',
+    const context = artistArchiveContext(clapton);
+
+    expect(context.trim().split(/\s+/).length).toBeGreaterThanOrEqual(90);
+    expect(context).toContain(
+      'Eric Clapton has 5 documented rig setups spanning 1966–1989 in the Suede DNA collection',
     );
+    expect(context).toContain('presentation, normalization, and search layer');
+    expect(context).toContain('does not interpret the photographed gear');
+    expect(context).toContain('not a complete history');
+    expect(context).not.toContain('complete rig archive');
     expect(artistArchiveContext(singleRigArtist)).toContain(
       '1 documented rig setup from 2010 in the Suede DNA collection',
     );

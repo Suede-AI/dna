@@ -30,7 +30,7 @@ export function artistArchiveContext(
       ? `from ${artist.yearMin}`
       : `spanning ${artistYearRange(artist)}`;
 
-  return `${artist.name} has ${artistRigCount(artist)} ${coverage} in the Suede DNA collection. Each entry is indexed from the Guitar Geek Archives and links to its original Internet Archive file. Suede DNA verifies the manifest structure and source reference, not the upstream archive's artist or year attribution.`;
+  return `${artist.name} has ${artistRigCount(artist)} ${coverage} in the Suede DNA collection. Every entry is indexed from the community-maintained Guitar Geek Archives item on the Internet Archive and links to its original archive.org file. Suede DNA adds a presentation, normalization, and search layer. The manifest records an artist association, year, file format, structured source URL, and stable identifier for each archived diagram. Those fields support browsing and source tracing; Suede DNA does not interpret the photographed gear or independently fact-check the upstream artist and year attribution. Coverage reflects the diagrams available in the upstream collection, not a complete history of this artist's equipment or career.`;
 }
 
 export function homePageTitle(): string {
