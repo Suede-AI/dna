@@ -1,6 +1,7 @@
 import type { NextConfig } from 'next';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ARTIST_MERGES } from './src/lib/canonical-artists';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -18,6 +19,17 @@ const nextConfig: NextConfig = {
       },
     ],
     formats: ['image/avif', 'image/webp'],
+  },
+  // Duplicate artist slugs from the upstream filename grammar are retired; each one
+  // permanently redirects to the surviving page that now holds all of its rigs.
+  async redirects() {
+    return Object.entries(ARTIST_MERGES).map(([from, to]) => ({
+      source: `/${from}`,
+      destination: `/${to}`,
+      // 301 rather than Next's default 308 for `permanent: true` — these are canonical
+      // consolidations of GET-only archive pages, and 301 is what the crawlers expect.
+      statusCode: 301,
+    }));
   },
   async headers() {
     return [
