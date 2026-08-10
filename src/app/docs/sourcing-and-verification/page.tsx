@@ -97,7 +97,7 @@ export default function SourcingPage() {
 
       <DocSection heading="COVERAGE IS NOT COMPLETE">
         <p>
-          The archive documents 409 rigs across 390 artists. That is a meaningful sample of
+          The archive documents 409 rigs across 361 artists. That is a meaningful sample of
           guitar history, not an exhaustive one. Many artists have no entry at all; many who do
           have only one or two documented years out of a much longer career. Absence from the
           archive says nothing about an artist&apos;s significance. It only reflects what the

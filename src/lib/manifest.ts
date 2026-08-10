@@ -1,5 +1,6 @@
 import rigsManifest from '../../data/rigs.json';
 import artistsManifest from '../../data/artists.json';
+import { canonicalArtistName, canonicalArtistSlug } from './canonical-artists';
 
 export type Rig = {
   id: string;
@@ -19,8 +20,54 @@ export type Artist = {
   decades: number[];
 };
 
-const rigs = rigsManifest.rigs as Rig[];
-const artists = artistsManifest as Artist[];
+// The upstream filename grammar produces several slugs for the same person and a
+// display name that is the raw slug. Both are normalized here, at read time, so the
+// generated manifests stay a faithful record of the upstream archive while every
+// rendered surface — grid, hero, alt text, titles, descriptions, JSON-LD, sitemap,
+// stats — reads one canonical entity per artist.
+const baseNames = new Map((artistsManifest as Artist[]).map((a) => [a.slug, a.name]));
+
+function resolvedName(slug: string): string {
+  return canonicalArtistName(slug, baseNames.get(slug) ?? slug);
+}
+
+function groupByArtist(source: Rig[]): Artist[] {
+  const map = new Map<string, Artist>();
+  for (const rig of source) {
+    const decade = Math.floor(rig.year / 10) * 10;
+    const existing = map.get(rig.artistSlug);
+    if (!existing) {
+      map.set(rig.artistSlug, {
+        slug: rig.artistSlug,
+        name: rig.artistName,
+        count: 1,
+        yearMin: rig.year,
+        yearMax: rig.year,
+        decades: [decade],
+      });
+      continue;
+    }
+    map.set(rig.artistSlug, {
+      ...existing,
+      count: existing.count + 1,
+      yearMin: Math.min(existing.yearMin, rig.year),
+      yearMax: Math.max(existing.yearMax, rig.year),
+      decades: existing.decades.includes(decade)
+        ? existing.decades
+        : [...existing.decades, decade].sort((a, b) => a - b),
+    });
+  }
+  return [...map.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+const rigs: Rig[] = (rigsManifest.rigs as Rig[])
+  .map((rig) => {
+    const slug = canonicalArtistSlug(rig.artistSlug);
+    return { ...rig, artistSlug: slug, artistName: resolvedName(slug) };
+  })
+  .sort((a, b) => a.artistName.localeCompare(b.artistName) || a.year - b.year);
+
+const artists: Artist[] = groupByArtist(rigs);
 
 export function getAllRigs(): Rig[] {
   return rigs;

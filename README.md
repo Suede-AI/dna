@@ -4,7 +4,7 @@
 
 **Live:** [dna.suedeai.ai](https://dna.suedeai.ai)
 
-A tonal genealogy archive of guitarists' rigs and signal chains — 409 documented setups from 390 artists, indexed by year and player. Built and maintained by [Suede Labs AI](https://suedeai.ai).
+A tonal genealogy archive of guitarists' rigs and signal chains — 409 documented setups from 361 artists, indexed by year and player. Built and maintained by [Suede Labs AI](https://suedeai.ai).
 
 The premise: every distinctive guitar tone lives inside a specific signal chain — the pedalboard, the amp, the mic placement, the unsung 9V power supply that everything depends on. Suede DNA is a browsable compilation of those rigs, sourced from the long-running [guitargeek-archives](https://archive.org/details/guitargeek-archives) on archive.org, normalized into a single searchable manifest, and presented as a static, fast, archival-feeling site.
 

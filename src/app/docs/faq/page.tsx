@@ -37,7 +37,7 @@ const FAQS = [
   },
   {
     q: 'Why isn’t [artist] in the archive?',
-    a: 'The archive documents 409 rigs from 390 artists: a sample of guitar history, not an exhaustive one. An artist’s absence reflects what the upstream collection happened to document, not a judgment about their significance.',
+    a: 'The archive documents 409 rigs from 361 artists: a sample of guitar history, not an exhaustive one. An artist’s absence reflects what the upstream collection happened to document, not a judgment about their significance.',
   },
   {
     q: 'Why does an artist only have one or two rigs when they had a decades-long career?',
