@@ -1,0 +1,120 @@
+name: Vercel Production Deploy
+
+# The Vercel GitHub App is not installed on the Suede-AI org, so this project
+# cannot use Vercel's own Git integration. This workflow is the replacement:
+# it is the only thing that should ever deploy dna.suedeai.ai.
+#
+# It runs after CI, not alongside it — the archive derives its public pages from
+# data/rigs.json, so shipping a commit that fails validate-manifest would put
+# wrong artist data on live URLs.
+
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: vercel-production
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: build and deploy to production
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    # workflow_run fires on every CI conclusion, including failure and cancelled.
+    # Only a green run may ship. workflow_dispatch is the manual escape hatch.
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+    steps:
+      - name: Check for deploy credentials
+        id: creds
+        run: |
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "### Deploy skipped"
+              echo
+              echo "\`VERCEL_TOKEN\` is not set on this repository, so there is nothing to"
+              echo "deploy with. Add VERCEL_TOKEN, VERCEL_ORG_ID and VERCEL_PROJECT_ID as"
+              echo "repository secrets, then re-run this workflow."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.creds.outputs.ready == 'true'
+        uses: actions/checkout@v4
+        with:
+          # workflow_run checks out the default branch tip by default, which may
+          # already have moved past the commit CI just proved green. Pin to the
+          # exact SHA that passed.
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Install pnpm
+        if: steps.creds.outputs.ready == 'true'
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+          run_install: false
+
+      - name: Setup Node
+        if: steps.creds.outputs.ready == 'true'
+        uses: actions/setup-node@v4
+        with:
+          # Matches the Vercel project's runtime (24.x). CI builds on 20 to catch
+          # compatibility problems; the artifact we actually ship must be built on
+          # the version production runs.
+          node-version: 24
+          cache: pnpm
+
+      - name: Install dependencies
+        if: steps.creds.outputs.ready == 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Pull Vercel environment
+        if: steps.creds.outputs.ready == 'true'
+        run: npx vercel@59 pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
+
+      - name: Build
+        if: steps.creds.outputs.ready == 'true'
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+        run: npx vercel@59 build --prod --token="${{ secrets.VERCEL_TOKEN }}"
+
+      - name: Deploy
+        if: steps.creds.outputs.ready == 'true'
+        id: deploy
+        run: |
+          # The CLI writes progress banners alongside the URL; the URL is the last line.
+          url=$(npx vercel@59 deploy --prebuilt --prod --token="${{ secrets.VERCEL_TOKEN }}" | tail -1)
+          [ -n "$url" ] || { echo "::error::deploy produced no URL"; exit 1; }
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Deployed to production"
+            echo
+            echo "- commit: \`${{ github.event.workflow_run.head_sha || github.sha }}\`"
+            echo "- deployment: $url"
+            echo "- live: https://dna.suedeai.ai"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Verify production is serving
+        if: steps.creds.outputs.ready == 'true'
+        run: |
+          code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 5 --retry-delay 5 \
+            --retry-all-errors https://dna.suedeai.ai)
+          echo "dna.suedeai.ai -> $code"
+          [ "$code" = "200" ] || { echo "::error::dna.suedeai.ai returned $code after deploy"; exit 1; }
