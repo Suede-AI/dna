@@ -24,3 +24,23 @@ export function canonicalArtistSlug(slug: string): string {
 export function canonicalArtistName(slug: string, fallback: string): string {
   return ARTIST_DISPLAY_NAMES[slug] ?? fallback;
 }
+
+/**
+ * Separator used by curated "Player — Band" display names (space, EM DASH,
+ * space). Its presence marks a name that was authored in reviewed form.
+ */
+export const CURATED_NAME_SEPARATOR = ' — ';
+
+/**
+ * True only when an artist's display name has been human-reviewed — either
+ * listed explicitly in data/artist-names.json, or authored in the curated
+ * "Player — Band" form. Every other page renders the raw upstream filename
+ * grammar (a title-cased slug such as "Who Pete" for Pete Townshend, or
+ * "Yolatengo Ira" for Ira Kaplan), which fabricates a human name. Those
+ * fabricated names must NOT be indexed or asserted as a real entity in
+ * structured data, so this predicate gates both the robots directive and the
+ * Person/MusicGroup JSON-LD on every artist page.
+ */
+export function isReviewedArtistName(slug: string, name: string): boolean {
+  return ARTIST_DISPLAY_NAMES[slug] !== undefined || name.includes(CURATED_NAME_SEPARATOR);
+}

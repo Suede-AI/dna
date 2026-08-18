@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllArtists } from '@/lib/manifest';
+import { artistIsIndexable } from '@/lib/seo';
 import { DOCS } from '@/lib/docs-content';
 import { ARTICLES } from '@/lib/articles-content';
 import rigsManifest from '../../data/rigs.json';
@@ -25,11 +26,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     })),
-    ...getAllArtists().map((a) => ({
-      url: `${SITE_URL}/${a.slug}`,
-      lastModified,
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
+    // Only reviewed artist pages are indexable; a sitemap must not advertise
+    // noindexed (fabricated-name) URLs for crawling.
+    ...getAllArtists()
+      .filter(artistIsIndexable)
+      .map((a) => ({
+        url: `${SITE_URL}/${a.slug}`,
+        lastModified,
+        changeFrequency: 'monthly' as const,
+        priority: 0.7,
+      })),
   ];
 }

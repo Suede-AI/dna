@@ -1,4 +1,22 @@
 import type { Artist, Rig } from './manifest';
+import { CURATED_NAME_SEPARATOR, isReviewedArtistName } from './canonical-artists';
+
+/**
+ * A page may be indexed and may assert its subject in structured data only when
+ * its display name has been human-reviewed. Unreviewed pages render a
+ * fabricated slug-derived name, so they are served `noindex, follow` with no
+ * Person/MusicGroup JSON-LD. Single source of truth for both decisions.
+ */
+export function artistIsIndexable(artist: Pick<Artist, 'slug' | 'name'>): boolean {
+  return isReviewedArtistName(artist.slug, artist.name);
+}
+
+/** Split a curated "Player — Band" display name into its parts. */
+export function splitArtistName(name: string): { person: string; band?: string } {
+  const i = name.indexOf(CURATED_NAME_SEPARATOR);
+  if (i === -1) return { person: name };
+  return { person: name.slice(0, i), band: name.slice(i + CURATED_NAME_SEPARATOR.length) };
+}
 
 export function artistYearRange(artist: Pick<Artist, 'yearMin' | 'yearMax'>): string {
   return artist.yearMin === artist.yearMax
@@ -41,13 +59,27 @@ export function homePageDescription(stats: { totalRigs: number; yearMin: number;
   return `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs.toLocaleString()} documented setups from ${stats.yearMin} to ${stats.yearMax}, indexed by year and player. Suede DNA — signal chains, archived.`;
 }
 
+/**
+ * Structured data for a reviewed artist page. Each page profiles an individual
+ * guitarist, so the subject is a `Person`, not a `MusicGroup` (the prior type
+ * asserted every player was a band). A curated "Player — Band" name is split so
+ * the person's name and their band are each represented faithfully and match
+ * the visible page. Only ever emitted for indexable (reviewed) artists — see
+ * `artistIsIndexable`.
+ */
 export function artistJsonLd(artist: Artist, rigs: Rig[], siteUrl: string) {
+  const { person, band } = splitArtistName(artist.name);
+  const personEntity = {
+    '@type': 'Person',
+    name: person,
+    ...(band ? { memberOf: { '@type': 'MusicGroup', name: band } } : {}),
+  } as const;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
     mainEntity: {
-      '@type': 'MusicGroup',
-      name: artist.name,
+      ...personEntity,
       url: `${siteUrl}/${artist.slug}`,
     },
     breadcrumb: {
@@ -60,7 +92,7 @@ export function artistJsonLd(artist: Artist, rigs: Rig[], siteUrl: string) {
     hasPart: rigs.map((rig) => ({
       '@type': 'ImageObject',
       contentUrl: rig.src,
-      creator: { '@type': 'MusicGroup', name: artist.name },
+      creator: personEntity,
       dateCreated: String(rig.year),
       creditText: 'Guitar Geek Archives',
       isAccessibleForFree: true,
