@@ -67,15 +67,39 @@ describe('SEO helpers', () => {
     );
   });
 
-  it('emits valid artist JSON-LD shape', () => {
+  it('emits valid artist JSON-LD shape typing the subject as a Person', () => {
     const ld = artistJsonLd(clapton, [
       { id: 'eric-clapton-1966', src: 'https://example.com/x.jpg', year: 1966, format: 'jpg', artistSlug: 'eric-clapton', artistName: 'Eric Clapton' },
     ], 'https://dna.suedeai.ai');
     expect(ld['@type']).toBe('ProfilePage');
-    expect(ld.mainEntity['@type']).toBe('MusicGroup');
+    // An individual guitarist is a Person, not a MusicGroup.
+    expect(ld.mainEntity['@type']).toBe('Person');
     expect(ld.mainEntity.name).toBe('Eric Clapton');
     expect(Array.isArray(ld.hasPart)).toBe(true);
     expect(ld.hasPart[0]['@type']).toBe('ImageObject');
+    expect(ld.hasPart[0].creator['@type']).toBe('Person');
     expect(ld.hasPart[0].creditText).toBe('Guitar Geek Archives');
+  });
+
+  it('splits a curated "Player — Band" name into Person + memberOf', () => {
+    const iommi: Artist = {
+      slug: 'blacksabbath-tony',
+      name: 'Tony Iommi — Black Sabbath',
+      count: 3,
+      yearMin: 1970,
+      yearMax: 1978,
+      decades: [1970],
+    };
+    const ld = artistJsonLd(iommi, [
+      { id: 'blacksabbath-tony-1970', src: 'https://example.com/y.jpg', year: 1970, format: 'jpg', artistSlug: 'blacksabbath-tony', artistName: 'Tony Iommi — Black Sabbath' },
+    ], 'https://dna.suedeai.ai');
+    expect(ld.mainEntity['@type']).toBe('Person');
+    // The person's name must not carry the band suffix...
+    expect(ld.mainEntity.name).toBe('Tony Iommi');
+    // ...the band is represented via memberOf, and both halves are substrings
+    // of the visible display name so schema matches rendered content.
+    expect(ld.mainEntity.memberOf).toEqual({ '@type': 'MusicGroup', name: 'Black Sabbath' });
+    expect(iommi.name).toContain(ld.mainEntity.name);
+    expect(iommi.name).toContain('Black Sabbath');
   });
 });

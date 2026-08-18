@@ -6,7 +6,7 @@ import { DNAChain } from '@/components/artist/DNAChain';
 import { RigDetailCard } from '@/components/artist/RigDetailCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArtistArchivePosition } from '@/lib/artist-index';
-import { artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
+import { artistIsIndexable, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -22,9 +22,16 @@ export async function generateMetadata({
   const { 'artist-slug': slug } = await params;
   const artist = getArtistBySlug(slug);
   if (!artist) return {};
+  // Pages whose name has not been human-reviewed render a fabricated,
+  // slug-derived name. Keep them out of the index (noindex) while still letting
+  // crawlers follow their real archive.org links, until names are curated.
+  const indexable = artistIsIndexable(artist);
   return {
     title: artistPageTitle(artist),
     description: artistPageDescription(artist),
+    robots: indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true },
     alternates: { canonical: `/${slug}` },
     openGraph: {
       title: artistPageTitle(artist),
@@ -51,7 +58,9 @@ export default async function ArtistPage({ params }: { params: Promise<{ 'artist
 
   return (
     <main>
-      <JsonLd data={artistJsonLd(artist, rigs, SITE_URL)} />
+      {/* Only reviewed pages assert their subject in structured data; fabricated
+          slug-derived names must not be published as a real Person entity. */}
+      {artistIsIndexable(artist) && <JsonLd data={artistJsonLd(artist, rigs, SITE_URL)} />}
       <ArtistStrip artist={artist} archivePosition={archivePosition} prev={prev} next={next} />
       <DNAChain rigs={rigs} artistName={artist.name} />
       <section aria-label="Rigs in detail">
