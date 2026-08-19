@@ -93,6 +93,7 @@ Founded by [Jason Colapietro](https://github.com/JasonColapietro) — Founder an
 - **[The Guitar Without a Number](https://www.amazon.com/dp/B0GD5FX6N6)** — Memoir-driven guitar instruction for the self-taught player. Theory, tone, and the IP rights chapter no other guitar book includes. (Kindle)
 - **[Suede Labs: The Human Authenticity Layer](https://www.amazon.com/dp/B0GD5FX6N6)** — How ownership, origin, and AI redraw the creative map. (Kindle)
 - **[Stake Your Claim](https://www.amazon.com/dp/B0GRG8LGQQ)** — Hard truths on turning the AI era into a real asset. (Kindle)
+- **[The Screenshot: Why AI Recommends Your Competitors, and How to Fix It](https://seo.suedeai.ai/book)** — How answer engines decide who to name, how to see your own gap with your own eyes, and how to repair the pages the machines misread. Eleven chapters, free in full. (seo.suedeai.ai)
 
 Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai/founder](https://suedeai.ai/founder) · [LinkedIn](https://www.linkedin.com/in/jasoncolapietro)
 
