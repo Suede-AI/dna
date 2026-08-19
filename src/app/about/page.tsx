@@ -128,7 +128,10 @@ export default function AboutPage() {
             <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Human Authenticity Layer</a>,{' '}
             <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Proof as Infrastructure</a>, and{' '}
             <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Stake Your Claim</a>{' '}
-            — all on Amazon.
+            — all on Amazon. And{' '}
+            <a href="https://seo.suedeai.ai/book" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Screenshot: Why AI Recommends Your Competitors, and How to Fix It</a>
+            {' '}— eleven chapters on how answer engines decide who to name, and how to repair the
+            pages the machines misread — free in full at seo.suedeai.ai.
           </p>
         </section>
 
