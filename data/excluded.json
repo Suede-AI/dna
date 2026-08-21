@@ -1,145 +1,1275 @@
 {
-  "excludedAt": "2026-05-19T23:27:33.298Z",
-  "count": 28,
+  "excludedAt": "2026-08-21T02:01:09.773Z",
+  "count": 254,
   "entries": [
     {
-      "id": "alan_low-2000",
-      "src": "https://archive.org/download/guitargeek-archives/alan_low_2000.png",
+      "id": "10000maniacs_rob-2000",
+      "src": "https://archive.org/download/guitargeek-archives/10000maniacs_rob_2000.png",
       "status": 500
     },
     {
-      "id": "bowelectric_lawrence-1998",
-      "src": "https://archive.org/download/guitargeek-archives/bowelectric_lawrence_1998.png",
+      "id": "a_day_to_remember_kevin_skaff-2010",
+      "src": "https://archive.org/download/guitargeek-archives/a_day_to_remember_kevin_skaff_guitar_rig_2010.jpg",
       "status": 500
     },
     {
-      "id": "bowery_electric_martha-1994",
-      "src": "https://archive.org/download/guitargeek-archives/bowery_electric_martha_1994.png",
+      "id": "aarktika_jon-2000",
+      "src": "https://archive.org/download/guitargeek-archives/aarktika_jon_2000.png",
       "status": 500
     },
     {
-      "id": "catatonia_mark-2000",
-      "src": "https://archive.org/download/guitargeek-archives/catatonia_mark_2000.png",
+      "id": "aberdeen_beth-2002",
+      "src": "https://archive.org/download/guitargeek-archives/aberdeen_beth_2002.png",
       "status": 500
     },
     {
-      "id": "chapterhouse_simon-1993",
-      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_simon_1993.png",
+      "id": "aberdeen_john-2002",
+      "src": "https://archive.org/download/guitargeek-archives/aberdeen_john_2002.png",
       "status": 500
     },
     {
-      "id": "devildriver_jeff_kendrick-2008",
-      "src": "https://archive.org/download/guitargeek-archives/devildriver_jeff_kendrick_2008.jpg",
+      "id": "aberdeen_johnny-2002",
+      "src": "https://archive.org/download/guitargeek-archives/aberdeen_johnny_2002.png",
       "status": 500
     },
     {
-      "id": "fearfactory_dino-1998",
-      "src": "https://archive.org/download/guitargeek-archives/fearfactory_dino_1998.png",
+      "id": "ace_frehley-2010",
+      "src": "https://archive.org/download/guitargeek-archives/ace_frehley_guitar_rig_2010.jpg",
       "status": 500
     },
     {
-      "id": "flaw_lance-2002",
-      "src": "https://archive.org/download/guitargeek-archives/flaw_lance_2002.png",
+      "id": "adema_tim_fluckey-2005",
+      "src": "https://archive.org/download/guitargeek-archives/adema_tim_fluckey_2005.jpg",
       "status": 500
     },
     {
-      "id": "jamc_lincoln-1999",
-      "src": "https://archive.org/download/guitargeek-archives/jamc_lincoln_1999.png",
+      "id": "against_me_laura_jane_grace-2011",
+      "src": "https://archive.org/download/guitargeek-archives/against_me_laura_jane_grace_guitar_rig_2011.jpg",
       "status": 500
     },
     {
-      "id": "kenny_wayne_shephard-2010",
-      "src": "https://archive.org/download/guitargeek-archives/kenny_wayne_shephard_guitar_rig_2010.jpg",
+      "id": "air_formation_matt-2000",
+      "src": "https://archive.org/download/guitargeek-archives/air_formation_matt_2000.png",
       "status": 500
     },
     {
-      "id": "kingcrimson_trey-2000",
-      "src": "https://archive.org/download/guitargeek-archives/kingcrimson_trey_2000.png",
+      "id": "albert_king-1977",
+      "src": "https://archive.org/download/guitargeek-archives/albert_king_1977.png",
       "status": 500
     },
     {
-      "id": "llc_scott-1993",
-      "src": "https://archive.org/download/guitargeek-archives/llc_scott_1993.png",
+      "id": "alice_in_chains_jerry_cantrell-2010",
+      "src": "https://archive.org/download/guitargeek-archives/alice_in_chains_jerry_cantrell_guitar_rig_2010.jpg",
       "status": 500
     },
     {
-      "id": "muse_matt-2000",
-      "src": "https://archive.org/download/guitargeek-archives/muse_matt_2000.png",
+      "id": "alicecooper_pete-2000",
+      "src": "https://archive.org/download/guitargeek-archives/alicecooper_pete_2000.png",
       "status": 500
     },
     {
-      "id": "nickelback_ryan-2001",
-      "src": "https://archive.org/download/guitargeek-archives/nickelback_ryan_2001.png",
+      "id": "alisonshalo_adam-1994",
+      "src": "https://archive.org/download/guitargeek-archives/alisonshalo_adam_1994.png",
       "status": 500
     },
     {
-      "id": "orgy_ryan-2000",
-      "src": "https://archive.org/download/guitargeek-archives/orgy_ryan_2000.png",
+      "id": "allmanbrothers_warren-1980",
+      "src": "https://archive.org/download/guitargeek-archives/allmanbrothers_warren_1980.png",
       "status": 500
     },
     {
-      "id": "pixies_black-1993",
-      "src": "https://archive.org/download/guitargeek-archives/pixies_black_1993.png",
+      "id": "allmanbrothers_warren-1990",
+      "src": "https://archive.org/download/guitargeek-archives/allmanbrothers_warren_1990.png",
       "status": 500
     },
     {
-      "id": "pixies_joey-1991",
-      "src": "https://archive.org/download/guitargeek-archives/pixies_joey_1991.png",
+      "id": "animals_as_leaders-2011",
+      "src": "https://archive.org/download/guitargeek-archives/animals_as_leaders_2011_rig.jpg",
       "status": 500
     },
     {
-      "id": "potus_david_dederer-1993",
-      "src": "https://archive.org/download/guitargeek-archives/potus_david_dederer_guitar_rig_1993.jpg",
+      "id": "anthrax_scott_ian-2003",
+      "src": "https://archive.org/download/guitargeek-archives/anthrax_scott_ian_2003.jpg",
       "status": 500
     },
     {
-      "id": "radiohead_jonny_-1997",
-      "src": "https://archive.org/download/guitargeek-archives/radiohead_jonny__1997.jpg",
+      "id": "arc_angels_charlie-1999",
+      "src": "https://archive.org/download/guitargeek-archives/arc_angels_charlie_1999.png",
       "status": 500
     },
     {
-      "id": "rhcp_john-2001",
-      "src": "https://archive.org/download/guitargeek-archives/rhcp_john_2001.png",
+      "id": "arcangels_doyle-2000",
+      "src": "https://archive.org/download/guitargeek-archives/arcangels_doyle_2000.png",
       "status": 500
     },
     {
-      "id": "sisterhazel_andrew-2001",
-      "src": "https://archive.org/download/guitargeek-archives/sisterhazel_andrew_2001.png",
+      "id": "arch_enemy_michael_amott-2006",
+      "src": "https://archive.org/download/guitargeek-archives/arch_enemy_michael_amott_2006.jpg",
       "status": 500
     },
     {
-      "id": "slipknot_jim_root-2004",
-      "src": "https://archive.org/download/guitargeek-archives/slipknot_jim_root_2004.jpg",
+      "id": "ash_mark-2000",
+      "src": "https://archive.org/download/guitargeek-archives/ash_mark_2000.png",
       "status": 500
     },
     {
-      "id": "slowdive_neil-1993",
-      "src": "https://archive.org/download/guitargeek-archives/slowdive_neil_1993.png",
+      "id": "asteroid4_eric-2001",
+      "src": "https://archive.org/download/guitargeek-archives/asteroid4_eric_2001.png",
       "status": 500
     },
     {
-      "id": "stabbingwest_walter-2001",
-      "src": "https://archive.org/download/guitargeek-archives/stabbingwest_walter_2001.png",
+      "id": "asteroid4_james-2001",
+      "src": "https://archive.org/download/guitargeek-archives/asteroid4_james_2001.png",
       "status": 500
     },
     {
-      "id": "staticx_tony-2002",
-      "src": "https://archive.org/download/guitargeek-archives/staticx_tony_2002.png",
+      "id": "audioslave_tom_morello-2004",
+      "src": "https://archive.org/download/guitargeek-archives/audioslave_tom_morello_2004_rig.jpg",
       "status": 500
     },
     {
-      "id": "steelpulse_moonie-2000",
-      "src": "https://archive.org/download/guitargeek-archives/steelpulse_moonie_2000.png",
+      "id": "avril_devin-2006",
+      "src": "https://archive.org/download/guitargeek-archives/avril_devin_2006.png",
       "status": 500
     },
     {
-      "id": "swervedriver_steve-1998",
-      "src": "https://archive.org/download/guitargeek-archives/swervedriver_steve_1998.png",
+      "id": "badlydrawnboy_damon-2001",
+      "src": "https://archive.org/download/guitargeek-archives/badlydrawnboy_damon_2001.png",
       "status": 500
     },
     {
-      "id": "toadies_lisa-2001",
-      "src": "https://archive.org/download/guitargeek-archives/toadies_lisa_2001.png",
+      "id": "badlydrawnboy_robin-2001",
+      "src": "https://archive.org/download/guitargeek-archives/badlydrawnboy_robin_2001.png",
+      "status": 500
+    },
+    {
+      "id": "badlydrawnboy_sean-2001",
+      "src": "https://archive.org/download/guitargeek-archives/badlydrawnboy_sean_2001.png",
+      "status": 500
+    },
+    {
+      "id": "bandofsusans_robert-1995",
+      "src": "https://archive.org/download/guitargeek-archives/bandofsusans_robert_1995.png",
+      "status": 500
+    },
+    {
+      "id": "bellesebastian_steve-2000",
+      "src": "https://archive.org/download/guitargeek-archives/bellesebastian_steve_2000.png",
+      "status": 500
+    },
+    {
+      "id": "berry_chuck-1999",
+      "src": "https://archive.org/download/guitargeek-archives/berry_chuck_1999.png",
+      "status": 500
+    },
+    {
+      "id": "bethanycurve_richard-1999",
+      "src": "https://archive.org/download/guitargeek-archives/bethanycurve_richard_1999.png",
+      "status": 500
+    },
+    {
+      "id": "bigasstruck_steve-2001",
+      "src": "https://archive.org/download/guitargeek-archives/bigasstruck_steve_2001.png",
+      "status": 500
+    },
+    {
+      "id": "biohazard_billy-2001",
+      "src": "https://archive.org/download/guitargeek-archives/biohazard_billy_2001.png",
+      "status": 500
+    },
+    {
+      "id": "blacksabbath_toni-1971",
+      "src": "https://archive.org/download/guitargeek-archives/blacksabbath_toni_1971.png",
+      "status": 500
+    },
+    {
+      "id": "blacksabbath_toni-2000",
+      "src": "https://archive.org/download/guitargeek-archives/blacksabbath_toni_2000.png",
+      "status": 500
+    },
+    {
+      "id": "blacksabbath_tony-1971",
+      "src": "https://archive.org/download/guitargeek-archives/blacksabbath_tony_1971.png",
+      "status": 500
+    },
+    {
+      "id": "booradleys_martin-1995",
+      "src": "https://archive.org/download/guitargeek-archives/booradleys_martin_1995.png",
+      "status": 500
+    },
+    {
+      "id": "britnyfox_tommy-2001",
+      "src": "https://archive.org/download/guitargeek-archives/britnyfox_tommy_2001.png",
+      "status": 500
+    },
+    {
+      "id": "brmc_peter-2001",
+      "src": "https://archive.org/download/guitargeek-archives/brmc_peter_2001.png",
+      "status": 0
+    },
+    {
+      "id": "builttospill_doug-1999",
+      "src": "https://archive.org/download/guitargeek-archives/builttospill_doug_1999.png",
+      "status": 500
+    },
+    {
+      "id": "bullet_for_my_valentine_michael_padget-2008",
+      "src": "https://archive.org/download/guitargeek-archives/bullet_for_my_valentine_michael_padget_2008.jpg",
+      "status": 500
+    },
+    {
+      "id": "carlton_larry-2000",
+      "src": "https://archive.org/download/guitargeek-archives/carlton_larry_2000.png",
+      "status": 500
+    },
+    {
+      "id": "catatonia_owen-2000",
+      "src": "https://archive.org/download/guitargeek-archives/catatonia_owen_2000.png",
+      "status": 500
+    },
+    {
+      "id": "catherine_wheel_brian-1995",
+      "src": "https://archive.org/download/guitargeek-archives/catherine_wheel_brian_1995.png",
+      "status": 500
+    },
+    {
+      "id": "catherinewheel_brian-1995",
+      "src": "https://archive.org/download/guitargeek-archives/catherinewheel_brian_1995.png",
+      "status": 0
+    },
+    {
+      "id": "catherinewheel_brian-2000",
+      "src": "https://archive.org/download/guitargeek-archives/catherinewheel_brian_2000.png",
+      "status": 0
+    },
+    {
+      "id": "catherinewheel_rob-2000",
+      "src": "https://archive.org/download/guitargeek-archives/catherinewheel_rob_2000.png",
+      "status": 0
+    },
+    {
+      "id": "cgt_paul-2004",
+      "src": "https://archive.org/download/guitargeek-archives/cgt_paul_2004.png",
+      "status": 500
+    },
+    {
+      "id": "chapterhouse_andrew-1992",
+      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_andrew_1992.png",
+      "status": 502
+    },
+    {
+      "id": "chapterhouse_andrew_sheriff-1992",
+      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_andrew_sheriff_guitar_rig_1992.jpg",
+      "status": 500
+    },
+    {
+      "id": "chapterhouse_stephen-1992",
+      "src": "https://archive.org/download/guitargeek-archives/chapterhouse_stephen_1992.png",
+      "status": 500
+    },
+    {
+      "id": "charlatans_mark-2000",
+      "src": "https://archive.org/download/guitargeek-archives/charlatans_mark_2000.png",
+      "status": 500
+    },
+    {
+      "id": "children_of_bodom_alexi_laiho-2006",
+      "src": "https://archive.org/download/guitargeek-archives/children_of_bodom_alexi_laiho_2006.jpg",
+      "status": 500
+    },
+    {
+      "id": "children_of_bodom_roope_latvala-2009",
+      "src": "https://archive.org/download/guitargeek-archives/children_of_bodom_roope_latvala_guitar_rig_2009.jpg",
+      "status": 500
+    },
+    {
+      "id": "chimaira_rob_arnold-2009",
+      "src": "https://archive.org/download/guitargeek-archives/chimaira_rob_arnold_guitar_rig_2009.jpg",
+      "status": 500
+    },
+    {
+      "id": "christopher_willits-2007",
+      "src": "https://archive.org/download/guitargeek-archives/christopher_willits_2007.jpg",
+      "status": 500
+    },
+    {
+      "id": "circa_survive_brendan-2011",
+      "src": "https://archive.org/download/guitargeek-archives/circa_survive_brendan_2011.jpg",
+      "status": 500
+    },
+    {
+      "id": "clientele_alasdair-2008",
+      "src": "https://archive.org/download/guitargeek-archives/clientele_alasdair_2008.jpg",
+      "status": 500
+    },
+    {
+      "id": "clientele_alastair-2008",
+      "src": "https://archive.org/download/guitargeek-archives/clientele_alastair_2008.png",
+      "status": 500
+    },
+    {
+      "id": "collectivesoul_ross-1998",
+      "src": "https://archive.org/download/guitargeek-archives/collectivesoul_ross_1998.png",
+      "status": 500
+    },
+    {
+      "id": "collectivesoul_ross-2000",
+      "src": "https://archive.org/download/guitargeek-archives/collectivesoul_ross_2000.png",
+      "status": 500
+    },
+    {
+      "id": "corrosion_pepper-2000",
+      "src": "https://archive.org/download/guitargeek-archives/corrosion_pepper_2000.png",
+      "status": 500
+    },
+    {
+      "id": "cure_robert-1996",
+      "src": "https://archive.org/download/guitargeek-archives/cure_robert_1996.png",
+      "status": 500
+    },
+    {
+      "id": "curt_kirkwood-2000",
+      "src": "https://archive.org/download/guitargeek-archives/curt_kirkwood_2000.png",
+      "status": 500
+    },
+    {
+      "id": "curve_dean-2001",
+      "src": "https://archive.org/download/guitargeek-archives/curve_dean_2001.png",
+      "status": 500
+    },
+    {
+      "id": "curve_rob-2001",
+      "src": "https://archive.org/download/guitargeek-archives/curve_rob_2001.png",
+      "status": 500
+    },
+    {
+      "id": "dale_dick-2000",
+      "src": "https://archive.org/download/guitargeek-archives/dale_dick_2000.png",
+      "status": 500
+    },
+    {
+      "id": "dandywarhols_courtney-2000",
+      "src": "https://archive.org/download/guitargeek-archives/dandywarhols_courtney_2000.png",
+      "status": 500
+    },
+    {
+      "id": "dandywarhols_pete-2001",
+      "src": "https://archive.org/download/guitargeek-archives/dandywarhols_pete_2001.png",
+      "status": 500
+    },
+    {
+      "id": "danzig_todd-1999",
+      "src": "https://archive.org/download/guitargeek-archives/danzig_todd_1999.png",
+      "status": 500
+    },
+    {
+      "id": "darkest_hour_mike_schleibaum-2009",
+      "src": "https://archive.org/download/guitargeek-archives/darkest_hour_mike_schleibaum_2009.jpg",
+      "status": 500
+    },
+    {
+      "id": "davidgregory_dave-2000",
+      "src": "https://archive.org/download/guitargeek-archives/davidgregory_dave_2000.png",
+      "status": 500
+    },
+    {
+      "id": "deathcabforcutie_ben-1999",
+      "src": "https://archive.org/download/guitargeek-archives/deathcabforcutie_ben_1999.png",
+      "status": 500
+    },
+    {
+      "id": "deftones_stephen-1999",
+      "src": "https://archive.org/download/guitargeek-archives/deftones_stephen_1999.png",
+      "status": 500
+    },
+    {
+      "id": "deftones_stephen_carpenter-2011",
+      "src": "https://archive.org/download/guitargeek-archives/deftones_stephen_carpenter_guitar_rig_2011.jpg",
+      "status": 500
+    },
+    {
+      "id": "denmark_joe-2004",
+      "src": "https://archive.org/download/guitargeek-archives/denmark_joe_2004.png",
+      "status": 500
+    },
+    {
+      "id": "disturbed_dan-2000",
+      "src": "https://archive.org/download/guitargeek-archives/disturbed_dan_2000.png",
+      "status": 500
+    },
+    {
+      "id": "dokken_reb-2001",
+      "src": "https://archive.org/download/guitargeek-archives/dokken_reb_2001.png",
+      "status": 500
+    },
+    {
+      "id": "doncabellero_ian-2000",
+      "src": "https://archive.org/download/guitargeek-archives/doncabellero_ian_2000.png",
+      "status": 500
+    },
+    {
+      "id": "down_kirk_windstein-2007",
+      "src": "https://archive.org/download/guitargeek-archives/down_kirk_windstein_2007.jpg",
+      "status": 0
+    },
+    {
+      "id": "echo_orbiter_justin-2001",
+      "src": "https://archive.org/download/guitargeek-archives/echo_orbiter_justin_2001.png",
+      "status": 0
+    },
+    {
+      "id": "edwyn_collins-1996",
+      "src": "https://archive.org/download/guitargeek-archives/edwyn_collins_1996.png",
+      "status": 500
+    },
+    {
+      "id": "eric_clapton_bluesbreakers-1966",
+      "src": "https://archive.org/download/guitargeek-archives/eric_clapton_bluesbreakers_guitar_rig_1966.jpg",
+      "status": 500
+    },
+    {
+      "id": "eric_clapton_cream-1967",
+      "src": "https://archive.org/download/guitargeek-archives/eric_clapton_cream_guitar_rig_1967.jpg",
+      "status": 500
+    },
+    {
+      "id": "eric_clapton_the_yardbirds-1964",
+      "src": "https://archive.org/download/guitargeek-archives/eric_clapton_the_yardbirds_guitar_rig_1964.jpg",
+      "status": 502
+    },
+    {
+      "id": "ericjohnson-2001",
+      "src": "https://archive.org/download/guitargeek-archives/ericjohnson_2001.png",
+      "status": 0
+    },
+    {
+      "id": "escape_the_fate_bryan_monte_money-2008",
+      "src": "https://archive.org/download/guitargeek-archives/escape_the_fate_bryan_monte_money_2008.jpg",
+      "status": 500
+    },
+    {
+      "id": "eve6_jon-2000",
+      "src": "https://archive.org/download/guitargeek-archives/eve6_jon_2000.png",
+      "status": 500
+    },
+    {
+      "id": "facetoface_trever-2000",
+      "src": "https://archive.org/download/guitargeek-archives/facetoface_trever_2000.png",
+      "status": 0
+    },
+    {
+      "id": "factory81_bill-2001",
+      "src": "https://archive.org/download/guitargeek-archives/factory81_bill_2001.png",
+      "status": 0
+    },
+    {
+      "id": "fall_out_boy_joe_trohman-2005",
+      "src": "https://archive.org/download/guitargeek-archives/fall_out_boy_joe_trohman_2005.jpg",
+      "status": 0
+    },
+    {
+      "id": "fates_warning_jim-2012",
+      "src": "https://archive.org/download/guitargeek-archives/fates_warning_jim_2012.jpg",
+      "status": 0
+    },
+    {
+      "id": "feared_ola_englund-2014",
+      "src": "https://archive.org/download/guitargeek-archives/feared_ola_englund_guitar_rig_2014.jpg",
+      "status": 0
+    },
+    {
+      "id": "fearfactory_dino-2001",
+      "src": "https://archive.org/download/guitargeek-archives/fearfactory_dino_2001.png",
+      "status": 0
+    },
+    {
+      "id": "five_finger_death_punch_jason_hook-2010",
+      "src": "https://archive.org/download/guitargeek-archives/five_finger_death_punch_jason_hook_2010.jpg",
+      "status": 500
+    },
+    {
+      "id": "flaw_ryan-2002",
+      "src": "https://archive.org/download/guitargeek-archives/flaw_ryan_2002.png",
+      "status": 500
+    },
+    {
+      "id": "foofighters_dave-2000",
+      "src": "https://archive.org/download/guitargeek-archives/foofighters_dave_2000.png",
+      "status": 500
+    },
+    {
+      "id": "foofighters_nate-2000",
+      "src": "https://archive.org/download/guitargeek-archives/foofighters_nate_2000.png",
+      "status": 500
+    },
+    {
+      "id": "for_against_mav-1996",
+      "src": "https://archive.org/download/guitargeek-archives/for_against_mav_1996.png",
+      "status": 500
+    },
+    {
+      "id": "frankblack-2001",
+      "src": "https://archive.org/download/guitargeek-archives/frankblack_2001.png",
+      "status": 500
+    },
+    {
+      "id": "fsa_david-1995",
+      "src": "https://archive.org/download/guitargeek-archives/fsa_david_1995.png",
+      "status": 500
+    },
+    {
+      "id": "fuel_brett-2000",
+      "src": "https://archive.org/download/guitargeek-archives/fuel_brett_2000.png",
+      "status": 500
+    },
+    {
+      "id": "fugazi_guy-1999",
+      "src": "https://archive.org/download/guitargeek-archives/fugazi_guy_1999.png",
+      "status": 500
+    },
+    {
+      "id": "fugazi_guy_picciotto-1999",
+      "src": "https://archive.org/download/guitargeek-archives/fugazi_guy_picciotto_guitar_rig_1999.jpg",
+      "status": 500
+    },
+    {
+      "id": "fugazi_ian-1999",
+      "src": "https://archive.org/download/guitargeek-archives/fugazi_ian_1999.png",
+      "status": 500
+    },
+    {
+      "id": "fumanchu_bob-2000",
+      "src": "https://archive.org/download/guitargeek-archives/fumanchu_bob_2000.png",
+      "status": 500
+    },
+    {
+      "id": "fumanchu_bob-2001",
+      "src": "https://archive.org/download/guitargeek-archives/fumanchu_bob_2001.png",
+      "status": 500
+    },
+    {
+      "id": "gbv_mitch_mitchell-2011",
+      "src": "https://archive.org/download/guitargeek-archives/gbv_mitch_mitchell_2011.jpg",
+      "status": 500
+    },
+    {
+      "id": "gilbert_paul-2000",
+      "src": "https://archive.org/download/guitargeek-archives/gilbert_paul_2000.png",
+      "status": 500
+    },
+    {
+      "id": "korn_head-1997",
+      "src": "https://archive.org/download/guitargeek-archives/korn_head_1997.png",
+      "status": 500
+    },
+    {
+      "id": "korn_head-1999",
+      "src": "https://archive.org/download/guitargeek-archives/korn_head_1999.png",
+      "status": 500
+    },
+    {
+      "id": "korn_head-2002",
+      "src": "https://archive.org/download/guitargeek-archives/korn_head_guitar_rig_2002.jpg",
+      "status": 500
+    },
+    {
+      "id": "korn_munky-1997",
+      "src": "https://archive.org/download/guitargeek-archives/korn_munky_1997.png",
+      "status": 500
+    },
+    {
+      "id": "korn_munky-1999",
+      "src": "https://archive.org/download/guitargeek-archives/korn_munky_1999.png",
+      "status": 500
+    },
+    {
+      "id": "korn_munky-2002",
+      "src": "https://archive.org/download/guitargeek-archives/korn_munky_guitar_rig_2002.jpg",
+      "status": 500
+    },
+    {
+      "id": "laguns_tracii-2000",
+      "src": "https://archive.org/download/guitargeek-archives/laguns_tracii_2000.png",
+      "status": 500
+    },
+    {
+      "id": "laika_margaret-1999",
+      "src": "https://archive.org/download/guitargeek-archives/laika_margaret_1999.png",
+      "status": 500
+    },
+    {
+      "id": "lamb_of_god_willie_adler-2005",
+      "src": "https://archive.org/download/guitargeek-archives/lamb_of_god_willie_adler_2005.jpg",
+      "status": 500
+    },
+    {
+      "id": "lang_jonny-1999",
+      "src": "https://archive.org/download/guitargeek-archives/lang_jonny_1999.png",
+      "status": 502
+    },
+    {
+      "id": "leni_stern-2002",
+      "src": "https://archive.org/download/guitargeek-archives/leni_stern_2002.png",
+      "status": 502
+    },
+    {
+      "id": "limpbizkit_wes-1998",
+      "src": "https://archive.org/download/guitargeek-archives/limpbizkit_wes_1998.png",
+      "status": 0
+    },
+    {
+      "id": "linkin_park_brad_delson-2004",
+      "src": "https://archive.org/download/guitargeek-archives/linkin_park_brad_delson_2004.jpg",
+      "status": 502
+    },
+    {
+      "id": "lochheed_adam-2004",
+      "src": "https://archive.org/download/guitargeek-archives/lochheed_adam_2004.png",
+      "status": 0
+    },
+    {
+      "id": "luna_dean-2000",
+      "src": "https://archive.org/download/guitargeek-archives/luna_dean_2000.png",
+      "status": 0
+    },
+    {
+      "id": "luna_dean-2004",
+      "src": "https://archive.org/download/guitargeek-archives/luna_dean_2004.png",
+      "status": 0
+    },
+    {
+      "id": "luna_sean-2001",
+      "src": "https://archive.org/download/guitargeek-archives/luna_sean_2001.png",
+      "status": 500
+    },
+    {
+      "id": "lush_miki-1994",
+      "src": "https://archive.org/download/guitargeek-archives/lush_miki_1994.png",
+      "status": 500
+    },
+    {
+      "id": "lush_miki_berenyi-1994",
+      "src": "https://archive.org/download/guitargeek-archives/lush_miki_berenyi_guitar_rig_1994.jpg",
+      "status": 502
+    },
+    {
+      "id": "machinehead_phil_demmel-2007",
+      "src": "https://archive.org/download/guitargeek-archives/machinehead_phil_demmel_2007.jpg",
+      "status": 502
+    },
+    {
+      "id": "magicdirt_adalita-2001",
+      "src": "https://archive.org/download/guitargeek-archives/magicdirt_adalita_2001.png",
+      "status": 502
+    },
+    {
+      "id": "magicdirt_dean-2001",
+      "src": "https://archive.org/download/guitargeek-archives/magicdirt_dean_2001.png",
+      "status": 502
+    },
+    {
+      "id": "magicdirt_raul-2001",
+      "src": "https://archive.org/download/guitargeek-archives/magicdirt_raul_2001.png",
+      "status": 502
+    },
+    {
+      "id": "mahogany_andrew-1999",
+      "src": "https://archive.org/download/guitargeek-archives/mahogany_andrew_1999.png",
+      "status": 502
+    },
+    {
+      "id": "malmsteen_yngwie-1988",
+      "src": "https://archive.org/download/guitargeek-archives/malmsteen_yngwie_1988.png",
+      "status": 502
+    },
+    {
+      "id": "manorastroman_trace-2000",
+      "src": "https://archive.org/download/guitargeek-archives/manorastroman_trace_2000.png",
+      "status": 502
+    },
+    {
+      "id": "mastodon_bill_kelliher-2009",
+      "src": "https://archive.org/download/guitargeek-archives/mastodon_bill_kelliher_guitar_rig_2009.jpg",
+      "status": 502
+    },
+    {
+      "id": "matthewsweet_richard-1992",
+      "src": "https://archive.org/download/guitargeek-archives/matthewsweet_richard_1992.png",
+      "status": 502
+    },
+    {
+      "id": "may_brian-1999",
+      "src": "https://archive.org/download/guitargeek-archives/may_brian_1999.png",
+      "status": 502
+    },
+    {
+      "id": "mbv_belinda-1991",
+      "src": "https://archive.org/download/guitargeek-archives/mbv_belinda_1991.png",
+      "status": 0
+    },
+    {
+      "id": "mbv_kevin-1991",
+      "src": "https://archive.org/download/guitargeek-archives/mbv_kevin_1991.png",
+      "status": 502
+    },
+    {
+      "id": "medicine_brad-1994",
+      "src": "https://archive.org/download/guitargeek-archives/medicine_brad_1994.png",
+      "status": 502
+    },
+    {
+      "id": "meeting_places_chase-2003",
+      "src": "https://archive.org/download/guitargeek-archives/meeting_places_chase_2003.png",
+      "status": 0
+    },
+    {
+      "id": "meeting_places_scott-2003",
+      "src": "https://archive.org/download/guitargeek-archives/meeting_places_scott_2003.png",
+      "status": 502
+    },
+    {
+      "id": "megadeth_dave-2004",
+      "src": "https://archive.org/download/guitargeek-archives/megadeth_dave_2004_rig.jpg",
+      "status": 502
+    },
+    {
+      "id": "megadeth_glen_drover-2007",
+      "src": "https://archive.org/download/guitargeek-archives/megadeth_glen_drover_2007.jpg",
+      "status": 502
+    },
+    {
+      "id": "mellowdrone_jonathan-2004",
+      "src": "https://archive.org/download/guitargeek-archives/mellowdrone_jonathan_2004.png",
+      "status": 502
+    },
+    {
+      "id": "meltbanana_agata-2000",
+      "src": "https://archive.org/download/guitargeek-archives/meltbanana_agata_2000.png",
+      "status": 502
+    },
+    {
+      "id": "melvins_buzzo-2001",
+      "src": "https://archive.org/download/guitargeek-archives/melvins_buzzo_2001.png",
+      "status": 502
+    },
+    {
+      "id": "mightylemondrops_dave-1990",
+      "src": "https://archive.org/download/guitargeek-archives/mightylemondrops_dave_1990.png",
+      "status": 502
+    },
+    {
+      "id": "mogwai_stewart-2000",
+      "src": "https://archive.org/download/guitargeek-archives/mogwai_stewart_2000.png",
+      "status": 502
+    },
+    {
+      "id": "motleycrue_mick-1995",
+      "src": "https://archive.org/download/guitargeek-archives/motleycrue_mick_1995.png",
+      "status": 502
+    },
+    {
+      "id": "mudoney_mark-1999",
+      "src": "https://archive.org/download/guitargeek-archives/mudoney_mark_1999.png",
+      "status": 0
+    },
+    {
+      "id": "mudvayne_gurrg-2001",
+      "src": "https://archive.org/download/guitargeek-archives/mudvayne_gurrg_2001.png",
+      "status": 502
+    },
+    {
+      "id": "mudvayne_gurrg-2005",
+      "src": "https://archive.org/download/guitargeek-archives/mudvayne_gurrg_2005.jpg",
+      "status": 502
+    },
+    {
+      "id": "mudvayne_ryknow-2001",
+      "src": "https://archive.org/download/guitargeek-archives/mudvayne_ryknow_2001.png",
+      "status": 502
+    },
+    {
+      "id": "mxpx_tom-1999",
+      "src": "https://archive.org/download/guitargeek-archives/mxpx_tom_1999.png",
+      "status": 502
+    },
+    {
+      "id": "nadasurf_daniel-2001",
+      "src": "https://archive.org/download/guitargeek-archives/nadasurf_daniel_2001.png",
+      "status": 502
+    },
+    {
+      "id": "nadasurf_matthew-2001",
+      "src": "https://archive.org/download/guitargeek-archives/nadasurf_matthew_2001.png",
+      "status": 502
+    },
+    {
+      "id": "nickelback_mike-2001",
+      "src": "https://archive.org/download/guitargeek-archives/nickelback_mike_2001.png",
+      "status": 502
+    },
+    {
+      "id": "nin_robin_finck-2014",
+      "src": "https://archive.org/download/guitargeek-archives/nin_robin_finck_guitar_rig_2014.jpg",
+      "status": 502
+    },
+    {
+      "id": "nirvana_kurt-1992",
+      "src": "https://archive.org/download/guitargeek-archives/nirvana_kurt_1992.png",
+      "status": 502
+    },
+    {
+      "id": "nirvana_kurt-1993",
+      "src": "https://archive.org/download/guitargeek-archives/nirvana_kurt_1993.png",
+      "status": 502
+    },
+    {
+      "id": "nirvana_kurt-1995",
+      "src": "https://archive.org/download/guitargeek-archives/nirvana_kurt_1995.png",
+      "status": 0
+    },
+    {
+      "id": "nofx_elhefe-1999",
+      "src": "https://archive.org/download/guitargeek-archives/nofx_elhefe_1999.png",
+      "status": 502
+    },
+    {
+      "id": "nothingface_tom-2001",
+      "src": "https://archive.org/download/guitargeek-archives/nothingface_tom_2001.png",
+      "status": 0
+    },
+    {
+      "id": "ocean_blue_david-1994",
+      "src": "https://archive.org/download/guitargeek-archives/ocean_blue_david_1994.png",
+      "status": 502
+    },
+    {
+      "id": "orangesunshine_ryan-2004",
+      "src": "https://archive.org/download/guitargeek-archives/orangesunshine_ryan_2004.png",
+      "status": 0
+    },
+    {
+      "id": "orgy_amir-2000",
+      "src": "https://archive.org/download/guitargeek-archives/orgy_amir_2000.png",
+      "status": 0
+    },
+    {
+      "id": "ozzy_randy-1981",
+      "src": "https://archive.org/download/guitargeek-archives/ozzy_randy_1981.png",
+      "status": 502
+    },
+    {
+      "id": "ozzy_rhoads-1981",
+      "src": "https://archive.org/download/guitargeek-archives/ozzy_rhoads_1981.jpg",
+      "status": 500
+    },
+    {
+      "id": "ozzy_zakk-1988",
+      "src": "https://archive.org/download/guitargeek-archives/ozzy_zakk_1988.png",
+      "status": 0
+    },
+    {
+      "id": "ozzy_zakk_wylde-2011",
+      "src": "https://archive.org/download/guitargeek-archives/ozzy_zakk_wylde_2011.jpg",
+      "status": 0
+    },
+    {
+      "id": "pantera_rex-2000",
+      "src": "https://archive.org/download/guitargeek-archives/pantera_rex_2000.png",
+      "status": 500
+    },
+    {
+      "id": "paparoach_jerry-2000",
+      "src": "https://archive.org/download/guitargeek-archives/paparoach_jerry_2000.png",
+      "status": 500
+    },
+    {
+      "id": "paul_gilbert-2008",
+      "src": "https://archive.org/download/guitargeek-archives/paul_gilbert_2008.jpg",
+      "status": 500
+    },
+    {
+      "id": "pearljam_eddie-1997",
+      "src": "https://archive.org/download/guitargeek-archives/pearljam_eddie_1997.png",
+      "status": 0
+    },
+    {
+      "id": "pearljam_stone-1997",
+      "src": "https://archive.org/download/guitargeek-archives/pearljam_stone_1997.png",
+      "status": 0
+    },
+    {
+      "id": "perfectcircle_billie-2000",
+      "src": "https://archive.org/download/guitargeek-archives/perfectcircle_billie_2000.png",
+      "status": 0
+    },
+    {
+      "id": "pete_anderson-2001",
+      "src": "https://archive.org/download/guitargeek-archives/pete_anderson_2001.png",
+      "status": 500
+    },
+    {
+      "id": "peteanderson-2001",
+      "src": "https://archive.org/download/guitargeek-archives/peteanderson_2001.png",
+      "status": 500
+    },
+    {
+      "id": "petty_tom-2000",
+      "src": "https://archive.org/download/guitargeek-archives/petty_tom_2000.png",
+      "status": 500
+    },
+    {
+      "id": "phillesh_warren-2001",
+      "src": "https://archive.org/download/guitargeek-archives/phillesh_warren_2001.png",
+      "status": 500
+    },
+    {
+      "id": "pixies_kim-1991",
+      "src": "https://archive.org/download/guitargeek-archives/pixies_kim_1991.png",
+      "status": 502
+    },
+    {
+      "id": "pod_marcos-2000",
+      "src": "https://archive.org/download/guitargeek-archives/pod_marcos_2000.png",
+      "status": 500
+    },
+    {
+      "id": "pod_traa-2000",
+      "src": "https://archive.org/download/guitargeek-archives/pod_traa_2000.png",
+      "status": 502
+    },
+    {
+      "id": "polara_dan-1998",
+      "src": "https://archive.org/download/guitargeek-archives/polara_dan_1998.png",
+      "status": 0
+    },
+    {
+      "id": "polara_jennifer-1995",
+      "src": "https://archive.org/download/guitargeek-archives/polara_jennifer_1995.png",
+      "status": 0
+    },
+    {
+      "id": "posies_ken-1996",
+      "src": "https://archive.org/download/guitargeek-archives/posies_ken_1996.png",
+      "status": 0
+    },
+    {
+      "id": "posterchildren_rick-1999",
+      "src": "https://archive.org/download/guitargeek-archives/posterchildren_rick_1999.png",
+      "status": 502
+    },
+    {
+      "id": "primus_larry-1998",
+      "src": "https://archive.org/download/guitargeek-archives/primus_larry_1998.png",
+      "status": 502
+    },
+    {
+      "id": "promisering_davey-2000",
+      "src": "https://archive.org/download/guitargeek-archives/promisering_davey_2000.png",
+      "status": 502
+    },
+    {
+      "id": "psych_furs_richard-2001",
+      "src": "https://archive.org/download/guitargeek-archives/psych_furs_richard_2001.png",
+      "status": 502
+    },
+    {
+      "id": "psychedelicfurs_john-1980",
+      "src": "https://archive.org/download/guitargeek-archives/psychedelicfurs_john_1980.png",
+      "status": 502
+    },
+    {
+      "id": "psychedelicfurs_john-1985",
+      "src": "https://archive.org/download/guitargeek-archives/psychedelicfurs_john_1985.png",
+      "status": 502
+    },
+    {
+      "id": "psychedelicfurs_john-2001",
+      "src": "https://archive.org/download/guitargeek-archives/psychedelicfurs_john_2001.png",
+      "status": 502
+    },
+    {
+      "id": "psychedelicfurs_tim-2001",
+      "src": "https://archive.org/download/guitargeek-archives/psychedelicfurs_tim_2001.png",
+      "status": 502
+    },
+    {
+      "id": "queen_brian-1990",
+      "src": "https://archive.org/download/guitargeek-archives/queen_brian_1990.png",
+      "status": 502
+    },
+    {
+      "id": "queensryche_michael_wilton-2007",
+      "src": "https://archive.org/download/guitargeek-archives/queensryche_michael_wilton_2007.jpg",
+      "status": 502
+    },
+    {
+      "id": "queensryche_mike_stone-2007",
+      "src": "https://archive.org/download/guitargeek-archives/queensryche_mike_stone_2007.jpg",
+      "status": 502
+    },
+    {
+      "id": "radiohead_jonny-1997",
+      "src": "https://archive.org/download/guitargeek-archives/radiohead_jonny_1997.png",
+      "status": 502
+    },
+    {
+      "id": "radiohead_thom-1997",
+      "src": "https://archive.org/download/guitargeek-archives/radiohead_thom_1997.png",
+      "status": 502
+    },
+    {
+      "id": "railwaychilren_gary-1991",
+      "src": "https://archive.org/download/guitargeek-archives/railwaychilren_gary_1991.png",
+      "status": 502
+    },
+    {
+      "id": "raitt_bonnie-2000",
+      "src": "https://archive.org/download/guitargeek-archives/raitt_bonnie_2000.png",
+      "status": 502
+    },
+    {
+      "id": "ramones_johnny-1990",
+      "src": "https://archive.org/download/guitargeek-archives/ramones_johnny_1990.png",
+      "status": 502
+    },
+    {
+      "id": "ramones_johnny_ramone-1996",
+      "src": "https://archive.org/download/guitargeek-archives/ramones_johnny_ramone_1996.jpg",
+      "status": 502
+    },
+    {
+      "id": "ratm_tom-1998",
+      "src": "https://archive.org/download/guitargeek-archives/ratm_tom_1998.png",
+      "status": 502
+    },
+    {
+      "id": "ratm_tom_morello-1998",
+      "src": "https://archive.org/download/guitargeek-archives/ratm_tom_morello_1998_rig.jpg",
+      "status": 502
+    },
+    {
+      "id": "remyzero_jeffrey-2002",
+      "src": "https://archive.org/download/guitargeek-archives/remyzero_jeffrey_2002.png",
+      "status": 502
+    },
+    {
+      "id": "rhcp_dave-1996",
+      "src": "https://archive.org/download/guitargeek-archives/rhcp_dave_1996.png",
+      "status": 500
+    },
+    {
+      "id": "rhcp_john_frusciante-2001",
+      "src": "https://archive.org/download/guitargeek-archives/rhcp_john_frusciante_2001.jpg",
+      "status": 502
+    },
+    {
+      "id": "richardlloyd-1980",
+      "src": "https://archive.org/download/guitargeek-archives/richardlloyd_1980.png",
+      "status": 502
+    },
+    {
+      "id": "ride_andy-1991",
+      "src": "https://archive.org/download/guitargeek-archives/ride_andy_1991.png",
+      "status": 502
+    },
+    {
+      "id": "rig_jamc_ben-1999",
+      "src": "https://archive.org/download/guitargeek-archives/rig_jamc_ben_1999.jpg",
+      "status": 502
+    },
+    {
+      "id": "ryecoalition_john-2000",
+      "src": "https://archive.org/download/guitargeek-archives/ryecoalition_john_2000.png",
+      "status": 502
+    },
+    {
+      "id": "satriani_joe-2000",
+      "src": "https://archive.org/download/guitargeek-archives/satriani_joe_2000.png",
+      "status": 502
+    },
+    {
+      "id": "seam_soo-1995",
+      "src": "https://archive.org/download/guitargeek-archives/seam_soo_1995.png",
+      "status": 502
+    },
+    {
+      "id": "secret_machines_devon-2006",
+      "src": "https://archive.org/download/guitargeek-archives/secret_machines_devon_2006.png",
+      "status": 502
+    },
+    {
+      "id": "sepultura_andreas_kisser-2006",
+      "src": "https://archive.org/download/guitargeek-archives/sepultura_andreas_kisser_2006.jpg",
+      "status": 502
+    },
+    {
+      "id": "sevendust_john-2002",
+      "src": "https://archive.org/download/guitargeek-archives/sevendust_john_2002.png",
+      "status": 502
+    },
+    {
+      "id": "shadowsfall_jon_donais-2003",
+      "src": "https://archive.org/download/guitargeek-archives/shadowsfall_jon_donais_2003.jpg",
+      "status": 502
+    },
+    {
+      "id": "shellac_steve-2000",
+      "src": "https://archive.org/download/guitargeek-archives/shellac_steve_2000.png",
+      "status": 502
+    },
+    {
+      "id": "sherylcrow_jeff-2002",
+      "src": "https://archive.org/download/guitargeek-archives/sherylcrow_jeff_2002.png",
+      "status": 502
+    },
+    {
+      "id": "shinedown_jasin_todd-2006",
+      "src": "https://archive.org/download/guitargeek-archives/shinedown_jasin_todd_2006.jpg",
+      "status": 502
+    },
+    {
+      "id": "sisterhazel_jeff-2001",
+      "src": "https://archive.org/download/guitargeek-archives/sisterhazel_jeff_2001.png",
+      "status": 502
+    },
+    {
+      "id": "sisterhazel_ryan-2001",
+      "src": "https://archive.org/download/guitargeek-archives/sisterhazel_ryan_2001.png",
+      "status": 500
+    },
+    {
+      "id": "sixxam_dj_ashba-2008",
+      "src": "https://archive.org/download/guitargeek-archives/sixxam_dj_ashba_guitar_rig_2008.jpg",
+      "status": 502
+    },
+    {
+      "id": "skinlab_glen-2003",
+      "src": "https://archive.org/download/guitargeek-archives/skinlab_glen_2003.png",
+      "status": 502
+    },
+    {
+      "id": "skunkanansie_ace-1999",
+      "src": "https://archive.org/download/guitargeek-archives/skunkanansie_ace_1999.png",
+      "status": 502
+    },
+    {
+      "id": "skycriesmary_william-1999",
+      "src": "https://archive.org/download/guitargeek-archives/skycriesmary_william_1999.png",
+      "status": 0
+    },
+    {
+      "id": "slash-2003",
+      "src": "https://archive.org/download/guitargeek-archives/slash_2003.jpg",
+      "status": 500
+    },
+    {
+      "id": "slash-2007",
+      "src": "https://archive.org/download/guitargeek-archives/slash_2007.jpg",
+      "status": 500
+    },
+    {
+      "id": "sleaterkinney_carrie-2000",
+      "src": "https://archive.org/download/guitargeek-archives/sleaterkinney_carrie_2000.png",
+      "status": 500
+    },
+    {
+      "id": "slipknot_4-2000",
+      "src": "https://archive.org/download/guitargeek-archives/slipknot_4_2000.png",
+      "status": 500
+    },
+    {
+      "id": "slipknot_7-2000",
+      "src": "https://archive.org/download/guitargeek-archives/slipknot_7_2000.png",
+      "status": 500
+    },
+    {
+      "id": "slowdive_christian-1993",
+      "src": "https://archive.org/download/guitargeek-archives/slowdive_christian_1993.jpg",
+      "status": 500
+    },
+    {
+      "id": "slowdive_neil_halstead-1993",
+      "src": "https://archive.org/download/guitargeek-archives/slowdive_neil_halstead_1993.jpg",
+      "status": 500
+    },
+    {
+      "id": "slowdive_rachel-1993",
+      "src": "https://archive.org/download/guitargeek-archives/slowdive_rachel_1993.jpg",
+      "status": 500
+    },
+    {
+      "id": "spineshank_mike-2003",
+      "src": "https://archive.org/download/guitargeek-archives/spineshank_mike_2003.png",
+      "status": 500
+    },
+    {
+      "id": "srv-1984",
+      "src": "https://archive.org/download/guitargeek-archives/srv_1984.png",
+      "status": 500
+    },
+    {
+      "id": "staticx_tripp-2002",
+      "src": "https://archive.org/download/guitargeek-archives/staticx_tripp_2002.png",
+      "status": 500
+    },
+    {
+      "id": "testament_eric_peterson-2006",
+      "src": "https://archive.org/download/guitargeek-archives/testament_eric_peterson_2006.jpg",
+      "status": 500
+    },
+    {
+      "id": "the_cult_billy_duffy-2012",
+      "src": "https://archive.org/download/guitargeek-archives/the_cult_billy_duffy_2012.jpg",
+      "status": 500
+    },
+    {
+      "id": "the_used_quinn_allman-2013",
+      "src": "https://archive.org/download/guitargeek-archives/the_used_quinn_allman_2013.jpg",
+      "status": 500
+    },
+    {
+      "id": "thin_lizzy_brian-1974",
+      "src": "https://archive.org/download/guitargeek-archives/thin_lizzy_brian_1974.png",
+      "status": 500
+    },
+    {
+      "id": "thin_lizzy_brian_robertson-1974",
+      "src": "https://archive.org/download/guitargeek-archives/thin_lizzy_brian_robertson_guitar_rig_1974.jpg",
+      "status": 500
+    },
+    {
+      "id": "whitesnake_doug_aldrich-2009",
+      "src": "https://archive.org/download/guitargeek-archives/whitesnake_doug_aldrich_guitar_rig_2009.jpg",
+      "status": 500
+    },
+    {
+      "id": "who_pete-1969",
+      "src": "https://archive.org/download/guitargeek-archives/who_pete_1969.png",
+      "status": 500
+    },
+    {
+      "id": "widespreadpanic_houser-2001",
+      "src": "https://archive.org/download/guitargeek-archives/widespreadpanic_houser_2001.png",
+      "status": 500
+    },
+    {
+      "id": "widespreadpanic_john-2001",
+      "src": "https://archive.org/download/guitargeek-archives/widespreadpanic_john_2001.png",
+      "status": 500
+    },
+    {
+      "id": "willienelson_jackie-2001",
+      "src": "https://archive.org/download/guitargeek-archives/willienelson_jackie_2001.png",
+      "status": 500
+    },
+    {
+      "id": "willits-2009",
+      "src": "https://archive.org/download/guitargeek-archives/willits_2009.png",
+      "status": 500
+    },
+    {
+      "id": "windy_and_carl_carl-1996",
+      "src": "https://archive.org/download/guitargeek-archives/windy_and_carl_carl_1996.png",
       "status": 500
     }
   ]

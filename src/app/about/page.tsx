@@ -123,8 +123,11 @@ export default function AboutPage() {
               The Signal Chain
             </a>
             {' '}— a history of amplifiers, effects, and electric guitar tone across every era —
-            free at guitar.solutions. His other books on AI, rights, and creator ownership:{' '}
-            <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Guitar Without a Number</a>,{' '}
+            free at guitar.solutions. It grew out of his earlier self-taught instruction thread,{' '}
+            <a href="https://strumly.suedeai.ai/book/catalog" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Guitar Without a Number</a>
+            {' '}— memoir-driven instruction for the self-taught guitarist, now published inside
+            The Signal Chain rather than as a separate title. His books on AI, rights, and creator
+            ownership:{' '}
             <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Human Authenticity Layer</a>,{' '}
             <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Proof as Infrastructure</a>, and{' '}
             <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Stake Your Claim</a>{' '}
