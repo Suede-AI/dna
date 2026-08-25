@@ -49,7 +49,7 @@ const FAQS = [
   },
   {
     q: 'I found a wrong year, wrong artist, or broken image. How do I report it?',
-    a: 'Message @aisuede on X or email info@suedeai.org. Corrections are applied through data/overrides.json without altering the underlying image.',
+    a: 'Message @aisuede on X or email info@suedeai.ai. Corrections are applied through data/overrides.json without altering the underlying image.',
   },
   {
     q: 'Can I use a rig image from the archive?',

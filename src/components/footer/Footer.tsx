@@ -30,10 +30,10 @@ export function Footer() {
             @aisuede on X ↗
           </a>
           <a
-            href="mailto:info@suedeai.org?subject=Suede%20DNA"
+            href="mailto:info@suedeai.ai?subject=Suede%20DNA"
             className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"
           >
-            info@suedeai.org
+            info@suedeai.ai
           </a>
         </div>
         <div className="mono-label">

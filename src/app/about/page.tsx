@@ -92,10 +92,10 @@ export default function AboutPage() {
             </a>{' '}
             or write to{' '}
             <a
-              href="mailto:info@suedeai.org"
+              href="mailto:info@suedeai.ai"
               className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
             >
-              info@suedeai.org
+              info@suedeai.ai
             </a>
             .
           </p>

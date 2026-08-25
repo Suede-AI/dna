@@ -110,7 +110,7 @@ export default function SourcingPage() {
         <p>
           If you find a misattributed rig, a wrong year, or a broken image, the fastest path to a
           fix is <SuedeLink href="https://x.com/aisuede">@aisuede on X</SuedeLink> or{' '}
-          <SuedeLink href="mailto:info@suedeai.org">info@suedeai.org</SuedeLink>. Corrections are
+          <SuedeLink href="mailto:info@suedeai.ai">info@suedeai.ai</SuedeLink>. Corrections are
           applied through <code className="mono text-white">data/overrides.json</code>. The
           underlying image is never edited or re-hosted, only the metadata around it.
         </p>
