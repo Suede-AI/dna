@@ -114,7 +114,7 @@ export function homeJsonLd(
     description: homePageDescription(stats),
     url: siteUrl,
     isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },
-    publisher: { '@type': 'Organization', name: 'Suede Labs AI', url: 'https://suedeai.ai' },
+    publisher: { '@id': 'https://suedeai.ai/#organization' },
     mainEntity: {
       '@type': 'ItemList',
       name: 'Guitar Rig Archive',
