@@ -39,24 +39,32 @@ jobs:
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
     steps:
+      # Fails the job when a secret is missing. This used to set ready=false and
+      # skip every step below, which made the workflow go green while shipping
+      # nothing — main sat undeployed and the Actions tab said everything passed.
+      # A deploy workflow that cannot deploy is a failure, not a skip.
       - name: Check for deploy credentials
-        id: creds
         run: |
-          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
-            echo "ready=false" >> "$GITHUB_OUTPUT"
+          missing=""
+          [ -n "${{ secrets.VERCEL_TOKEN }}" ]      || missing="$missing VERCEL_TOKEN"
+          [ -n "${{ secrets.VERCEL_ORG_ID }}" ]     || missing="$missing VERCEL_ORG_ID"
+          [ -n "${{ secrets.VERCEL_PROJECT_ID }}" ] || missing="$missing VERCEL_PROJECT_ID"
+          if [ -n "$missing" ]; then
             {
-              echo "### Deploy skipped"
+              echo "### Deploy failed: missing credentials"
               echo
-              echo "\`VERCEL_TOKEN\` is not set on this repository, so there is nothing to"
-              echo "deploy with. Add VERCEL_TOKEN, VERCEL_ORG_ID and VERCEL_PROJECT_ID as"
-              echo "repository secrets, then re-run this workflow."
+              echo "Not set on this repository:$missing"
+              echo
+              echo "dna.suedeai.ai cannot be deployed until these exist as repository"
+              echo "secrets. Until then every commit to main stays unpublished."
+              echo
+              echo "Settings -> Secrets and variables -> Actions, then re-run this workflow."
             } >> "$GITHUB_STEP_SUMMARY"
-          else
-            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "::error::missing deploy secrets:$missing"
+            exit 1
           fi
 
       - name: Checkout
-        if: steps.creds.outputs.ready == 'true'
         uses: actions/checkout@v4
         with:
           # workflow_run checks out the default branch tip by default, which may
@@ -65,14 +73,12 @@ jobs:
           ref: ${{ github.event.workflow_run.head_sha || github.sha }}
 
       - name: Install pnpm
-        if: steps.creds.outputs.ready == 'true'
         uses: pnpm/action-setup@v3
         with:
           version: 9
           run_install: false
 
       - name: Setup Node
-        if: steps.creds.outputs.ready == 'true'
         uses: actions/setup-node@v4
         with:
           # Matches the Vercel project's runtime (24.x). CI builds on 20 to catch
@@ -82,21 +88,17 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        if: steps.creds.outputs.ready == 'true'
         run: pnpm install --frozen-lockfile
 
       - name: Pull Vercel environment
-        if: steps.creds.outputs.ready == 'true'
         run: npx vercel@59 pull --yes --environment=production --token="${{ secrets.VERCEL_TOKEN }}"
 
       - name: Build
-        if: steps.creds.outputs.ready == 'true'
         env:
           NEXT_TELEMETRY_DISABLED: "1"
         run: npx vercel@59 build --prod --token="${{ secrets.VERCEL_TOKEN }}"
 
       - name: Deploy
-        if: steps.creds.outputs.ready == 'true'
         id: deploy
         run: |
           # The CLI writes progress banners alongside the URL; the URL is the last line.
@@ -111,10 +113,35 @@ jobs:
             echo "- live: https://dna.suedeai.ai"
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Verify production is serving
-        if: steps.creds.outputs.ready == 'true'
+      # A 200 proves the host answers, not that it answers with THIS build — the
+      # site returned 200 all the way through the period when main was never
+      # being deployed at all. Next chunk filenames are content-hashed, so the
+      # production domain and the deployment we just created must reference the
+      # same set once the alias has moved.
+      - name: Verify production is serving this build
+        env:
+          DEPLOY_URL: ${{ steps.deploy.outputs.url }}
         run: |
           code=$(curl -sS -o /dev/null -w '%{http_code}' --retry 5 --retry-delay 5 \
             --retry-all-errors https://dna.suedeai.ai)
           echo "dna.suedeai.ai -> $code"
           [ "$code" = "200" ] || { echo "::error::dna.suedeai.ai returned $code after deploy"; exit 1; }
+
+          chunks() {
+            curl -sS --retry 3 --retry-delay 3 --retry-all-errors "$1" \
+              | grep -oE '/_next/static/chunks/[A-Za-z0-9._-]+\.js' | sort -u
+          }
+          live=$(chunks https://dna.suedeai.ai)
+          fresh=$(chunks "$DEPLOY_URL")
+
+          if [ -z "$fresh" ]; then
+            echo "::warning::could not read assets from $DEPLOY_URL; freshness not verified"
+            exit 0
+          fi
+          if [ "$live" = "$fresh" ]; then
+            echo "production is serving the deployment just built"
+            exit 0
+          fi
+          echo "::error::dna.suedeai.ai is not serving $DEPLOY_URL - the alias did not move"
+          diff <(echo "$live") <(echo "$fresh") || true
+          exit 1
