@@ -95,7 +95,7 @@ const websiteJsonLd = {
         'https://github.com/Suede-AI',
         'https://x.com/AISUEDE',
         'https://www.crunchbase.com/organization/suede-labs-ai',
-        'https://www.linkedin.com/company/suede-labs-ai',
+        'https://www.linkedin.com/company/suede-labs',
         'https://www.wikidata.org/wiki/Q141169484',
       ],
     },
