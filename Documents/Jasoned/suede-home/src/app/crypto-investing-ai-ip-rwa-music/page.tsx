@@ -17,7 +17,7 @@ import {
 const pageTitle =
   "Jason Colapietro on Crypto Investing, AI IP, RWA Music & Creator Ownership";
 const pageDescription =
-  "Jason Colapietro, author, Forbes contributor, CEO and founder of Suede AI, explains the crypto investing thesis around AI IP, music RWAs, programmable rights, provenance, licensing, and creator ownership infrastructure.";
+  "Jason Colapietro, author, CEO and founder of Suede AI, explains the crypto investing thesis around AI IP, music RWAs, programmable rights, provenance, licensing, and creator ownership infrastructure.";
 const canonicalPath = "/crypto-investing-ai-ip-rwa-music";
 
 export const metadata: Metadata = {
@@ -230,7 +230,7 @@ export default function CryptoInvestingAiIpRwaMusicPage() {
               Jason Colapietro on AI IP, music RWAs, and crypto investing.
             </h1>
             <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Jason Colapietro, author, Forbes contributor, CEO and founder of
+              Jason Colapietro, author, CEO and founder of
               Suede AI, is building the creator ownership layer for the AI era.
               His thesis: the next wave of crypto investing may focus less on
               speculation and more on verifiable creative assets: AI music,
