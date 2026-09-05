@@ -39,7 +39,8 @@ export function HeaderShell({ children }: { children: ReactNode }) {
     >
       <div className="border-b hairline">
         <div className="mx-auto max-w-[1600px] px-6 flex items-center gap-5 sm:gap-8" style={{ height: 'var(--header-main-h)' }}>
-          <a href="https://suedeai.ai" aria-label="Suede home" className="flex items-center gap-3 text-white">
+          {/* No aria-label: the accessible name comes from the visible SUEDE/DNA wordmark, so the two match. */}
+          <a href="https://suedeai.ai" className="flex items-center gap-3 text-white">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/suede-mark.svg" alt="" width={28} height={28} />
             <span className="mono text-sm tracking-[0.12em] font-medium">

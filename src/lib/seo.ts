@@ -58,7 +58,7 @@ export function homePageTitle(): string {
 }
 
 export function homePageDescription(stats: { totalRigs: number; yearMin: number; yearMax: number }): string {
-  return `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs.toLocaleString()} documented setups from ${stats.yearMin} to ${stats.yearMax}, indexed by year and player. Suede DNA — signal chains, archived.`;
+  return `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs.toLocaleString()} documented setups from ${stats.yearMin} to ${stats.yearMax}, indexed by year and player, sourced from the Guitar Geek Archives on the Internet Archive.`;
 }
 
 /**
