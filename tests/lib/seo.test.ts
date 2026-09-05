@@ -1,10 +1,13 @@
 import { describe, it, expect } from 'vitest';
 import {
+  articleJsonLd,
   artistArchiveContext,
   artistJsonLd,
   artistPageDescription,
   artistPageTitle,
+  homeJsonLd,
 } from '../../src/lib/seo';
+import { ARTICLES } from '../../src/lib/articles-content';
 import type { Artist } from '../../src/lib/manifest';
 
 const clapton: Artist = {
@@ -101,5 +104,43 @@ describe('SEO helpers', () => {
     expect(ld.mainEntity.memberOf).toEqual({ '@type': 'MusicGroup', name: 'Black Sabbath' });
     expect(iommi.name).toContain(ld.mainEntity.name);
     expect(iommi.name).toContain('Black Sabbath');
+  });
+
+  it('does not declare a list structure the home page cannot enumerate', () => {
+    const ld = homeJsonLd('https://dna.suedeai.ai', {
+      totalRigs: 409,
+      yearMin: 1964,
+      yearMax: 2019,
+    });
+    expect(ld['@type']).toBe('CollectionPage');
+    // An ItemList promises enumerable members. The grid is filtered and sorted
+    // in the browser, so no fixed list here can keep matching the page.
+    const serialized = JSON.stringify(ld);
+    expect(serialized).not.toContain('ItemList');
+    expect(serialized).not.toContain('itemListElement');
+    expect(serialized).not.toContain('numberOfItems');
+    // The size of the collection survives as prose, not as a structure claim.
+    expect(ld.description).toContain('409');
+  });
+
+  it('emits Article JSON-LD for every essay, matching the visible page', () => {
+    expect(ARTICLES.length).toBeGreaterThan(0);
+
+    for (const article of ARTICLES) {
+      const ld = articleJsonLd(article, 'https://dna.suedeai.ai');
+      expect(ld['@type']).toBe('Article');
+      // Headline and dateline are the strings the page renders.
+      expect(ld.headline).toBe(article.title);
+      expect(ld.description).toBe(article.description);
+      expect(ld.datePublished).toBe(article.date);
+      expect(ld.dateModified).toBe(article.date);
+      expect(ld.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(ld.author.name).toBe('Jason Colapietro');
+      // Author and publisher resolve into the graph the root layout emits.
+      expect(ld.author['@id']).toBe('https://suedeai.ai/founder#person');
+      expect(ld.publisher['@id']).toBe('https://suedeai.ai/#organization');
+      expect(ld.url).toBe(`https://dna.suedeai.ai/articles/${article.slug}`);
+      expect(ld.mainEntityOfPage['@id']).toBe(ld.url);
+    }
   });
 });

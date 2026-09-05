@@ -47,6 +47,17 @@ export function Footer() {
           <Link href="/articles" className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1">
             ARTICLES →
           </Link>
+          {/* Suede DNA is published by Suede Labs AI and is covered by the estate
+              privacy policy, so the footer links to the policy that governs it
+              rather than restating it on this host. */}
+          <a
+            href="https://suedeai.ai/privacy"
+            className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            PRIVACY ↗
+          </a>
           <a
             href="https://guitar.solutions"
             className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"

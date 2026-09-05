@@ -32,7 +32,7 @@ export default function HomePage() {
   const rigs = getAllRigs();
   return (
     <main>
-      <JsonLd data={homeJsonLd(SITE_URL, stats.totalArtists, stats.totalRigs, stats)} />
+      <JsonLd data={homeJsonLd(SITE_URL, stats)} />
       <HomeHero />
       <CompilationGrid artists={artists} rigs={rigs} />
     </main>

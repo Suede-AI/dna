@@ -1,5 +1,7 @@
 import type { Artist, Rig } from './manifest';
+import type { ArticleEntry } from './articles-content';
 import { CURATED_NAME_SEPARATOR, isReviewedArtistName } from './canonical-artists';
+import { DNA_SOCIAL_IMAGE } from './seo/social-metadata';
 
 /**
  * A page may be indexed and may assert its subject in structured data only when
@@ -101,10 +103,17 @@ export function artistJsonLd(artist: Artist, rigs: Rig[], siteUrl: string) {
   } as const;
 }
 
+/**
+ * Structured data for the archive front page. The page is a `CollectionPage`
+ * and nothing more: an `ItemList` promises an enumeration a consumer can read
+ * out of the markup, and this grid is filtered, sorted, and re-ordered in the
+ * browser, so a fixed list baked into the page would stop matching what is on
+ * screen the moment a filter is applied. The size of the collection stays in
+ * the description prose, which is rendered text rather than a promise of
+ * structure.
+ */
 export function homeJsonLd(
   siteUrl: string,
-  totalArtists: number,
-  totalRigs: number,
   stats: { totalRigs: number; yearMin: number; yearMax: number },
 ) {
   return {
@@ -115,12 +124,35 @@ export function homeJsonLd(
     url: siteUrl,
     isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },
     publisher: { '@id': 'https://suedeai.ai/#organization' },
-    mainEntity: {
-      '@type': 'ItemList',
-      name: 'Guitar Rig Archive',
-      numberOfItems: totalRigs,
-      itemListOrder: 'https://schema.org/ItemListOrderAscending',
-      description: `${totalArtists} artists · ${totalRigs} rigs`,
+  } as const;
+}
+
+/**
+ * Structured data for an essay under /articles. Every field mirrors something
+ * the page already renders: the headline is the visible `h1`, the date is the
+ * visible dateline, and the author and publisher resolve by `@id` into the
+ * WebSite/Organization/Person graph the root layout emits on every page.
+ */
+export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
+  const url = `${siteUrl}/articles/${article.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    datePublished: article.date,
+    dateModified: article.date,
+    inLanguage: 'en-US',
+    isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },
+    author: {
+      '@type': 'Person',
+      '@id': 'https://suedeai.ai/founder#person',
+      name: 'Jason Colapietro',
+      url: 'https://suedeai.ai/founder',
     },
+    publisher: { '@id': 'https://suedeai.ai/#organization' },
+    image: `${siteUrl}${DNA_SOCIAL_IMAGE.url}`,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    url,
   } as const;
 }
