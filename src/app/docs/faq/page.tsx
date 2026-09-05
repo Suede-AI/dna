@@ -41,7 +41,7 @@ const FAQS = [
   },
   {
     q: 'Why does an artist only have one or two rigs when they had a decades-long career?',
-    a: 'Coverage depends entirely on what was documented and preserved upstream. Some artists have a single photographed rig from one tour; others have several spread across years. The DNA chain on an artist page shows exactly what is documented. Nothing is extrapolated to fill gaps.',
+    a: 'Coverage depends entirely on what was documented and preserved upstream. Some artists have a single photographed rig from one tour; others have several spread across years. The DNA chain on an artist page shows only what is documented, without filling gaps.',
   },
   {
     q: 'Does Suede DNA tell me the exact pedals and settings in a photo?',

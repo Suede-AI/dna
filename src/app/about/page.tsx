@@ -40,9 +40,9 @@ export default function AboutPage() {
           <h2 className="mono-label text-[color:var(--color-white)]">PREMISE</h2>
           <p className="mt-3">
             Suede DNA is a compilation archive of guitarists&apos; rigs. Each artist&apos;s chain of
-            documented setups across the years is treated as a tonal genealogy — a literal signal
+            documented setups across the years is treated as a tonal genealogy, a literal signal
             chain stretched across time. The site is structured around two views: a discovery grid
-            of every rig in the archive, and per-artist pages presenting that artist&apos;s rigs as a
+            of the rigs in the archive, and per-artist pages presenting that artist&apos;s rigs as a
             chronological strand.
           </p>
         </section>
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <section>
           <h2 className="mono-label text-[color:var(--color-white)]">SOURCE</h2>
           <p className="mt-3">
-            Every photograph in this archive originates from the{' '}
+            Photographs in this archive originate from the{' '}
             <a
               href="https://archive.org/details/guitargeek-archives"
               target="_blank"
@@ -69,7 +69,7 @@ export default function AboutPage() {
         <section>
           <h2 className="mono-label text-[color:var(--color-white)]">METHOD</h2>
           <p className="mt-3">
-            We do not interpret rig content from photos in v1 — no gear-list reconstruction, no
+            We do not interpret rig content from photos in v1. No gear-list reconstruction, no
             signal-chain transcription. Each rig is presented as the source documents it: a single
             archival photo, a year, an artist, and the path back to the upstream file. The
             compilation is the value, not the interpretation.
@@ -122,19 +122,19 @@ export default function AboutPage() {
             >
               The Signal Chain
             </a>
-            {' '}— a history of amplifiers, effects, and electric guitar tone across every era —
+            {', '}a history of amplifiers, effects, and electric guitar tone,
             free at guitar.solutions. It grew out of his earlier self-taught instruction thread,{' '}
             <a href="https://strumly.suedeai.ai/book/catalog" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Guitar Without a Number</a>
-            {' '}— memoir-driven instruction for the self-taught guitarist, now published inside
+            {', '}memoir-driven instruction for the self-taught guitarist, now published inside
             The Signal Chain rather than as a separate title. His books on AI, rights, and creator
             ownership:{' '}
             <a href="https://www.amazon.com/dp/B0GD5FX6N6" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Human Authenticity Layer</a>,{' '}
             <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Proof as Infrastructure</a>, and{' '}
-            <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Stake Your Claim</a>{' '}
-            — all on Amazon. And{' '}
+            <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Stake Your Claim</a>{', '}
+            all on Amazon. And{' '}
             <a href="https://seo.suedeai.ai/book" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Screenshot: Why AI Recommends Your Competitors, and How to Fix It</a>
-            {' '}— eleven chapters on how answer engines decide who to name, and how to repair the
-            pages the machines misread — free in full at seo.suedeai.ai.
+            {', '}eleven chapters on how answer engines decide who to name, and how to repair the
+            pages the machines misread, free in full at seo.suedeai.ai.
           </p>
         </section>
 

@@ -73,8 +73,8 @@ export default function ArticlePage() {
             guitar and a modest amp setup, the kind of gear a working blues band could afford and
             haul between London clubs. There is no pedalboard to speak of, because the vocabulary of
             the pedalboard did not really exist yet for a player like him. Tone came from fingers,
-            a guitar, and an amplifier pushed to its own natural breakup. Nothing sat between the
-            two.
+            a guitar, and an amplifier pushed to its own natural breakup. No pedal or processor
+            sat between the two.
           </p>
           <p>
             It is worth pausing on how little that setup asks of anyone trying to understand it. One
@@ -93,7 +93,7 @@ export default function ArticlePage() {
             effectively set the template for British blues-rock: a Gibson Les Paul into a cranked
             Marshall combo, pushed loud enough in the studio that the story, repeated often enough
             in guitar circles to have become its own piece of folklore, has an engineer objecting
-            and Clapton and Mayall keeping the take anyway. Whether every detail of that story is
+            and Clapton and Mayall keeping the take anyway. Whether the details of that story are
             precise or slightly burnished by fifty years of retelling, the tone itself is not in
             dispute. It is on the record.
           </p>
@@ -124,7 +124,7 @@ export default function ArticlePage() {
             bigger amp stack, but it marks something: the beginning of the pedalboard as part of the
             story, not an afterthought to it. The purist who resisted &ldquo;For Your Love&rdquo;
             three years earlier was now playing psychedelic rock through a wah pedal in an
-            arena-scale power trio. Nothing about that is a contradiction. It is what three years of
+            arena-scale power trio. That is not a contradiction. It is what three years of
             a working musician&apos;s life actually looks like when you track the gear instead of the
             reputation.
           </p>
