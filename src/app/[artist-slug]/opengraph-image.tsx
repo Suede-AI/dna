@@ -6,6 +6,13 @@ export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 export const alt = 'Suede DNA artist page';
 
+const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
+const IMAGE_FETCH_TIMEOUT_MS = 4_000;
+
+function imageMimeType(format: string): string {
+  return format.toLowerCase() === 'jpg' ? 'image/jpeg' : `image/${format.toLowerCase()}`;
+}
+
 export default async function Image({ params }: { params: Promise<{ 'artist-slug': string }> }) {
   const { 'artist-slug': artistSlug } = await params;
   const artist = getArtistBySlug(artistSlug);
@@ -15,14 +22,21 @@ export default async function Image({ params }: { params: Promise<{ 'artist-slug
   const firstRig = getRigsByArtistSlug(artist.slug)[0];
   let imgData: string | null = null;
   if (firstRig) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), IMAGE_FETCH_TIMEOUT_MS);
     try {
-      const res = await fetch(firstRig.src);
-      if (res.ok) {
+      const res = await fetch(firstRig.src, { signal: controller.signal });
+      const contentLength = Number(res.headers.get('content-length') ?? 0);
+      if (res.ok && (!contentLength || contentLength <= MAX_IMAGE_BYTES)) {
         const buf = Buffer.from(await res.arrayBuffer());
-        imgData = `data:image/${firstRig.format};base64,${buf.toString('base64')}`;
+        if (buf.byteLength <= MAX_IMAGE_BYTES) {
+          imgData = `data:${imageMimeType(firstRig.format)};base64,${buf.toString('base64')}`;
+        }
       }
     } catch {
       imgData = null;
+    } finally {
+      clearTimeout(timeout);
     }
   }
   return new ImageResponse(
@@ -30,7 +44,7 @@ export default async function Image({ params }: { params: Promise<{ 'artist-slug
       <div style={{ width: '100%', height: '100%', background: '#050b16', display: 'flex', color: '#fff', fontFamily: 'system-ui' }}>
         <div style={{ width: '50%', height: '100%', display: 'flex' }}>
           {imgData ? (
-            <img src={imgData} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={imgData} alt="" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
           ) : (
             <div style={{ width: '100%', height: '100%', background: '#09101b' }} />
           )}
