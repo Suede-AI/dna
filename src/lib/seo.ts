@@ -54,11 +54,11 @@ export function artistArchiveContext(
 }
 
 export function homePageTitle(): string {
-  return 'Suede DNA — Signal Chains, Archived';
+  return 'Suede DNA: Signal Chains, Archived';
 }
 
 export function homePageDescription(stats: { totalRigs: number; yearMin: number; yearMax: number }): string {
-  return `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs.toLocaleString()} documented setups from ${stats.yearMin} to ${stats.yearMax}, indexed by year and player, sourced from the Guitar Geek Archives on the Internet Archive.`;
+  return `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs.toLocaleString()} documented setups from ${stats.yearMin} to ${stats.yearMax}, indexed by year and player.`;
 }
 
 /**
@@ -119,7 +119,7 @@ export function homeJsonLd(
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Suede DNA — Signal Chains, Archived',
+    name: 'Suede DNA: Signal Chains, Archived',
     description: homePageDescription(stats),
     url: siteUrl,
     isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },
