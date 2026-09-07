@@ -59,6 +59,14 @@ export function Footer() {
             PRIVACY ↗
           </a>
           <a
+            href="https://hub.suedeai.ai"
+            className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Suede estate directory ↗
+          </a>
+          <a
             href="https://guitar.solutions"
             className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"
             target="_blank"

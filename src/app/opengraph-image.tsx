@@ -4,7 +4,7 @@ import { getStats } from '@/lib/manifest';
 export const runtime = 'nodejs';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
-export const alt = 'Suede DNA — Signal Chains, Archived';
+export const alt = 'Suede DNA: Signal Chains, Archived';
 
 export default async function Image() {
   const stats = getStats();

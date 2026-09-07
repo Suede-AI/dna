@@ -6,7 +6,10 @@ import {
   artistPageDescription,
   artistPageTitle,
   homeJsonLd,
+  homePageDescription,
+  homePageTitle,
 } from '../../src/lib/seo';
+import { getStats } from '../../src/lib/manifest';
 import { ARTICLES } from '../../src/lib/articles-content';
 import type { Artist } from '../../src/lib/manifest';
 
@@ -104,6 +107,20 @@ describe('SEO helpers', () => {
     expect(ld.mainEntity.memberOf).toEqual({ '@type': 'MusicGroup', name: 'Black Sabbath' });
     expect(iommi.name).toContain(ld.mainEntity.name);
     expect(iommi.name).toContain('Black Sabbath');
+  });
+
+  it('keeps the home page title free of em dashes across every surface', () => {
+    expect(homePageTitle()).toBe('Suede DNA: Signal Chains, Archived');
+    expect(homePageTitle()).not.toContain('\u2014');
+    expect(homeJsonLd('https://dna.suedeai.ai', getStats()).name).toBe(homePageTitle());
+  });
+
+  it('keeps the home page description within the 160 character snippet limit', () => {
+    const description = homePageDescription(getStats());
+    expect(description.length).toBeLessThanOrEqual(160);
+    expect(description).toContain('409');
+    expect(description).toContain('1964 to 2014');
+    expect(description).toMatch(/indexed by year and player\.$/);
   });
 
   it('does not declare a list structure the home page cannot enumerate', () => {
