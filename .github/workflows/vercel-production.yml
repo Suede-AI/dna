@@ -34,33 +34,38 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       github.event.workflow_run.conclusion == 'success'
 
+    # These two identify which Vercel project to ship to. They are not
+    # credentials: they do nothing without VERCEL_TOKEN, and the Vercel CLI
+    # writes them in plain text to .vercel/project.json on any machine that runs
+    # `vercel pull`. Holding them as secrets bought no protection and cost three
+    # chances to half-populate the set, so they live here and VERCEL_TOKEN is the
+    # only secret the deploy needs.
     env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      VERCEL_ORG_ID: team_i3zcwXswG8Kcy4hJaBIKuAt6
+      VERCEL_PROJECT_ID: prj_7Zxlwv6V6X0ZQ9TbySaGCyBsMJaj
 
     steps:
-      # Fails the job when a secret is missing. This used to set ready=false and
+      # Fails the job when the token is missing. This used to set ready=false and
       # skip every step below, which made the workflow go green while shipping
       # nothing — main sat undeployed and the Actions tab said everything passed.
       # A deploy workflow that cannot deploy is a failure, not a skip.
       - name: Check for deploy credentials
         run: |
-          missing=""
-          [ -n "${{ secrets.VERCEL_TOKEN }}" ]      || missing="$missing VERCEL_TOKEN"
-          [ -n "${{ secrets.VERCEL_ORG_ID }}" ]     || missing="$missing VERCEL_ORG_ID"
-          [ -n "${{ secrets.VERCEL_PROJECT_ID }}" ] || missing="$missing VERCEL_PROJECT_ID"
-          if [ -n "$missing" ]; then
+          if [ -z "${{ secrets.VERCEL_TOKEN }}" ]; then
             {
               echo "### Deploy failed: missing credentials"
               echo
-              echo "Not set on this repository:$missing"
+              echo "VERCEL_TOKEN is not set on this repository."
               echo
-              echo "dna.suedeai.ai cannot be deployed until these exist as repository"
-              echo "secrets. Until then every commit to main stays unpublished."
+              echo "dna.suedeai.ai cannot be deployed until it exists. Until then"
+              echo "every commit to main stays unpublished."
               echo
-              echo "Settings -> Secrets and variables -> Actions, then re-run this workflow."
+              echo "Settings -> Secrets and variables -> Actions, then re-run this"
+              echo "workflow. It has to be a repository secret. An environment secret"
+              echo "is not visible to this job, and the environment variables page in"
+              echo "the Vercel dashboard is a different thing that has no effect here."
             } >> "$GITHUB_STEP_SUMMARY"
-            echo "::error::missing deploy secrets:$missing"
+            echo "::error::missing deploy secret: VERCEL_TOKEN"
             exit 1
           fi
 
