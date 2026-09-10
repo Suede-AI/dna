@@ -98,6 +98,7 @@ const websiteJsonLd = {
         'https://www.linkedin.com/company/suede-labs',
         'https://www.wikidata.org/wiki/Q141169484',
       ],
+      founder: { '@id': JASON_PERSON_ID },
     },
     {
       '@type': 'Person',
