@@ -2,7 +2,7 @@
 
 Source: `suedeai.ai-Coverage-Drilldown-2026-05-14.xlsx`.
 
-Drive note: the Google Drive connector search/recent-file calls failed with `Unknown tool`, and no Google Drive Desktop mirror was found under `~/Library/CloudStorage`, so this pass used the synced iCloud mirror at `/Users/jason/Library/Mobile Documents/com~apple~CloudDocs/suedeai.ai-Coverage-Drilldown-2026-05-14.xlsx`.
+Drive note: the Google Drive connector search/recent-file calls failed with `Unknown tool`, and no Google Drive Desktop mirror was found under `~/Library/CloudStorage`, so this pass used the synced iCloud mirror at `~/Library/Mobile Documents/com~apple~CloudDocs/suedeai.ai-Coverage-Drilldown-2026-05-14.xlsx`.
 
 Issue in sheet: `Discovered - currently not indexed`.
 
@@ -16,12 +16,12 @@ Issue in sheet: `Discovered - currently not indexed`.
 
 Files changed for the active issue:
 
-- `/Users/jason/Documents/Ramboed/Suede-AI-App/suede-home/next.config.ts`
-- `/Users/jason/Documents/Ramboed/Suede-AI-App/suede-home/src/app/rewards/page.tsx`
-- `/Users/jason/Documents/Ramboed/Suede-AI-App/suede-home/src/app/sitemap.ts`
-- `/Users/jason/Documents/Ramboed/Suede-AI-App/suede-home/src/app/homepage/HomePage.tsx`
-- `/Users/jason/Documents/Ramboed/Suede-AI-App/suede-home/src/app/homepage/ExploreDropdown.tsx`
-- `/Users/jason/Documents/Ramboed/Suede-AI-App/suede-home/src/app/homepage/HomeHeader.tsx`
+- `~/Documents/Ramboed/Suede-AI-App/suede-home/next.config.ts`
+- `~/Documents/Ramboed/Suede-AI-App/suede-home/src/app/rewards/page.tsx`
+- `~/Documents/Ramboed/Suede-AI-App/suede-home/src/app/sitemap.ts`
+- `~/Documents/Ramboed/Suede-AI-App/suede-home/src/app/homepage/HomePage.tsx`
+- `~/Documents/Ramboed/Suede-AI-App/suede-home/src/app/homepage/ExploreDropdown.tsx`
+- `~/Documents/Ramboed/Suede-AI-App/suede-home/src/app/homepage/HomeHeader.tsx`
 
 Verification:
 
