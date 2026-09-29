@@ -4,6 +4,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 import type { Rig } from '@/lib/manifest';
 
+// Archive.org serves these originals, but the image optimizer returns 502 for them.
+const OPTIMIZER_FAILURES = new Set([
+  'https://archive.org/download/guitargeek-archives/melvins_buzzo_2001.png',
+  'https://archive.org/download/guitargeek-archives/mightylemondrops_dave_1990.png',
+]);
+
 export function RigImage({
   rig,
   alt,
@@ -47,7 +53,7 @@ export function RigImage({
         priority={priority}
         sizes={sizes}
         className={`transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
-        unoptimized={rig.format === 'gif' || rig.src.startsWith('https://archive.org/download/')}
+        unoptimized={rig.format === 'gif' || OPTIMIZER_FAILURES.has(rig.src)}
         onLoad={() => setLoaded(true)}
         onError={() => setFailed(true)}
       />
