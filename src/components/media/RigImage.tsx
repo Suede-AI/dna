@@ -47,7 +47,7 @@ export function RigImage({
         priority={priority}
         sizes={sizes}
         className={`transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'} ${className}`}
-        unoptimized={rig.format === 'gif'}
+        unoptimized={rig.format === 'gif' || rig.src.startsWith('https://archive.org/download/')}
         onLoad={() => setLoaded(true)}
         onError={() => setFailed(true)}
       />

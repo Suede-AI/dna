@@ -11,13 +11,15 @@ vi.mock('next/image', () => ({
     onLoad,
     onError,
     className,
+    unoptimized,
   }: {
     src: string;
     alt: string;
     onLoad?: () => void;
     onError?: () => void;
     className?: string;
-  }) => <img src={src} alt={alt} onLoad={onLoad} onError={onError} className={className} />,
+    unoptimized?: boolean;
+  }) => <img src={src} alt={alt} onLoad={onLoad} onError={onError} className={className} data-unoptimized={String(unoptimized)} />,
 }));
 
 const rig: Rig = {
@@ -30,6 +32,12 @@ const rig: Rig = {
 };
 
 describe('RigImage', () => {
+  it('loads Archive.org images directly when the image optimizer cannot fetch them', () => {
+    render(<RigImage rig={rig} alt="Artist rig" sizes="192px" />);
+
+    expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'true');
+  });
+
   it('renders an archive fallback when the image fails', () => {
     render(
       <div className="relative h-48 w-48">
