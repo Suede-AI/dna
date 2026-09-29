@@ -27,13 +27,28 @@ const rig: Rig = {
   artistSlug: 'artist',
   artistName: 'Artist',
   year: 1997,
-  src: 'https://archive.org/download/example/rig.jpg',
+  src: 'https://archive.org/download/guitargeek-archives/eric_clapton_1989.jpg',
   format: 'jpg',
 };
 
 describe('RigImage', () => {
-  it('loads Archive.org images directly when the image optimizer cannot fetch them', () => {
+  it('keeps ordinary Archive.org rigs optimized for thumbnail sizes', () => {
     render(<RigImage rig={rig} alt="Artist rig" sizes="192px" />);
+
+    expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'false');
+  });
+
+  it.each([
+    'melvins_buzzo_2001.png',
+    'mightylemondrops_dave_1990.png',
+  ])('serves the confirmed optimizer failure %s directly', (filename) => {
+    render(<RigImage rig={{ ...rig, src: `https://archive.org/download/guitargeek-archives/${filename}` }} alt="Artist rig" sizes="192px" />);
+
+    expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'true');
+  });
+
+  it('keeps GIF rigs unoptimized', () => {
+    render(<RigImage rig={{ ...rig, format: 'gif', src: 'https://archive.org/download/example/rig.gif' }} alt="Artist rig" sizes="192px" />);
 
     expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'true');
   });
