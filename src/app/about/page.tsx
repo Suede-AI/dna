@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
+  keywords: keywordsFor('/about'),
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'About — Suede DNA',

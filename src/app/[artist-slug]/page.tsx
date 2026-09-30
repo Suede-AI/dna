@@ -7,6 +7,7 @@ import { RigDetailCard } from '@/components/artist/RigDetailCard';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArtistArchivePosition } from '@/lib/artist-index';
 import { artistIsIndexable, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
+import { artistKeywords } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -29,6 +30,8 @@ export async function generateMetadata({
   return {
     title: artistPageTitle(artist),
     description: artistPageDescription(artist),
+    // Noindex pages carry a fabricated slug-derived name: no keywords for them.
+    ...(indexable ? { keywords: artistKeywords(artist) } : {}),
     robots: indexable
       ? { index: true, follow: true }
       : { index: false, follow: true },

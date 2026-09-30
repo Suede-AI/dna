@@ -2,6 +2,7 @@ import type { Artist, Rig } from './manifest';
 import type { ArticleEntry } from './articles-content';
 import { CURATED_NAME_SEPARATOR, isReviewedArtistName } from './canonical-artists';
 import { DNA_SOCIAL_IMAGE } from './seo/social-metadata';
+import { ROUTE_KEYWORDS, withBrand } from './seo/keywords';
 
 /**
  * A page may be indexed and may assert its subject in structured data only when
@@ -127,6 +128,12 @@ export function homeJsonLd(
   } as const;
 }
 
+function articleKeywords(slug: string): string[] {
+  const route = `/articles/${slug}`;
+  const terms = (ROUTE_KEYWORDS as Record<string, readonly string[]>)[route] ?? ROUTE_KEYWORDS['/articles'];
+  return withBrand(terms);
+}
+
 /**
  * Structured data for an essay under /articles. Every field mirrors something
  * the page already renders: the headline is the visible `h1`, the date is the
@@ -140,6 +147,7 @@ export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
     '@type': 'Article',
     headline: article.title,
     description: article.description,
+    keywords: articleKeywords(article.slug).join(', '),
     datePublished: article.date,
     dateModified: article.date,
     inLanguage: 'en-US',

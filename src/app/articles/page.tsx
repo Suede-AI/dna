@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ARTICLES } from '@/lib/articles-content';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Articles',
   description:
     'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
+  keywords: keywordsFor('/articles'),
   alternates: { canonical: `${SITE_URL}/articles` },
   openGraph: {
     title: 'Articles — Suede DNA',

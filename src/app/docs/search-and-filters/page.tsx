@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection } from '@/components/docs/PageShell';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/search-and-filters';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Search and Filters',
   description:
     'How the search box parses names, years, and decades, how ranking works, and how decade filters and sort order combine.',
+  keywords: keywordsFor('/docs/search-and-filters'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: 'Search and Filters — Suede DNA Docs',

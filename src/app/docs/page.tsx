@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DOCS } from '@/lib/docs-content';
 import { IndexCard } from '@/components/docs/IndexCard';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: 'Docs',
   description:
     'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
+  keywords: keywordsFor('/docs'),
   alternates: { canonical: `${SITE_URL}/docs` },
   openGraph: {
     title: 'Docs — Suede DNA',

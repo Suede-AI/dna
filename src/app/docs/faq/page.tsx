@@ -3,6 +3,7 @@ import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getStats } from '@/lib/manifest';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/faq';
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: 'FAQ',
   description:
     'Common questions about coverage, corrections, image rights, and how to reach the archive if something is wrong.',
+  keywords: keywordsFor('/docs/faq'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: 'FAQ — Suede DNA Docs',

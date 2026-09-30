@@ -4,6 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticle } from '@/lib/articles-content';
 import { articleJsonLd } from '@/lib/seo';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const SLUG = 'rig-archaeology-and-the-ear-trained-player';
@@ -12,6 +13,7 @@ const article = getArticle(SLUG)!;
 export const metadata: Metadata = {
   title: article.title,
   description: article.description,
+  keywords: keywordsFor('/articles/rig-archaeology-and-the-ear-trained-player'),
   alternates: { canonical: `${SITE_URL}/articles/${SLUG}` },
   openGraph: {
     title: `${article.title} — Suede DNA`,

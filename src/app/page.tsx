@@ -4,6 +4,7 @@ import { CompilationGrid } from '@/components/grid/CompilationGrid';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getAllArtists, getAllRigs, getStats } from '@/lib/manifest';
 import { homeJsonLd, homePageDescription, homePageTitle } from '@/lib/seo';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -12,6 +13,7 @@ const stats = getStats();
 export const metadata: Metadata = {
   title: homePageTitle(),
   description: homePageDescription(stats),
+  keywords: keywordsFor('/'),
   alternates: { canonical: '/' },
   openGraph: {
     title: homePageTitle(),
