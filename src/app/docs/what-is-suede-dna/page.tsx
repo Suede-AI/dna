@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getStats } from '@/lib/manifest';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/what-is-suede-dna';
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   title: 'What Suede DNA Is',
   description:
     'The premise behind the archive: why a guitarist’s rigs form a signal chain across time, and how the site is structured around that idea.',
+  keywords: keywordsFor('/docs/what-is-suede-dna'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: 'What Suede DNA Is — Suede DNA Docs',

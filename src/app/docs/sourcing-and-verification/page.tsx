@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/sourcing-and-verification';
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Sourcing and Verification',
   description:
     'Where the rig photos come from, how the manifest is built and validated, and exactly what Suede DNA does and does not verify.',
+  keywords: keywordsFor('/docs/sourcing-and-verification'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
     title: 'Sourcing and Verification — Suede DNA Docs',

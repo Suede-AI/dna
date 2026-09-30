@@ -6,6 +6,7 @@ import { Footer } from '@/components/footer/Footer';
 import { GridMotif } from '@/components/chrome/GridMotif';
 import { getStats } from '@/lib/manifest';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
+import { keywordsFor } from '@/lib/seo/keywords';
 import './globals.css';
 
 const stats = getStats();
@@ -18,21 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: 'Suede DNA: Signal Chains, Archived', template: '%s · Suede DNA' },
   description: defaultDescription,
-  keywords: [
-    'guitar rigs',
-    'signal chains',
-    'guitarist gear',
-    'guitar rig archive',
-    'guitar pedalboard history',
-    'Guitar Geek',
-    'guitar setup photos',
-    'rock guitar equipment',
-    'guitar tone archive',
-    'musician gear documentation',
-    'vintage guitar rigs',
-    'guitar effects chains',
-    'Suede DNA',
-  ],
+  keywords: keywordsFor('/'),
   authors: [{ name: 'Jason Colapietro', url: 'https://suedeai.ai/founder' }],
   creator: 'Jason Colapietro',
   publisher: 'Suede Labs AI',
