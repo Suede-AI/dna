@@ -47,7 +47,7 @@ export function Footer() {
           <Link href="/articles" className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1">
             ARTICLES →
           </Link>
-          {/* Suede DNA is published by Suede Labs AI and is covered by the estate
+          {/* Suede DNA is published by Suede AI and is covered by the estate
               privacy policy, so the footer links to the policy that governs it
               rather than restating it on this host. */}
           <a

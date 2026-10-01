@@ -1,10 +1,10 @@
 # Suede DNA
 
-> **A [Suede Labs AI](https://suedeai.ai) project · Built by [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO**
+> **A [Suede AI](https://suedeai.ai) project · Built by [Jason Colapietro](https://suedeai.ai/founder), Founder and CEO**
 
 **Live:** [dna.suedeai.ai](https://dna.suedeai.ai)
 
-A tonal genealogy archive of guitarists' rigs and signal chains — 409 documented setups from 361 artists, indexed by year and player. Built and maintained by [Suede Labs AI](https://suedeai.ai).
+A tonal genealogy archive of guitarists' rigs and signal chains — 409 documented setups from 361 artists, indexed by year and player. Built and maintained by [Suede AI](https://suedeai.ai).
 
 The premise: every distinctive guitar tone lives inside a specific signal chain — the pedalboard, the amp, the mic placement, the unsung 9V power supply that everything depends on. Suede DNA is a browsable compilation of those rigs, sourced from the long-running [guitargeek-archives](https://archive.org/details/guitargeek-archives) on archive.org, normalized into a single searchable manifest, and presented as a static, fast, archival-feeling site.
 
@@ -76,7 +76,7 @@ The rig images and signal-chain references are derived from the [guitargeek-arch
 
 ## About Suede
 
-Suede DNA is one of several products in the [Suede Labs AI](https://suedeai.ai) family — a small studio building tools at the intersection of guitar, music, and AI. Sibling products include [Strumly](https://strumly.suedeai.ai) (24/7 conversational AI guitar coach) and [FretPulse](https://fretpulse.suedeai.ai) (holistic guitar care companion).
+Suede DNA is one of several products in the [Suede AI](https://suedeai.ai) family — a small studio building tools at the intersection of guitar, music, and AI. Sibling products include [Strumly](https://strumly.suedeai.ai) (24/7 conversational AI guitar coach) and [FretPulse](https://fretpulse.suedeai.ai) (holistic guitar care companion).
 
 Founded by [Jason Colapietro](https://github.com/JasonColapietro) — Founder and CEO, published author.
 

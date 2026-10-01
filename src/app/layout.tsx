@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   keywords: keywordsFor('/'),
   authors: [{ name: 'Jason Colapietro', url: 'https://suedeai.ai/founder' }],
   creator: 'Jason Colapietro',
-  publisher: 'Suede Labs AI',
+  publisher: 'Suede AI',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -74,7 +74,7 @@ const websiteJsonLd = {
     {
       '@type': 'Organization',
       '@id': SUEDE_ORG_ID,
-      name: 'Suede Labs AI',
+      name: 'Suede AI',
       url: 'https://suedeai.ai',
       foundingDate: '2024',
       sameAs: [
