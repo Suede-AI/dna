@@ -5,13 +5,13 @@ import { keywordsFor } from '@/lib/seo/keywords';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
-  title: 'About',
+  title: { absolute: 'About Suede DNA: How the Guitar Rig Archive Is Built' },
   description:
     'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
   keywords: keywordsFor('/about'),
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
-    title: 'About — Suede DNA',
+    title: 'About Suede DNA: How the Guitar Rig Archive Is Built',
     description:
       'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
     url: `${SITE_URL}/about`,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About — Suede DNA',
+    title: 'About Suede DNA: How the Guitar Rig Archive Is Built',
     description:
       'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
   },
@@ -34,7 +34,7 @@ export default function AboutPage() {
         className="font-[820] text-white mt-4"
         style={{ fontSize: 'var(--text-section)', lineHeight: 1, letterSpacing: 'var(--tracking-tight)' }}
       >
-        The method.
+        About Suede DNA: the method.
       </h1>
 
       <article className="mt-12 space-y-10 text-[color:var(--color-bone)] leading-relaxed">

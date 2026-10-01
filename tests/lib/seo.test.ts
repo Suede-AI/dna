@@ -33,7 +33,12 @@ const singleRigArtist: Artist = {
 
 describe('SEO helpers', () => {
   it('formats artist page title', () => {
-    expect(artistPageTitle(clapton)).toBe('Eric Clapton — Guitar Rigs 1966–1989');
+    expect(artistPageTitle(clapton)).toBe('Eric Clapton Guitar Rigs, 1966–1989');
+  });
+
+  it('puts the band after the player in a curated artist title', () => {
+    const mahoney: Artist = { ...clapton, slug: '311-tim-mahoney', name: 'Tim Mahoney — 311', yearMin: 1997, yearMax: 2004 };
+    expect(artistPageTitle(mahoney)).toBe('Tim Mahoney Guitar Rigs (311), 1997–2004');
   });
 
   it('formats artist page description with counts', () => {
@@ -45,7 +50,7 @@ describe('SEO helpers', () => {
   });
 
   it('formats single-rig artist title without duplicate year range', () => {
-    expect(artistPageTitle(singleRigArtist)).toBe('A Day To Remember Kevin Skaff — Guitar Rigs 2010');
+    expect(artistPageTitle(singleRigArtist)).toBe('A Day To Remember Kevin Skaff Guitar Rigs, 2010');
     expect(artistPageTitle(singleRigArtist)).not.toContain('2010–2010');
   });
 
@@ -110,7 +115,7 @@ describe('SEO helpers', () => {
   });
 
   it('keeps the home page title free of em dashes across every surface', () => {
-    expect(homePageTitle()).toBe('Suede DNA: Signal Chains, Archived');
+    expect(homePageTitle()).toBe('Suede DNA: Guitar Rig Archive of Signal Chains');
     expect(homePageTitle()).not.toContain('\u2014');
     expect(homeJsonLd('https://dna.suedeai.ai', getStats()).name).toBe(homePageTitle());
   });

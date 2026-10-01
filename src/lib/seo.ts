@@ -27,8 +27,13 @@ export function artistYearRange(artist: Pick<Artist, 'yearMin' | 'yearMax'>): st
     : `${artist.yearMin}–${artist.yearMax}`;
 }
 
+/**
+ * "Tim Mahoney Guitar Rigs (311), 1997–2004". Leads with the page's primary
+ * keyword (`{player} guitar rig`), which the h1 also carries.
+ */
 export function artistPageTitle(artist: Artist): string {
-  return `${artist.name} — Guitar Rigs ${artistYearRange(artist)}`;
+  const { person, band } = splitArtistName(artist.name);
+  return `${person} Guitar Rigs${band ? ` (${band})` : ''}, ${artistYearRange(artist)}`;
 }
 
 function artistRigCount(artist: Pick<Artist, 'count'>): string {
@@ -55,7 +60,7 @@ export function artistArchiveContext(
 }
 
 export function homePageTitle(): string {
-  return 'Suede DNA: Signal Chains, Archived';
+  return 'Suede DNA: Guitar Rig Archive of Signal Chains';
 }
 
 export function homePageDescription(stats: { totalRigs: number; yearMin: number; yearMax: number }): string {
@@ -120,7 +125,7 @@ export function homeJsonLd(
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Suede DNA: Signal Chains, Archived',
+    name: homePageTitle(),
     description: homePageDescription(stats),
     url: siteUrl,
     isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },

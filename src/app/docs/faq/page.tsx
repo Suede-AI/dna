@@ -9,13 +9,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/faq';
 
 export const metadata: Metadata = {
-  title: 'FAQ',
+  title: { absolute: 'Suede DNA FAQ: Coverage, Corrections, Image Rights' },
   description:
     'Common questions about coverage, corrections, image rights, and how to reach the archive if something is wrong.',
   keywords: keywordsFor('/docs/faq'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'FAQ — Suede DNA Docs',
+    title: 'Suede DNA FAQ: Coverage, Corrections, Image Rights',
     description:
       'Common questions about coverage, corrections, image rights, and how to reach the archive if something is wrong.',
     url: `${SITE_URL}${PATH}`,
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FAQ — Suede DNA Docs',
+    title: 'Suede DNA FAQ: Coverage, Corrections, Image Rights',
     description:
       'Common questions about coverage, corrections, image rights, and how to reach the archive if something is wrong.',
     images: [DNA_SOCIAL_IMAGE.url],
@@ -84,7 +84,7 @@ const faqJsonLd = {
 export default function FaqPage() {
   const stats = getStats();
   return (
-    <PageShell eyebrow="SUEDE/DNA / DOCS" title="FAQ." backHref="/docs" backLabel="← ALL DOCS">
+    <PageShell eyebrow="SUEDE/DNA / DOCS" title="Suede DNA FAQ." backHref="/docs" backLabel="← ALL DOCS">
       <JsonLd data={faqJsonLd} />
       <DocSection heading={`${stats.totalRigs} RIGS, ${stats.totalArtists} ARTISTS`}>
         <p>

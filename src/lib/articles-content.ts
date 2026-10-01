@@ -9,7 +9,7 @@ export type ArticleEntry = {
 export const ARTICLES: ArticleEntry[] = [
   {
     slug: 'building-a-tone-over-a-career',
-    title: 'Building a Tone Over a Career: Eric Clapton, 1964–1967',
+    title: 'Eric Clapton Guitar Rig, 1964–1967: Building a Tone',
     description:
       'Three documented rigs, three years apart, from the same guitarist. What the Yardbirds, the Bluesbreakers, and Cream show about how a signal chain accumulates a personality.',
     date: '2026-07-01',
@@ -25,7 +25,7 @@ export const ARTICLES: ArticleEntry[] = [
   },
   {
     slug: 'shred-signal-and-the-virtuoso-rig',
-    title: 'Shred, Signal, and the Virtuoso Rig',
+    title: 'Shred Guitar Rigs and the Virtuoso Signal Chain',
     description:
       'From the mid-1980s through the 2000s, a generation of technical players built rigs engineered for speed and headroom. What that era’s gear chains have in common.',
     date: '2026-07-09',
@@ -33,7 +33,7 @@ export const ARTICLES: ArticleEntry[] = [
   },
   {
     slug: 'rig-archaeology-and-the-ear-trained-player',
-    title: 'Rig Archaeology and the Ear-Trained Player',
+    title: 'Learning Guitar by Ear with Rig Archaeology',
     description:
       'Why knowing what someone played through changes what you hear when you try to learn their part — and where gear research helps or gets in the way.',
     date: '2026-07-13',
@@ -41,7 +41,7 @@ export const ARTICLES: ArticleEntry[] = [
   },
   {
     slug: 'the-unsung-link',
-    title: 'The Unsung Link: What Gear Lists Leave Out',
+    title: 'The Unsung Link: What Guitar Gear Lists Leave Out',
     description:
       'Guitars and amps get the credit. Power supplies, patch cables, mic placement, and room treatment do the quiet work that gear lists rarely mention.',
     date: '2026-07-17',

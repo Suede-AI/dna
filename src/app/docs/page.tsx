@@ -8,13 +8,13 @@ import { keywordsFor } from '@/lib/seo/keywords';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
-  title: 'Docs',
+  title: { absolute: 'Suede DNA Docs: How the Guitar Rig Archive Works' },
   description:
     'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
   keywords: keywordsFor('/docs'),
   alternates: { canonical: `${SITE_URL}/docs` },
   openGraph: {
-    title: 'Docs — Suede DNA',
+    title: 'Suede DNA Docs: How the Guitar Rig Archive Works',
     description:
       'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
     url: `${SITE_URL}/docs`,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Docs — Suede DNA',
+    title: 'Suede DNA Docs: How the Guitar Rig Archive Works',
     description:
       'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
     images: [DNA_SOCIAL_IMAGE.url],
@@ -39,7 +39,7 @@ export default function DocsIndexPage() {
         className="font-[820] text-white mt-4"
         style={{ fontSize: 'var(--text-section)', lineHeight: 1, letterSpacing: 'var(--tracking-tight)' }}
       >
-        Documentation.
+        Suede DNA docs.
       </h1>
       <p
         className="mt-6 max-w-[640px] text-[color:var(--color-bone)] leading-relaxed"

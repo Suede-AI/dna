@@ -7,13 +7,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/sourcing-and-verification';
 
 export const metadata: Metadata = {
-  title: 'Sourcing and Verification',
+  title: 'Guitar Rig Sourcing and Verification',
   description:
     'Where the rig photos come from, how the manifest is built and validated, and exactly what Suede DNA does and does not verify.',
   keywords: keywordsFor('/docs/sourcing-and-verification'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'Sourcing and Verification — Suede DNA Docs',
+    title: 'Guitar Rig Sourcing and Verification — Suede DNA Docs',
     description:
       'Where the rig photos come from, how the manifest is built and validated, and exactly what Suede DNA does and does not verify.',
     url: `${SITE_URL}${PATH}`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sourcing and Verification — Suede DNA Docs',
+    title: 'Guitar Rig Sourcing and Verification — Suede DNA Docs',
     description:
       'Where the rig photos come from, how the manifest is built and validated, and exactly what Suede DNA does and does not verify.',
     images: [DNA_SOCIAL_IMAGE.url],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 export default function SourcingPage() {
   return (
-    <PageShell eyebrow="SUEDE/DNA / DOCS" title="Sourcing and verification." backHref="/docs" backLabel="← ALL DOCS">
+    <PageShell eyebrow="SUEDE/DNA / DOCS" title="Guitar rig sourcing and verification." backHref="/docs" backLabel="← ALL DOCS">
       <DocSection heading="THE SOURCE">
         <p>
           Every photograph in Suede DNA originates from{' '}
