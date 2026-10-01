@@ -66,7 +66,7 @@ const jsonLd = {
   url: `${baseUrl}${canonicalPath}`,
   publisher: {
     "@type": "Organization",
-    name: "Suede Labs AI",
+    name: "Suede AI",
     url: baseUrl,
   },
   mainEntity: {
@@ -234,7 +234,7 @@ export default function IosDownloadHubPage() {
               {[
                 "Official Apple App Store links",
                 "iPhone and iPad ready",
-                "Built by Suede Labs AI",
+                "Built by Suede AI",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <BadgeCheck className="h-4 w-4 text-[#f5d69a]" />

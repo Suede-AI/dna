@@ -38,7 +38,7 @@ Category priority:
 | Context | Approved Name |
 |---|---|
 | Company / product | `Suede Labs` |
-| App | `Suede Labs AI` |
+| App | `Suede AI` |
 | Token name | `Suede Labs AI` |
 | Ticker / token | `$SUEDE` |
 | Symbol without cashtag | `SUEDE` |

@@ -44,5 +44,5 @@ The underlying rig diagrams remain the property of their original creators. Sued
 ## Contact
 
 - Project lead: [Jason Colapietro](https://github.com/JasonColapietro)
-- Studio: [Suede Labs AI](https://suedeai.ai)
+- Studio: [Suede AI](https://suedeai.ai)
 - Issues: [github.com/Suede-AI/dna/issues](https://github.com/Suede-AI/dna/issues)

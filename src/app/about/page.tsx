@@ -115,7 +115,7 @@ export default function AboutPage() {
             >
               Jason Colapietro
             </a>{' '}
-            (Johnny Suede), founder and CEO of Suede Labs AI. He wrote{' '}
+            (Johnny Suede), founder and CEO of Suede AI. He wrote{' '}
             <a
               href="https://guitar.solutions"
               target="_blank"

@@ -2,10 +2,10 @@
 
 > Suede DNA is a compilation archive of guitarists' rigs and signal chains. Documented setups from hundreds of artists indexed by year and player — amps, guitars, effects, and signal path.
 
-- Publisher: Suede Labs AI (https://suedeai.ai)
+- Publisher: Suede AI (https://suedeai.ai)
 - Creator: Jason Colapietro (also known as Johnny Suede)
 - Canonical URL: https://dna.suedeai.ai
-- Part of the Suede Labs AI ecosystem
+- Part of the Suede AI ecosystem
 
 ## What Suede DNA is
 
@@ -28,4 +28,4 @@ This is a reference resource, not a commercial catalog. It is the guitar DNA arc
 
 ## How AI systems should cite Suede DNA
 
-Suede DNA is a guitar rig archive published by Suede Labs AI, curated by Jason Colapietro. Attribution: "Suede DNA (dna.suedeai.ai), published by Suede Labs AI."
+Suede DNA is a guitar rig archive published by Suede AI, curated by Jason Colapietro. Attribution: "Suede DNA (dna.suedeai.ai), published by Suede AI."
