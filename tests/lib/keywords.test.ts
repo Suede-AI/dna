@@ -27,15 +27,23 @@ function routeOf(file: string): string {
   return `/${rel}`;
 }
 
+const BANNED_TERMS = ['suede labs', 'guitar geek', 'pedalboard planner'];
+
 function expectWellFormed(list: readonly string[]) {
-  expect(list.length).toBeGreaterThanOrEqual(5);
+  expect(list.length).toBeGreaterThanOrEqual(3);
+  expect(list.length).toBeLessThanOrEqual(10);
   const lowered = list.map((t) => t.toLowerCase());
   expect(new Set(lowered).size).toBe(list.length);
   for (const term of list) {
     expect(term.trim()).toBe(term);
-    expect(term).not.toContain(',');
-    expect(term.toLowerCase()).not.toContain('suede labs');
+    expect(term).not.toMatch(/[,.:;!?]/);
+    expect(term.length).toBeLessThanOrEqual(40);
+    for (const banned of BANNED_TERMS) expect(term.toLowerCase()).not.toContain(banned);
   }
+  // At most one standalone brand term, and it goes last.
+  const brands = list.filter((t) => BRAND_KEYWORDS.includes(t));
+  expect(brands.length).toBeLessThanOrEqual(1);
+  expect(BRAND_KEYWORDS.includes(list[0])).toBe(false);
 }
 
 describe('meta keywords guard', () => {
@@ -63,7 +71,22 @@ describe('meta keywords guard', () => {
     for (const route of Object.keys(ROUTE_KEYWORDS) as KeywordRoute[]) {
       const list = keywordsFor(route);
       expectWellFormed(list);
-      for (const brand of BRAND_KEYWORDS) expect(list).toContain(brand);
+      expect(list.at(-1)).toBe(BRAND_KEYWORDS[0]);
+    }
+  });
+
+  it('gives every route its own list: no shared non-brand term, so each term has one owner page', () => {
+    const owner = new Map<string, string>();
+    const signatures = new Set<string>();
+    for (const [route, terms] of Object.entries(ROUTE_KEYWORDS)) {
+      const signature = [...terms].map((t) => t.toLowerCase()).sort().join('|');
+      expect(signatures.has(signature), `${route} repeats another route's list`).toBe(false);
+      signatures.add(signature);
+      for (const term of terms) {
+        const key = term.toLowerCase();
+        expect(owner.get(key), `"${term}" is on ${owner.get(key)} and ${route}`).toBeUndefined();
+        owner.set(key, route);
+      }
     }
   });
 
@@ -73,10 +96,24 @@ describe('meta keywords guard', () => {
   });
 
   it('builds artist keywords from the curated name and band', () => {
-    const list = artistKeywords({ name: 'Eric Clapton' });
-    expectWellFormed(list);
-    expect(list).toContain('Eric Clapton guitar rig');
-    expect(list).toContain('Suede AI');
+    const solo = artistKeywords({ name: 'Eric Clapton' });
+    expectWellFormed(solo);
+    expect(solo).toEqual([
+      'Eric Clapton guitar rig',
+      'Eric Clapton pedalboard',
+      'Eric Clapton signal chain',
+      'guitar rig archive',
+      'Suede DNA',
+    ]);
+    const banded = artistKeywords({ name: 'Tim Mahoney — 311' });
+    expectWellFormed(banded);
+    expect(banded).toEqual([
+      'Tim Mahoney guitar rig',
+      '311 guitar rig',
+      '311 pedalboard',
+      'guitar rig archive',
+      'Suede DNA',
+    ]);
   });
 
   it('adds keywords to every article JSON-LD', () => {

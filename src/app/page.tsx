@@ -11,7 +11,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const stats = getStats();
 
 export const metadata: Metadata = {
-  title: homePageTitle(),
+  title: { absolute: homePageTitle() },
   description: homePageDescription(stats),
   keywords: keywordsFor('/'),
   alternates: { canonical: '/' },

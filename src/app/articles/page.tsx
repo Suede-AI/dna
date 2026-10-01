@@ -7,13 +7,13 @@ import { keywordsFor } from '@/lib/seo/keywords';
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
-  title: 'Articles',
+  title: 'Guitar Rig History Articles',
   description:
     'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
   keywords: keywordsFor('/articles'),
   alternates: { canonical: `${SITE_URL}/articles` },
   openGraph: {
-    title: 'Articles — Suede DNA',
+    title: 'Guitar Rig History Articles — Suede DNA',
     description:
       'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
     url: `${SITE_URL}/articles`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Articles — Suede DNA',
+    title: 'Guitar Rig History Articles — Suede DNA',
     description:
       'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
     images: [DNA_SOCIAL_IMAGE.url],
@@ -47,7 +47,7 @@ export default function ArticlesIndexPage() {
         className="font-[820] text-white mt-4"
         style={{ fontSize: 'var(--text-section)', lineHeight: 1, letterSpacing: 'var(--tracking-tight)' }}
       >
-        Articles.
+        Articles on guitar rig history.
       </h1>
       <p
         className="mt-6 max-w-[640px] text-[color:var(--color-bone)] leading-relaxed"

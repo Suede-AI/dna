@@ -8,13 +8,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/what-is-suede-dna';
 
 export const metadata: Metadata = {
-  title: 'What Suede DNA Is',
+  title: { absolute: 'What Is Suede DNA? Guitar Signal Chains Over Time' },
   description:
     'The premise behind the archive: why a guitarist’s rigs form a signal chain across time, and how the site is structured around that idea.',
   keywords: keywordsFor('/docs/what-is-suede-dna'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'What Suede DNA Is — Suede DNA Docs',
+    title: 'What Is Suede DNA? Guitar Signal Chains Over Time',
     description:
       'The premise behind the archive: why a guitarist’s rigs form a signal chain across time, and how the site is structured around that idea.',
     url: `${SITE_URL}${PATH}`,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'What Suede DNA Is — Suede DNA Docs',
+    title: 'What Is Suede DNA? Guitar Signal Chains Over Time',
     description:
       'The premise behind the archive: why a guitarist’s rigs form a signal chain across time, and how the site is structured around that idea.',
     images: [DNA_SOCIAL_IMAGE.url],
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 export default function WhatIsSuedeDnaPage() {
   const stats = getStats();
   return (
-    <PageShell eyebrow="SUEDE/DNA / DOCS" title="What Suede DNA is." backHref="/docs" backLabel="← ALL DOCS">
+    <PageShell eyebrow="SUEDE/DNA / DOCS" title="What is Suede DNA?" backHref="/docs" backLabel="← ALL DOCS">
       <DocSection heading="THE PREMISE">
         <p>
           Suede DNA is a compilation archive of guitarists&apos; rigs. Right now it holds{' '}

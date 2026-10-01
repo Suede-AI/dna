@@ -17,7 +17,7 @@ const defaultDescription = `A compilation archive of guitarists' rigs and signal
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: 'Suede DNA: Signal Chains, Archived', template: '%s · Suede DNA' },
+  title: { default: 'Suede DNA: Guitar Rig Archive of Signal Chains', template: '%s · Suede DNA' },
   description: defaultDescription,
   keywords: keywordsFor('/'),
   authors: [{ name: 'Jason Colapietro', url: 'https://suedeai.ai/founder' }],
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'Suede DNA',
-    title: 'Suede DNA: Signal Chains, Archived',
+    title: 'Suede DNA: Guitar Rig Archive of Signal Chains',
     description: defaultDescription,
     images: [DNA_SOCIAL_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Suede DNA: Signal Chains, Archived',
+    title: 'Suede DNA: Guitar Rig Archive of Signal Chains',
     description: defaultDescription,
     site: '@AISUEDE',
     creator: '@johnnysuede',

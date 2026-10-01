@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Artist } from '@/lib/manifest';
 import type { ArtistArchivePosition } from '@/lib/artist-index';
-import { artistArchiveContext, artistYearRange } from '@/lib/seo';
+import { artistArchiveContext, artistYearRange, splitArtistName } from '@/lib/seo';
 
 export function ArtistStrip({
   artist,
@@ -14,6 +14,7 @@ export function ArtistStrip({
   prev?: Artist;
   next?: Artist;
 }) {
+  const { person, band } = splitArtistName(artist.name);
   return (
     <section aria-labelledby="artist-heading" className="border-b hairline">
       <div className="mx-auto max-w-[1400px] px-6 py-20">
@@ -31,7 +32,14 @@ export function ArtistStrip({
             letterSpacing: 'var(--tracking-tight)',
           }}
         >
-          {artist.name}
+          {person}{' '}
+          {/* Keeps "{player} guitar rig", the page's primary term, in the h1. */}
+          <span
+            className="mono-label mt-4 block text-[color:var(--color-bone)]"
+            style={{ fontWeight: 400, lineHeight: 'normal' }}
+          >
+            guitar rigs{band ? ` · ${band}` : ''}
+          </span>
         </h1>
         <div className="mt-6 flex flex-wrap items-center gap-3 mono-data text-[color:var(--color-bone)]">
           {archivePosition ? (

@@ -21,14 +21,21 @@ export function HomeHero() {
     <section className="home-hero" aria-labelledby="hero-heading">
       <div className="home-hero__inner">
         <div className="home-hero__copy">
-          <p className="mono-label">SUEDE/DNA — GUITAR RIG ARCHIVE</p>
           <h1
             id="hero-heading"
             className="home-hero__title font-[820] text-white"
             style={{
               letterSpacing: 0,
+              marginTop: 0,
             }}
           >
+            {/* The eyebrow lives in the h1 so the page's primary term ("guitar rig archive") is in its heading. */}
+            <span
+              className="mono-label block"
+              style={{ fontWeight: 400, lineHeight: 'normal', marginBottom: '1.25rem' }}
+            >
+              SUEDE/DNA — GUITAR RIG ARCHIVE
+            </span>{' '}
             <span className="block animate-[sweep-in_var(--duration-hero)_var(--ease-sweep)_both]">
               THE RIGS
             </span>

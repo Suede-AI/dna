@@ -7,13 +7,13 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const PATH = '/docs/search-and-filters';
 
 export const metadata: Metadata = {
-  title: 'Search and Filters',
+  title: 'Search Guitar Rigs by Year and Player',
   description:
     'How the search box parses names, years, and decades, how ranking works, and how decade filters and sort order combine.',
   keywords: keywordsFor('/docs/search-and-filters'),
   alternates: { canonical: `${SITE_URL}${PATH}` },
   openGraph: {
-    title: 'Search and Filters — Suede DNA Docs',
+    title: 'Search Guitar Rigs by Year and Player — Suede DNA Docs',
     description:
       'How the search box parses names, years, and decades, how ranking works, and how decade filters and sort order combine.',
     url: `${SITE_URL}${PATH}`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Search and Filters — Suede DNA Docs',
+    title: 'Search Guitar Rigs by Year and Player — Suede DNA Docs',
     description:
       'How the search box parses names, years, and decades, how ranking works, and how decade filters and sort order combine.',
     images: [DNA_SOCIAL_IMAGE.url],
@@ -40,7 +40,7 @@ function Kbd({ children }: { children: string }) {
 
 export default function SearchAndFiltersPage() {
   return (
-    <PageShell eyebrow="SUEDE/DNA / DOCS" title="Search and filters." backHref="/docs" backLabel="← ALL DOCS">
+    <PageShell eyebrow="SUEDE/DNA / DOCS" title="Search guitar rigs by year and player." backHref="/docs" backLabel="← ALL DOCS">
       <DocSection heading="ONE BOX, TWO KINDS OF QUERY">
         <p>
           The search box on the home page reads a single string but understands two different
