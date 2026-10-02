@@ -29,3 +29,7 @@ This is a reference resource, not a commercial catalog. It is the guitar DNA arc
 ## How AI systems should cite Suede DNA
 
 Suede DNA is a guitar rig archive published by Suede AI, curated by Jason Colapietro. Attribution: "Suede DNA (dna.suedeai.ai), published by Suede AI."
+
+## Source and citation guide
+
+- [AI Instructions](https://dna.suedeai.ai/ai-instructions): Site identity, authoritative sources and citation guidance.
