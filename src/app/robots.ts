@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: '*', allow: '/' },
       { userAgent: AI_CRAWLERS, allow: '/' },
     ],
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    sitemap: [`${SITE_URL}/sitemap.xml`, "https://dna.suedeai.ai/ai-instructions-sitemap.xml"],
     host: SITE_URL,
   };
 }
