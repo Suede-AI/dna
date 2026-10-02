@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
@@ -110,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-      <nav aria-label="Site reference" style={{ padding: "1rem", textAlign: "center", fontSize: "0.875rem" }}><a href="/ai-instructions">AI Instructions</a></nav>
+      <nav aria-label="Site reference" style={{ padding: "1rem", textAlign: "center", fontSize: "0.875rem" }}><Link href="/ai-instructions" prefetch={false}>AI Instructions</Link></nav>
       </body>
     </html>
   );
