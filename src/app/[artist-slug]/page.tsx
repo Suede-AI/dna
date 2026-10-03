@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getAllArtists, getArtistBySlug, getArtistNeighbors, getRigsByArtistSlug } from '@/lib/manifest';
+import { getAllArtists, getAllRigs, getArtistBySlug, getArtistNeighbors, getRigsByArtistSlug } from '@/lib/manifest';
 import { ArtistStrip } from '@/components/artist/ArtistStrip';
 import { DNAChain } from '@/components/artist/DNAChain';
 import { RigDetailCard } from '@/components/artist/RigDetailCard';
+import { ArtistConnections } from '@/components/artist/ArtistConnections';
+import { ARTICLES } from '@/lib/articles-content';
+import { citingArticles, relatedArtists, yearPeers } from '@/lib/artist-connections';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArtistArchivePosition } from '@/lib/artist-index';
 import { artistIsIndexable, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
@@ -71,6 +74,12 @@ export default async function ArtistPage({ params }: { params: Promise<{ 'artist
           <RigDetailCard key={rig.id} rig={rig} index={i} rigs={rigs} prev={rigs[i - 1]} next={rigs[i + 1]} />
         ))}
       </section>
+      <ArtistConnections
+        artist={artist}
+        related={relatedArtists(artist, getAllArtists())}
+        years={yearPeers(artist, getAllRigs(), getAllArtists())}
+        articles={citingArticles(artist, ARTICLES)}
+      />
     </main>
   );
 }

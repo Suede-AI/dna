@@ -4,6 +4,12 @@ export type ArticleEntry = {
   description: string;
   date: string; // ISO date
   readTime: string;
+  /**
+   * Canonical artist pages this essay links to in its body. Kept in step with
+   * the essay's own links by tests/lib/artist-connections.test.ts, and used to
+   * link back from each artist page to the essays that cite it.
+   */
+  artistSlugs?: string[];
 };
 
 export const ARTICLES: ArticleEntry[] = [
@@ -14,6 +20,7 @@ export const ARTICLES: ArticleEntry[] = [
       'Three documented rigs, three years apart, from the same guitarist. What the Yardbirds, the Bluesbreakers, and Cream show about how a signal chain accumulates a personality.',
     date: '2026-07-01',
     readTime: '8 min',
+    artistSlugs: ['eric-clapton-the-yardbirds', 'eric-clapton-bluesbreakers', 'eric-clapton-cream'],
   },
   {
     slug: 'the-guitar-rig-diagram-as-a-documentary-form',
@@ -30,6 +37,16 @@ export const ARTICLES: ArticleEntry[] = [
       'From the mid-1980s through the 2000s, a generation of technical players built rigs engineered for speed and headroom. What that era’s gear chains have in common.',
     date: '2026-07-09',
     readTime: '10 min',
+    artistSlugs: [
+      'yngwie-malmsteen',
+      'steve-vai',
+      'satriani-joe',
+      'ozzy-zakk-wylde',
+      'jeff-beck',
+      'joe-bonamassa',
+      'ratm-tom-morello',
+      'audioslave-tom-morello',
+    ],
   },
   {
     slug: 'rig-archaeology-and-the-ear-trained-player',
