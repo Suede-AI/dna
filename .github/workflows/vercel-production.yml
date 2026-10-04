@@ -4,15 +4,11 @@ name: Vercel Production Deploy
 # cannot use Vercel's own Git integration. This workflow is the replacement:
 # it is the only thing that should ever deploy dna.suedeai.ai.
 #
-# It runs after CI, not alongside it — the archive derives its public pages from
-# data/rigs.json, so shipping a commit that fails validate-manifest would put
-# wrong artist data on live URLs.
+# Automatic post-CI deploys are paused while VERCEL_TOKEN is absent, avoiding
+# a guaranteed failed Actions run after every green main CI. workflow_dispatch
+# remains available so deployment can resume without rebuilding this workflow.
 
 on:
-  workflow_run:
-    workflows: ["CI"]
-    types: [completed]
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
