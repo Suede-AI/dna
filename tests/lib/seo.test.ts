@@ -88,8 +88,15 @@ describe('SEO helpers', () => {
     expect(ld.mainEntity.name).toBe('Eric Clapton');
     expect(Array.isArray(ld.hasPart)).toBe(true);
     expect(ld.hasPart[0]['@type']).toBe('ImageObject');
-    expect(ld.hasPart[0].creator['@type']).toBe('Person');
+    expect(ld.hasPart[0].about).toEqual({ '@type': 'Person', name: 'Eric Clapton' });
+    expect(ld.hasPart[0].contentUrl).toBe('https://example.com/x.jpg');
     expect(ld.hasPart[0].creditText).toBe('Guitar Geek Archives');
+    expect(ld.hasPart[0].isAccessibleForFree).toBe(true);
+    // Artist association and rig year do not prove image authorship, creation
+    // date, or a reuse license for the archived file.
+    expect(ld.hasPart[0]).not.toHaveProperty('creator');
+    expect(ld.hasPart[0]).not.toHaveProperty('dateCreated');
+    expect(ld.hasPart[0]).not.toHaveProperty('license');
   });
 
   it('splits a curated "Player — Band" name into Person + memberOf', () => {
@@ -112,6 +119,11 @@ describe('SEO helpers', () => {
     expect(ld.mainEntity.memberOf).toEqual({ '@type': 'MusicGroup', name: 'Black Sabbath' });
     expect(iommi.name).toContain(ld.mainEntity.name);
     expect(iommi.name).toContain('Black Sabbath');
+    expect(ld.hasPart[0].about).toEqual({
+      '@type': 'Person',
+      name: 'Tony Iommi',
+      memberOf: { '@type': 'MusicGroup', name: 'Black Sabbath' },
+    });
   });
 
   it('keeps the home page title free of em dashes across every surface', () => {

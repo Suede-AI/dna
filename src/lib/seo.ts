@@ -100,11 +100,11 @@ export function artistJsonLd(artist: Artist, rigs: Rig[], siteUrl: string) {
     hasPart: rigs.map((rig) => ({
       '@type': 'ImageObject',
       contentUrl: rig.src,
-      creator: personEntity,
-      dateCreated: String(rig.year),
+      // The archive identifies whose rig is depicted, not who made the image.
+      // Its rig year and host terms do not establish image creation or licensing.
+      about: personEntity,
       creditText: 'Guitar Geek Archives',
       isAccessibleForFree: true,
-      license: 'https://archive.org/about/terms.php',
     })),
   } as const;
 }
