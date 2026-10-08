@@ -97,7 +97,7 @@ export function Footer() {
         <div className="mx-auto max-w-[1600px] px-6 py-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div
             aria-hidden
-            className="font-[820] leading-[0.85] tracking-[var(--tracking-tight)] text-white select-none"
+            className="flex flex-wrap sm:block font-[820] leading-[0.85] tracking-[var(--tracking-tight)] text-white select-none"
             style={{ fontSize: 'clamp(3rem, 8vw, 7rem)' }}
           >
             <span>SUEDE</span>
