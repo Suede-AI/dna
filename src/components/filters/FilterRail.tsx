@@ -30,7 +30,7 @@ export function FilterRail({
   return (
     <div
       className="sticky z-30 border-y hairline backdrop-blur supports-[backdrop-filter]:bg-[color:var(--color-ink-1)]/80"
-      style={{ top: 'var(--header-h)' }}
+      style={{ top: 'var(--measured-header-h, var(--header-h))' }}
     >
       <div className="mx-auto max-w-[1400px] px-6 py-4 flex flex-wrap items-center gap-6">
         <DecadeChips selected={state.decades} onToggle={toggleDecade} />
