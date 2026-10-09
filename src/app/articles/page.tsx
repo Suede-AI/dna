@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ARTICLES } from '@/lib/articles-content';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
 
@@ -42,6 +44,7 @@ function formatDate(iso: string) {
 export default function ArticlesIndexPage() {
   return (
     <main className="mx-auto max-w-[900px] px-6 py-24">
+      <JsonLd data={breadcrumbJsonLd(SITE_URL, [{ name: 'Articles', path: '/articles' }])} />
       <p className="mono-label">SUEDE/DNA / ARTICLES</p>
       <h1
         className="font-[820] text-white mt-4"

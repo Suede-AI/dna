@@ -45,7 +45,15 @@ export function artistPageDescription(artist: Artist): string {
     artist.yearMin === artist.yearMax
       ? `in ${artist.yearMin}`
       : `between ${artist.yearMin} and ${artist.yearMax}`;
-  return `Explore ${artistRigCount(artist)} for ${artist.name} ${when} in the Suede DNA collection. Each diagram links to its Guitar Geek Archives source on the Internet Archive.`;
+  const lead = `Explore ${artistRigCount(artist)} for ${artist.name} ${when} in Suede DNA.`;
+  // Keep the snippet within 155 characters: shorten the sourcing sentence
+  // before ever cutting the artist-specific lead.
+  const tails = [
+    ' Each diagram links to its Guitar Geek Archives source.',
+    ' Each links to its Guitar Geek source.',
+    '',
+  ];
+  return lead + (tails.find((t) => (lead + t).length <= 155) ?? '');
 }
 
 export function artistArchiveContext(
@@ -133,6 +141,25 @@ export function homeJsonLd(
   } as const;
 }
 
+/**
+ * BreadcrumbList for a docs or article page. `trail` runs from the first
+ * crumb below the site root to the current page; the root is always
+ * "Suede DNA". Names mirror the visible page titles.
+ */
+export function breadcrumbJsonLd(siteUrl: string, trail: { name: string; path: string }[]) {
+  const crumbs = [{ name: 'Suede DNA', path: '' }, ...trail];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: crumb.name,
+      item: crumb.path ? `${siteUrl}${crumb.path}` : siteUrl,
+    })),
+  } as const;
+}
+
 function articleKeywords(slug: string): string[] {
   const route = `/articles/${slug}`;
   const terms = (ROUTE_KEYWORDS as Record<string, readonly string[]>)[route] ?? ROUTE_KEYWORDS['/articles'];
@@ -163,7 +190,7 @@ export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
       name: 'Jason Colapietro',
       url: 'https://suedeai.ai/founder',
     },
-    publisher: { '@id': 'https://suedeai.ai/#organization' },
+    publisher: { '@id': 'https://suedeai.ai/#organization', name: 'Suede AI' },
     image: `${siteUrl}${DNA_SOCIAL_IMAGE.url}`,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     url,

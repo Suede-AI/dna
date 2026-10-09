@@ -145,12 +145,12 @@ export default function AboutPage() {
           <p className="mt-3">
             Built by Suede Labs for{' '}
             <a
-              href="https://suede.social"
+              href="https://social.suedeai.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
             >
-              suede.social
+              social.suedeai.ai
             </a>{' '}
             on Next.js 15, Tailwind v4, and Geist. The visual language follows the Suede Sonic
             Laboratory specification used across{' '}

@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getStats } from '@/lib/manifest';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
+import { getDoc } from '@/lib/docs-content';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
 
@@ -35,6 +38,12 @@ export default function WhatIsSuedeDnaPage() {
   const stats = getStats();
   return (
     <PageShell eyebrow="SUEDE/DNA / DOCS" title="What is Suede DNA?" backHref="/docs" backLabel="← ALL DOCS">
+      <JsonLd
+        data={breadcrumbJsonLd(SITE_URL, [
+          { name: 'Docs', path: '/docs' },
+          { name: getDoc('what-is-suede-dna')!.title, path: '/docs/what-is-suede-dna' },
+        ])}
+      />
       <DocSection heading="THE PREMISE">
         <p>
           Suede DNA is a compilation archive of guitarists&apos; rigs. Right now it holds{' '}
