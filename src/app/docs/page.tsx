@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { DOCS } from '@/lib/docs-content';
 import { IndexCard } from '@/components/docs/IndexCard';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
 
@@ -34,6 +36,7 @@ export const metadata: Metadata = {
 export default function DocsIndexPage() {
   return (
     <main className="mx-auto max-w-[1100px] px-6 py-24">
+      <JsonLd data={breadcrumbJsonLd(SITE_URL, [{ name: 'Docs', path: '/docs' }])} />
       <p className="mono-label">SUEDE/DNA / DOCS</p>
       <h1
         className="font-[820] text-white mt-4"

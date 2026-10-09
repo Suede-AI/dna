@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { getStats } from '@/lib/manifest';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
+import { getDoc } from '@/lib/docs-content';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
 
@@ -85,6 +87,12 @@ export default function FaqPage() {
   const stats = getStats();
   return (
     <PageShell eyebrow="SUEDE/DNA / DOCS" title="Suede DNA FAQ." backHref="/docs" backLabel="← ALL DOCS">
+      <JsonLd
+        data={breadcrumbJsonLd(SITE_URL, [
+          { name: 'Docs', path: '/docs' },
+          { name: getDoc('faq')!.title, path: '/docs/faq' },
+        ])}
+      />
       <JsonLd data={faqJsonLd} />
       <DocSection heading={`${stats.totalRigs} RIGS, ${stats.totalArtists} ARTISTS`}>
         <p>

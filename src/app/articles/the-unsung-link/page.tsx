@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { PageShell, DocSection, SuedeLink } from '@/components/docs/PageShell';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArticle } from '@/lib/articles-content';
-import { articleJsonLd } from '@/lib/seo';
+import { articleJsonLd, breadcrumbJsonLd } from '@/lib/seo';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
 
@@ -45,6 +45,12 @@ export default function ArticlePage() {
   return (
     <>
       <JsonLd data={articleJsonLd(article, SITE_URL)} />
+      <JsonLd
+        data={breadcrumbJsonLd(SITE_URL, [
+          { name: 'Articles', path: '/articles' },
+          { name: article.title, path: `/articles/${SLUG}` },
+        ])}
+      />
       <PageShell
         eyebrow="SUEDE/DNA / ARTICLES"
         title={article.title}

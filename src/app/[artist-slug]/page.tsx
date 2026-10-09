@@ -6,7 +6,7 @@ import { DNAChain } from '@/components/artist/DNAChain';
 import { RigDetailCard } from '@/components/artist/RigDetailCard';
 import { ArtistConnections } from '@/components/artist/ArtistConnections';
 import { ARTICLES } from '@/lib/articles-content';
-import { citingArticles, relatedArtists, yearPeers } from '@/lib/artist-connections';
+import { citingArticles, relatedArtists, singleRigFacts, yearPeers } from '@/lib/artist-connections';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArtistArchivePosition } from '@/lib/artist-index';
 import { artistIsIndexable, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
@@ -79,6 +79,7 @@ export default async function ArtistPage({ params }: { params: Promise<{ 'artist
         related={relatedArtists(artist, getAllArtists())}
         years={yearPeers(artist, getAllRigs(), getAllArtists())}
         articles={citingArticles(artist, ARTICLES)}
+        facts={singleRigFacts(artist, getAllRigs(), getAllArtists())}
       />
     </main>
   );

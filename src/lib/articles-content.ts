@@ -17,7 +17,7 @@ export const ARTICLES: ArticleEntry[] = [
     slug: 'building-a-tone-over-a-career',
     title: 'Eric Clapton Guitar Rig, 1964–1967: Building a Tone',
     description:
-      'Three documented rigs, three years apart, from the same guitarist. What the Yardbirds, the Bluesbreakers, and Cream show about how a signal chain accumulates a personality.',
+      'Three documented rigs, three years apart, from one guitarist. What the Yardbirds, Bluesbreakers, and Cream show about how a signal chain gains personality.',
     date: '2026-07-01',
     readTime: '8 min',
     artistSlugs: ['eric-clapton-the-yardbirds', 'eric-clapton-bluesbreakers', 'eric-clapton-cream'],
@@ -26,7 +26,7 @@ export const ARTICLES: ArticleEntry[] = [
     slug: 'the-guitar-rig-diagram-as-a-documentary-form',
     title: 'The Guitar Rig Diagram as a Documentary Form',
     description:
-      'Gear lists have been drawn, photographed, and argued over for decades. A short history of how musicians and fans started documenting rigs, and why the habit stuck.',
+      'Gear lists have been drawn, photographed, and argued over for decades. A short history of how players and fans began documenting rigs, and why it stuck.',
     date: '2026-07-05',
     readTime: '9 min',
   },
@@ -34,7 +34,7 @@ export const ARTICLES: ArticleEntry[] = [
     slug: 'shred-signal-and-the-virtuoso-rig',
     title: 'Shred Guitar Rigs and the Virtuoso Signal Chain',
     description:
-      'From the mid-1980s through the 2000s, a generation of technical players built rigs engineered for speed and headroom. What that era’s gear chains have in common.',
+      'From the mid-1980s through the 2000s, technical players built rigs engineered for speed and headroom. What that era’s gear chains have in common.',
     date: '2026-07-09',
     readTime: '10 min',
     artistSlugs: [

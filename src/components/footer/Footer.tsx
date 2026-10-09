@@ -75,12 +75,12 @@ export function Footer() {
             THE SIGNAL CHAIN ↗
           </a>
           <a
-            href="https://suede.social"
+            href="https://social.suedeai.ai"
             className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1"
             target="_blank"
             rel="noopener noreferrer"
           >
-            suede.social ↗
+            social.suedeai.ai ↗
           </a>
           <a
             href="https://suedeai.ai"
@@ -109,12 +109,12 @@ export function Footer() {
             <p className="text-[color:var(--color-mute-readable)]">
               SOURCED FROM GUITAR GEEK FOR{' '}
               <a
-                href="https://suede.social"
+                href="https://social.suedeai.ai"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
               >
-                SUEDE.SOCIAL ↗
+                SOCIAL.SUEDEAI.AI ↗
               </a>
             </p>
           </div>

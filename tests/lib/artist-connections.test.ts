@@ -77,3 +77,26 @@ describe('citingArticles', () => {
     }
   });
 });
+
+describe('singleRigFacts', () => {
+  it('describes a single-rig reviewed page from manifest data only', async () => {
+    const { singleRigFacts } = await import('../../src/lib/artist-connections');
+    const { getAllArtists, getAllRigs } = await import('../../src/lib/manifest');
+    const all = getAllArtists();
+    const rigs = getAllRigs();
+    const artist = all.find((a) => a.slug === 'hendrix-jimi')!;
+    const f = singleRigFacts(artist, rigs, all)!;
+    expect(f.year).toBe(artist.yearMin);
+    expect(f.sourceFile).toMatch(/\.(png|jpg|gif)$/);
+    expect(f.yearRank).toBeGreaterThanOrEqual(1);
+    expect(f.yearRank).toBeLessThanOrEqual(f.yearTotal);
+  });
+
+  it('returns null for multi-rig or unreviewed pages', async () => {
+    const { singleRigFacts } = await import('../../src/lib/artist-connections');
+    const { getAllArtists, getAllRigs } = await import('../../src/lib/manifest');
+    const all = getAllArtists();
+    const multi = all.find((a) => a.slug === 'eric-clapton-cream')!;
+    expect(singleRigFacts(multi, getAllRigs(), all)).toBeNull();
+  });
+});

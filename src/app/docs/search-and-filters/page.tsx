@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { PageShell, DocSection } from '@/components/docs/PageShell';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { breadcrumbJsonLd } from '@/lib/seo';
+import { getDoc } from '@/lib/docs-content';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
 
@@ -41,6 +44,12 @@ function Kbd({ children }: { children: string }) {
 export default function SearchAndFiltersPage() {
   return (
     <PageShell eyebrow="SUEDE/DNA / DOCS" title="Search guitar rigs by year and player." backHref="/docs" backLabel="← ALL DOCS">
+      <JsonLd
+        data={breadcrumbJsonLd(SITE_URL, [
+          { name: 'Docs', path: '/docs' },
+          { name: getDoc('search-and-filters')!.title, path: '/docs/search-and-filters' },
+        ])}
+      />
       <DocSection heading="ONE BOX, TWO KINDS OF QUERY">
         <p>
           The search box on the home page reads a single string but understands two different

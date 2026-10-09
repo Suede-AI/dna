@@ -45,7 +45,7 @@ describe('SEO helpers', () => {
     expect(artistPageDescription(clapton)).toContain('5 documented rig setups');
     expect(artistPageDescription(clapton)).toContain('1966');
     expect(artistPageDescription(clapton)).toContain('1989');
-    expect(artistPageDescription(clapton)).toContain('Suede DNA collection');
+    expect(artistPageDescription(clapton)).toContain('Suede DNA');
     expect(artistPageDescription(clapton)).not.toContain('complete rig archive');
   });
 
@@ -176,5 +176,28 @@ describe('SEO helpers', () => {
       expect(ld.url).toBe(`https://dna.suedeai.ai/articles/${article.slug}`);
       expect(ld.mainEntityOfPage['@id']).toBe(ld.url);
     }
+  });
+});
+
+describe('SEO fixes: breadcrumbs and snippet length', () => {
+  it('builds a BreadcrumbList rooted at Suede DNA', async () => {
+    const { breadcrumbJsonLd } = await import('../../src/lib/seo');
+    const ld = breadcrumbJsonLd('https://dna.suedeai.ai', [{ name: 'Docs', path: '/docs' }]);
+    expect(ld['@type']).toBe('BreadcrumbList');
+    expect(ld.itemListElement.map((i) => i.item)).toEqual([
+      'https://dna.suedeai.ai',
+      'https://dna.suedeai.ai/docs',
+    ]);
+  });
+
+  it('keeps every article and artist description within 155 characters', async () => {
+    const { getAllArtists } = await import('../../src/lib/manifest');
+    for (const article of ARTICLES) expect(article.description.length).toBeLessThanOrEqual(155);
+    for (const a of getAllArtists()) expect(artistPageDescription(a).length).toBeLessThanOrEqual(155);
+  });
+
+  it('names the publisher Suede AI', () => {
+    const ld = articleJsonLd(ARTICLES[0], 'https://dna.suedeai.ai');
+    expect(ld.publisher.name).toBe('Suede AI');
   });
 });
