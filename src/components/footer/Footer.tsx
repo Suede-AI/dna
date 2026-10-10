@@ -105,7 +105,16 @@ export function Footer() {
             <span className="text-[color:var(--color-bone)]">DNA</span>
           </div>
           <div className="mono-label text-[color:var(--color-bone)] sm:text-right space-y-1">
-            <p>A SUEDE LABS / JASON COLAPIETRO CREATION</p>
+            <p>
+              Built by{' '}
+              <a
+                href="https://suedeai.ai/founder"
+                className="hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
+              >
+                Jason Colapietro
+              </a>
+              , founder of Suede AI
+            </p>
             <p className="text-[color:var(--color-mute-readable)]">
               SOURCED FROM GUITAR GEEK FOR{' '}
               <a
