@@ -6,19 +6,18 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbJsonLd } from '@/lib/seo';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
+import { DOCS_INDEX_DESCRIPTION } from '@/lib/page-descriptions';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
   title: { absolute: 'Suede DNA Docs: How the Guitar Rig Archive Works' },
-  description:
-    'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
+  description: DOCS_INDEX_DESCRIPTION,
   keywords: keywordsFor('/docs'),
   alternates: { canonical: `${SITE_URL}/docs` },
   openGraph: {
     title: 'Suede DNA Docs: How the Guitar Rig Archive Works',
-    description:
-      'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
+    description: DOCS_INDEX_DESCRIPTION,
     url: `${SITE_URL}/docs`,
     siteName: 'Suede DNA',
     type: 'website',
@@ -27,8 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Suede DNA Docs: How the Guitar Rig Archive Works',
-    description:
-      'How Suede DNA is built: sourcing, the manifest pipeline, search syntax, and answers to common questions about the archive.',
+    description: DOCS_INDEX_DESCRIPTION,
     images: [DNA_SOCIAL_IMAGE.url],
   },
 };
