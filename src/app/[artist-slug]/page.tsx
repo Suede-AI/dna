@@ -9,7 +9,7 @@ import { ARTICLES } from '@/lib/articles-content';
 import { citingArticles, relatedArtists, singleRigFacts, yearPeers } from '@/lib/artist-connections';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArtistArchivePosition } from '@/lib/artist-index';
-import { artistIsIndexable, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
+import { artistDocumentTitle, artistIsIndexable, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
 import { artistKeywords } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
@@ -31,7 +31,7 @@ export async function generateMetadata({
   // crawlers follow their real archive.org links, until names are curated.
   const indexable = artistIsIndexable(artist);
   return {
-    title: artistPageTitle(artist),
+    title: artistDocumentTitle(artist),
     description: artistPageDescription(artist),
     // Noindex pages carry a fabricated slug-derived name: no keywords for them.
     ...(indexable ? { keywords: artistKeywords(artist) } : {}),

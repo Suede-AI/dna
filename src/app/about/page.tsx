@@ -161,15 +161,6 @@ export default function AboutPage() {
               className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
             >
               suedeai.ai
-            </a>{' '}
-            and{' '}
-            <a
-              href="https://launch.suedeai.ai"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"
-            >
-              launch.suedeai.ai
             </a>
             .
           </p>

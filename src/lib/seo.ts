@@ -36,6 +36,21 @@ export function artistPageTitle(artist: Artist): string {
   return `${person} Guitar Rigs${band ? ` (${band})` : ''}, ${artistYearRange(artist)}`;
 }
 
+/** The layout's title template appends this to every page title. */
+export const SITE_TITLE_SUFFIX = ' · Suede DNA';
+/** Longest document title kept whole in a search result. */
+export const MAX_DOCUMENT_TITLE = 65;
+
+/**
+ * The `<title>` for an artist page. The site suffix is kept when the whole
+ * title fits a search result; a long player/band name drops it rather than
+ * having the engine cut the title mid-word.
+ */
+export function artistDocumentTitle(artist: Artist): string | { absolute: string } {
+  const title = artistPageTitle(artist);
+  return (title + SITE_TITLE_SUFFIX).length <= MAX_DOCUMENT_TITLE ? title : { absolute: title };
+}
+
 function artistRigCount(artist: Pick<Artist, 'count'>): string {
   return `${artist.count} documented rig ${artist.count === 1 ? 'setup' : 'setups'}`;
 }
