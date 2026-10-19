@@ -73,7 +73,7 @@ export default function ArticlePage() {
 
         <DocSection heading="THE NECK AS PART OF THE SIGNAL CHAIN">
           <p>
-            Malmsteen&apos;s <SuedeLink href="/malmsteen-yngwie">1988 rig</SuedeLink> and his{' '}
+            Malmsteen&apos;s <SuedeLink href="/yngwie-malmsteen#rig-1988">1988 rig</SuedeLink> and his{' '}
             <SuedeLink href="/yngwie-malmsteen">2008 rig</SuedeLink> are two decades apart and built
             around the same core idea: a Fender Stratocaster with a scalloped fretboard, played
             through a Marshall stack pushed hard enough to sustain a note indefinitely. The
@@ -94,7 +94,7 @@ export default function ArticlePage() {
             MIDI switching rather than a pedalboard on the floor. The instinct is practical: a rack
             system lets a player recall a complex combination of gain, delay, and modulation
             settings with a single footswitch press instead of stomping four pedals in sequence
-            mid-solo. <SuedeLink href="/vai-steve">Vai&apos;s 1999 rig</SuedeLink> and{' '}
+            mid-solo. <SuedeLink href="/steve-vai#rig-1999">Vai&apos;s 1999 rig</SuedeLink> and{' '}
             <SuedeLink href="/steve-vai">2007 rig</SuedeLink>, alongside{' '}
             <SuedeLink href="/satriani-joe">Satriani&apos;s 2000 setup</SuedeLink>, all sit in this
             rack-and-signature-guitar tradition: Vai&apos;s Ibanez JEM, built to his own
@@ -125,7 +125,7 @@ export default function ArticlePage() {
         <DocSection heading="THE TRADITIONALISTS, SAME DECADE">
           <p>
             Not every player working in this window bought into rack systems or scalloped necks at
-            all. Zakk Wylde&apos;s <SuedeLink href="/wylde-zakk">2000</SuedeLink> and{' '}
+            all. Zakk Wylde&apos;s <SuedeLink href="/ozzy-zakk-wylde#rig-2000">2000</SuedeLink> and{' '}
             <SuedeLink href="/ozzy-zakk-wylde">2011</SuedeLink> rigs are built around a Gibson Les
             Paul, the black-and-white &ldquo;Bullseye&rdquo; finish that became as much a visual
             signature as a tonal one, into a straightforward, heavily overdriven Marshall stack,
