@@ -1,19 +1,18 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { keywordsFor } from '@/lib/seo/keywords';
+import { ABOUT_DESCRIPTION } from '@/lib/page-descriptions';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
   title: { absolute: 'About Suede DNA: How the Guitar Rig Archive Is Built' },
-  description:
-    'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
+  description: ABOUT_DESCRIPTION,
   keywords: keywordsFor('/about'),
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: 'About Suede DNA: How the Guitar Rig Archive Is Built',
-    description:
-      'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
+    description: ABOUT_DESCRIPTION,
     url: `${SITE_URL}/about`,
     siteName: 'Suede DNA',
     type: 'website',
@@ -21,8 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About Suede DNA: How the Guitar Rig Archive Is Built',
-    description:
-      'How Suede DNA is sourced, structured, and attributed. The Guitar Geek archives, the Internet Archive, and the method behind the compilation.',
+    description: ABOUT_DESCRIPTION,
   },
 };
 

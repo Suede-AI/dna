@@ -5,19 +5,18 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { breadcrumbJsonLd } from '@/lib/seo';
 import { DNA_SOCIAL_IMAGE } from '@/lib/seo/social-metadata';
 import { keywordsFor } from '@/lib/seo/keywords';
+import { ARTICLES_INDEX_DESCRIPTION } from '@/lib/page-descriptions';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
 export const metadata: Metadata = {
   title: 'Guitar Rig History Articles',
-  description:
-    'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
+  description: ARTICLES_INDEX_DESCRIPTION,
   keywords: keywordsFor('/articles'),
   alternates: { canonical: `${SITE_URL}/articles` },
   openGraph: {
     title: 'Guitar Rig History Articles — Suede DNA',
-    description:
-      'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
+    description: ARTICLES_INDEX_DESCRIPTION,
     url: `${SITE_URL}/articles`,
     siteName: 'Suede DNA',
     type: 'website',
@@ -26,8 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Guitar Rig History Articles — Suede DNA',
-    description:
-      'Essays on rig history, tone genealogy, and the craft of the signal chain — from the Suede DNA archive.',
+    description: ARTICLES_INDEX_DESCRIPTION,
     images: [DNA_SOCIAL_IMAGE.url],
   },
 };
