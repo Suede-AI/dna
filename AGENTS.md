@@ -17,7 +17,6 @@ pnpm typecheck && pnpm lint && pnpm test && pnpm build   # THE GATES — all fou
 
 1. **One task per run, one commit per task.** Small surgical diffs. Conventional commit
    messages (`feat:` / `fix:` / `style:` / `perf:` / `test:` / `docs:`). **Never push.**
-   No AI attribution lines in commit messages.
 2. **Rig diagrams are the content. Never crop them.** `object-cover` on a rig image is a
    bug — use `object-contain` (letterboxed on ink) or natural aspect. Never vendor, mirror,
    or hotlink-rewrite the archive.org images.
@@ -60,3 +59,7 @@ pnpm typecheck && pnpm lint && pnpm test && pnpm build   # THE GATES — all fou
 
 The active work order is `docs/visual-overhaul/SPEC.md`. Take the first unchecked task,
 top to bottom. Full protocol: `docs/visual-overhaul/LOOP_PROMPT.md`.
+
+## Repository attribution preferences
+
+Omit optional AI attribution from new commit messages and pull request descriptions, including AI Co-Authored-By, Generated-by text, and Claude session links or trailers. Name new branches for the task without agent or model names, subject to system or harness naming requirements. Preserve actual authorship, required provenance, license notices, security and audit records, and attribution required by higher-priority policies or system instructions.
