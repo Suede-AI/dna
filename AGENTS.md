@@ -45,6 +45,14 @@ pnpm typecheck && pnpm lint && pnpm test && pnpm build   # THE GATES — all fou
 10. **Tailwind v4 beta** (`@theme` in tokens.css). House pattern is utility classes plus
     occasional inline `style` referencing token vars — follow it; don't restructure it.
 
+## Public archive indexing
+
+Published archive pages are indexable by default and must appear in the sitemap
+and llms.txt even when identity-review metadata is incomplete. Present unresolved
+names explicitly as upstream archive labels; do not invent reviewed identities.
+Person schema and performer associations still require name review. Keep these
+independent rules covered for the entire catalog and future unresolved entries.
+
 ## Layout facts
 
 - Header is sticky: 64px bar + a ticker row beneath it. `FilterRail` is sticky below that

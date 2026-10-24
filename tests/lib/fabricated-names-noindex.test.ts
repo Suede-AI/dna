@@ -1,135 +1,107 @@
-import { describe, it, expect } from 'vitest';
-import { getAllArtists, getRigsByArtistSlug, type Artist } from '../../src/lib/manifest';
-import { ARTIST_DISPLAY_NAMES } from '../../src/lib/canonical-artists';
-import { artistIsIndexable, artistJsonLd } from '../../src/lib/seo';
-import { generateMetadata } from '../../src/app/[artist-slug]/page';
-
-/**
- * Guard for the fabricated-artist-name defect.
- *
- * 302+ artist pages render a human name that is a literal title-cased transform
- * of an archive.org filename slug ("Who Pete" for Pete Townshend, "Yolatengo
- * Ira" for Ira Kaplan, "Alicecooper Pete"). The real surnames are not in the
- * data at all. Publishing these — in <title>/<h1>/JSON-LD, typed as a real
- * entity — asserts false facts about living people to answer engines.
- *
- * The CLAIM this test defends (asserted on the defect class, not on any
- * remembered literal, and scanned per artist rather than on a concatenation):
- *
- *   1. An artist page is indexable IFF its display name has been human-reviewed
- *      (listed in data/artist-names.json, or authored in curated "Player — Band"
- *      form). Every other page is a fabricated name.
- *   2. Every fabricated page is served `noindex, follow`.
- *   3. Every fabricated page emits NO Person/MusicGroup JSON-LD at all, so its
- *      fabricated name is never asserted as a real entity anywhere in the graph.
- *   4. Every reviewed page stays `index, follow` and types its subject as a
- *      Person (never the old, wrong MusicGroup), with the name split so schema
- *      matches the visible page.
- */
+import { afterEach, describe, it, expect, vi } from 'vitest';
+import { renderToStaticMarkup } from 'react-dom/server';
+import * as manifest from '../../src/lib/manifest';
+import { type Artist } from '../../src/lib/manifest';
+import { ARTIST_DISPLAY_NAMES, RETIRED_ARTIST_SLUGS, isReviewedArtistName } from '../../src/lib/canonical-artists';
+import { artistArchiveContext, artistPageDescription, artistPageTitle } from '../../src/lib/seo';
+import ArtistPage, { generateMetadata } from '../../src/app/[artist-slug]/page';
+import sitemap from '../../src/app/sitemap';
+import { ArtistStrip } from '../../src/components/artist/ArtistStrip';
 
 const SITE = 'https://dna.suedeai.ai';
-const artists = getAllArtists();
+const artists = manifest.getAllArtists();
+const reviewed = artists.filter((a) => isReviewedArtistName(a.slug, a.name));
+const unresolved = artists.filter((a) => !isReviewedArtistName(a.slug, a.name));
 
-/** Exactly what the artist page emits: schema only for indexable artists. */
-function emittedSchema(a: Artist) {
-  return artistIsIndexable(a) ? artistJsonLd(a, getRigsByArtistSlug(a.slug), SITE) : null;
+afterEach(() => vi.restoreAllMocks());
+
+/** Inspect the actual page's JSON-LD child, not a copy of its eligibility rule. */
+async function emittedSchema(artist: Artist) {
+  const page = await ArtistPage({ params: Promise.resolve({ 'artist-slug': artist.slug }) });
+  return page.props.children[0]?.props?.data ?? null;
 }
 
-/** Recursively collect every `name` string an emitted JSON-LD graph asserts. */
 function collectNames(node: unknown, out: string[] = []): string[] {
   if (Array.isArray(node)) {
-    for (const x of node) collectNames(x, out);
+    for (const value of node) collectNames(value, out);
   } else if (node && typeof node === 'object') {
-    const o = node as Record<string, unknown>;
-    if (typeof o.name === 'string') out.push(o.name);
-    for (const v of Object.values(o)) collectNames(v, out);
+    const record = node as Record<string, unknown>;
+    if (typeof record.name === 'string') out.push(record.name);
+    for (const value of Object.values(record)) collectNames(value, out);
   }
   return out;
 }
 
-const reviewed = artists.filter((a) => artistIsIndexable(a));
-const fabricated = artists.filter((a) => !artistIsIndexable(a));
-
-describe('fabricated artist names are not indexed or asserted as entities', () => {
-  it('partitions every live artist and is non-vacuous (both buckets populated)', () => {
-    expect(reviewed.length + fabricated.length).toBe(artists.length);
-    expect(artists.length).toBe(361);
-    // Non-vacuous: neither bucket is empty, and the fabricated bucket is the
-    // large majority the fix targets.
-    expect(reviewed.length).toBe(64);
-    expect(fabricated.length).toBe(297);
-  });
-
-  it('classifies known real-people fabrications as non-indexable', () => {
-    // These slugs are live and render a mangled name for a real, living person.
+describe('public archive discovery is independent of performer identity review', () => {
+  it('preserves the existing reviewed identities without manufacturing review records', () => {
+    expect(artists).toHaveLength(361);
+    expect(reviewed).toHaveLength(64);
+    expect(unresolved).toHaveLength(297);
     for (const slug of ['who-pete', 'alicecooper-pete', 'yolatengo-ira']) {
-      const a = artists.find((x) => x.slug === slug);
-      expect(a, `${slug} should be a live artist`).toBeDefined();
-      expect(artistIsIndexable(a!)).toBe(false);
+      expect(unresolved.some((artist) => artist.slug === slug)).toBe(true);
       expect(ARTIST_DISPLAY_NAMES[slug]).toBeUndefined();
     }
   });
 
-  it('emits noindex,follow for every fabricated page and index,follow for reviewed pages', async () => {
-    // Assert on the actual metadata boundary (generateMetadata), per artist.
-    const check = async (a: Artist) => {
-      const meta = await generateMetadata({ params: Promise.resolve({ 'artist-slug': a.slug }) });
-      const robots = meta.robots as { index?: boolean; follow?: boolean } | undefined;
-      return robots;
-    };
-    // Sample across both buckets keeps the run fast while covering the boundary
-    // on real reviewed and real fabricated slugs.
-    for (const a of [...fabricated.slice(0, 25), ...fabricated.slice(-5)]) {
-      const robots = await check(a);
-      expect(robots?.index, `${a.slug} must be noindex`).toBe(false);
-      expect(robots?.follow, `${a.slug} must stay follow`).toBe(true);
-    }
-    for (const a of reviewed) {
-      const robots = await check(a);
-      expect(robots?.index, `${a.slug} must stay indexable`).toBe(true);
-      expect(robots?.follow).toBe(true);
+  it('makes every published archive page indexable, self-canonical and discoverable in the sitemap', async () => {
+    const urls = sitemap().map((entry) => entry.url);
+    for (const artist of artists) {
+      const metadata = await generateMetadata({ params: Promise.resolve({ 'artist-slug': artist.slug }) });
+      expect(metadata.robots, artist.slug).toEqual({ index: true, follow: true });
+      expect(metadata.alternates?.canonical, artist.slug).toBe(`/${artist.slug}`);
+      expect(urls.filter((url) => url === `${SITE}/${artist.slug}`), artist.slug).toHaveLength(1);
     }
   });
 
-  it('emits no JSON-LD for any fabricated page (per artist)', () => {
-    for (const a of fabricated) {
-      expect(emittedSchema(a), `${a.slug} must not emit structured data`).toBeNull();
+  it('identifies unresolved names as archive labels in titles, visible headings and source context', async () => {
+    for (const artist of unresolved) {
+      expect(artistPageTitle(artist), artist.slug).toContain('Archive label:');
+      expect(artistPageDescription(artist), artist.slug).toContain('Archive label');
+      expect(artistArchiveContext(artist), artist.slug).toContain('not been verified as a performer identity');
+      const markup = renderToStaticMarkup(ArtistStrip({ artist, archivePosition: null }));
+      expect(markup.match(/<h1[\s\S]*?<\/h1>/)?.[0], artist.slug).toContain('Archive label:');
+      const metadata = await generateMetadata({ params: Promise.resolve({ 'artist-slug': artist.slug }) });
+      expect(metadata.openGraph).toMatchObject({ type: 'website' });
+      expect(metadata.keywords, artist.slug).toBeUndefined();
     }
   });
 
-  it('never asserts a fabricated name as an entity anywhere in the emitted graph', () => {
-    const fabricatedNames = new Set(fabricated.map((a) => a.name));
-    expect(fabricatedNames.size).toBeGreaterThan(0);
-
-    const assertedNames = new Set<string>();
-    for (const a of artists) {
-      const ld = emittedSchema(a);
-      if (ld) for (const n of collectNames(ld)) assertedNames.add(n);
-    }
-    expect(assertedNames.size).toBeGreaterThan(0);
-
-    for (const name of fabricatedNames) {
-      expect(assertedNames.has(name), `fabricated name "${name}" must not appear in any JSON-LD`).toBe(false);
+  it('emits no performer schema for any unresolved archive label', async () => {
+    for (const artist of unresolved) {
+      expect(await emittedSchema(artist), artist.slug).toBeNull();
     }
   });
 
-  it('types every reviewed subject as a Person (not MusicGroup) with a name that matches the visible page', () => {
-    for (const a of reviewed) {
-      const ld = emittedSchema(a);
-      expect(ld, `${a.slug} should emit schema`).not.toBeNull();
-      const mainEntity = ld!.mainEntity as { '@type': string; name: string; memberOf?: { name: string } };
-      expect(mainEntity['@type'], `${a.slug} subject must be a Person`).toBe('Person');
-      // The Person name must not carry the "— Band" suffix...
-      expect(mainEntity.name.includes(' — '), `${a.slug} person name must be split`).toBe(false);
-      // ...and every asserted name must be a substring of the visible display
-      // name, so structured data matches rendered content.
-      expect(a.name).toContain(mainEntity.name);
-      if (mainEntity.memberOf) expect(a.name).toContain(mainEntity.memberOf.name);
-      // Regression guard: the old code typed individuals as MusicGroup.
-      const names = collectNames(ld);
-      expect(names.length).toBeGreaterThan(0);
-      const types = JSON.stringify(ld);
-      expect(types.includes('"MusicGroup"') && !mainEntity.memberOf).toBe(false);
+  it('preserves all reviewed Person graphs with visible names and original archive image sources', async () => {
+    const unresolvedNames = new Set(unresolved.map((artist) => artist.name));
+    for (const artist of reviewed) {
+      const graph = await emittedSchema(artist);
+      expect(graph?.mainEntity['@type'], artist.slug).toBe('Person');
+      expect(artist.name).toContain(graph.mainEntity.name);
+      if (graph.mainEntity.memberOf) expect(artist.name).toContain(graph.mainEntity.memberOf.name);
+      for (const name of collectNames(graph)) expect(unresolvedNames.has(name), name).toBe(false);
+      expect(graph.hasPart.map((part: { contentUrl: string }) => part.contentUrl)).toEqual(
+        manifest.getRigsByArtistSlug(artist.slug).map((rig) => rig.src),
+      );
     }
+  });
+
+  it('keeps a future published unreviewed archive label discoverable without creating an identity assertion', async () => {
+    const future: Artist = { ...unresolved[0], slug: 'unreviewed-future-label', name: 'Unreviewed Future Label' };
+    vi.spyOn(manifest, 'getAllArtists').mockReturnValue([...artists, future]);
+    vi.spyOn(manifest, 'getArtistBySlug').mockImplementation((slug) => [...artists, future].find((a) => a.slug === slug));
+    const metadata = await generateMetadata({ params: Promise.resolve({ 'artist-slug': future.slug }) });
+    expect(metadata.robots).toEqual({ index: true, follow: true });
+    expect(metadata.openGraph).toMatchObject({ type: 'website' });
+    expect(sitemap().some((entry) => entry.url === `${SITE}/${future.slug}`)).toBe(true);
+    expect(await emittedSchema(future)).toBeNull();
+  });
+
+  it('does not add retired or nonexistent archive pages to discovery', async () => {
+    const urls = new Set(sitemap().map((entry) => entry.url));
+    for (const slug of RETIRED_ARTIST_SLUGS) expect(urls.has(`${SITE}/${slug}`), slug).toBe(false);
+    const params = Promise.resolve({ 'artist-slug': 'nonexistent-archive-entry' });
+    expect(await generateMetadata({ params })).toEqual({});
+    await expect(ArtistPage({ params })).rejects.toThrow('NEXT_HTTP_ERROR_FALLBACK;404');
   });
 });

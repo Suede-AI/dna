@@ -90,9 +90,9 @@ describe('meta keywords guard', () => {
     }
   });
 
-  it('gives keywords only to indexable artist pages', () => {
+  it('gives performer keywords only to reviewed identities', () => {
     const src = readFileSync(join(APP_DIR, '[artist-slug]', 'page.tsx'), 'utf8');
-    expect(src).toContain('...(indexable ? { keywords: artistKeywords(artist) } : {})');
+    expect(src).toContain('...(reviewed ? { keywords: artistKeywords(artist) } : {})');
   });
 
   it('builds artist keywords from the curated name and band', () => {

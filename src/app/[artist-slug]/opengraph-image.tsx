@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { getArtistBySlug, getRigsByArtistSlug } from '@/lib/manifest';
+import { artistHasReviewedIdentity } from '@/lib/seo';
 
 export const runtime = 'nodejs';
 export const size = { width: 1200, height: 630 };
@@ -50,7 +51,9 @@ export default async function Image({ params }: { params: Promise<{ 'artist-slug
           )}
         </div>
         <div style={{ width: '50%', padding: 60, display: 'flex', flexDirection: 'column' }}>
-          <div style={{ fontSize: 18, letterSpacing: 4, color: 'rgba(255,255,255,0.4)' }}>SUEDE / DNA</div>
+          <div style={{ fontSize: 18, letterSpacing: 4, color: 'rgba(255,255,255,0.4)' }}>
+            {artistHasReviewedIdentity(artist) ? 'SUEDE / DNA' : 'SUEDE / DNA · ARCHIVE LABEL'}
+          </div>
           <div
             style={{
               marginTop: 'auto',

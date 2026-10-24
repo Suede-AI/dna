@@ -5,7 +5,7 @@ import { ARTICLES } from '../../src/lib/articles-content';
 import { canonicalArtistSlug } from '../../src/lib/canonical-artists';
 import { citingArticles, relatedArtists, yearPeers } from '../../src/lib/artist-connections';
 import { getAllArtists, getAllRigs, getArtistBySlug } from '../../src/lib/manifest';
-import { artistIsIndexable } from '../../src/lib/seo';
+import { artistHasReviewedIdentity } from '../../src/lib/seo';
 
 const artists = getAllArtists();
 const rigs = getAllRigs();
@@ -33,8 +33,8 @@ describe('relatedArtists', () => {
   it('never returns or is computed for an unreviewed page', () => {
     for (const a of artists) {
       const r = relatedArtists(a, artists);
-      if (!artistIsIndexable(a)) expect(r).toEqual([]);
-      for (const x of r) expect(artistIsIndexable(x.artist)).toBe(true);
+      if (!artistHasReviewedIdentity(a)) expect(r).toEqual([]);
+      for (const x of r) expect(artistHasReviewedIdentity(x.artist)).toBe(true);
     }
   });
 });
@@ -46,7 +46,7 @@ describe('yearPeers', () => {
     expect(entry.rigCount).toBe(rigs.filter((r) => r.year === 2009).length);
     expect(entry.peers.map((p) => p.slug)).not.toContain('311-tim-mahoney');
     for (const p of entry.peers) {
-      expect(artistIsIndexable(p)).toBe(true);
+      expect(artistHasReviewedIdentity(p)).toBe(true);
       expect(rigs.some((r) => r.artistSlug === p.slug && r.year === 2009)).toBe(true);
     }
   });

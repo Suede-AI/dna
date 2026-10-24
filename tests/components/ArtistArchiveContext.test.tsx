@@ -35,7 +35,7 @@ describe('artist archive context', () => {
     render(<ArtistStrip artist={artist} archivePosition={{ index: 1, total: 390 }} />);
 
     expect(
-      screen.getByText(/Archive Artist has 1 documented rig setup from 1997 in the Suede DNA collection/),
+      screen.getByText(/The upstream archive label “Archive Artist” groups 1 documented rig setup from 1997 in the Suede DNA collection/),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: /sourcing and verification/i })).toHaveAttribute(
       'href',
