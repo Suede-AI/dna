@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import type { Artist } from '@/lib/manifest';
 import type { ArtistArchivePosition } from '@/lib/artist-index';
-import { artistArchiveContext, artistYearRange, splitArtistName } from '@/lib/seo';
+import { artistArchiveContext, artistHasReviewedIdentity, artistPageLabel, artistYearRange, splitArtistName } from '@/lib/seo';
 
 export function ArtistStrip({
   artist,
@@ -15,13 +15,14 @@ export function ArtistStrip({
   next?: Artist;
 }) {
   const { person, band } = splitArtistName(artist.name);
+  const reviewed = artistHasReviewedIdentity(artist);
   return (
     <section aria-labelledby="artist-heading" className="border-b hairline">
       <div className="mx-auto max-w-[1400px] px-6 py-20">
         <nav aria-label="Breadcrumb" className="mono-label mb-6">
           <Link href="/" className="hover:text-[color:var(--color-signal)]">SUEDE/DNA</Link>
           <span className="mx-2 text-[color:var(--color-mute)]">/</span>
-          <span className="text-white">{artist.name.toUpperCase()}</span>
+          <span className="text-white">{artistPageLabel(artist).toUpperCase()}</span>
         </nav>
         <h1
           id="artist-heading"
@@ -32,7 +33,7 @@ export function ArtistStrip({
             letterSpacing: 'var(--tracking-tight)',
           }}
         >
-          {person}{' '}
+          {reviewed ? person : artistPageLabel(artist)}{' '}
           {/* Keeps "{player} guitar rig", the page's primary term, in the h1. */}
           <span
             className="mono-label mt-4 block text-[color:var(--color-bone)]"
@@ -44,7 +45,7 @@ export function ArtistStrip({
         <div className="mt-6 flex flex-wrap items-center gap-3 mono-data text-[color:var(--color-bone)]">
           {archivePosition ? (
             <span className="mono-label text-[color:var(--color-bone)]">
-              ARTIST {archivePosition.index} / {archivePosition.total}
+              {reviewed ? 'ARTIST' : 'ARCHIVE ENTRY'} {archivePosition.index} / {archivePosition.total}
             </span>
           ) : null}
           <span>{artist.count} RIG{artist.count === 1 ? '' : 'S'}</span>

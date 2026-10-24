@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { getAllArtists } from '@/lib/manifest';
-import { artistIsIndexable } from '@/lib/seo';
+import { ARCHIVE_LABEL_COPY_UPDATED_AT, artistHasReviewedIdentity } from '@/lib/seo';
 import { DOCS } from '@/lib/docs-content';
 import { ARTICLES } from '@/lib/articles-content';
 import rigsManifest from '../../data/rigs.json';
@@ -26,13 +26,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     })),
-    // Only reviewed artist pages are indexable; a sitemap must not advertise
-    // noindexed (fabricated-name) URLs for crawling.
+    // Every published archive entry is discoverable, independently of name review.
     ...getAllArtists()
-      .filter(artistIsIndexable)
       .map((a) => ({
         url: `${SITE_URL}/${a.slug}`,
-        lastModified,
+        lastModified: artistHasReviewedIdentity(a)
+          ? lastModified
+          : new Date(Math.max(lastModified.getTime(), Date.parse(ARCHIVE_LABEL_COPY_UPDATED_AT))),
         changeFrequency: 'monthly' as const,
         priority: 0.7,
       })),

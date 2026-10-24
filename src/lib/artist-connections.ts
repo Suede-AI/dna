@@ -1,6 +1,6 @@
 import type { Artist, Rig } from './manifest';
 import type { ArticleEntry } from './articles-content';
-import { artistIsIndexable, splitArtistName } from './seo';
+import { artistHasReviewedIdentity, splitArtistName } from './seo';
 
 /**
  * Cross-references between artist pages, derived only from data the repo
@@ -15,11 +15,11 @@ export type RelatedArtist = { artist: Artist; relation: 'same-player' | 'same-ba
 
 /** Reviewed pages for the same player under another band, or another player in the same band. */
 export function relatedArtists(artist: Artist, all: Artist[]): RelatedArtist[] {
-  if (!artistIsIndexable(artist)) return [];
+  if (!artistHasReviewedIdentity(artist)) return [];
   const { person, band } = splitArtistName(artist.name);
   const out: RelatedArtist[] = [];
   for (const other of all) {
-    if (other.slug === artist.slug || !artistIsIndexable(other)) continue;
+    if (other.slug === artist.slug || !artistHasReviewedIdentity(other)) continue;
     const o = splitArtistName(other.name);
     if (o.person === person) out.push({ artist: other, relation: 'same-player' });
     else if (band && o.band === band) out.push({ artist: other, relation: 'same-band' });
@@ -34,7 +34,7 @@ export type YearPeers = { year: number; rigCount: number; peers: Artist[] };
  * year and the other reviewed artists documented in it.
  */
 export function yearPeers(artist: Artist, rigs: Rig[], all: Artist[]): YearPeers[] {
-  if (!artistIsIndexable(artist)) return [];
+  if (!artistHasReviewedIdentity(artist)) return [];
   const bySlug = new Map(all.map((a) => [a.slug, a]));
   const years = [...new Set(rigs.filter((r) => r.artistSlug === artist.slug).map((r) => r.year))].sort(
     (a, b) => a - b,
@@ -44,7 +44,7 @@ export function yearPeers(artist: Artist, rigs: Rig[], all: Artist[]): YearPeers
     const peers = [...new Set(inYear.map((r) => r.artistSlug))]
       .filter((slug) => slug !== artist.slug)
       .map((slug) => bySlug.get(slug))
-      .filter((a): a is Artist => Boolean(a && artistIsIndexable(a)))
+      .filter((a): a is Artist => Boolean(a && artistHasReviewedIdentity(a)))
       .sort((a, b) => a.name.localeCompare(b.name));
     return { year, rigCount: inYear.length, peers };
   });
@@ -91,7 +91,7 @@ export type SingleRigFacts = {
  * inferred about the gear.
  */
 export function singleRigFacts(artist: Artist, rigs: Rig[], all: Artist[]): SingleRigFacts | null {
-  if (artist.count !== 1 || !artistIsIndexable(artist)) return null;
+  if (artist.count !== 1 || !artistHasReviewedIdentity(artist)) return null;
   const rig = rigs.find((r) => r.artistSlug === artist.slug);
   if (!rig) return null;
   const decade = Math.floor(rig.year / 10) * 10;
@@ -100,7 +100,7 @@ export function singleRigFacts(artist: Artist, rigs: Rig[], all: Artist[]): Sing
     .sort((a, b) => a.id.localeCompare(b.id));
   const bySlug = new Map(all.map((a) => [a.slug, a]));
   const reviewed = rigs
-    .filter((r) => r.artistSlug !== artist.slug && artistIsIndexable(bySlug.get(r.artistSlug) ?? artist))
+    .filter((r) => r.artistSlug !== artist.slug && artistHasReviewedIdentity(bySlug.get(r.artistSlug) ?? artist))
     .filter((r) => bySlug.has(r.artistSlug));
   const pick = (r?: Rig) => (r ? { artist: bySlug.get(r.artistSlug) as Artist, year: r.year } : undefined);
   const before = reviewed

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import sitemap from '@/app/sitemap';
 import { buildLlmsTxt } from '@/lib/llms';
 import { getAllArtists } from '@/lib/manifest';
-import { artistIsIndexable, artistPageDescription } from '@/lib/seo';
+import { artistHasReviewedIdentity, artistPageDescription } from '@/lib/seo';
 import { DOCS } from '@/lib/docs-content';
 import { ARTICLES } from '@/lib/articles-content';
 
@@ -24,13 +24,16 @@ describe('llms.txt', () => {
     for (const article of ARTICLES) {
       expect(byUrl.get(`${SITE_URL}/articles/${article.slug}`)).toBe(article.description);
     }
-    for (const artist of getAllArtists().filter(artistIsIndexable)) {
+    for (const artist of getAllArtists()) {
       expect(byUrl.get(`${SITE_URL}/${artist.slug}`)).toBe(artistPageDescription(artist));
     }
   });
 
-  it('never lists a noindexed artist page', () => {
-    const hidden = getAllArtists().filter((artist) => !artistIsIndexable(artist));
-    for (const artist of hidden) expect(body).not.toContain(`(${SITE_URL}/${artist.slug})`);
+  it('lists unresolved source labels without presenting them as verified performer names', () => {
+    const unresolved = getAllArtists().filter((artist) => !artistHasReviewedIdentity(artist));
+    expect(unresolved).toHaveLength(297);
+    for (const artist of unresolved) {
+      expect(body).toContain(`[Archive label: ${artist.name}](${SITE_URL}/${artist.slug})`);
+    }
   });
 });

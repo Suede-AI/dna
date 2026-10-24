@@ -14,8 +14,8 @@ import { ARTICLES } from '../../src/lib/articles-content';
 import type { Artist } from '../../src/lib/manifest';
 
 const clapton: Artist = {
-  slug: 'eric-clapton',
-  name: 'Eric Clapton',
+  slug: 'eric-clapton-cream',
+  name: 'Eric Clapton — Cream',
   count: 5,
   yearMin: 1966,
   yearMax: 1989,
@@ -33,7 +33,7 @@ const singleRigArtist: Artist = {
 
 describe('SEO helpers', () => {
   it('formats artist page title', () => {
-    expect(artistPageTitle(clapton)).toBe('Eric Clapton Guitar Rigs, 1966–1989');
+    expect(artistPageTitle(clapton)).toBe('Eric Clapton Guitar Rigs (Cream), 1966–1989');
   });
 
   it('puts the band after the player in a curated artist title', () => {
@@ -50,7 +50,7 @@ describe('SEO helpers', () => {
   });
 
   it('formats single-rig artist title without duplicate year range', () => {
-    expect(artistPageTitle(singleRigArtist)).toBe('A Day To Remember Kevin Skaff Guitar Rigs, 2010');
+    expect(artistPageTitle(singleRigArtist)).toBe('Archive label: A Day To Remember Kevin Skaff — Guitar Rigs, 2010');
     expect(artistPageTitle(singleRigArtist)).not.toContain('2010–2010');
   });
 
@@ -67,7 +67,7 @@ describe('SEO helpers', () => {
 
     expect(context.trim().split(/\s+/).length).toBeGreaterThanOrEqual(90);
     expect(context).toContain(
-      'Eric Clapton has 5 documented rig setups spanning 1966–1989 in the Suede DNA collection',
+      'Eric Clapton — Cream has 5 documented rig setups spanning 1966–1989 in the Suede DNA collection',
     );
     expect(context).toContain('presentation, normalization, and search layer');
     expect(context).toContain('does not interpret the photographed gear');
@@ -88,7 +88,7 @@ describe('SEO helpers', () => {
     expect(ld.mainEntity.name).toBe('Eric Clapton');
     expect(Array.isArray(ld.hasPart)).toBe(true);
     expect(ld.hasPart[0]['@type']).toBe('ImageObject');
-    expect(ld.hasPart[0].about).toEqual({ '@type': 'Person', name: 'Eric Clapton' });
+    expect(ld.hasPart[0].about).toEqual({ '@type': 'Person', name: 'Eric Clapton', memberOf: { '@type': 'MusicGroup', name: 'Cream' } });
     expect(ld.hasPart[0].contentUrl).toBe('https://example.com/x.jpg');
     expect(ld.hasPart[0].creditText).toBe('Guitar Geek Archives');
     expect(ld.hasPart[0].isAccessibleForFree).toBe(true);

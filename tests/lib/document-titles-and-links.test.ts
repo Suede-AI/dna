@@ -7,7 +7,7 @@ import {
   MAX_DOCUMENT_TITLE,
   SITE_TITLE_SUFFIX,
   artistDocumentTitle,
-  artistIsIndexable,
+  artistHasReviewedIdentity,
   artistPageTitle,
 } from '../../src/lib/seo';
 
@@ -24,8 +24,8 @@ function sourceFiles(dir: string): string[] {
 }
 
 describe('artist document titles', () => {
-  it('fits every indexable artist title in a search result', () => {
-    const indexable = getAllArtists().filter(artistIsIndexable);
+  it('fits every reviewed artist title in a search result', () => {
+    const indexable = getAllArtists().filter(artistHasReviewedIdentity);
     expect(indexable.length).toBeGreaterThan(0);
     for (const artist of indexable) {
       const title = rendered(artistDocumentTitle(artist));
@@ -34,7 +34,7 @@ describe('artist document titles', () => {
   });
 
   it('keeps the site suffix whenever it fits, and only then', () => {
-    for (const artist of getAllArtists().filter(artistIsIndexable)) {
+    for (const artist of getAllArtists().filter(artistHasReviewedIdentity)) {
       const base = artistPageTitle(artist);
       const title = artistDocumentTitle(artist);
       if ((base + SITE_TITLE_SUFFIX).length <= MAX_DOCUMENT_TITLE) {

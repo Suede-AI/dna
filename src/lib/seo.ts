@@ -5,14 +5,19 @@ import { DNA_SOCIAL_IMAGE } from './seo/social-metadata';
 import { ROUTE_KEYWORDS, withBrand } from './seo/keywords';
 
 /**
- * A page may be indexed and may assert its subject in structured data only when
- * its display name has been human-reviewed. Unreviewed pages render a
- * fabricated slug-derived name, so they are served `noindex, follow` with no
- * Person/MusicGroup JSON-LD. Single source of truth for both decisions.
+ * Entity assertions require a reviewed display name. Public archive pages are
+ * independently indexable; unresolved names are presented as source labels.
  */
-export function artistIsIndexable(artist: Pick<Artist, 'slug' | 'name'>): boolean {
+export function artistHasReviewedIdentity(artist: Pick<Artist, 'slug' | 'name'>): boolean {
   return isReviewedArtistName(artist.slug, artist.name);
 }
+
+export function artistPageLabel(artist: Pick<Artist, 'slug' | 'name'>): string {
+  return artistHasReviewedIdentity(artist) ? artist.name : `Archive label: ${artist.name}`;
+}
+
+/** Date the unresolved archive labels gained explicit source-attribution copy. */
+export const ARCHIVE_LABEL_COPY_UPDATED_AT = '2026-10-24T00:00:00Z';
 
 /** Split a curated "Player — Band" display name into its parts. */
 export function splitArtistName(name: string): { person: string; band?: string } {
@@ -32,6 +37,9 @@ export function artistYearRange(artist: Pick<Artist, 'yearMin' | 'yearMax'>): st
  * keyword (`{player} guitar rig`), which the h1 also carries.
  */
 export function artistPageTitle(artist: Artist): string {
+  if (!artistHasReviewedIdentity(artist)) {
+    return `${artistPageLabel(artist)} — Guitar Rigs, ${artistYearRange(artist)}`;
+  }
   const { person, band } = splitArtistName(artist.name);
   return `${person} Guitar Rigs${band ? ` (${band})` : ''}, ${artistYearRange(artist)}`;
 }
@@ -60,26 +68,32 @@ export function artistPageDescription(artist: Artist): string {
     artist.yearMin === artist.yearMax
       ? `in ${artist.yearMin}`
       : `between ${artist.yearMin} and ${artist.yearMax}`;
-  const lead = `Explore ${artistRigCount(artist)} for ${artist.name} ${when} in Suede DNA.`;
+  const lead = artistHasReviewedIdentity(artist)
+    ? `Explore ${artistRigCount(artist)} for ${artist.name} ${when} in Suede DNA.`
+    : `Archive label “${artist.name}”: ${artistRigCount(artist)} ${when}.`;
   // Keep the snippet within 155 characters: shorten the sourcing sentence
   // before ever cutting the artist-specific lead.
-  const tails = [
-    ' Each diagram links to its Guitar Geek Archives source.',
-    ' Each links to its Guitar Geek source.',
-    '',
-  ];
+  const tails = artistHasReviewedIdentity(artist)
+    ? [' Each diagram links to its Guitar Geek Archives source.', ' Each links to its Guitar Geek source.', '']
+    : [' Source label, not a verified performer identity.', ' Unverified source attribution.', ''];
   return lead + (tails.find((t) => (lead + t).length <= 155) ?? '');
 }
 
 export function artistArchiveContext(
-  artist: Pick<Artist, 'name' | 'count' | 'yearMin' | 'yearMax'>,
+  artist: Pick<Artist, 'slug' | 'name' | 'count' | 'yearMin' | 'yearMax'>,
 ): string {
   const coverage =
     artist.yearMin === artist.yearMax
       ? `from ${artist.yearMin}`
       : `spanning ${artistYearRange(artist)}`;
 
-  return `${artist.name} has ${artistRigCount(artist)} ${coverage} in the Suede DNA collection. Every entry is indexed from the community-maintained Guitar Geek Archives item on the Internet Archive and links to its original archive.org file. Suede DNA adds a presentation, normalization, and search layer. The manifest records an artist association, year, file format, structured source URL, and stable identifier for each archived diagram. Those fields support browsing and source tracing; Suede DNA does not interpret the photographed gear or independently fact-check the upstream artist and year attribution. Coverage reflects the diagrams available in the upstream collection, not a complete history of this artist's equipment or career.`;
+  const lead = artistHasReviewedIdentity(artist)
+    ? `${artist.name} has ${artistRigCount(artist)} ${coverage} in the Suede DNA collection.`
+    : `The upstream archive label “${artist.name}” groups ${artistRigCount(artist)} ${coverage} in the Suede DNA collection. This label is derived from source filenames and has not been verified as a performer identity.`;
+  const subject = artistHasReviewedIdentity(artist)
+    ? "this artist's equipment or career"
+    : 'the equipment or people represented by the source';
+  return `${lead} Every entry is indexed from the community-maintained Guitar Geek Archives item on the Internet Archive and links to its original archive.org file. Suede DNA adds a presentation, normalization, and search layer. The manifest records an artist association, year, file format, structured source URL, and stable identifier for each archived diagram. Those fields support browsing and source tracing; Suede DNA does not interpret the photographed gear or independently fact-check the upstream artist and year attribution. Coverage reflects the diagrams available in the upstream collection, not a complete history of ${subject}.`;
 }
 
 export function homePageTitle(): string {
@@ -95,8 +109,8 @@ export function homePageDescription(stats: { totalRigs: number; yearMin: number;
  * guitarist, so the subject is a `Person`, not a `MusicGroup` (the prior type
  * asserted every player was a band). A curated "Player — Band" name is split so
  * the person's name and their band are each represented faithfully and match
- * the visible page. Only ever emitted for indexable (reviewed) artists — see
- * `artistIsIndexable`.
+ * the visible page. Only ever emitted for reviewed identities — see
+ * `artistHasReviewedIdentity`. Page indexability does not establish identity.
  */
 export function artistJsonLd(artist: Artist, rigs: Rig[], siteUrl: string) {
   const { person, band } = splitArtistName(artist.name);
