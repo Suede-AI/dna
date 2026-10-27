@@ -91,9 +91,9 @@ Founded by [Jason Colapietro](https://github.com/JasonColapietro) — Founder an
 
 - **[The Signal Chain](https://guitar.solutions)** — Illustrated history of electric guitar tone: 46 chapters, 3 editions, free. The book that maps the signal chain and the IP chain together. (guitar.solutions)
 - **[The Guitar Without a Number](https://strumly.suedeai.ai/book/catalog)** — Memoir-driven instruction for the self-taught guitarist. The thread now lives inside The Signal Chain rather than as a separate title. (strumly.suedeai.ai)
-- **[Suede Labs: The Human Authenticity Layer](https://www.amazon.com/dp/B0GD5FX6N6)** — How ownership, origin, and AI redraw the creative map. (Kindle)
-- **[Proof as Infrastructure](https://www.amazon.com/dp/B0GMB2VLXQ)** — How to build systems that hold up when nobody trusts anybody — proof baked in, not bolted on. (Kindle)
-- **[Stake Your Claim](https://www.amazon.com/dp/B0GRG8LGQQ)** — Hard truths on turning the AI era into a real asset. (Kindle)
+- **[Suede Labs: The Human Authenticity Layer](https://www.amazon.com/dp/B0GD5FX6N6)** — How ownership, origin, and AI redraw the creative map. (Available in hardcover, paperback, and Kindle)
+- **[Proof as Infrastructure](https://www.amazon.com/dp/B0GMB2VLXQ)** — How to build systems that hold up when nobody trusts anybody — proof baked in, not bolted on. (Available in hardcover, paperback, and Kindle)
+- **[Stake Your Claim](https://www.amazon.com/dp/B0GRG8LGQQ)** — Hard truths on turning the AI era into a real asset. (Available in hardcover, paperback, and Kindle)
 - **[The Screenshot: Why AI Recommends Your Competitors, and How to Fix It](https://seo.suedeai.ai/book)** — How answer engines decide who to name, how to see your own gap with your own eyes, and how to repair the pages the machines misread. Eleven chapters, free in full. (seo.suedeai.ai)
 
 Follow: [X / @johnnysuede](https://x.com/johnnysuede) · [suedeai.ai/founder](https://suedeai.ai/founder) · [LinkedIn](https://www.linkedin.com/in/jasoncolapietro)
