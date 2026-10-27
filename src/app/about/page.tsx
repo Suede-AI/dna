@@ -1,7 +1,37 @@
+import Image from "next/image";
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { keywordsFor } from '@/lib/seo/keywords';
 import { ABOUT_DESCRIPTION } from '@/lib/page-descriptions';
+
+
+const AUTHOR_BOOKS = [
+  [
+    "the-signal-chain",
+    "The Signal Chain",
+    "https://guitar.solutions"
+  ],
+  [
+    "human-authenticity-layer",
+    "The Human Authenticity Layer",
+    "https://www.amazon.com/dp/B0GD5FX6N6"
+  ],
+  [
+    "proof-as-infrastructure",
+    "Proof as Infrastructure",
+    "https://www.amazon.com/dp/B0GMB2VLXQ"
+  ],
+  [
+    "stake-your-claim",
+    "Stake Your Claim",
+    "https://www.amazon.com/dp/B0GRG8LGQQ"
+  ],
+  [
+    "the-screenshot",
+    "The Screenshot",
+    "https://seo.suedeai.ai/book"
+  ]
+];
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 
@@ -136,6 +166,19 @@ export default function AboutPage() {
             {', '}eleven chapters on how answer engines decide who to name, and how to repair the
             pages the machines misread, free in full at seo.suedeai.ai.
           </p>
+          <div aria-label="Books by Jason Colapietro" style={{ display: "flex", flexWrap: "wrap", gap: "1rem", marginTop: "1.5rem" }}>
+            {AUTHOR_BOOKS.map(([slug, title, url]) => (
+              <a key={slug} href={url} target="_blank" rel="noopener noreferrer">
+                <Image
+                  src={`/books/${slug}-cover.${slug === "the-signal-chain" ? "webp" : "jpg"}`}
+                  alt={`Cover of ${title}`}
+                  width={80}
+                  height={128}
+                  style={{ display: "block", width: "80px", height: "128px", objectFit: "contain" }}
+                />
+              </a>
+            ))}
+          </div>
         </section>
 
         <section>
