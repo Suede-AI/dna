@@ -12,6 +12,21 @@ export function artistHasReviewedIdentity(artist: Pick<Artist, 'slug' | 'name'>)
   return isReviewedArtistName(artist.slug, artist.name);
 }
 
+/** Fewest documented rigs that make an unreviewed archive label worth indexing. */
+export const MIN_INDEXABLE_RIGS = 3;
+
+/**
+ * Whether an archive page is offered to search engines. A page qualifies when
+ * its name has been reviewed or it documents at least MIN_INDEXABLE_RIGS rigs.
+ * Single- and two-rig source labels render mostly shared template copy, so
+ * they are `noindex, follow` and left out of the sitemap and llms.txt. They
+ * stay published and linked from the home grid. The robots meta, the sitemap
+ * and llms.txt all read this one predicate so they cannot disagree.
+ */
+export function artistIsIndexable(artist: Pick<Artist, 'slug' | 'name' | 'count'>): boolean {
+  return artistHasReviewedIdentity(artist) || artist.count >= MIN_INDEXABLE_RIGS;
+}
+
 export function artistPageLabel(artist: Pick<Artist, 'slug' | 'name'>): string {
   return artistHasReviewedIdentity(artist) ? artist.name : `Archive label: ${artist.name}`;
 }
