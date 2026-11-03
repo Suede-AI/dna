@@ -1,17 +1,27 @@
 import { afterEach, describe, it, expect, vi } from 'vitest';
+import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import * as manifest from '../../src/lib/manifest';
 import { type Artist } from '../../src/lib/manifest';
 import { ARTIST_DISPLAY_NAMES, RETIRED_ARTIST_SLUGS, isReviewedArtistName } from '../../src/lib/canonical-artists';
-import { artistArchiveContext, artistPageDescription, artistPageTitle } from '../../src/lib/seo';
+import {
+  MIN_INDEXABLE_RIGS,
+  artistArchiveContext,
+  artistIsIndexable,
+  artistPageDescription,
+  artistPageTitle,
+} from '../../src/lib/seo';
 import ArtistPage, { generateMetadata } from '../../src/app/[artist-slug]/page';
 import sitemap from '../../src/app/sitemap';
 import { ArtistStrip } from '../../src/components/artist/ArtistStrip';
+import { RigCard } from '../../src/components/grid/RigCard';
 
 const SITE = 'https://dna.suedeai.ai';
 const artists = manifest.getAllArtists();
 const reviewed = artists.filter((a) => isReviewedArtistName(a.slug, a.name));
 const unresolved = artists.filter((a) => !isReviewedArtistName(a.slug, a.name));
+const indexable = artists.filter(artistIsIndexable);
+const thin = artists.filter((a) => !artistIsIndexable(a));
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -32,7 +42,7 @@ function collectNames(node: unknown, out: string[] = []): string[] {
   return out;
 }
 
-describe('public archive discovery is independent of performer identity review', () => {
+describe('archive indexing: reviewed or well-documented pages only; identity claims need review', () => {
   it('preserves the existing reviewed identities without manufacturing review records', () => {
     expect(artists).toHaveLength(361);
     expect(reviewed).toHaveLength(64);
@@ -43,13 +53,35 @@ describe('public archive discovery is independent of performer identity review',
     }
   });
 
-  it('makes every published archive page indexable, self-canonical and discoverable in the sitemap', async () => {
+  it('indexes a page only when its name is reviewed or it documents 3+ rigs', () => {
+    expect(MIN_INDEXABLE_RIGS).toBe(3);
+    for (const artist of artists) {
+      const expected = isReviewedArtistName(artist.slug, artist.name) || artist.count >= 3;
+      expect(artistIsIndexable(artist), artist.slug).toBe(expected);
+    }
+    expect(indexable).toHaveLength(69);
+    expect(thin).toHaveLength(292);
+    expect(thin.every((artist) => artist.count < 3 && !isReviewedArtistName(artist.slug, artist.name))).toBe(true);
+  });
+
+  it('gives robots meta and the sitemap the same answer for every published page, all self-canonical', async () => {
     const urls = sitemap().map((entry) => entry.url);
     for (const artist of artists) {
       const metadata = await generateMetadata({ params: Promise.resolve({ 'artist-slug': artist.slug }) });
-      expect(metadata.robots, artist.slug).toEqual({ index: true, follow: true });
+      const index = artistIsIndexable(artist);
+      expect(metadata.robots, artist.slug).toEqual({ index, follow: true });
       expect(metadata.alternates?.canonical, artist.slug).toBe(`/${artist.slug}`);
-      expect(urls.filter((url) => url === `${SITE}/${artist.slug}`), artist.slug).toHaveLength(1);
+      expect(urls.filter((url) => url === `${SITE}/${artist.slug}`), artist.slug).toHaveLength(index ? 1 : 0);
+    }
+  });
+
+  it('keeps every noindexed label published and linked from the home archive grid', async () => {
+    for (const artist of thin) {
+      const page = await ArtistPage({ params: Promise.resolve({ 'artist-slug': artist.slug }) });
+      expect(page, artist.slug).toBeTruthy();
+      const [rig] = manifest.getRigsByArtistSlug(artist.slug);
+      const markup = renderToStaticMarkup(createElement(RigCard, { rig, index: 0 }));
+      expect(markup, artist.slug).toContain(`href="/${artist.slug}#rig-${rig.year}"`);
     }
   });
 
@@ -86,15 +118,20 @@ describe('public archive discovery is independent of performer identity review',
     }
   });
 
-  it('keeps a future published unreviewed archive label discoverable without creating an identity assertion', async () => {
-    const future: Artist = { ...unresolved[0], slug: 'unreviewed-future-label', name: 'Unreviewed Future Label' };
-    vi.spyOn(manifest, 'getAllArtists').mockReturnValue([...artists, future]);
-    vi.spyOn(manifest, 'getArtistBySlug').mockImplementation((slug) => [...artists, future].find((a) => a.slug === slug));
-    const metadata = await generateMetadata({ params: Promise.resolve({ 'artist-slug': future.slug }) });
-    expect(metadata.robots).toEqual({ index: true, follow: true });
-    expect(metadata.openGraph).toMatchObject({ type: 'website' });
-    expect(sitemap().some((entry) => entry.url === `${SITE}/${future.slug}`)).toBe(true);
-    expect(await emittedSchema(future)).toBeNull();
+  it('applies the same rule to future unreviewed labels, without creating an identity assertion', async () => {
+    const single: Artist = { ...unresolved[0], slug: 'unreviewed-future-label', name: 'Unreviewed Future Label', count: 1 };
+    const documented: Artist = { ...single, slug: 'unreviewed-documented-label', name: 'Unreviewed Documented Label', count: 3 };
+    const all = [...artists, single, documented];
+    vi.spyOn(manifest, 'getAllArtists').mockReturnValue(all);
+    vi.spyOn(manifest, 'getArtistBySlug').mockImplementation((slug) => all.find((a) => a.slug === slug));
+    const urls = sitemap().map((entry) => entry.url);
+    for (const [future, index] of [[single, false], [documented, true]] as const) {
+      const metadata = await generateMetadata({ params: Promise.resolve({ 'artist-slug': future.slug }) });
+      expect(metadata.robots, future.slug).toEqual({ index, follow: true });
+      expect(metadata.openGraph, future.slug).toMatchObject({ type: 'website' });
+      expect(urls.includes(`${SITE}/${future.slug}`), future.slug).toBe(index);
+      expect(await emittedSchema(future), future.slug).toBeNull();
+    }
   });
 
   it('does not add retired or nonexistent archive pages to discovery', async () => {

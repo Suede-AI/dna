@@ -9,7 +9,14 @@ import { ARTICLES } from '@/lib/articles-content';
 import { citingArticles, relatedArtists, singleRigFacts, yearPeers } from '@/lib/artist-connections';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { getArtistArchivePosition } from '@/lib/artist-index';
-import { artistDocumentTitle, artistHasReviewedIdentity, artistJsonLd, artistPageDescription, artistPageTitle } from '@/lib/seo';
+import {
+  artistDocumentTitle,
+  artistHasReviewedIdentity,
+  artistIsIndexable,
+  artistJsonLd,
+  artistPageDescription,
+  artistPageTitle,
+} from '@/lib/seo';
 import { artistKeywords } from '@/lib/seo/keywords';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
@@ -32,7 +39,8 @@ export async function generateMetadata({
     description: artistPageDescription(artist),
     // Performer keywords still require identity review; archive discovery does not.
     ...(reviewed ? { keywords: artistKeywords(artist) } : {}),
-    robots: { index: true, follow: true },
+    // Thin source labels stay published and crawlable but are not indexed.
+    robots: { index: artistIsIndexable(artist), follow: true },
     alternates: { canonical: `/${slug}` },
     openGraph: {
       title: artistPageTitle(artist),

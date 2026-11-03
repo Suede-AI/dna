@@ -46,11 +46,16 @@ pnpm typecheck && pnpm lint && pnpm test && pnpm build   # THE GATES — all fou
 
 ## Public archive indexing
 
-Published archive pages are indexable by default and must appear in the sitemap
-and llms.txt even when identity-review metadata is incomplete. Present unresolved
-names explicitly as upstream archive labels; do not invent reviewed identities.
-Person schema and performer associations still require name review. Keep these
-independent rules covered for the entire catalog and future unresolved entries.
+Every archive page stays published and linked from the home grid. A page is
+indexed, and listed in the sitemap and llms.txt, only when its name is reviewed
+or it documents at least 3 rigs (`artistIsIndexable` in `src/lib/seo.ts`, the
+one predicate robots meta, sitemap and llms.txt all read). Other pages render
+`noindex, follow`: single- and two-rig source labels are mostly shared template
+copy (2026-11-03 estate SEO audit). This supersedes the 2026-10-24 rule that
+indexed every published page. Present unresolved names explicitly as upstream
+archive labels; do not invent reviewed identities. Person schema and performer
+associations still require name review. Keep these rules covered for the entire
+catalog and future unresolved entries.
 
 ## Layout facts
 

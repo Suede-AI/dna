@@ -1,5 +1,5 @@
 import { getAllArtists, getStats } from './manifest';
-import { artistPageLabel, artistPageDescription, homePageDescription } from './seo';
+import { artistIsIndexable, artistPageLabel, artistPageDescription, homePageDescription } from './seo';
 import { DOCS } from './docs-content';
 import { ARTICLES } from './articles-content';
 import {
@@ -12,12 +12,12 @@ const link = (label: string, url: string, description: string) => `- [${label}](
 
 /**
  * The /llms.txt body. It lists every page the sitemap advertises, read from the
- * same sources (DOCS, ARTICLES and all published archive entries), and describes each
+ * same sources (DOCS, ARTICLES and the indexable archive entries), and describes each
  * page with its own meta description, so the two indexes cannot drift.
  */
 export function buildLlmsTxt(siteUrl: string): string {
   const stats = getStats();
-  const artists = getAllArtists();
+  const artists = getAllArtists().filter(artistIsIndexable);
 
   return [
     '# Suede DNA',
