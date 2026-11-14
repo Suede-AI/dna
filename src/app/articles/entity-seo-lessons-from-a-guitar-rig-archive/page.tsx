@@ -104,11 +104,11 @@ export default function ArticlePage() {
 
         <DocSection heading="LESSON 2: INDEX LESS, BE TRUSTED MORE">
           <p>
-            Jason Colapietro made the call that surprises people most.
-            Of 361 artist pages, the archive offers 69 to search engines. The rest stay live for
-            visitors but carry a noindex directive because they are mostly shared template copy.
-            That decision came out of a site-wide SEO audit in November 2026, and it is the
-            lesson clients push back on most. A smaller index that is uniformly useful earns more
+            This is the call Jason Colapietro made that surprises people most. Of 361 artist
+            pages, the archive offers 69 to search engines. The rest stay live for visitors but
+            carry a noindex directive because they are mostly shared template copy. That
+            decision came out of a site-wide SEO audit in November 2026, and it runs against
+            the instinct to publish more pages. A smaller index that is uniformly useful earns more
             trust per page than a large one padded with near-duplicates. Answer engines appear to
             weigh that trust at the domain level, so thin pages cost the strong ones.
           </p>
@@ -176,9 +176,9 @@ export default function ArticlePage() {
             <SuedeLink href="https://seo.suedeai.ai/evidence#claude-for-startups">
               Claude for Startups
             </SuedeLink>
-            , Anthropic’s startup program. His view on why thin content fails in AI search ran in{' '}
+            , Anthropic’s startup program. Press coverage includes Programming Insider’s{' '}
             <SuedeLink href="https://programminginsider.com/in-the-age-of-infinite-content-spam-is-instant-death/">
-              Programming Insider
+              “In the Age of Infinite Content, Spam Is Instant Death”
             </SuedeLink>
             , and TechBullion reported that Suede Labs{' '}
             <SuedeLink href="https://techbullion.com/suede-labs-advances-in-the-avalanche-build-games-with-massive-infrastructure-play/">

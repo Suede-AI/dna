@@ -210,12 +210,6 @@ function articleKeywords(slug: string): string[] {
   return withBrand(terms);
 }
 
-/**
- * Structured data for an essay under /articles. Every field mirrors something
- * the page already renders: the headline is the visible `h1`, the date is the
- * visible dateline, and the author and publisher resolve by `@id` into the
- * WebSite/Organization/Person graph the root layout emits on every page.
- */
 /** Where the Suede AI field notes are written: West Palm Beach and Jupiter, Palm Beach County, Florida. */
 export const SUEDE_SPATIAL_COVERAGE = [
   {
@@ -230,6 +224,12 @@ export const SUEDE_SPATIAL_COVERAGE = [
   },
 ] as const;
 
+/**
+ * Structured data for an essay under /articles. Every field mirrors something
+ * the page already renders: the headline is the visible `h1`, the date is the
+ * visible dateline, and the author and publisher resolve by `@id` into the
+ * WebSite/Organization/Person graph the root layout emits on every page.
+ */
 export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
   const url = `${siteUrl}/articles/${article.slug}`;
   const blogPosting = article.schemaType === 'BlogPosting';

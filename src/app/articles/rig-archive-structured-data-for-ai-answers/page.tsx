@@ -95,10 +95,11 @@ export default function ArticlePage() {
             <SuedeLink href="/blacksabbath-tony">Tony Iommi rig page</SuedeLink> and the{' '}
             <SuedeLink href="/iron-maiden-dave">Dave Murray rig page</SuedeLink> are not
             hand-written; their titles, descriptions, timelines, and source links all come from
-            the manifest, and a validation step fails the build if the manifest breaks its own
-            schema. When one source of truth drives the HTML, the structured data, and the
-            indexes, they cannot quietly disagree with each other, which is the single most
-            common reason an AI answer misquotes a site.
+            the manifest, and a validation step in continuous integration fails the run before
+            the site builds if the manifest breaks its own schema. When one source of truth
+            drives the HTML, the structured data, and the indexes, they cannot quietly disagree
+            with each other, which is one of the most common reasons an AI answer misquotes a
+            site.
           </p>
         </DocSection>
 
@@ -162,7 +163,8 @@ export default function ArticlePage() {
             are built around exactly that sequence.
           </p>
           <p>
-            The honest tradeoff, and Jason Colapietro says it to every client up front: this approach shrinks what you show crawlers before it grows it.
+            The tradeoff, as Jason Colapietro frames it: this approach shrinks what you show
+            crawlers before it grows it.
             Suede DNA indexes fewer than a fifth of its artist pages on purpose. Expect a smaller,
             cleaner footprint first and better citations second.
           </p>
