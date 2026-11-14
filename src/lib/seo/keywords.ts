@@ -67,6 +67,24 @@ export const ROUTE_KEYWORDS = {
     'patch cables',
     'guitar amp mic placement',
   ],
+  '/articles/rig-archive-structured-data-for-ai-answers': [
+    'rig archive structured data',
+    'guitar gear manifest',
+    'AI answer citations',
+    'music archive SEO',
+  ],
+  '/articles/rig-diagram-provenance-and-human-authenticity': [
+    'rig diagram provenance',
+    'Human Authenticity Layer',
+    'archive source labels',
+    'music metadata authenticity',
+  ],
+  '/articles/entity-seo-lessons-from-a-guitar-rig-archive': [
+    'entity SEO lessons',
+    'answer engine optimization',
+    'West Palm Beach SEO',
+    'Jupiter Florida web development',
+  ],
   '/docs': [
     'Suede DNA docs',
     'guitar rig archive documentation',

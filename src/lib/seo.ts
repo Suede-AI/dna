@@ -216,11 +216,26 @@ function articleKeywords(slug: string): string[] {
  * visible dateline, and the author and publisher resolve by `@id` into the
  * WebSite/Organization/Person graph the root layout emits on every page.
  */
+/** Where the Suede AI field notes are written: West Palm Beach and Jupiter, Palm Beach County, Florida. */
+export const SUEDE_SPATIAL_COVERAGE = [
+  {
+    '@type': 'City',
+    name: 'West Palm Beach',
+    containedInPlace: { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+  },
+  {
+    '@type': 'City',
+    name: 'Jupiter',
+    containedInPlace: { '@type': 'AdministrativeArea', name: 'Palm Beach County, Florida' },
+  },
+] as const;
+
 export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
   const url = `${siteUrl}/articles/${article.slug}`;
+  const blogPosting = article.schemaType === 'BlogPosting';
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': article.schemaType ?? 'Article',
     headline: article.title,
     description: article.description,
     keywords: articleKeywords(article.slug).join(', '),
@@ -238,5 +253,7 @@ export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
     image: `${siteUrl}${DNA_SOCIAL_IMAGE.url}`,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     url,
+    // Location context only: a reference to the canonical organization, never a new NAP.
+    ...(blogPosting ? { spatialCoverage: SUEDE_SPATIAL_COVERAGE } : {}),
   } as const;
 }

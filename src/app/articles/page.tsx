@@ -55,7 +55,8 @@ export default function ArticlesIndexPage() {
         style={{ fontSize: 'var(--text-body)' }}
       >
         Essays on rig history, tone genealogy, and the craft of the signal chain, written from
-        inside the archive.
+        inside the archive, plus field notes from Suede AI in West Palm Beach, Florida on how
+        archives get read by search engines and AI answers.
       </p>
 
       <div className="mt-14 divide-y hairline">

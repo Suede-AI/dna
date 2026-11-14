@@ -162,7 +162,7 @@ describe('SEO helpers', () => {
 
     for (const article of ARTICLES) {
       const ld = articleJsonLd(article, 'https://dna.suedeai.ai');
-      expect(ld['@type']).toBe('Article');
+      expect(ld['@type']).toBe(article.schemaType ?? 'Article');
       // Headline and dateline are the strings the page renders.
       expect(ld.headline).toBe(article.title);
       expect(ld.description).toBe(article.description);
@@ -175,6 +175,40 @@ describe('SEO helpers', () => {
       expect(ld.publisher['@id']).toBe('https://suedeai.ai/#organization');
       expect(ld.url).toBe(`https://dna.suedeai.ai/articles/${article.slug}`);
       expect(ld.mainEntityOfPage['@id']).toBe(ld.url);
+    }
+  });
+});
+
+describe('Suede AI field notes (BlogPosting)', () => {
+  const notes = ARTICLES.filter((a) => a.schemaType === 'BlogPosting');
+
+  it('emits BlogPosting with Palm Beach County coverage and canonical entity @ids only', () => {
+    expect(notes.length).toBe(3);
+    for (const article of notes) {
+      const ld = articleJsonLd(article, 'https://dna.suedeai.ai');
+      expect(ld['@type']).toBe('BlogPosting');
+      const places = JSON.stringify((ld as { spatialCoverage?: unknown }).spatialCoverage);
+      expect(places).toContain('West Palm Beach');
+      expect(places).toContain('Jupiter');
+      expect(places).toContain('Palm Beach County, Florida');
+      // No new Person/Organization identities and no street address.
+      const ids = [...JSON.stringify(ld).matchAll(/"@id":"([^"]+)"/g)].map((m) => m[1]);
+      expect(ids.sort()).toEqual(
+        [
+          'https://dna.suedeai.ai/articles/' + article.slug,
+          'https://suedeai.ai/#organization',
+          'https://suedeai.ai/founder#person',
+        ].sort(),
+      );
+      expect(JSON.stringify(ld)).not.toContain('streetAddress');
+    }
+  });
+
+  it('keeps plain essays as Article without location claims', () => {
+    for (const article of ARTICLES.filter((a) => a.schemaType !== 'BlogPosting')) {
+      const ld = articleJsonLd(article, 'https://dna.suedeai.ai');
+      expect(ld['@type']).toBe('Article');
+      expect('spatialCoverage' in ld).toBe(false);
     }
   });
 });

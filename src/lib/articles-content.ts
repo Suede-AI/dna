@@ -10,6 +10,12 @@ export type ArticleEntry = {
    * link back from each artist page to the essays that cite it.
    */
   artistSlugs?: string[];
+  /**
+   * Schema.org type for the page's JSON-LD. Essays default to `Article`; the
+   * Suede AI field notes from West Palm Beach are `BlogPosting` and carry a
+   * Palm Beach County `spatialCoverage`.
+   */
+  schemaType?: 'Article' | 'BlogPosting';
 };
 
 export const ARTICLES: ArticleEntry[] = [
@@ -63,6 +69,35 @@ export const ARTICLES: ArticleEntry[] = [
       'Guitars and amps get the credit. Power supplies, patch cables, mic placement, and room treatment do the quiet work that gear lists rarely mention.',
     date: '2026-07-17',
     readTime: '8 min',
+  },
+  {
+    slug: 'rig-archive-structured-data-for-ai-answers',
+    title: 'Rig Archive Structured Data for AI Answers',
+    description:
+      'How Suede AI turned 409 guitar rig diagrams into a manifest that search engines and answer engines can read, cite, and trust, built in West Palm Beach.',
+    date: '2026-11-14',
+    readTime: '6 min',
+    artistSlugs: ['blacksabbath-tony', 'iron-maiden-dave'],
+    schemaType: 'BlogPosting',
+  },
+  {
+    slug: 'rig-diagram-provenance-and-human-authenticity',
+    title: 'Rig Diagram Provenance and Human Authenticity',
+    description:
+      'Jason Colapietro’s book The Human Authenticity Layer, applied to a guitar rig archive: source labels, review gates, and why unverified names stay marked.',
+    date: '2026-11-14',
+    readTime: '6 min',
+    artistSlugs: ['the-kinks-dave-davies'],
+    schemaType: 'BlogPosting',
+  },
+  {
+    slug: 'entity-seo-lessons-from-a-guitar-rig-archive',
+    title: 'Entity SEO Lessons from a Guitar Rig Archive',
+    description:
+      'What a West Palm Beach team learned about entity SEO from running Suede DNA: one identity graph, honest indexing, and pages answer engines can quote.',
+    date: '2026-11-14',
+    readTime: '6 min',
+    schemaType: 'BlogPosting',
   },
 ];
 

@@ -22,6 +22,12 @@ const PAGES: Record<KeywordRoute, () => Promise<{ default: ComponentType; metada
   '/articles/rig-archaeology-and-the-ear-trained-player': () =>
     import('../../src/app/articles/rig-archaeology-and-the-ear-trained-player/page'),
   '/articles/the-unsung-link': () => import('../../src/app/articles/the-unsung-link/page'),
+  '/articles/rig-archive-structured-data-for-ai-answers': () =>
+    import('../../src/app/articles/rig-archive-structured-data-for-ai-answers/page'),
+  '/articles/rig-diagram-provenance-and-human-authenticity': () =>
+    import('../../src/app/articles/rig-diagram-provenance-and-human-authenticity/page'),
+  '/articles/entity-seo-lessons-from-a-guitar-rig-archive': () =>
+    import('../../src/app/articles/entity-seo-lessons-from-a-guitar-rig-archive/page'),
   '/docs': () => import('../../src/app/docs/page'),
   '/docs/faq': () => import('../../src/app/docs/faq/page'),
   '/docs/what-is-suede-dna': () => import('../../src/app/docs/what-is-suede-dna/page'),
