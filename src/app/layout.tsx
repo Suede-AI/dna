@@ -1,3 +1,4 @@
+import Script from "next/script";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
@@ -117,6 +118,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       <nav aria-label="Site reference" style={{ padding: "1rem", textAlign: "center", fontSize: "0.875rem" }}><Link href="/ai-instructions" prefetch={false}>AI Instructions</Link></nav>
+        {/* Light · Dark · AI agent view switch shared by every Suede site (suedeai.ai/agent-view.js). */}
+        <Script src="https://suedeai.ai/agent-view.js" strategy="lazyOnload" />
       </body>
     </html>
   );
