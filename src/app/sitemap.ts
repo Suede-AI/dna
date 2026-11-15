@@ -22,7 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/articles`, lastModified, changeFrequency: 'weekly', priority: 0.6 },
     ...ARTICLES.map((article) => ({
       url: `${SITE_URL}/articles/${article.slug}`,
-      lastModified: new Date(`${article.date}T00:00:00Z`),
+      lastModified: new Date(`${article.modified ?? article.date}T00:00:00Z`),
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     })),

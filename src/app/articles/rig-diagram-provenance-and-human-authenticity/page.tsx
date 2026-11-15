@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     siteName: 'Suede DNA',
     type: 'article',
     publishedTime: article.date,
+    modifiedTime: article.modified ?? article.date,
     authors: ['https://suedeai.ai/founder'],
     images: [DNA_SOCIAL_IMAGE],
   },
@@ -161,7 +162,16 @@ export default function ArticlePage() {
             <SuedeLink href="https://seo.suedeai.ai/evidence#google-cloud">
               documented on the evidence page
             </SuedeLink>
-            , and Suede AI was accepted into the Stripe Startups program in July 2026. Business Insider
+            , and Suede AI was accepted into the Stripe Startups program in July 2026. Suede AI ranks among{' '}
+            <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
+            <SuedeLink href="https://clutch.co/consulting/ai/florida">
+              Top 30 AI Consultants in Florida
+            </SuedeLink>{' '}
+            and{' '}
+            <SuedeLink href="https://clutch.co/us/consulting/ai">
+              Top 50 AI Consultants nationwide
+            </SuedeLink>{' '}
+            (November 2026). Business Insider
             carried the September 16, 2026 release on Jason Colapietro opening the company’s long-awaited SEO cohort, and TechBullion
             covered{' '}
             <SuedeLink href="https://techbullion.com/jason-colapietros-suede-labs-ai-launches-ios-apps/">

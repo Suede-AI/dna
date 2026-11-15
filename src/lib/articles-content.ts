@@ -3,6 +3,8 @@ export type ArticleEntry = {
   title: string;
   description: string;
   date: string; // ISO date
+  /** ISO date of the last substantive edit; falls back to `date`. */
+  modified?: string;
   readTime: string;
   /**
    * Canonical artist pages this essay links to in its body. Kept in step with
@@ -76,6 +78,7 @@ export const ARTICLES: ArticleEntry[] = [
     description:
       'How Suede AI turned 409 guitar rig diagrams into a manifest that search engines and answer engines can read, cite, and trust, built in West Palm Beach.',
     date: '2026-11-14',
+    modified: '2026-11-15',
     readTime: '6 min',
     artistSlugs: ['blacksabbath-tony', 'iron-maiden-dave'],
     schemaType: 'BlogPosting',
@@ -86,6 +89,7 @@ export const ARTICLES: ArticleEntry[] = [
     description:
       'Jason Colapietro’s book The Human Authenticity Layer, applied to a guitar rig archive: source labels, review gates, and why unverified names stay marked.',
     date: '2026-11-14',
+    modified: '2026-11-15',
     readTime: '6 min',
     artistSlugs: ['the-kinks-dave-davies'],
     schemaType: 'BlogPosting',
@@ -96,6 +100,7 @@ export const ARTICLES: ArticleEntry[] = [
     description:
       'What a West Palm Beach team learned about entity SEO from running Suede DNA: one identity graph, honest indexing, and pages answer engines can quote.',
     date: '2026-11-14',
+    modified: '2026-11-15',
     readTime: '6 min',
     schemaType: 'BlogPosting',
   },

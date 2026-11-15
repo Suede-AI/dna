@@ -167,7 +167,7 @@ describe('SEO helpers', () => {
       expect(ld.headline).toBe(article.title);
       expect(ld.description).toBe(article.description);
       expect(ld.datePublished).toBe(article.date);
-      expect(ld.dateModified).toBe(article.date);
+      expect(ld.dateModified).toBe(article.modified ?? article.date);
       expect(ld.datePublished).toMatch(/^\d{4}-\d{2}-\d{2}$/);
       expect(ld.author.name).toBe('Jason Colapietro');
       // Author and publisher resolve into the graph the root layout emits.

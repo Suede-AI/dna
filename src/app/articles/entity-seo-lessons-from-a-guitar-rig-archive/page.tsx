@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     siteName: 'Suede DNA',
     type: 'article',
     publishedTime: article.date,
+    modifiedTime: article.modified ?? article.date,
     authors: ['https://suedeai.ai/founder'],
     images: [DNA_SOCIAL_IMAGE],
   },
@@ -146,7 +147,16 @@ export default function ArticlePage() {
             <SuedeLink href="https://suedeai.agency/company/recognition">
               the Suede AI recognition page
             </SuedeLink>
-            .
+            . Suede AI ranks among{' '}
+            <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
+            <SuedeLink href="https://clutch.co/consulting/ai/florida">
+              Top 30 AI Consultants in Florida
+            </SuedeLink>{' '}
+            and{' '}
+            <SuedeLink href="https://clutch.co/us/consulting/ai">
+              Top 50 AI Consultants nationwide
+            </SuedeLink>{' '}
+            (November 2026).
           </p>
         </DocSection>
 

@@ -240,7 +240,7 @@ export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
     description: article.description,
     keywords: articleKeywords(article.slug).join(', '),
     datePublished: article.date,
-    dateModified: article.date,
+    dateModified: article.modified ?? article.date,
     inLanguage: 'en-US',
     isPartOf: { '@type': 'WebSite', name: 'Suede DNA', url: siteUrl },
     author: {

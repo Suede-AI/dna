@@ -176,6 +176,12 @@ function BuiltInWestPalmBeach() {
             </Link>
             .
           </p>
+          <p className="mt-3 max-w-[720px] text-[color:var(--color-bone)] leading-relaxed">
+            Suede AI ranks among <Out href="https://clutch.co/profile/suede-ai-seo">Clutch</Out>’s{' '}
+            <Out href="https://clutch.co/consulting/ai/florida">Top 30 AI Consultants in Florida</Out>{' '}
+            and <Out href="https://clutch.co/us/consulting/ai">Top 50 AI Consultants nationwide</Out>{' '}
+            (November 2026).
+          </p>
         </div>
         <div className="mono-label">
           <p className="text-[color:var(--color-bone)] mb-2">MORE FROM SUEDE AI</p>
