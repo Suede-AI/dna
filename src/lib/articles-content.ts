@@ -111,7 +111,7 @@ export const ARTICLES: ArticleEntry[] = [
   },
   {
     slug: 'gain-staging-lessons-from-famous-rig-diagrams',
-    title: 'Gain Staging Lessons from Famous Guitar Rig Diagrams',
+    title: 'Gain Staging Lessons from Famous Rig Diagrams',
     description:
       'Where famous guitar tones clip, read from five rig diagrams in the Suede DNA archive: amp as gain stage, treble boosters, fuzz order, and high-gain amps.',
     date: '2026-11-15',
@@ -127,7 +127,7 @@ export const ARTICLES: ArticleEntry[] = [
   },
   {
     slug: 'verifying-a-rig-diagram-before-you-cite-it',
-    title: 'Verify a Rig Diagram Before You Cite It: Checklist',
+    title: 'Verify a Rig Diagram Before You Cite It',
     description:
       'A seven-step provenance checklist for a Boca Raton researcher citing a guitar rig diagram: original file, filename year, reviewed name, second source.',
     date: '2026-11-15',

@@ -284,7 +284,8 @@ describe('Round 4 depth field notes (2026-11-15)', () => {
         expect(article).toBeDefined();
         expect(article.schemaType).toBe('BlogPosting');
         expect(article.date).toBe('2026-11-15');
-        expect(article.title.length).toBeLessThanOrEqual(53);
+        // Leaves room for the ' · Suede DNA' title template inside 60 characters.
+        expect(article.title.length).toBeLessThanOrEqual(48);
       });
 
       it('runs 900 to 1300 words of visible prose', () => {
@@ -310,7 +311,8 @@ describe('Round 4 depth field notes (2026-11-15)', () => {
 
       it('names the founder and the company the way the brief requires', () => {
         expect(text.match(/Jason Colapietro/g)!.length).toBeGreaterThanOrEqual(5);
-        expect(text.match(/\bSuede\b/g)!.length).toBeGreaterThanOrEqual(3);
+        expect(text.match(/\bSuede\b(?! (?:AI|Labs|DNA|Signal)\b)/g)!.length).toBeGreaterThanOrEqual(3);
+        expect(text.match(/\bJason\b(?! Colapietro)/g)!.length).toBeGreaterThanOrEqual(1);
         expect((text.match(/Suede Labs/g) ?? []).length).toBeLessThanOrEqual(1);
       });
 

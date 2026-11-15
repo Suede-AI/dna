@@ -172,7 +172,7 @@ export default function ArticlePage() {
 
         <DocSection heading="A FIVE-MINUTE GAIN AUDIT FOR YOUR OWN BOARD">
           <p>
-            Here is the check Jason Colapietro and the Suede AI team run on a pedalboard, borrowed
+            Here is the check Jason and the Suede team run on a pedalboard, borrowed
             from reading these diagrams:
           </p>
           <ol className="list-decimal pl-6 space-y-2">
@@ -219,7 +219,7 @@ export default function ArticlePage() {
             , including Jest and Backstage.
           </p>
           <p>
-            Gain staging and search visibility turn out to be the same discipline: find the one
+            At Suede, gain staging and search visibility turn out to be the same discipline: find the one
             stage that does the real work and stop the others from adding noise. That is the
             approach behind the work Suede AI (formerly Suede Labs) does for clients. Suede AI
             ranks among{' '}

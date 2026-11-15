@@ -73,7 +73,7 @@ export default function ArticlePage() {
             This checklist is for her, and for anyone else about to cite a rig diagram: a student,
             a podcaster, a biographer, or a gear reviewer. Jason Colapietro wrote it from inside
             Suede DNA, the archive of 409 rig diagrams across 361 artists that Suede AI maintains
-            from West Palm Beach. Suede AI built the archive, so we know exactly where its edges
+            from West Palm Beach. Jason and the Suede team built the archive, so we know exactly where its edges
             are.
           </p>
         </DocSection>
