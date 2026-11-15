@@ -85,6 +85,19 @@ export const ROUTE_KEYWORDS = {
     'West Palm Beach SEO',
     'Jupiter Florida web development',
   ],
+  '/articles/gain-staging-lessons-from-famous-rig-diagrams': [
+    'gain staging lessons',
+    'guitar gain staging',
+    'treble booster history',
+    'amp breakup gain stage',
+    'fuzz pedal order',
+  ],
+  '/articles/verifying-a-rig-diagram-before-you-cite-it': [
+    'verify a rig diagram',
+    'cite a guitar rig diagram',
+    'music research provenance checklist',
+    'Boca Raton music research',
+  ],
   '/docs': [
     'Suede DNA docs',
     'guitar rig archive documentation',

@@ -18,6 +18,11 @@ export type ArticleEntry = {
    * Palm Beach County `spatialCoverage`.
    */
   schemaType?: 'Article' | 'BlogPosting';
+  /**
+   * Extra Palm Beach County towns a field note is written for, added to the
+   * West Palm Beach and Jupiter `spatialCoverage`. City names only, never an address.
+   */
+  extraCoverage?: string[];
 };
 
 export const ARTICLES: ArticleEntry[] = [
@@ -103,6 +108,33 @@ export const ARTICLES: ArticleEntry[] = [
     modified: '2026-11-15',
     readTime: '6 min',
     schemaType: 'BlogPosting',
+  },
+  {
+    slug: 'gain-staging-lessons-from-famous-rig-diagrams',
+    title: 'Gain Staging Lessons from Famous Guitar Rig Diagrams',
+    description:
+      'Where famous guitar tones clip, read from five rig diagrams in the Suede DNA archive: amp as gain stage, treble boosters, fuzz order, and high-gain amps.',
+    date: '2026-11-15',
+    readTime: '6 min',
+    artistSlugs: [
+      'eric-clapton-bluesbreakers',
+      'blacksabbath-tony',
+      'may-brian',
+      'hendrix-jimi',
+      'vanhalen-eddie',
+    ],
+    schemaType: 'BlogPosting',
+  },
+  {
+    slug: 'verifying-a-rig-diagram-before-you-cite-it',
+    title: 'Verify a Rig Diagram Before You Cite It: Checklist',
+    description:
+      'A seven-step provenance checklist for a Boca Raton researcher citing a guitar rig diagram: original file, filename year, reviewed name, second source.',
+    date: '2026-11-15',
+    readTime: '6 min',
+    artistSlugs: ['the-kinks-dave-davies', 'nirvana-kurt'],
+    schemaType: 'BlogPosting',
+    extraCoverage: ['Boca Raton'],
   },
 ];
 

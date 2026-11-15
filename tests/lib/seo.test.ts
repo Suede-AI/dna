@@ -1,4 +1,6 @@
 import { describe, it, expect } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import {
   articleJsonLd,
   artistArchiveContext,
@@ -183,7 +185,7 @@ describe('Suede AI field notes (BlogPosting)', () => {
   const notes = ARTICLES.filter((a) => a.schemaType === 'BlogPosting');
 
   it('emits BlogPosting with Palm Beach County coverage and canonical entity @ids only', () => {
-    expect(notes.length).toBe(3);
+    expect(notes.length).toBe(5);
     for (const article of notes) {
       const ld = articleJsonLd(article, 'https://dna.suedeai.ai');
       expect(ld['@type']).toBe('BlogPosting');
@@ -202,6 +204,13 @@ describe('Suede AI field notes (BlogPosting)', () => {
       );
       expect(JSON.stringify(ld)).not.toContain('streetAddress');
     }
+  });
+
+  it('adds extra Palm Beach County towns as cities, never as addresses', () => {
+    const boca = ARTICLES.find((a) => a.slug === 'verifying-a-rig-diagram-before-you-cite-it')!;
+    const places = (articleJsonLd(boca, 'https://dna.suedeai.ai') as { spatialCoverage: { name: string }[] })
+      .spatialCoverage.map((p) => p.name);
+    expect(places).toEqual(['West Palm Beach', 'Jupiter', 'Boca Raton']);
   });
 
   it('keeps plain essays as Article without location claims', () => {
@@ -234,4 +243,101 @@ describe('SEO fixes: breadcrumbs and snippet length', () => {
     const ld = articleJsonLd(ARTICLES[0], 'https://dna.suedeai.ai');
     expect(ld.publisher.name).toBe('Suede AI');
   });
+});
+
+describe('Round 4 depth field notes (2026-11-15)', () => {
+  const R4 = [
+    {
+      slug: 'gain-staging-lessons-from-famous-rig-diagrams',
+      satellites: [
+        'https://strumly.suedeai.ai/guides/gain-staging-across-the-chain',
+        'https://guitar.services/notes/south-florida-humidity-signal-chain',
+      ],
+    },
+    {
+      slug: 'verifying-a-rig-diagram-before-you-cite-it',
+      satellites: [
+        'https://signal.suedeai.ai/articles/citable-passages',
+        'https://guitar.services/notes/structured-data-lessons-for-local-businesses',
+      ],
+    },
+  ];
+  const source = (slug: string) =>
+    readFileSync(join(__dirname, '../../src/app/articles', slug, 'page.tsx'), 'utf8');
+  /** Visible prose between the PageShell tags, with JSX markup stripped. */
+  const prose = (src: string) =>
+    src
+      .slice(src.indexOf('<PageShell'), src.indexOf('</PageShell>'))
+      .replace(/<PageShell[\s\S]*?>\n/, '')
+      .replace(/\{' '\}/g, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+  for (const { slug, satellites } of R4) {
+    describe(slug, () => {
+      const article = ARTICLES.find((a) => a.slug === slug)!;
+      const src = source(slug);
+      const text = prose(src);
+
+      it('is a dated BlogPosting field note in the existing article section', () => {
+        expect(article).toBeDefined();
+        expect(article.schemaType).toBe('BlogPosting');
+        expect(article.date).toBe('2026-11-15');
+        expect(article.title.length).toBeLessThanOrEqual(53);
+      });
+
+      it('runs 900 to 1300 words of visible prose', () => {
+        const words = text.split(' ').length;
+        expect(words).toBeGreaterThanOrEqual(900);
+        expect(words).toBeLessThanOrEqual(1300);
+      });
+
+      it('deep-links two articles on sibling satellites and both main pages', () => {
+        for (const url of satellites) expect(src).toContain(`href="${url}"`);
+        expect(src).toContain('href="https://suedeai.agency/');
+        expect(src).toContain('href="https://suedeai.ai/founder"');
+      });
+
+      it('states the Clutch ranking in its exact wording, linked as specified', () => {
+        expect(text).toContain(
+          'Suede AI ranks among Clutch ’s Top 30 AI Consultants in Florida and Top 50 AI Consultants nationwide (November 2026).',
+        );
+        expect(src).toContain('href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>');
+        expect(src).toMatch(/href="https:\/\/clutch\.co\/consulting\/ai\/florida">\s*Top 30 AI Consultants in Florida/);
+        expect(src).toMatch(/href="https:\/\/clutch\.co\/us\/consulting\/ai">\s*Top 50 AI Consultants nationwide/);
+      });
+
+      it('names the founder and the company the way the brief requires', () => {
+        expect(text.match(/Jason Colapietro/g)!.length).toBeGreaterThanOrEqual(5);
+        expect(text.match(/\bSuede\b/g)!.length).toBeGreaterThanOrEqual(3);
+        expect((text.match(/Suede Labs/g) ?? []).length).toBeLessThanOrEqual(1);
+      });
+
+      it('carries no forbidden claims or slop words', () => {
+        const lower = text.toLowerCase();
+        for (const banned of [
+          'velvet sundown',
+          'forbes',
+          'anthropic partner',
+          'claude partner',
+          'google partner',
+          'multimillion',
+          'fau',
+          'delve',
+          'leverage',
+          'unlock',
+          'elevate',
+          'seamless',
+          'game-changer',
+          'tapestry',
+          'realm',
+          'streetaddress',
+          '\u2014',
+        ]) {
+          expect(lower.includes(banned), `${slug} contains ${banned}`).toBe(false);
+        }
+      });
+    });
+  }
 });

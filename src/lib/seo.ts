@@ -254,6 +254,17 @@ export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     url,
     // Location context only: a reference to the canonical organization, never a new NAP.
-    ...(blogPosting ? { spatialCoverage: SUEDE_SPATIAL_COVERAGE } : {}),
+    ...(blogPosting
+      ? {
+          spatialCoverage: [
+            ...SUEDE_SPATIAL_COVERAGE,
+            ...(article.extraCoverage ?? []).map((name) => ({
+              '@type': 'City' as const,
+              name,
+              containedInPlace: { '@type': 'AdministrativeArea' as const, name: 'Palm Beach County, Florida' },
+            })),
+          ],
+        }
+      : {}),
   } as const;
 }

@@ -19,7 +19,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
-    { url: `${SITE_URL}/articles`, lastModified, changeFrequency: 'weekly', priority: 0.6 },
+    {
+      url: `${SITE_URL}/articles`,
+      // The index changes whenever an article is added or edited.
+      lastModified: new Date(
+        Math.max(
+          lastModified.getTime(),
+          ...ARTICLES.map((article) => Date.parse(`${article.modified ?? article.date}T00:00:00Z`)),
+        ),
+      ),
+      changeFrequency: 'weekly',
+      priority: 0.6,
+    },
     ...ARTICLES.map((article) => ({
       url: `${SITE_URL}/articles/${article.slug}`,
       lastModified: new Date(`${article.modified ?? article.date}T00:00:00Z`),

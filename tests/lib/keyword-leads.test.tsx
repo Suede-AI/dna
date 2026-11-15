@@ -28,6 +28,10 @@ const PAGES: Record<KeywordRoute, () => Promise<{ default: ComponentType; metada
     import('../../src/app/articles/rig-diagram-provenance-and-human-authenticity/page'),
   '/articles/entity-seo-lessons-from-a-guitar-rig-archive': () =>
     import('../../src/app/articles/entity-seo-lessons-from-a-guitar-rig-archive/page'),
+  '/articles/gain-staging-lessons-from-famous-rig-diagrams': () =>
+    import('../../src/app/articles/gain-staging-lessons-from-famous-rig-diagrams/page'),
+  '/articles/verifying-a-rig-diagram-before-you-cite-it': () =>
+    import('../../src/app/articles/verifying-a-rig-diagram-before-you-cite-it/page'),
   '/docs': () => import('../../src/app/docs/page'),
   '/docs/faq': () => import('../../src/app/docs/faq/page'),
   '/docs/what-is-suede-dna': () => import('../../src/app/docs/what-is-suede-dna/page'),
