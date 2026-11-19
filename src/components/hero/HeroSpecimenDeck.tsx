@@ -21,6 +21,8 @@ export function HeroSpecimenDeck({ rigs }: { rigs: Rig[] }) {
             <RigImage
               rig={rig}
               alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
+              width={640}
+              height={480}
               priority={index === 0}
               sizes={index === 0 ? '(min-width: 1024px) 44vw, 92vw' : '(min-width: 1024px) 24vw, 46vw'}
               className="object-contain"

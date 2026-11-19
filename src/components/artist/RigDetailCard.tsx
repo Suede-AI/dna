@@ -44,6 +44,8 @@ export function RigDetailCard({
             <RigImage
               rig={rig}
               alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
+              width={1200}
+              height={900}
               priority={index === 0}
               sizes="(min-width: 768px) 60vw, 100vw"
               className="object-contain"
@@ -131,6 +133,8 @@ function RigNavLink({ rig, label, direction }: { rig: Rig; label: string; direct
           <RigImage
             rig={rig}
             alt={`${rig.artistName} guitar rig setup, ${rig.year}`}
+            width={72}
+            height={54}
             sizes="72px"
             className="object-contain transition-opacity group-hover:opacity-90"
           />

@@ -23,6 +23,8 @@ function RigCardComponent({ rig, index, stagger }: { rig: Rig; index: number; st
           <RigImage
             rig={rig}
             alt={`${rig.artistName} guitar rig setup, ${rig.year} — Guitar Geek archive`}
+            width={500}
+            height={400}
             sizes="(min-width: 1536px) 25vw, (min-width: 1280px) 33vw, (min-width: 640px) 50vw, 100vw"
             className="object-contain transition-opacity duration-300 group-hover:opacity-90"
           />

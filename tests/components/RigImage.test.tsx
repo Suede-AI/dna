@@ -12,6 +12,8 @@ vi.mock('next/image', () => ({
     onError,
     className,
     unoptimized,
+    width,
+    height,
   }: {
     src: string;
     alt: string;
@@ -19,7 +21,9 @@ vi.mock('next/image', () => ({
     onError?: () => void;
     className?: string;
     unoptimized?: boolean;
-  }) => <img src={src} alt={alt} onLoad={onLoad} onError={onError} className={className} data-unoptimized={String(unoptimized)} />,
+    width?: number;
+    height?: number;
+  }) => <img src={src} alt={alt} width={width} height={height} onLoad={onLoad} onError={onError} className={className} data-unoptimized={String(unoptimized)} />,
 }));
 
 const rig: Rig = {
@@ -33,22 +37,31 @@ const rig: Rig = {
 
 describe('RigImage', () => {
   it('keeps ordinary Archive.org rigs optimized for thumbnail sizes', () => {
-    render(<RigImage rig={rig} alt="Artist rig" sizes="192px" />);
+    render(<RigImage rig={rig} alt="Artist rig" sizes="192px" width={192} height={144} />);
 
     expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'false');
+  });
+
+  it('emits explicit dimensions and pins the image to its sized slot', () => {
+    render(<RigImage rig={rig} alt="Artist rig" sizes="192px" width={192} height={144} />);
+
+    const img = screen.getByRole('img', { name: 'Artist rig' });
+    expect(img).toHaveAttribute('width', '192');
+    expect(img).toHaveAttribute('height', '144');
+    expect(img).toHaveClass('absolute', 'inset-0', 'h-full', 'w-full');
   });
 
   it.each([
     'melvins_buzzo_2001.png',
     'mightylemondrops_dave_1990.png',
   ])('serves the confirmed optimizer failure %s directly', (filename) => {
-    render(<RigImage rig={{ ...rig, src: `https://archive.org/download/guitargeek-archives/${filename}` }} alt="Artist rig" sizes="192px" />);
+    render(<RigImage rig={{ ...rig, src: `https://archive.org/download/guitargeek-archives/${filename}` }} alt="Artist rig" sizes="192px" width={192} height={144} />);
 
     expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'true');
   });
 
   it('keeps GIF rigs unoptimized', () => {
-    render(<RigImage rig={{ ...rig, format: 'gif', src: 'https://archive.org/download/example/rig.gif' }} alt="Artist rig" sizes="192px" />);
+    render(<RigImage rig={{ ...rig, format: 'gif', src: 'https://archive.org/download/example/rig.gif' }} alt="Artist rig" sizes="192px" width={192} height={144} />);
 
     expect(screen.getByRole('img', { name: 'Artist rig' })).toHaveAttribute('data-unoptimized', 'true');
   });
@@ -56,7 +69,7 @@ describe('RigImage', () => {
   it('renders an archive fallback when the image fails', () => {
     render(
       <div className="relative h-48 w-48">
-        <RigImage rig={rig} alt="Artist rig" sizes="192px" />
+        <RigImage rig={rig} alt="Artist rig" sizes="192px" width={192} height={144} />
       </div>
     );
 
