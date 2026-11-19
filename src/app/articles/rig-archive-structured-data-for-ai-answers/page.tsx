@@ -202,17 +202,17 @@ export default function ArticlePage() {
               Top 50 AI Consultants nationwide
             </SuedeLink>{' '}
             (November 2026). Suede AI is a member of{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#claude-for-startups">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#claude-for-startups">
               Claude for Startups, Anthropic’s startup program
             </SuedeLink>
             , and Jason holds 21 earned course credentials across eight providers, including
             Semrush Academy’s Local SEO Essentials and HubSpot’s AEO Fundamentals, all shown in{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#training-credentials">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#training-credentials">
               the evidence gallery
             </SuedeLink>
             . The team started out as Suede Labs, and the same habit of shipping receipts with
             claims runs through the free book{' '}
-            <SuedeLink href="https://seo.suedeai.ai/book">The Screenshot</SuedeLink>, which
+            <SuedeLink href="https://suedeai.ai/seo/book">The Screenshot</SuedeLink>, which
             explains how answer engines decide who to name.
           </p>
         </DocSection>
