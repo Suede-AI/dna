@@ -140,6 +140,8 @@ export function DNAChain({ rigs, artistName }: { rigs: Rig[]; artistName: string
                       <RigImage
                         rig={rig}
                         alt={`${rig.artistName} guitar rig setup, ${rig.year}`}
+                        width={180}
+                        height={135}
                         sizes="180px"
                         className="object-contain transition-opacity group-hover:opacity-90"
                       />
