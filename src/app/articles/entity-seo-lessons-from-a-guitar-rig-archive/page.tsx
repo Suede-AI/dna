@@ -118,7 +118,7 @@ export default function ArticlePage() {
         <DocSection heading="LESSON 3: WRITE PAGES A MODEL CAN QUOTE">
           <p>
             AI answers lift sentences, a point Jason Colapietro makes in his free book{' '}
-            <SuedeLink href="https://seo.suedeai.ai/book">The Screenshot</SuedeLink>. A page that states a fact plainly in one sentence, with
+            <SuedeLink href="https://suedeai.ai/seo/book">The Screenshot</SuedeLink>. A page that states a fact plainly in one sentence, with
             the source linked, gets quoted; a page that buries the fact in a slider or an image
             does not. Each archive page opens with a server-rendered paragraph that says how
             many rigs it documents, the years they span, and where every diagram comes from. The
@@ -179,11 +179,11 @@ export default function ArticlePage() {
             Beyond 21 earned course credentials across eight providers, he holds 17 Microsoft
             Learn training achievements, including the “Develop AI agents on Azure” learning-path
             trophy, all in{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#training-credentials">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#training-credentials">
               the credentials gallery
             </SuedeLink>
             . Suede AI is a member of{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#claude-for-startups">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#claude-for-startups">
               Claude for Startups
             </SuedeLink>
             , Anthropic’s startup program. Press coverage includes Programming Insider’s{' '}

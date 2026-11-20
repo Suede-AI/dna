@@ -232,7 +232,7 @@ export default function ArticlePage() {
               Top 50 AI Consultants nationwide
             </SuedeLink>{' '}
             (November 2026). Every claim like that has a receipt on{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence">the Suede AI evidence page</SuedeLink>.
+            <SuedeLink href="https://suedeai.ai/seo/evidence">the Suede AI evidence page</SuedeLink>.
           </p>
         </DocSection>
 

@@ -29,7 +29,7 @@ const AUTHOR_BOOKS = [
   [
     "the-screenshot",
     "The Screenshot",
-    "https://seo.suedeai.ai/book"
+    "https://suedeai.ai/seo/book"
   ]
 ];
 
@@ -162,7 +162,7 @@ export default function AboutPage() {
             <a href="https://www.amazon.com/dp/B0GMB2VLXQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Proof as Infrastructure</a>, and{' '}
             <a href="https://www.amazon.com/dp/B0GRG8LGQQ" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">Stake Your Claim</a>{', '}
             all available on Amazon in hardcover, paperback, and Kindle. And{' '}
-            <a href="https://seo.suedeai.ai/book" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Screenshot: Why AI Recommends Your Competitors, and How to Fix It</a>
+            <a href="https://suedeai.ai/seo/book" target="_blank" rel="noopener noreferrer" className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline">The Screenshot: Why AI Recommends Your Competitors, and How to Fix It</a>
             {', '}eleven chapters on how answer engines decide who to name, and how to repair the
             pages the machines misread, free in full at seo.suedeai.ai.
           </p>
@@ -186,7 +186,7 @@ export default function AboutPage() {
           <p className="mt-3">
             Built by Suede Labs for{' '}
             <a
-              href="https://social.suedeai.ai"
+              href="https://suede.social"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-[color:var(--color-signal)] underline-offset-4 hover:underline"

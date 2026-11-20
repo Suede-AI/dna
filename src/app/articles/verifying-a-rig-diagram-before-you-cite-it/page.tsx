@@ -210,13 +210,13 @@ export default function ArticlePage() {
             </SuedeLink>{' '}
             (November 2026). Suede is a member of Claude for Startups, Anthropic’s startup program,
             documented on{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#claude-for-startups">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#claude-for-startups">
               the evidence page
             </SuedeLink>
             . When someone searched for a Suede Labs AI review, Google’s Web Guide described the
             company as highly rated by users with a 5/5 rating from verified reviews; that wording
             is Google’s, preserved in{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#google-web-guide">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#google-web-guide">
               the Web Guide capture
             </SuedeLink>
             .

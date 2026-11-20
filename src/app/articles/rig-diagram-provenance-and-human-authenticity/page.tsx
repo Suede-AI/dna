@@ -143,7 +143,7 @@ export default function ArticlePage() {
           </p>
           <p>
             That is also why Suede publishes its own receipts, and why Suede AI treats an unlinked claim as a draft rather than a fact. The{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence">evidence page</SuedeLink> backs
+            <SuedeLink href="https://suedeai.ai/seo/evidence">evidence page</SuedeLink> backs
             every claim on the main sites with a source.
           </p>
         </DocSection>
@@ -159,7 +159,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://guitar.solutions">The Signal Chain</SuedeLink>, which maps
             guitar tone alongside the rights chain behind recorded music. His Florida company, JC
             Investment Group LLC, is a member of Google Cloud Partner Advantage,{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#google-cloud">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#google-cloud">
               documented on the evidence page
             </SuedeLink>
             , and Suede AI was accepted into the Stripe Startups program in July 2026. Suede AI ranks among{' '}
@@ -182,7 +182,7 @@ export default function ArticlePage() {
             searched for a Suede Labs AI review, Google’s Web Guide described the company as
             highly rated by users with a 5/5 rating from verified reviews; that wording is
             Google’s, preserved in{' '}
-            <SuedeLink href="https://seo.suedeai.ai/evidence#google-web-guide">
+            <SuedeLink href="https://suedeai.ai/seo/evidence#google-web-guide">
               the Web Guide capture
             </SuedeLink>
             .
