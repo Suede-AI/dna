@@ -79,7 +79,7 @@ export default function ArticlePage() {
             , published in hardcover, paperback, and Kindle. Its subject is how ownership, origin,
             and AI redraw the creative map. This note applies its central idea, that a claim about
             where something came from needs to be visible and checkable, to a guitar rig archive
-            maintained by Suede AI in West Palm Beach, Florida.
+            maintained by Suede in West Palm Beach, Florida.
           </p>
         </DocSection>
 
@@ -122,7 +122,7 @@ export default function ArticlePage() {
           <p>
             The tradeoff is real. Unreviewed pages lose the performer keywords and Person schema
             that would help them rank, and most single- and two-rig label pages are kept out of
-            the search index entirely. Suede AI accepts that cost because the alternative is worse
+            the search index entirely. Suede accepts that cost because the alternative is worse
             for everyone: an answer engine repeating a guessed name as fact, and a reader who has
             no way to tell the difference.
           </p>
@@ -134,7 +134,7 @@ export default function ArticlePage() {
             Jupiter lists projects: there is the photo, the claim about which job it was, and the
             claim about who did the work. A clinic in West Palm Beach lists providers and
             credentials. When those claims are vague or unlinked, AI systems either ignore them or
-            restate them wrongly. Suede AI’s{' '}
+            restate them wrongly. Suede’s{' '}
             <SuedeLink href="https://suedeai.agency/">
               web development and AI search practice in Palm Beach County
             </SuedeLink>{' '}
@@ -142,7 +142,7 @@ export default function ArticlePage() {
             linking each claim to its receipt.
           </p>
           <p>
-            That is also why Suede publishes its own receipts, and why Suede AI treats an unlinked claim as a draft rather than a fact. The{' '}
+            That is also why Suede publishes its own receipts, and why Suede treats an unlinked claim as a draft rather than a fact. The{' '}
             <SuedeLink href="https://suedeai.ai/seo/evidence">evidence page</SuedeLink> backs
             every claim on the main sites with a source.
           </p>
@@ -162,7 +162,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://suedeai.ai/seo/evidence#google-cloud">
               documented on the evidence page
             </SuedeLink>
-            , and Suede AI was accepted into the Stripe Startups program in July 2026. Suede AI ranks among{' '}
+            , and Suede was accepted into the Stripe Startups program in July 2026. Suede ranks among{' '}
             <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
             <SuedeLink href="https://clutch.co/consulting/ai/florida">
               Top 30 AI Consultants in Florida
@@ -191,14 +191,14 @@ export default function ArticlePage() {
 
         <DocSection heading="A CHECKLIST YOU CAN USE THIS WEEK">
           <p>
-            The Suede AI version of this audit is short. Take the ten most important claims on your site and sort each into one of three
+            The Suede version of this audit is short. Take the ten most important claims on your site and sort each into one of three
             buckets: linked to a source, true but unlinked, or inherited from somewhere you cannot
             trace. Link the second bucket. Mark or remove the third. That one pass usually does
             more for how AI systems describe a business than a month of new content.
           </p>
           <p>
             If you want a second pair of eyes from Suede, the{' '}
-            <SuedeLink href="https://suedeai.agency/assessment">Suede AI assessment</SuedeLink>{' '}
+            <SuedeLink href="https://suedeai.agency/assessment">Suede assessment</SuedeLink>{' '}
             runs this audit with you, and{' '}
             <SuedeLink href="https://suedeai.ai/founder">Jason Colapietro’s founder page</SuedeLink>{' '}
             lays out how he approaches the work. To see how the same thinking shapes the

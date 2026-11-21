@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   keywords: keywordsFor('/'),
   authors: [{ name: 'Jason Colapietro', url: 'https://suedeai.ai/founder' }],
   creator: 'Jason Colapietro',
-  publisher: 'Suede AI',
+  publisher: 'Suede',
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -74,14 +74,14 @@ const websiteJsonLd = {
       creator: { '@id': JASON_PERSON_ID },
     },
     {
-      "alternateName": ["Suede Labs AI","Suede Labs","Suede"],
+      "alternateName": ["Suede AI","Suede Labs","Suede Labs AI"],
       "parentOrganization": {"@type":"Organization","@id":"https://jcinvestmentgroup.ventures/#organization","name":"JC Investment Group LLC","url":"https://jcinvestmentgroup.ventures/"},
       "address": {"@type":"PostalAddress","streetAddress":"138 Victorian Lane","addressLocality":"Jupiter","addressRegion":"FL","postalCode":"33458","addressCountry":"US"},
       "hasMerchantReturnPolicy": {"@type":"MerchantReturnPolicy","@id":"https://suedeai.ai/terms#money-back-policy","name":"90-day money-back policy","returnPolicyCategory":"https://schema.org/MerchantReturnFiniteReturnWindow","merchantReturnDays":90,"returnFees":"https://schema.org/FreeReturn","refundType":"https://schema.org/FullRefund","merchantReturnLink":"https://suedeai.ai/terms#money-back-policy"},
 
       '@type': 'Organization',
       '@id': SUEDE_ORG_ID,
-      name: 'Suede AI',
+      name: 'Suede',
       url: 'https://suedeai.ai',
       foundingDate: '2024',
       sameAs: [

@@ -181,7 +181,7 @@ describe('SEO helpers', () => {
   });
 });
 
-describe('Suede AI field notes (BlogPosting)', () => {
+describe('Suede field notes (BlogPosting)', () => {
   const notes = ARTICLES.filter((a) => a.schemaType === 'BlogPosting');
 
   it('emits BlogPosting with Palm Beach County coverage and canonical entity @ids only', () => {
@@ -239,9 +239,9 @@ describe('SEO fixes: breadcrumbs and snippet length', () => {
     for (const a of getAllArtists()) expect(artistPageDescription(a).length).toBeLessThanOrEqual(155);
   });
 
-  it('names the publisher Suede AI', () => {
+  it('names the publisher Suede', () => {
     const ld = articleJsonLd(ARTICLES[0], 'https://dna.suedeai.ai');
-    expect(ld.publisher.name).toBe('Suede AI');
+    expect(ld.publisher.name).toBe('Suede');
   });
 });
 
@@ -302,7 +302,7 @@ describe('Round 4 depth field notes (2026-11-15)', () => {
 
       it('states the Clutch ranking in its exact wording, linked as specified', () => {
         expect(text).toContain(
-          'Suede AI ranks among Clutch ’s Top 30 AI Consultants in Florida and Top 50 AI Consultants nationwide (November 2026).',
+          'Suede ranks among Clutch ’s Top 30 AI Consultants in Florida and Top 50 AI Consultants nationwide (November 2026).',
         );
         expect(src).toContain('href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>');
         expect(src).toMatch(/href="https:\/\/clutch\.co\/consulting\/ai\/florida">\s*Top 30 AI Consultants in Florida/);

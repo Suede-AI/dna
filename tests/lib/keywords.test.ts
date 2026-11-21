@@ -27,7 +27,7 @@ function routeOf(file: string): string {
   return `/${rel}`;
 }
 
-const BANNED_TERMS = ['suede labs', 'guitar geek', 'pedalboard planner'];
+const BANNED_TERMS = ['suede ai', 'suede labs', 'guitar geek', 'pedalboard planner'];
 
 function expectWellFormed(list: readonly string[]) {
   expect(list.length).toBeGreaterThanOrEqual(3);

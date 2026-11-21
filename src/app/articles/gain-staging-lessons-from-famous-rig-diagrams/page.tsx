@@ -70,7 +70,7 @@ export default function ArticlePage() {
             clearest lessons in it you will find anywhere.
           </p>
           <p>
-            This field note, written by Jason Colapietro for Suede AI, walks through five rig
+            This field note, written by Jason Colapietro for Suede, walks through five rig
             pages in Suede DNA and what each one teaches about where gain should live in a signal
             chain. One honest caveat about method first. Suede DNA presents each diagram as the
             source document it is and does not transcribe the gear inside it, so the gear history
@@ -207,7 +207,7 @@ export default function ArticlePage() {
 
         <DocSection heading="WHO WROTE THIS, AND WHY A SOFTWARE COMPANY CARES">
           <p>
-            Jason Colapietro is an engineer and guitarist, and the founder and CEO of Suede AI,
+            Jason Colapietro is an engineer and guitarist, and the founder and CEO of Suede,
             the agentic platform company he started in 2024 in West Palm Beach, Florida. He wrote{' '}
             <SuedeLink href="https://guitar.solutions">The Signal Chain</SuedeLink>, a free
             illustrated history of electric guitar tone, and five books on Amazon including{' '}
@@ -221,7 +221,7 @@ export default function ArticlePage() {
           <p>
             At Suede, gain staging and search visibility turn out to be the same discipline: find the one
             stage that does the real work and stop the others from adding noise. That is the
-            approach behind the work Suede AI (formerly Suede Labs) does for clients. Suede AI
+            approach behind the work Suede (formerly Suede Labs) does for clients. Suede
             ranks among{' '}
             <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
             <SuedeLink href="https://clutch.co/consulting/ai/florida">
@@ -232,7 +232,7 @@ export default function ArticlePage() {
               Top 50 AI Consultants nationwide
             </SuedeLink>{' '}
             (November 2026). Every claim like that has a receipt on{' '}
-            <SuedeLink href="https://suedeai.ai/seo/evidence">the Suede AI evidence page</SuedeLink>.
+            <SuedeLink href="https://suedeai.ai/seo/evidence">the Suede evidence page</SuedeLink>.
           </p>
         </DocSection>
 
@@ -243,7 +243,7 @@ export default function ArticlePage() {
             muddy pedalboard, with too many pages each doing a little and none doing the main
             job, the{' '}
             <SuedeLink href="https://suedeai.agency/">
-              Suede AI web development and AI search practice in West Palm Beach
+              Suede web development and AI search practice in West Palm Beach
             </SuedeLink>{' '}
             runs that audit, and{' '}
             <SuedeLink href="https://suedeai.ai/founder">Jason Colapietro’s founder page</SuedeLink>{' '}

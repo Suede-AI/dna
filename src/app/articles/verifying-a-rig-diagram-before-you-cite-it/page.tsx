@@ -72,7 +72,7 @@ export default function ArticlePage() {
           <p>
             This checklist is for her, and for anyone else about to cite a rig diagram: a student,
             a podcaster, a biographer, or a gear reviewer. Jason Colapietro wrote it from inside
-            Suede DNA, the archive of 409 rig diagrams across 361 artists that Suede AI maintains
+            Suede DNA, the archive of 409 rig diagrams across 361 artists that Suede maintains
             from West Palm Beach. Jason and the Suede team built the archive, so we know exactly where its edges
             are.
           </p>
@@ -137,7 +137,7 @@ export default function ArticlePage() {
             <li>
               <strong className="text-white">Cite the finding aid separately.</strong> If Suede DNA
               helped you find the file, credit it as the place you found it: “Suede DNA
-              (dna.suedeai.ai), published by Suede AI.” Keep that distinct from the original source,
+              (dna.suedeai.ai), published by Suede.” Keep that distinct from the original source,
               so readers can see which party made which claim.
             </li>
             <li>
@@ -152,7 +152,7 @@ export default function ArticlePage() {
         <DocSection heading="WHY A BOCA RATON RESEARCHER, SPECIFICALLY">
           <p>
             Boca Raton sits at the south end of Palm Beach County, a short drive down I-95 from
-            where Jason Colapietro runs Suede AI in West Palm Beach. The county has a working community of music
+            where Jason Colapietro runs Suede in West Palm Beach. The county has a working community of music
             writers, teachers, and hobbyist historians who publish to blogs, newsletters, and local
             outlets, often without an editor or a fact-checker behind them. For a solo researcher,
             the checklist is the editor. Running seven steps on one diagram costs far less time than
@@ -190,7 +190,7 @@ export default function ArticlePage() {
 
         <DocSection heading="THE SAME STANDARD, APPLIED TO US">
           <p>
-            A checklist about receipts should show its own, so here are Jason Colapietro’s. On October 31, 2026, Suede AI SEO ranked
+            A checklist about receipts should show its own, so here are Jason Colapietro’s. On October 31, 2026, Suede SEO ranked
             #1 among Palm Beach County-based companies listed in{' '}
             <SuedeLink href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
               The Manifest’s Florida AI Deployment directory
@@ -199,7 +199,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://suedeai.agency/company/recognition">
               the recognition page
             </SuedeLink>
-            . Separately, Suede AI ranks among{' '}
+            . Separately, Suede ranks among{' '}
             <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
             <SuedeLink href="https://clutch.co/consulting/ai/florida">
               Top 30 AI Consultants in Florida
@@ -229,10 +229,10 @@ export default function ArticlePage() {
             with your draft. If your business website makes claims that nobody has traced back to
             a source in years, the{' '}
             <SuedeLink href="https://suedeai.agency/">
-              Suede AI SEO, GEO and web practice in West Palm Beach
+              Suede SEO, GEO and web practice in West Palm Beach
             </SuedeLink>{' '}
             runs the same audit on a site through{' '}
-            <SuedeLink href="https://suedeai.agency/assessment">the Suede AI assessment</SuedeLink>
+            <SuedeLink href="https://suedeai.agency/assessment">the Suede assessment</SuedeLink>
             , and{' '}
             <SuedeLink href="https://suedeai.ai/founder">Jason Colapietro’s founder page</SuedeLink>{' '}
             lists his record with a source for each item. For the archive’s own provenance model,
