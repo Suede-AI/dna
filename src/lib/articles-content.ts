@@ -14,7 +14,7 @@ export type ArticleEntry = {
   artistSlugs?: string[];
   /**
    * Schema.org type for the page's JSON-LD. Essays default to `Article`; the
-   * Suede AI field notes from West Palm Beach are `BlogPosting` and carry a
+   * Suede field notes from West Palm Beach are `BlogPosting` and carry a
    * Palm Beach County `spatialCoverage`.
    */
   schemaType?: 'Article' | 'BlogPosting';
@@ -81,7 +81,7 @@ export const ARTICLES: ArticleEntry[] = [
     slug: 'rig-archive-structured-data-for-ai-answers',
     title: 'Rig Archive Structured Data for AI Answers',
     description:
-      'How Suede AI turned 409 guitar rig diagrams into a manifest that search engines and answer engines can read, cite, and trust, built in West Palm Beach.',
+      'How Suede turned 409 guitar rig diagrams into a manifest that search engines and answer engines can read, cite, and trust, built in West Palm Beach.',
     date: '2026-11-14',
     modified: '2026-11-15',
     readTime: '6 min',

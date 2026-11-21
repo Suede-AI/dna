@@ -210,7 +210,7 @@ function articleKeywords(slug: string): string[] {
   return withBrand(terms);
 }
 
-/** Where the Suede AI field notes are written: West Palm Beach and Jupiter, Palm Beach County, Florida. */
+/** Where the Suede field notes are written: West Palm Beach and Jupiter, Palm Beach County, Florida. */
 export const SUEDE_SPATIAL_COVERAGE = [
   {
     '@type': 'City',
@@ -249,7 +249,7 @@ export function articleJsonLd(article: ArticleEntry, siteUrl: string) {
       name: 'Jason Colapietro',
       url: 'https://suedeai.ai/founder',
     },
-    publisher: { '@id': 'https://suedeai.ai/#organization', name: 'Suede AI' },
+    publisher: { '@id': 'https://suedeai.ai/#organization', name: 'Suede' },
     image: `${siteUrl}${DNA_SOCIAL_IMAGE.url}`,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
     url,

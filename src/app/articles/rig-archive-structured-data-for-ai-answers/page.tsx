@@ -71,11 +71,11 @@ export default function ArticlePage() {
             diagram, on its own, is an image with a filename. Nobody can quote it, filter it by
             decade, or tell whether the name attached to it was ever checked. Suede DNA exists to
             close that gap for 409 guitar rig diagrams from the Guitar Geek Archives on the
-            Internet Archive, and the way Suede AI structured it is a working pattern for any
+            Internet Archive, and the way Suede structured it is a working pattern for any
             archive that wants to be read by search engines and AI systems instead of skipped.
           </p>
           <p>
-            Jason Colapietro built the archive from Suede AI’s studio in West Palm Beach, Florida.
+            Jason Colapietro built the archive from Suede’s studio in West Palm Beach, Florida.
             This note walks through the decisions in the order they matter: what each record
             holds, which pages are offered to crawlers, how the machine-readable indexes stay in
             step, and what a Palm Beach County business site can borrow from all of it.
@@ -128,7 +128,7 @@ export default function ArticlePage() {
             The llms.txt file lists the same pages and describes each one with its own meta
             description, so a model reading it gets the page’s words rather than a paraphrase.
             The JSON-LD on every page resolves the publisher and author by reference into a
-            single graph: the organization is always the canonical Suede AI identity and the
+            single graph: the organization is always the canonical Suede identity and the
             author is always the canonical Jason Colapietro identity, never a fresh copy minted
             per page.
           </p>
@@ -144,7 +144,7 @@ export default function ArticlePage() {
         <DocSection heading="WHAT A PALM BEACH COUNTY BUSINESS CAN TAKE FROM THIS">
           <p>
             Swap “rigs” for “services,” “projects,” or “locations” and the pattern is the same one
-            Suede AI uses for clients through{' '}
+            Suede uses for clients through{' '}
             <SuedeLink href="https://suedeai.agency/">
               its West Palm Beach SEO, GEO, and web development practice
             </SuedeLink>
@@ -183,7 +183,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://apps.apple.com/us/developer/jason-colapietro/id1895958699">
               nine iOS apps under his own Apple developer account
             </SuedeLink>
-            . On October 31, 2026, Suede AI SEO ranked #1 among Palm Beach County-based companies
+            . On October 31, 2026, Suede SEO ranked #1 among Palm Beach County-based companies
             listed in The Manifest’s{' '}
             <SuedeLink href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
               Florida AI Deployment directory
@@ -192,7 +192,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://suedeai.agency/company/recognition">
               the recognition page
             </SuedeLink>
-            . Suede AI ranks among{' '}
+            . Suede ranks among{' '}
             <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
             <SuedeLink href="https://clutch.co/consulting/ai/florida">
               Top 30 AI Consultants in Florida
@@ -201,7 +201,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://clutch.co/us/consulting/ai">
               Top 50 AI Consultants nationwide
             </SuedeLink>{' '}
-            (November 2026). Suede AI is a member of{' '}
+            (November 2026). Suede is a member of{' '}
             <SuedeLink href="https://suedeai.ai/seo/evidence#claude-for-startups">
               Claude for Startups, Anthropic’s startup program
             </SuedeLink>
@@ -223,9 +223,9 @@ export default function ArticlePage() {
             facts every one of those pages should carry. If you cannot fill that list from a
             single source today, that is the first thing to fix. If you want Suede to look at it
             with you, start the{' '}
-            <SuedeLink href="https://suedeai.agency/assessment">free Suede AI assessment</SuedeLink>
+            <SuedeLink href="https://suedeai.agency/assessment">free Suede assessment</SuedeLink>
             , or read more about how Jason Colapietro works on{' '}
-            <SuedeLink href="https://suedeai.ai/founder">the Suede AI founder page</SuedeLink>.
+            <SuedeLink href="https://suedeai.ai/founder">the Suede founder page</SuedeLink>.
             For more on how this archive handles names it has not verified, see{' '}
             <SuedeLink href="/articles/rig-diagram-provenance-and-human-authenticity">
               rig diagram provenance and human authenticity

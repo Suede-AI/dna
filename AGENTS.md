@@ -73,6 +73,17 @@ catalog and future unresolved entries.
 The active work order is `docs/visual-overhaul/SPEC.md`. Take the first unchecked task,
 top to bottom. Full protocol: `docs/visual-overhaul/LOOP_PROMPT.md`.
 
+## The company name is Suede
+
+Owner direction, 2026-11-21: the publisher is "Suede". Sub-brands drop the
+old words ("Suede SEO", "Suede GEO", "Suede DNA"). "Suede AI" and "Suede
+Labs" appear in public copy only as the Organization's schema
+`alternateName`, a "formerly Suede Labs" alias statement, and records of
+other people's words (a press headline, a search query). Domains, URLs and
+the `Suede-AI` GitHub org are unchanged. `tests/lib/brand-name.test.ts`
+fails any other use in `src/` or `public/`. This is the one standing
+exception to hard rule 9: brand-name fixes may touch metadata and JSON-LD.
+
 ## Repository attribution preferences
 
 Omit optional AI attribution from new commit messages and pull request descriptions, including AI Co-Authored-By, Generated-by text, and Claude session links or trailers. Name new branches for the task without agent or model names, subject to system or harness naming requirements. Preserve actual authorship, required provenance, license notices, security and audit records, and attribution required by higher-priority policies or system instructions.

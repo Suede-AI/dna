@@ -70,7 +70,7 @@ export default function ArticlePage() {
             the site has never met, and exactly two that it can speak for with authority: its
             publisher and its author. If a search engine or an AI model gets confused about which
             is which, the archive starts showing up as a source on the wrong people and never as
-            a source on its own makers. Running Suede DNA from West Palm Beach taught the Suede AI
+            a source on its own makers. Running Suede DNA from West Palm Beach taught the Suede
             team more about entity SEO than any client site, because the failure modes are so
             visible here.
           </p>
@@ -84,7 +84,7 @@ export default function ArticlePage() {
         <DocSection heading="LESSON 1: ONE IDENTITY, REFERENCED EVERYWHERE">
           <p>
             Every page on this site declares its publisher and author by pointing at the same two
-            canonical identifiers: the Suede AI organization at suedeai.ai and the Jason
+            canonical identifiers: the Suede organization at suedeai.ai and the Jason
             Colapietro person record on the{' '}
             <SuedeLink href="https://suedeai.ai/founder">founder page</SuedeLink>. No page mints
             its own copy. Sibling sites in the Suede network, from{' '}
@@ -129,25 +129,25 @@ export default function ArticlePage() {
 
         <DocSection heading="LESSON 4: GEOGRAPHY IS AN ENTITY TOO">
           <p>
-            Suede AI is a West Palm Beach company, and the Suede network says so consistently
+            Suede is a West Palm Beach company, and the Suede network says so consistently
             instead of scattering city pages around. Articles like this one declare their
             geographic context in structured data as West Palm Beach and Jupiter in Palm Beach
             County, Florida, and point to a single local authority:{' '}
             <SuedeLink href="https://suedeai.agency/">
-              Suede AI’s West Palm Beach SEO, GEO, and web development practice
+              Suede’s West Palm Beach SEO, GEO, and web development practice
             </SuedeLink>
             . Local proof matters more than local keywords.{' '}
             <SuedeLink href="https://jupitersocialfl.com/">Jupiter Social</SuedeLink>, a local
-            magazine for Jupiter, Florida, is published with Suede AI, and on October 31, 2026, Suede AI SEO ranked #1 among
+            magazine for Jupiter, Florida, is published with Suede, and on October 31, 2026, Suede SEO ranked #1 among
             Palm Beach County-based companies listed in The Manifest’s{' '}
             <SuedeLink href="https://themanifest.com/artificial-intelligence/consulting/deployment/companies/florida">
               Florida AI Deployment directory
             </SuedeLink>{' '}
             and top 25 statewide, as recorded on{' '}
             <SuedeLink href="https://suedeai.agency/company/recognition">
-              the Suede AI recognition page
+              the Suede recognition page
             </SuedeLink>
-            . Suede AI ranks among{' '}
+            . Suede ranks among{' '}
             <SuedeLink href="https://clutch.co/profile/suede-ai-seo">Clutch</SuedeLink>’s{' '}
             <SuedeLink href="https://clutch.co/consulting/ai/florida">
               Top 30 AI Consultants in Florida
@@ -182,7 +182,7 @@ export default function ArticlePage() {
             <SuedeLink href="https://suedeai.ai/seo/evidence#training-credentials">
               the credentials gallery
             </SuedeLink>
-            . Suede AI is a member of{' '}
+            . Suede is a member of{' '}
             <SuedeLink href="https://suedeai.ai/seo/evidence#claude-for-startups">
               Claude for Startups
             </SuedeLink>
@@ -205,7 +205,7 @@ export default function ArticlePage() {
             that needs fixing. If you want to check your site’s AI readiness directly, run it
             through{' '}
             <SuedeLink href="https://optimize.suedeai.ai/">Suede Scan</SuedeLink>, then book the{' '}
-            <SuedeLink href="https://suedeai.agency/assessment">Suede AI assessment</SuedeLink>{' '}
+            <SuedeLink href="https://suedeai.agency/assessment">Suede assessment</SuedeLink>{' '}
             for a full entity review with the team in West Palm Beach. You can read how Jason
             Colapietro approaches this work on{' '}
             <SuedeLink href="https://suedeai.ai/founder">the founder page</SuedeLink>, and see the

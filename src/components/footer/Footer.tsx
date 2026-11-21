@@ -47,7 +47,7 @@ export function Footer() {
           <Link href="/articles" className="text-[color:var(--color-mute-readable)] hover:text-[color:var(--color-signal)] block mt-1">
             ARTICLES →
           </Link>
-          {/* Suede DNA is published by Suede AI and is covered by the estate
+          {/* Suede DNA is published by Suede and is covered by the estate
               privacy policy, so the footer links to the policy that governs it
               rather than restating it on this host. */}
           <a
@@ -115,7 +115,7 @@ export function Footer() {
               >
                 Jason Colapietro
               </a>
-              , founder of Suede AI
+              , founder of Suede
             </p>
             <p className="text-[color:var(--color-mute-readable)]">
               SOURCED FROM GUITAR GEEK FOR{' '}
@@ -149,7 +149,7 @@ function Out({ href, children }: { href: string; children: React.ReactNode }) {
 }
 
 /**
- * Sitewide "who made this, and where" block: Suede AI in West Palm Beach,
+ * Sitewide "who made this, and where" block: Suede in West Palm Beach,
  * Florida, with the main Suede pages and a few related archive siblings.
  */
 function BuiltInWestPalmBeach() {
@@ -158,33 +158,33 @@ function BuiltInWestPalmBeach() {
       <div className="mx-auto max-w-[1600px] px-6 py-10 grid gap-8 lg:grid-cols-[2fr_1fr]">
         <div>
           <h2 id="built-by-suede" className="mono-label text-[color:var(--color-bone)]">
-            BUILT BY SUEDE AI IN WEST PALM BEACH, FLORIDA
+            BUILT BY SUEDE IN WEST PALM BEACH, FLORIDA
           </h2>
           <p className="mt-3 max-w-[720px] text-[color:var(--color-bone)] leading-relaxed">
             Suede DNA is designed, engineered, and maintained by{' '}
-            <Out href="https://suedeai.ai/">Suede AI</Out>, the agentic platform company founded by{' '}
+            <Out href="https://suedeai.ai/">Suede</Out>, the agentic platform company founded by{' '}
             <Out href="https://suedeai.ai/founder">Jason Colapietro</Out> (
             <Out href="https://jasoncolapietro.com/">jasoncolapietro.com</Out>). The same team runs{' '}
             <Out href="https://suedeai.agency/">
-              Suede AI’s SEO, GEO, and web development practice
+              Suede’s SEO, GEO, and web development practice
             </Out>{' '}
             for businesses in West Palm Beach, Jupiter, and across Palm Beach County.{' '}
             <Out href="https://jupitersocialfl.com/">Jupiter Social</Out>, a local magazine for
-            Jupiter, Florida, is published with Suede AI. New here? Read the{' '}
+            Jupiter, Florida, is published with Suede. New here? Read the{' '}
             <Link href="/articles" className={FOOTER_LINK}>
               field notes on archives and AI search
             </Link>
             .
           </p>
           <p className="mt-3 max-w-[720px] text-[color:var(--color-bone)] leading-relaxed">
-            Suede AI ranks among <Out href="https://clutch.co/profile/suede-ai-seo">Clutch</Out>’s{' '}
+            Suede ranks among <Out href="https://clutch.co/profile/suede-ai-seo">Clutch</Out>’s{' '}
             <Out href="https://clutch.co/consulting/ai/florida">Top 30 AI Consultants in Florida</Out>{' '}
             and <Out href="https://clutch.co/us/consulting/ai">Top 50 AI Consultants nationwide</Out>{' '}
             (November 2026).
           </p>
         </div>
         <div className="mono-label">
-          <p className="text-[color:var(--color-bone)] mb-2">MORE FROM SUEDE AI</p>
+          <p className="text-[color:var(--color-bone)] mb-2">MORE FROM SUEDE</p>
           <ul className="space-y-1">
             {[
               ['https://guitar.services/', 'Signal Chain reference'],
