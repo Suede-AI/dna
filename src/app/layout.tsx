@@ -18,6 +18,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dna.suedeai.ai';
 const defaultDescription = `A compilation archive of guitarists' rigs and signal chains. ${stats.totalRigs} documented setups from ${stats.totalArtists} artists, ${stats.yearMin}–${stats.yearMax}, indexed by year and player.`;
 
 export const metadata: Metadata = {
+  icons: { icon: "/favicon.svg" },
   metadataBase: new URL(SITE_URL),
   title: { default: 'Suede DNA: Guitar Rig Archive of Signal Chains', template: '%s · Suede DNA' },
   description: defaultDescription,
